@@ -1,2 +1,0 @@
-# page-generator
-Page Generator
