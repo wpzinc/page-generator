@@ -3,7 +3,7 @@ Contributors: n7studios,wpzinc
 Donate link: https://www.wpzinc.com/plugins/page-generator-pro
 Tags: mass page generator, landing pages, multiple page generator
 Requires at least: 3.6
-Tested up to: 5.8
+Tested up to: 5.8.1
 Requires PHP: 7.2
 Stable tag: trunk
 License: GPLv2 or later
