@@ -18,7 +18,7 @@
 	    		<!-- Content -->
 	    		<div id="post-body-content">
 	    			<!-- Form Start -->
-	    			<form class="<?php echo $this->base->plugin->name; ?>" name="post" method="post" action="admin.php?page=page-generator-pro-keywords&amp;cmd=form&id=<?php echo absint( $_GET['id'] ); ?>" enctype="multipart/form-data">		
+	    			<form class="<?php echo $this->base->plugin->name; ?>" name="post" method="post" action="admin.php?page=page-generator-keywords&amp;cmd=form&id=<?php echo absint( $_GET['id'] ); ?>" enctype="multipart/form-data">		
 		    	    	<div id="normal-sortables" class="meta-box-sortables ui-sortable">                        
 			                <div id="keyword-panel" class="postbox">
 			                	<!-- Keyword ID we're editing -->
@@ -31,7 +31,7 @@
 			                    		<label for="keyword"><?php _e( 'Keyword', 'page-generator' ); ?></label>
 			                    	</div>
 			                    	<div class="right">
-			                    		<input type="text" name="keyword" id="keyword" value="<?php echo ( isset( $_POST['keyword'] ) ? $_POST['keyword'] : $keyword['keyword'] ); ?>" class="widefat" />
+			                    		<input type="text" name="keyword" id="keyword" value="<?php echo ( isset( $_POST['keyword'] ) ? esc_attr( $_POST['keyword'] ) : $keyword['keyword'] ); ?>" class="widefat" />
 			                    	
 				                    	<p class="description">
 				                    		<?php _e( 'A unique template tag name, which can then be used when generating content.', 'page-generator' ); ?>

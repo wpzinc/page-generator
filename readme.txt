@@ -96,6 +96,9 @@ There are no limits on the number of Pages that can be generated with our mass p
 
 == Changelog ==
 
+= 1.5.9 (2021-09-17) =
+* Fix: Keywords: Correctly escape Keyword name
+
 = 1.5.8 =
 * Added: Generate: Content: All Method.  See Docs: https://www.wpzinc.com/documentation/page-generator-pro/generate-methods/
 * Fix: Don't minify Plugin Javascript if a third party minification Plugin is active

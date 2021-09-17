@@ -28,7 +28,7 @@
 			                    		<label for="keyword"><?php _e( 'Keyword', 'page-generator' ); ?></label>
 			                    	</div>
 			                    	<div class="right">
-			                    		<input type="text" name="keyword" id="keyword" value="<?php echo ( isset( $_POST['keyword'] ) ? $_POST['keyword'] : '' ); ?>" class="widefat" />
+			                    		<input type="text" name="keyword" id="keyword" value="<?php echo ( isset( $_POST['keyword'] ) ? esc_attr( $_POST['keyword'] ) : '' ); ?>" class="widefat" />
 			                    	
 				                    	<p class="description">
 				                    		<?php _e( 'A unique template tag name, which can then be used when generating content.', 'page-generator' ); ?>
