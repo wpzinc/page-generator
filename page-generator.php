@@ -379,6 +379,7 @@ spl_autoload_register( 'Page_Generator_Autoloader' );
 include_once( dirname( __FILE__ ) . '/includes/admin/activation.php' );
 include_once( dirname( __FILE__ ) . '/includes/admin/deactivation.php' );
 register_activation_hook( __FILE__, 'page_generator_activate' );
+add_action( 'wp_insert_site', 'page_generator_activate_new_site' );
 add_action( 'wpmu_new_blog', 'page_generator_activate_new_site' );
 add_action( 'activate_blog', 'page_generator_activate_new_site' );
 register_deactivation_hook( __FILE__, 'page_generator_deactivate' );
