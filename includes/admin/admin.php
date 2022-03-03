@@ -105,6 +105,7 @@ class Page_Generator_Pro_Admin {
         $ext = ( $this->base->dashboard->should_load_minified_js() ? 'min' : '' );
 
         // JS - register scripts we might use
+        wp_register_script( $this->base->plugin->name . '-keywords', $this->base->plugin->url . 'assets/js/' . ( $minified ? 'min/' : '' ) . 'keywords' . ( $minified ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
         wp_register_script( $this->base->plugin->name . '-generate-browser', $this->base->plugin->url . 'assets/js/' . ( $ext ? 'min/' : '' ) . 'generate-browser' . ( $ext ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
         wp_register_script( $this->base->plugin->name . '-generate-content', $this->base->plugin->url . 'assets/js/' . ( $ext ? 'min/' : '' ) . 'generate-content' . ( $ext ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
         wp_register_script( $this->base->plugin->name . '-selectize', $this->base->plugin->url . 'assets/js/' . ( $ext ? 'min/' : '' ) . 'selectize' . ( $ext ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
@@ -112,6 +113,28 @@ class Page_Generator_Pro_Admin {
         // If here, we're on a plugin screen
         // Conditionally load scripts and styles depending on which section of the Plugin we're loading        
         switch ( $screen['screen'] ) {
+
+            /**
+             * Keywords
+             */
+            case 'keywords':
+                switch ( $screen['section'] ) {
+                    /**
+                     * Keywords: Add / Edit
+                     */
+                    case 'edit':
+                        wp_enqueue_script( $this->base->plugin->name . '-keywords' );
+
+                        // Localize Keywords with CodeMirror Code Editor instance
+                        wp_localize_script( $this->base->plugin->name . '-keywords', 'page_generator_pro_keywords', array(
+                        	'codeEditor' => wp_enqueue_code_editor( array(
+	                    		'type' => 'text',
+	                    	) )
+                        ) );
+                        break;
+                }
+                break;
+                
             /**
              * Content: Groups
              */
@@ -183,7 +206,6 @@ class Page_Generator_Pro_Admin {
             case 'generate':
                 wp_enqueue_script( 'jquery-ui-progressbar' );
                 wp_enqueue_script( 'wpzinc-admin-synchronous-ajax' );
-                wp_enqueue_script( $this->base->plugin->name . '-generate-browser' );
                 break;
         }
 
@@ -691,6 +713,9 @@ class Page_Generator_Pro_Admin {
         // Fetch group settings
         $settings = $group->get_settings( $id, false );
 
+        // Define return to Group URL
+        $return_url = admin_url( 'post.php?post=' . $id . '&amp;action=edit' );
+
         // Validate group
         $validated = $group->validate( $id );
         if ( is_wp_error( $validated ) ) {
@@ -710,10 +735,6 @@ class Page_Generator_Pro_Admin {
          */
         do_action( 'page_generator_pro_generate_content_before', $id, false, 'browser' );
     
-
-        // Define return to Group URL
-        $return_url = admin_url( 'post.php?post=' . $id . '&amp;action=edit' );
-        
         // Calculate how many pages could be generated
         $number_of_pages_to_generate = $this->base->get_class( 'generate' )->get_max_number_of_pages( $settings );
         if ( is_wp_error( $number_of_pages_to_generate ) ) {
@@ -744,7 +765,9 @@ class Page_Generator_Pro_Admin {
         $settings['stop_on_error'] = (int) $this->base->get_class( 'settings' )->get_setting( $this->base->plugin->name . '-generate', 'stop_on_error', 0 );
         $settings['stop_on_error_pause'] = (int) $this->base->get_class( 'settings' )->get_setting( $this->base->plugin->name . '-generate', 'stop_on_error_pause', 5 );
 
-        // Localize Generate Browser script with the necessary parameters for synchronous AJAX requests
+		// Enqueue and localize Generate Browser script with the necessary parameters for synchronous AJAX requests.
+        wp_enqueue_script( $this->base->plugin->name . '-generate-browser' );
+        wp_localize_script( $this->base->plugin->name . '-generate-browser', 'page_generator_pro', $this->base->licensing->get_parameters() );   
         wp_localize_script( $this->base->plugin->name . '-generate-browser', 'page_generator_pro_generate_browser', array(
             'action'                        => 'page_generator_pro_generate_' . $type,
             'action_on_finished'            => 'page_generator_pro_generate_' . $type . '_after',

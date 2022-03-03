@@ -157,8 +157,9 @@ class Page_Generator_Pro_Common {
                         'menuItemLimit'     => 20,
 
                         // TinyMCE specific
-                        'triggerKeyCode'    => 219,
-                        'tinyMCEName'       => 'page_generator_pro_autocomplete_keywords',
+                        'triggerKeyCode'    		=> 219, // Left square/curly bracket.
+                        'triggerKeyShiftRequired' 	=> true, // Require shift key to also be pressed.
+                        'tinyMCEName'       		=> 'page_generator_pro_autocomplete_keywords',
                     ),
                 ),
             ),

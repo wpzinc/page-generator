@@ -2,8 +2,8 @@
 Contributors: n7studios,wpzinc
 Donate link: https://www.wpzinc.com/plugins/page-generator-pro
 Tags: mass page generator, landing pages, multiple page generator
-Requires at least: 3.6
-Tested up to: 5.9
+Requires at least: 5.0
+Tested up to: 5.9.1
 Requires PHP: 7.2
 Stable tag: trunk
 License: GPLv2 or later
@@ -95,6 +95,15 @@ There are no limits on the number of Pages that can be generated with our mass p
 3. Generating Pages screen
 
 == Changelog ==
+
+= 1.6.0 (2022-03-03) =
+* Added: Keywords: Add/Edit: Use WordPress Code Editor for Terms for improved editing, readibility and search
+* Added: Generate: Content: Permalink: Validate that Keyword syntax is valid prior to Test / Generation
+* Added: Generate: Content: Keyword Autocomplete: Classic Editor: Up and down keys can be used to select highlighted autocomplete suggestion
+* Added: Generate: Content: Keyword Autocomplete: Classic Editor: Insert first displayed Keyword suggestion when enter key pressed
+* Fix: Generate: Content: Keyword Autocomplete: Classic Editor: Don't show autocompleter when left square bracket key pressed
+* Fix: Generate: Content: Detect Keywords in Gutenberg Blocks and Page Builders that use nested JSON strings to store data
+* Fix: Multisite: Activation: Use wp_insert_site hook when available in WordPress 5.1 and higher
 
 = 1.5.9 (2021-09-17) =
 * Fix: Keywords: Correctly escape Keyword name

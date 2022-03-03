@@ -608,10 +608,10 @@ class Page_Generator_Pro_Generate {
         // Recursively walk through all settings to find all keywords
         array_walk_recursive( $settings, array( $this, 'find_keywords_in_string' ) );
 
-        // Build results
+        // Build results.
         $results = array(
-            'required_keywords'         => $this->required_keywords,
-            'required_keywords_full'    => $this->required_keywords_full,
+            'required_keywords'         => $this->required_keywords, // Keywords only.
+            'required_keywords_full'    => $this->required_keywords_full, // Includes columns and modifiers.
         );
 
         // Reset required keywords array
@@ -790,10 +790,10 @@ class Page_Generator_Pro_Generate {
 
     }
 
-    /**
+/**
      * Performs a search on the given string to find any {keywords}
      *
-     * @since 1.2.0
+     * @since 	1.2.0
      *
      * @param   string  $content    Array Value (string to search)
      * @param   string  $key        Array Key
@@ -805,9 +805,29 @@ class Page_Generator_Pro_Generate {
             return array_walk_recursive( $content, array( $this, 'find_keywords_in_string' ) );
         }
 
-        // Get keywords and spins in this string
-        preg_match_all( "|{(.+?)}|", $content, $matches );
-
+        /**
+         * Get Keywords in this string.  Covers:
+         * - Alphanumeric and accented keyword names, with hyphens and underscores
+         * - Alphanumeric and accented keyword column names, with hyphens and underscores
+         * - Keyword modifiers
+         * - Keyword modifier arguments
+         * 
+         * For example:
+         * {keyword}
+         * {keyword_ü}
+         * {keyword-keyword}
+         * {keyword_keyword}
+         * {keyword:modifier}
+         * {keyword(column)}, {keyword(column_name)}, {keyword(column-name)}
+         * {keyword(column_name):modifier}, {keyword(column-name):modifier...:modifier}
+         * {keyword(column_name):modifier[args]}
+         * {keyword(column_name):modifier[arg1,argN]}
+         * 
+         * Previous method "|{(.+?)}|" would include spintax and fail to extract keywords
+         * within JSON e.g. Gutenberg Block JSON strings that contain a Keyword. 
+		 */
+        preg_match_all( '/{([\p{L}0-9_\-:,()\\[\\]]+?)}/u', $content, $matches );
+		
         // Bail if no matches are found
         if ( ! is_array( $matches ) ) {
             return;
@@ -818,14 +838,6 @@ class Page_Generator_Pro_Generate {
 
         // Iterate through matches, adding them to the required keywords array
         foreach ( $matches[1] as $m_key => $keyword ) {
-            // If this is a spin, split it and iterate through each variation to detect keywords
-            if ( strpos( $keyword, '|' ) !== false ) {
-                foreach ( explode( '|', $keyword ) as $spin ) {
-                    $this->add_keyword_to_required_keywords( $spin );
-                }
-                continue;
-            }
-
             $this->add_keyword_to_required_keywords( $keyword );
         }
 

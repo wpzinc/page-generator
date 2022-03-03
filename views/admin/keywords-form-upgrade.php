@@ -4,7 +4,7 @@
 
         <p>
         	<?php 
-        	_e( 'Import keyword data, automatically generate location keywords and extract term subsets.', 'page-generator' );
+        	_e( 'Define an Airtable, CSV File/URL, Database, RSS Feed or Spreadsheet as a Keyword Source; automatically generate location keywords, extract term colums/subsets.', 'page-generator' );
         	?>
         </p>
 

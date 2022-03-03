@@ -614,14 +614,23 @@ class Page_Generator_Pro_Groups {
         }
 
         // If the Permalink isn't empty, check it has at least one keyword specified
-        // so that unique permalinks are produced
+        // so that unique permalinks are produced.
         if ( ! empty( $settings['permalink'] ) ) {
             preg_match_all( "|{(.+?)}|", $settings['permalink'], $matches );
 
             if ( ! is_array( $matches ) || count( $matches[1] ) == 0 ) {
                 return new WP_Error( 
                     'page_generator_pro_groups_validate_permalink', 
-                    __( 'The Permalink must either be blank or contain one or more keywords, so that a unique Permalink is produced for each generated page.  Defining a "static" Permalink will result in a single generated page, regardless of any other settings.', 'page-generator' )
+                    __( 'The Permalink must either be blank or contain one or more keywords, so that a unique Permalink is produced for each generated page.  Defining a "static" Permalink will result in a single generated page, regardless of any other settings.', 'page-generator-pro' )
+                );
+            }
+
+            // Check that the number of opening and closing braces match, to ensure there isn't a typo that would
+            // result in the same generated Page being overwritten.
+            if ( substr_count( $settings['permalink'], '{' ) !== substr_count( $settings['permalink'], '}' ) ) {
+            	return new WP_Error( 
+                    'page_generator_pro_groups_validate_permalink', 
+                    __( 'One or more Keywords in the Permalink are missing opening and/or closing braces. This must be fixed for generation to work correctly.', 'page-generator-pro' )
                 );
             }
         }
