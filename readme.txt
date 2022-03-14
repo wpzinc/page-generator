@@ -96,6 +96,10 @@ There are no limits on the number of Pages that can be generated with our mass p
 
 == Changelog ==
 
+= 1.6.1 (2022-03-14) =
+* Fix: Generate via Browser: Call to a member function get_parameters() on null
+* Fix: Undefined variable: minified
+
 = 1.6.0 (2022-03-03) =
 * Added: Keywords: Add/Edit: Use WordPress Code Editor for Terms for improved editing, readibility and search
 * Added: Generate: Content: Permalink: Validate that Keyword syntax is valid prior to Test / Generation

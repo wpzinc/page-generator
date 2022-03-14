@@ -105,7 +105,7 @@ class Page_Generator_Pro_Admin {
         $ext = ( $this->base->dashboard->should_load_minified_js() ? 'min' : '' );
 
         // JS - register scripts we might use
-        wp_register_script( $this->base->plugin->name . '-keywords', $this->base->plugin->url . 'assets/js/' . ( $minified ? 'min/' : '' ) . 'keywords' . ( $minified ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
+        wp_register_script( $this->base->plugin->name . '-keywords', $this->base->plugin->url . 'assets/js/' . ( $ext ? 'min/' : '' ) . 'keywords' . ( $ext ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
         wp_register_script( $this->base->plugin->name . '-generate-browser', $this->base->plugin->url . 'assets/js/' . ( $ext ? 'min/' : '' ) . 'generate-browser' . ( $ext ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
         wp_register_script( $this->base->plugin->name . '-generate-content', $this->base->plugin->url . 'assets/js/' . ( $ext ? 'min/' : '' ) . 'generate-content' . ( $ext ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
         wp_register_script( $this->base->plugin->name . '-selectize', $this->base->plugin->url . 'assets/js/' . ( $ext ? 'min/' : '' ) . 'selectize' . ( $ext ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
@@ -767,7 +767,6 @@ class Page_Generator_Pro_Admin {
 
 		// Enqueue and localize Generate Browser script with the necessary parameters for synchronous AJAX requests.
         wp_enqueue_script( $this->base->plugin->name . '-generate-browser' );
-        wp_localize_script( $this->base->plugin->name . '-generate-browser', 'page_generator_pro', $this->base->licensing->get_parameters() );   
         wp_localize_script( $this->base->plugin->name . '-generate-browser', 'page_generator_pro_generate_browser', array(
             'action'                        => 'page_generator_pro_generate_' . $type,
             'action_on_finished'            => 'page_generator_pro_generate_' . $type . '_after',
