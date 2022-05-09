@@ -96,6 +96,9 @@ There are no limits on the number of Pages that can be generated with our mass p
 
 == Changelog ==
 
+= 1.6.3 (2022-05-12) =
+* Fix: Multisite: Activation: Conditionally load required hook depending on WordPress version
+
 = 1.6.2 (2022-04-24) =
 * Fix: Upgrade link would incorrectly redirect to WordPress Admin dashboard
 
