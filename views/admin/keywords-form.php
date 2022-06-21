@@ -122,7 +122,7 @@
 
 							                    			case 'textarea':
 							                    				?>
-							                    				<textarea name="<?php echo $source_name; ?>[<?php echo $option_name; ?>]" id="<?php echo $option_name; ?>" rows="10" class="widefat no-wrap" style="height:300px"><?php echo $value; ?></textarea>
+							                    				<textarea name="<?php echo $source_name; ?>[<?php echo $option_name; ?>]" id="<?php echo $option_name; ?>" rows="10" class="widefat no-wrap" style="height:300px"><?php echo esc_textarea( $value ); ?></textarea>
 				                    							<?php
 							                    				break;
 

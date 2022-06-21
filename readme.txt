@@ -96,6 +96,9 @@ There are no limits on the number of Pages that can be generated with our mass p
 
 == Changelog ==
 
+= 1.6.5 (2022-06-21) =
+* Fix: Keywords: Add/Edit: Correctly sanitize and escape Terms textarea field value to prevent possible XSS 
+
 = 1.6.4 (2022-06-09) =
 * Added: Support for WordPress 6.0
 

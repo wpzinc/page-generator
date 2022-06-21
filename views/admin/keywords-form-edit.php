@@ -22,7 +22,7 @@
 		    	    	<div id="normal-sortables" class="meta-box-sortables ui-sortable">                        
 			                <div id="keyword-panel" class="postbox">
 			                	<!-- Keyword ID we're editing -->
-			                	<input type="hidden" name="keywordID" value="<?php echo $keyword['keywordID']; ?>" />
+			                	<input type="hidden" name="keywordID" value="<?php echo esc_attr( $keyword['keywordID'] ); ?>" />
 			                	
 			                    <h3 class="hndle"><?php _e( 'Keyword', 'page-generator' ); ?></h3>
 			                    
@@ -118,7 +118,7 @@
 
 				                    			case 'textarea':
 				                    				?>
-				                    				<textarea name="<?php echo $keyword['source']; ?>[<?php echo $option_name; ?>]" id="<?php echo $option_name; ?>" rows="10" class="widefat no-wrap" style="height:300px"><?php echo $value; ?></textarea>
+				                    				<textarea name="<?php echo $keyword['source']; ?>[<?php echo $option_name; ?>]" id="<?php echo $option_name; ?>" rows="10" class="widefat no-wrap" style="height:300px"><?php echo esc_textarea( $value ); ?></textarea>
 	                    							<?php
 				                    				break;
 
