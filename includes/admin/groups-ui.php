@@ -95,7 +95,7 @@ class Page_Generator_Pro_Groups_UI {
 			3  => __( 'Custom field deleted.', 'page-generator' ),
 			4  => __( 'Group updated.', 'page-generator' ),
 			/* translators: Post revision title */
-			5  => ( isset( $_GET['revision'] ) ? sprintf( __( 'Group restored to revision from %s.', 'page-generator' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false ), // phpcs:ignore
+			5  => ( isset( $_GET['revision'] ) ? sprintf( __( 'Group restored to revision from %s.', 'page-generator' ), wp_post_revision_title( absint( $_GET['revision'] ), false ) ) : false ), // phpcs:ignore
 			6  => __( 'Group saved.', 'page-generator' ),
 			7  => __( 'Group saved.', 'page-generator' ),
 			8  => __( 'Group submitted.', 'page-generator' ),

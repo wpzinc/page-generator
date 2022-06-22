@@ -71,24 +71,20 @@
 									// Data, Delimiter and Column are stored outside of options, but are submitted as options.
 									$value = '';
 									if ( isset( $_POST[ $keyword['source'] ][ $option_name ] ) ) { // phpcs:ignore
-										$value = $_POST[ $keyword['source'] ][ $option_name ]; // phpcs:ignore
-
 										// Sanitize value depending on whether it's for a textarea or not.
 										if ( $option['type'] === 'textarea' ) {
 											// Prevents stripping of newlines.
-											$value = sanitize_textarea_field( $value );
+											$value = sanitize_textarea_field( $_POST[ $keyword['source'] ][ $option_name ] ); // phpcs:ignore
 										} else {
-											$value = sanitize_text_field( $value );
+											$value = sanitize_text_field( $_POST[ $keyword['source'] ][ $option_name ] ); // phpcs:ignore
 										}
 									} elseif ( isset( $_POST[ $option_name ] ) ) { // phpcs:ignore
-										$value = $_POST[ $option_name ]; // phpcs:ignore
-
 										// Sanitize value depending on whether it's for a textarea or not.
 										if ( $option['type'] === 'textarea' ) {
 											// Prevents stripping of newlines.
-											$value = sanitize_textarea_field( $value );
+											$value = sanitize_textarea_field( $_POST[ $option_name ] ); // phpcs:ignore
 										} else {
-											$value = sanitize_text_field( $value );
+											$value = sanitize_text_field( $_POST[ $option_name ] ); // phpcs:ignore
 										}
 									} elseif ( isset( $keyword['options'][ $option_name ] ) ) {
 										$value = $keyword['options'][ $option_name ];

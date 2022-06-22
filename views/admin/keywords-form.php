@@ -37,7 +37,7 @@
 										<label for="keyword"><?php esc_html_e( 'Keyword', 'page-generator' ); ?></label>
 									</div>
 									<div class="right">
-										<input type="text" name="keyword" id="keyword" value="<?php echo esc_attr( isset( $_POST['keyword'] ) ? esc_attr( $_POST['keyword'] ) : '' ); // phpcs:ignore ?>" class="widefat" />
+										<input type="text" name="keyword" id="keyword" value="<?php echo esc_attr( isset( $_POST['keyword'] ) ? $_POST['keyword'] : '' ); // phpcs:ignore ?>" class="widefat" />
 
 										<p class="description">
 											<?php esc_html_e( 'A unique template tag name, which can then be used when generating content.', 'page-generator' ); ?>
@@ -55,7 +55,7 @@
 												<?php
 												foreach ( $sources as $source_name => $source ) {
 													?>
-													<option value="<?php echo esc_attr( $source_name ); ?>"<?php echo esc_attr( ( isset( $_POST['source'] ) && $_POST['source'] == $source_name ) ? ' selected' : '' ); // phpcs:ignore ?>>
+													<option value="<?php echo esc_attr( $source_name ); ?>"<?php echo esc_attr( ( isset( $_POST['source'] ) && $_POST['source'] === $source_name ) ? ' selected' : '' ); // phpcs:ignore ?>>
 														<?php echo esc_attr( $source['label'] ); ?>
 													</option>
 													<?php
@@ -84,17 +84,19 @@
 												// Data, Delimiter and Column are stored outside of options, but are submitted as options.
 												$value = '';
 												if ( isset( $_POST[ $source_name ][ $option_name ] ) ) { // phpcs:ignore
-													$value = $_POST[ $source_name ][ $option_name ]; // phpcs:ignore
+													if ( $option['type'] === 'textarea' ) {
+														// Prevents stripping of newlines.
+														$value = sanitize_textarea_field( $_POST[ $source_name ][ $option_name ] ); // phpcs:ignore
+													} else {
+														$value = sanitize_text_field( $_POST[ $source_name ][ $option_name ] ); // phpcs:ignore
+													}
 												} elseif ( isset( $_POST[ $option_name ] ) ) { // phpcs:ignore
-													$value = $_POST[ $option_name ]; // phpcs:ignore
-												}
-
-												// Sanitize value depending on whether it's for a textarea or not.
-												if ( $option['type'] === 'textarea' ) {
-													// Prevents stripping of newlines.
-													$value = sanitize_textarea_field( $value );
-												} else {
-													$value = sanitize_text_field( $value );
+													if ( $option['type'] === 'textarea' ) {
+														// Prevents stripping of newlines.
+														$value = sanitize_textarea_field( $_POST[ $option_name ] ); // phpcs:ignore
+													} else {
+														$value = sanitize_text_field( $_POST[ $option_name ] ); // phpcs:ignore
+													}
 												}
 
 												// Output form field.

@@ -110,6 +110,7 @@ class Page_Generator_Pro_Admin {
 		$minified = $this->base->dashboard->should_load_minified_js();
 
 		// JS - register scripts we might use.
+		wp_register_script( $this->base->plugin->name . '-conditional-fields', $this->base->plugin->url . 'assets/js/' . ( $minified ? 'min/' : '' ) . 'conditional-fields' . ( $minified ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
 		wp_register_script( $this->base->plugin->name . '-generate-browser', $this->base->plugin->url . 'assets/js/' . ( $minified ? 'min/' : '' ) . 'generate-browser' . ( $minified ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
 		wp_register_script( $this->base->plugin->name . '-generate-content', $this->base->plugin->url . 'assets/js/' . ( $minified ? 'min/' : '' ) . 'generate-content' . ( $minified ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
 		wp_register_script( $this->base->plugin->name . '-keywords', $this->base->plugin->url . 'assets/js/' . ( $minified ? 'min/' : '' ) . 'keywords' . ( $minified ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
@@ -127,6 +128,7 @@ class Page_Generator_Pro_Admin {
 					 * Keywords: Add / Edit
 					 */
 					case 'edit':
+						wp_enqueue_script( $this->base->plugin->name . '-conditional-fields' );
 						wp_enqueue_script( $this->base->plugin->name . '-keywords' );
 
 						// Localize Keywords with CodeMirror Code Editor instance.
@@ -410,7 +412,13 @@ class Page_Generator_Pro_Admin {
 				// Get keyword from POST data or DB.
 				if ( isset( $_POST['keyword'] ) ) { // phpcs:ignore
 					// Get keyword from POST data.
-					$keyword = $_POST; // phpcs:ignore
+					$keyword = array(
+						'keyword' => sanitize_text_field( $_POST['keyword'] ), // phpcs:ignore
+						'source'  => sanitize_text_field( $_POST['source'] ), // phpcs:ignore
+						'local'   => array(
+							'data' => sanitize_textarea_field( $_POST['local']['data'] ), // phpcs:ignore
+						),
+					);
 				} elseif ( isset( $_GET['id'] ) ) { // phpcs:ignore
 					// Editing an existing Keyword.
 					$keyword = $this->base->get_class( 'keywords' )->get_by_id( absint( $_GET['id'] ) ); // phpcs:ignore
@@ -505,8 +513,15 @@ class Page_Generator_Pro_Admin {
 					break;
 				}
 
+				// Sanitize IDs.
+				$ids = array();
+				foreach ( $_REQUEST['ids'] as $id ) {
+					$id         = absint( sanitize_text_field( $id ) );
+					$ids[ $id ] = $id;
+				}
+
 				// Delete Keywords.
-				$result = $this->base->get_class( 'keywords' )->delete( $_REQUEST['ids'] );
+				$result = $this->base->get_class( 'keywords' )->delete( $ids );
 
 				// Output success or error messages.
 				if ( is_wp_error( $result ) ) {
@@ -517,7 +532,7 @@ class Page_Generator_Pro_Admin {
 						sprintf(
 							/* translators: Number of Keywords deleted */
 							__( '%s Keywords deleted.', 'page-generator' ),
-							count( $_REQUEST['ids'] )
+							count( $ids )
 						)
 					);
 				}
@@ -741,12 +756,15 @@ class Page_Generator_Pro_Admin {
 		$id           = ( ( isset( $_REQUEST['keywordID'] ) && ! empty( $_REQUEST['keywordID'] ) ) ? absint( $_REQUEST['keywordID'] ) : '' );
 		$keyword_name = sanitize_text_field( $_POST['keyword'] );
 		$source       = sanitize_text_field( $_POST['source'] );
+		$options      = array(
+			'data' => ( isset( $_POST[ $source ]['data'] ) ? sanitize_textarea_field( $_POST[ $source ]['data'] ) : '' ),
+		);
 
 		// Build Keyword.
 		$keyword = array(
 			'keyword'   => $keyword_name,
 			'source'    => $source,
-			'options'   => ( isset( $_POST[ $source ] ) ? $_POST[ $source ] : null ),
+			'options'   => $options,
 
 			// Determined by the Source.
 			'data'      => '',
