@@ -324,8 +324,6 @@ class Page_Generator_Pro_Common {
 		// Get statuses.
 		$statuses = array(
 			'draft'   => __( 'Draft', 'page-generator' ),
-			'future'  => __( 'Scheduled', 'page-generator' ),
-			'pending' => __( 'Pending Review', 'page-generator' ),
 			'private' => __( 'Private', 'page-generator' ),
 			'publish' => __( 'Publish', 'page-generator' ),
 		);
