@@ -318,7 +318,7 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 	 */
 	private function get_order_by() {
 
-		return ( isset( $_GET['orderby'] ) ? sanitize_text_field( $_GET['orderby'] ) : 'keyword' ); // phpcs:ignore
+		return ( isset( $_GET['orderby'] ) ? sanitize_sql_orderby( $_GET['orderby'] ) : 'keyword' ); // phpcs:ignore
 
 	}
 

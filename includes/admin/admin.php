@@ -644,7 +644,7 @@ class Page_Generator_Pro_Admin {
 				'page'    => $this->base->plugin->name . '-keywords',
 				's'       => ( isset( $_REQUEST['s'] ) ? sanitize_text_field( $_REQUEST['s'] ) : '' ), // phpcs:ignore
 				'paged'   => ( isset( $_REQUEST['paged'] ) ? sanitize_text_field( $_REQUEST['paged'] ) : 1 ), // phpcs:ignore
-				'orderby' => ( isset( $_REQUEST['orderby'] ) ? sanitize_text_field( $_REQUEST['orderby'] ) : 'keyword' ), // phpcs:ignore
+				'orderby' => ( isset( $_REQUEST['orderby'] ) ? sanitize_sql_orderby( $_REQUEST['orderby'] ) : 'keyword' ), // phpcs:ignore
 				'order'   => ( isset( $_REQUEST['order'] ) ? sanitize_text_field( $_REQUEST['order'] ) : 'ASC' ), // phpcs:ignore
 			),
 			'admin.php'

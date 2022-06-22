@@ -3016,17 +3016,6 @@
       "sC" : 3,
       "tS" : 0
     },
-    "\/_modules\/dashboard\/js\/clipboard.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/_modules\/dashboard\/js\/clipboard-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
     "\/_modules\/dashboard\/js\/deactivation.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -3787,6 +3776,17 @@
       "mi" : 1,
       "oA" : 0,
       "oAP" : "\/assets\/js\/min\/generate-content-min-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/assets\/js\/min\/keywords-min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/assets\/js\/min\/keywords-min-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
