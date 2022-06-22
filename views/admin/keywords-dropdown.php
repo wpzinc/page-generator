@@ -8,7 +8,7 @@
 
 ?>
 <select size="1" class="right wpzinc-tags" data-element="#<?php echo esc_attr( $element ); ?>">
-	<option value=""><?php esc_attr_e( '--- Insert Keyword ---', 'page-generator-pro' ); ?></option>
+	<option value=""><?php esc_attr_e( '--- Insert Keyword ---', 'page-generator' ); ?></option>
 	<?php
 	if ( is_array( $keywords ) && count( $keywords ) ) {
 		foreach ( $keywords as $keyword ) {

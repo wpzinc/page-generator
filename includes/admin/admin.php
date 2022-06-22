@@ -33,25 +33,25 @@ class Page_Generator_Pro_Admin {
 	 */
 	public function __construct( $base ) {
 
-        // Store base class
-        $this->base = $base;
+		// Store base class.
+		$this->base = $base;
 
-        // Admin Notices
-        add_action( 'admin_notices', array( $this, 'admin_notices' ) );
+		// Admin Notices.
+		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
 
-        // Admin CSS, JS and Menu
-        add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts_css' ) );
+		// Admin CSS, JS and Menu.
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts_css' ) );
 
-        add_action( 'admin_menu', array( $this, 'admin_menu' ), 8 );
-        add_action( 'parent_file', array( $this, 'admin_menu_hierarchy_correction' ), 999 );
+		add_action( 'admin_menu', array( $this, 'admin_menu' ), 8 );
+		add_action( 'parent_file', array( $this, 'admin_menu_hierarchy_correction' ), 999 );
 
-        // Keywords: Bulk and Row Actions
-        add_filter( 'set-screen-option', array( $this, 'set_screen_options' ), 10, 3 );
-        add_action( 'init', array( $this, 'run_keyword_save_actions' ) );
-        add_action( 'current_screen', array( $this, 'run_keyword_table_bulk_actions' ) );
-        add_action( 'current_screen', array( $this, 'run_keyword_table_row_actions' ) );
+		// Keywords: Bulk and Row Actions.
+		add_filter( 'set-screen-option', array( $this, 'set_screen_options' ), 10, 3 );
+		add_action( 'init', array( $this, 'run_keyword_save_actions' ) );
+		add_action( 'current_screen', array( $this, 'run_keyword_table_bulk_actions' ) );
+		add_action( 'current_screen', array( $this, 'run_keyword_table_row_actions' ) );
 
-    }
+	}
 
 	/**
 	 * Checks the transient to see if any admin notices need to be output now.
@@ -114,7 +114,7 @@ class Page_Generator_Pro_Admin {
 		wp_register_script( $this->base->plugin->name . '-generate-content', $this->base->plugin->url . 'assets/js/' . ( $minified ? 'min/' : '' ) . 'generate-content' . ( $minified ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
 		wp_register_script( $this->base->plugin->name . '-keywords', $this->base->plugin->url . 'assets/js/' . ( $minified ? 'min/' : '' ) . 'keywords' . ( $minified ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
 		wp_register_script( $this->base->plugin->name . '-selectize', $this->base->plugin->url . 'assets/js/' . ( $minified ? 'min/' : '' ) . 'selectize' . ( $minified ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
-		
+
 		// If here, we're on a plugin screen.
 		// Conditionally load scripts and styles depending on which section of the Plugin we're loading.
 		switch ( $screen['screen'] ) {
@@ -154,12 +154,12 @@ class Page_Generator_Pro_Admin {
 
 				// JS: Plugin.
 				wp_enqueue_script( $this->base->plugin->name . '-generate-content' );
-				
+
 				// Get localization strings.
 				$localization = array_merge(
 					$this->base->get_class( 'groups_ui' )->get_titles_and_messages(),
 					array(
-						'nonces'                          => array(
+						'nonces' => array(
 							'generate_content'         => wp_create_nonce( 'page-generator-pro-generate-browser' ),
 							'trash_generated_content'  => wp_create_nonce( 'page-generator-pro-trash-generated-content' ),
 							'delete_generated_content' => wp_create_nonce( 'page-generator-pro-delete-generated-content' ),
@@ -217,8 +217,8 @@ class Page_Generator_Pro_Admin {
 							$this->base->plugin->name . '-gutenberg',
 							'page_generator_pro_gutenberg',
 							array(
-								'keywords'   => $this->base->get_class( 'keywords' )->get_keywords_and_columns( true ),
-								'post_type'  => ( isset( $post->post_type ) ? $post->post_type : false ),
+								'keywords'  => $this->base->get_class( 'keywords' )->get_keywords_and_columns( true ),
+								'post_type' => ( isset( $post->post_type ) ? $post->post_type : false ),
 							)
 						);
 
@@ -233,7 +233,7 @@ class Page_Generator_Pro_Admin {
 						);
 
 						// Get localization strings.
-						$localization['post_id']                  = ( isset( $post->ID ) ? $post->ID : false );
+						$localization['post_id'] = ( isset( $post->ID ) ? $post->ID : false );
 						break;
 				}
 
@@ -278,43 +278,43 @@ class Page_Generator_Pro_Admin {
 
 	}
 
-    /**
-     * Add the Plugin to the WordPress Administration Menu
-     *
-     * @since   1.0.0
-     */
-    public function admin_menu() {
+	/**
+	 * Add the Plugin to the WordPress Administration Menu
+	 *
+	 * @since   1.0.0
+	 */
+	public function admin_menu() {
 
-        global $submenu;
+		global $submenu;
 
-        // Define the minimum capability required to access the Menu and Sub Menus
-        $minimum_capability = 'manage_options';
+		// Define the minimum capability required to access the Menu and Sub Menus.
+		$minimum_capability = 'manage_options';
 
-        /**
-         * Defines the minimum capability required to access the Media Library Organizer
-         * Menu and Sub Menus
-         *
-         * @since   2.8.9
-         *
-         * @param   string  $capability     Minimum Required Capability
-         * @return  string                  Minimum Required Capability
-         */
-        $minimum_capability = apply_filters( 'page_generator_pro_admin_admin_menu_minimum_capability', $minimum_capability );
+		/**
+		 * Defines the minimum capability required to access the Media Library Organizer
+		 * Menu and Sub Menus
+		 *
+		 * @since   2.8.9
+		 *
+		 * @param   string  $capability     Minimum Required Capability
+		 * @return  string                  Minimum Required Capability
+		 */
+		$minimum_capability = apply_filters( 'page_generator_pro_admin_admin_menu_minimum_capability', $minimum_capability );
 
-        // Main Menu.
-        add_menu_page( $this->base->plugin->displayName, $this->base->plugin->displayName, $minimum_capability, $this->base->plugin->name . '-keywords', array( $this, 'keywords_screen' ), 'dashicons-format-aside' );
+		// Main Menu.
+		add_menu_page( $this->base->plugin->displayName, $this->base->plugin->displayName, $minimum_capability, $this->base->plugin->name . '-keywords', array( $this, 'keywords_screen' ), 'dashicons-format-aside' );
 
-        // Sub Menu.
-        $keywords_page = add_submenu_page( $this->base->plugin->name . '-keywords', __( 'Keywords', 'page-generator' ), __( 'Keywords', 'page-generator' ), $minimum_capability, $this->base->plugin->name . '-keywords', array( $this, 'keywords_screen' ) );    
-        add_action( "load-$keywords_page", array( $this, 'add_keyword_screen_options' ) );
-        
-        $groups_page = add_submenu_page( $this->base->plugin->name . '-keywords', __( 'Generate Content', 'page-generator' ), __( 'Generate Content', 'page-generator' ), $minimum_capability, 'edit.php?post_type=' . $this->base->get_class( 'post_type' )->post_type_name );    
-        $generate_page = add_submenu_page( $this->base->plugin->name . '-keywords', __( 'Generate', 'page-generator' ), __( 'Generate', 'page-generator' ), $minimum_capability, $this->base->plugin->name . '-generate', array( $this, 'generate_screen' ) );    
-        
-        // Menus.
-        $upgrade_page = add_submenu_page( $this->base->plugin->name . '-keywords', __( 'Upgrade', 'page-generator' ), __( 'Upgrade', 'page-generator' ), $minimum_capability, $this->base->plugin->name . '-upgrade', array( $this, 'upgrade_screen' ) );
+		// Sub Menu.
+		$keywords_page = add_submenu_page( $this->base->plugin->name . '-keywords', __( 'Keywords', 'page-generator' ), __( 'Keywords', 'page-generator' ), $minimum_capability, $this->base->plugin->name . '-keywords', array( $this, 'keywords_screen' ) );
+		add_action( "load-$keywords_page", array( $this, 'add_keyword_screen_options' ) );
 
-    }
+		$groups_page   = add_submenu_page( $this->base->plugin->name . '-keywords', __( 'Generate Content', 'page-generator' ), __( 'Generate Content', 'page-generator' ), $minimum_capability, 'edit.php?post_type=' . $this->base->get_class( 'post_type' )->post_type_name );
+		$generate_page = add_submenu_page( $this->base->plugin->name . '-keywords', __( 'Generate', 'page-generator' ), __( 'Generate', 'page-generator' ), $minimum_capability, $this->base->plugin->name . '-generate', array( $this, 'generate_screen' ) );
+
+		// Menus.
+		$upgrade_page = add_submenu_page( $this->base->plugin->name . '-keywords', __( 'Upgrade', 'page-generator' ), __( 'Upgrade', 'page-generator' ), $minimum_capability, $this->base->plugin->name . '-upgrade', array( $this, 'upgrade_screen' ) );
+
+	}
 
 	/**
 	 * Ensures this Plugin's top level Admin menu remains open when the user clicks on:
@@ -424,7 +424,7 @@ class Page_Generator_Pro_Admin {
 				} elseif ( is_numeric( $keyword_id ) ) {
 					// Redirect.
 					$this->base->get_class( 'notices' )->enable_store();
-					$this->base->get_class( 'notices' )->add_success_notice( __( 'Keyword saved successfully', 'page-generator-pro' ) );
+					$this->base->get_class( 'notices' )->add_success_notice( __( 'Keyword saved successfully', 'page-generator' ) );
 					wp_safe_redirect( 'admin.php?page=page-generator-keywords&cmd=form&id=' . $keyword_id );
 					die;
 				}
@@ -434,7 +434,7 @@ class Page_Generator_Pro_Admin {
 
 	}
 
-/**
+	/**
 	 * Run any bulk actions on the Keyword WP_List_Table
 	 *
 	 * @since   2.6.5
@@ -462,7 +462,7 @@ class Page_Generator_Pro_Admin {
 		}
 		if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'bulk-keywords' ) ) {
 			$this->base->get_class( 'notices' )->add_error_notice(
-				__( 'Nonce invalid. Bulk action not performed.', 'page-generator-pro' )
+				__( 'Nonce invalid. Bulk action not performed.', 'page-generator' )
 			);
 			return;
 		}
@@ -500,7 +500,7 @@ class Page_Generator_Pro_Admin {
 				// Get Keyword IDs.
 				if ( ! isset( $_REQUEST['ids'] ) ) {
 					$this->base->get_class( 'notices' )->add_error_notice(
-						__( 'No Keywords were selected for deletion.', 'page-generator-pro' )
+						__( 'No Keywords were selected for deletion.', 'page-generator' )
 					);
 					break;
 				}
@@ -574,7 +574,7 @@ class Page_Generator_Pro_Admin {
 			case 'duplicate':
 				// Bail if no ID set.
 				if ( ! isset( $_GET['id'] ) ) {
-					$this->base->get_class( 'notices' )->add_error_notice( __( 'No Keyword was selected for duplication.', 'page-generator-pro' ) );
+					$this->base->get_class( 'notices' )->add_error_notice( __( 'No Keyword was selected for duplication.', 'page-generator' ) );
 					break;
 				}
 
@@ -592,7 +592,7 @@ class Page_Generator_Pro_Admin {
 							/* translators: Link to view duplicated Keyword */
 							__( 'Keyword duplicated successfully. %s', 'page-generator' ),
 							'<a href="' . admin_url( 'admin.php?page=' . $this->base->plugin->name . '-keywords&cmd=form&id=' . $result ) . '">' .
-							__( 'View Keyword', 'page-generator-pro' ) . '</a>'
+							__( 'View Keyword', 'page-generator' ) . '</a>'
 						)
 					);
 				}
@@ -607,7 +607,7 @@ class Page_Generator_Pro_Admin {
 			case 'delete':
 				// Bail if no ID set.
 				if ( ! isset( $_GET['id'] ) ) {
-					$this->base->get_class( 'notices' )->add_error_notice( __( 'No Group was selected for duplication.', 'page-generator-pro' ) );
+					$this->base->get_class( 'notices' )->add_error_notice( __( 'No Group was selected for duplication.', 'page-generator' ) );
 					break;
 				}
 
@@ -620,7 +620,7 @@ class Page_Generator_Pro_Admin {
 					$this->base->get_class( 'notices' )->add_error_notice( $result );
 				} elseif ( $result === true ) {
 					// Success.
-					$this->base->get_class( 'notices' )->add_success_notice( __( 'Keyword deleted successfully.', 'page-generator-pro' ) );
+					$this->base->get_class( 'notices' )->add_success_notice( __( 'Keyword deleted successfully.', 'page-generator' ) );
 				}
 
 				// Redirect.
@@ -655,21 +655,21 @@ class Page_Generator_Pro_Admin {
 
 	}
 
-    /**
-     * Outputs the Keywords Screens
-     *
-     * @since   1.0.0
-     */
-    public function keywords_screen() {
+	/**
+	 * Outputs the Keywords Screens
+	 *
+	 * @since   1.0.0
+	 */
+	public function keywords_screen() {
 
-        // Get command.
+		// Get command.
         $cmd = ( ( isset($_GET['cmd'] ) ) ? sanitize_text_field( $_GET['cmd'] ) : '' ); // phpcs:ignore
-        switch ( $cmd ) {
-            /**
-             * Add / Edit Keyword
-             */
-            case 'form':
-                // Edit.
+		switch ( $cmd ) {
+			/**
+			 * Add / Edit Keyword
+			 */
+			case 'form':
+				// Edit.
 				if ( isset( $_GET['id'] ) ) { // phpcs:ignore
 					// Get Keyword.
 					$keyword = $this->base->get_class( 'keywords' )->get_by_id( absint( $_GET['id'] ) ); // phpcs:ignore
@@ -687,7 +687,7 @@ class Page_Generator_Pro_Admin {
 					// View.
 					$view = 'views/admin/keywords-form.php';
 				}
-                break;
+				break;
 
 			/**
 			 * Duplicate Keyword
@@ -705,12 +705,12 @@ class Page_Generator_Pro_Admin {
 				$view = 'views/admin/keywords-table.php';
 				break;
 
-        }
+		}
 
-        // Load View.
-        include_once $this->base->plugin->folder . $view; 
+		// Load View.
+		include_once $this->base->plugin->folder . $view;
 
-    }
+	}
 
 	/**
 	 * Save Keyword
@@ -729,12 +729,12 @@ class Page_Generator_Pro_Admin {
 		// Run security checks.
 		// Missing nonce.
 		if ( ! isset( $_POST['nonce'] ) ) {
-			return new WP_Error( 'page_generator_pro_admin_save_keyword', __( 'Nonce field is missing. Settings NOT saved.', 'page-generator-pro' ) );
+			return new WP_Error( 'page_generator_pro_admin_save_keyword', __( 'Nonce field is missing. Settings NOT saved.', 'page-generator' ) );
 		}
 
 		// Invalid nonce.
 		if ( ! wp_verify_nonce( $_POST['nonce'], 'save_keyword' ) ) {
-			return new WP_Error( 'page_generator_pro_admin_save_keyword', __( 'Invalid nonce specified. Settings NOT saved.', 'page-generator-pro' ) );
+			return new WP_Error( 'page_generator_pro_admin_save_keyword', __( 'Invalid nonce specified. Settings NOT saved.', 'page-generator' ) );
 		}
 
 		// Validate Form Inputs.
@@ -774,7 +774,7 @@ class Page_Generator_Pro_Admin {
 
 	}
 
-    /**
+	/**
 	 * Generates content for the given Group and Group Type
 	 *
 	 * @since   1.2.3
@@ -786,7 +786,7 @@ class Page_Generator_Pro_Admin {
 
 		// Bail if no Group ID was specified.
 		if ( ! isset( $_REQUEST['id'] ) ) { // phpcs:ignore
-			$this->base->get_class( 'notices' )->add_error_notice( __( 'No Group ID was specified.', 'page-generator-pro' ) );
+			$this->base->get_class( 'notices' )->add_error_notice( __( 'No Group ID was specified.', 'page-generator' ) );
 			include_once $this->base->plugin->folder . 'views/admin/notices.php';
 			return;
 		}
@@ -811,7 +811,7 @@ class Page_Generator_Pro_Admin {
 		$return_url   = admin_url( 'post.php?post=' . $id . '&amp;action=edit' );
 		$object       = get_post_type_object( $settings['type'] );
 		$object_label = $object->labels->name;
-	
+
 		// Validate group.
 		$validated = $group->validate( $id );
 		if ( is_wp_error( $validated ) ) {
@@ -830,7 +830,7 @@ class Page_Generator_Pro_Admin {
 		 * @param   string  $system     System.
 		 */
 		do_action( 'page_generator_pro_generate_content_before', $id, false, 'browser' );
-	
+
 		// Calculate how many pages could be generated.
 		$number_of_pages_to_generate = $this->base->get_class( 'generate' )->get_max_number_of_pages( $settings );
 		if ( is_wp_error( $number_of_pages_to_generate ) ) {

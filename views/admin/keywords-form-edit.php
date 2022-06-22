@@ -12,7 +12,7 @@
 		<?php echo esc_html( $this->base->plugin->displayName ); ?>
 
 		<span>
-			<?php esc_html_e( 'Edit Keyword', 'page-generator-pro' ); ?>
+			<?php esc_html_e( 'Edit Keyword', 'page-generator' ); ?>
 		</span>
 	</h1>
 
@@ -33,31 +33,31 @@
 								<!-- Keyword ID we're editing -->
 								<input type="hidden" name="keywordID" value="<?php echo esc_attr( $keyword['keywordID'] ); ?>" />
 
-								<h3 class="hndle"><?php esc_html_e( 'Keyword', 'page-generator-pro' ); ?></h3>
+								<h3 class="hndle"><?php esc_html_e( 'Keyword', 'page-generator' ); ?></h3>
 
 								<div class="wpzinc-option">
 									<div class="left">
-										<label for="keyword"><?php esc_html_e( 'Keyword', 'page-generator-pro' ); ?></label>
+										<label for="keyword"><?php esc_html_e( 'Keyword', 'page-generator' ); ?></label>
 									</div>
 									<div class="right">
 										<input type="text" name="keyword" id="keyword" value="<?php echo esc_attr( stripslashes( isset( $_POST['keyword'] ) ? $_POST['keyword'] : $keyword['keyword'] ) ); // phpcs:ignore ?>" class="widefat" />
 
 										<p class="description">
-											<?php esc_html_e( 'A unique template tag name, which can then be used when generating content.', 'page-generator-pro' ); ?>
+											<?php esc_html_e( 'A unique template tag name, which can then be used when generating content.', 'page-generator' ); ?>
 										</p>
 									</div>
 								</div>
 
 								<div class="wpzinc-option">
 									<div class="left">
-										<label for="source"><?php esc_html_e( 'Source', 'page-generator-pro' ); ?></label>
+										<label for="source"><?php esc_html_e( 'Source', 'page-generator' ); ?></label>
 									</div>
 									<div class="right">
 										<div class="right">
 											<?php echo esc_html( $sources[ $keyword['source'] ]['label'] ); ?>
 											<input type="hidden" name="source" value="<?php echo esc_attr( $keyword['source'] ); ?>" />
 											<p class="description">
-												<?php esc_html_e( 'Once a Keyword is created, the source cannot be changed. To change the source, delete this Keyword and create a new Keyword with the same name.', 'page-generator-pro' ); ?>
+												<?php esc_html_e( 'Once a Keyword is created, the source cannot be changed. To change the source, delete this Keyword and create a new Keyword with the same name.', 'page-generator' ); ?>
 											</p>
 										</div>
 									</div>
@@ -108,7 +108,7 @@
 
 								<div class="wpzinc-option">
 									<?php wp_nonce_field( 'save_keyword', 'nonce' ); ?>
-									<input type="submit" name="submit" value="<?php esc_attr_e( 'Save', 'page-generator-pro' ); ?>" class="button button-primary" />
+									<input type="submit" name="submit" value="<?php esc_attr_e( 'Save', 'page-generator' ); ?>" class="button button-primary" />
 								</div>
 							</div>
 						</div>

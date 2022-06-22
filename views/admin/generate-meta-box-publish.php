@@ -9,7 +9,7 @@
 ?>
 <div class="wpzinc-option sidebar">
 	<div class="left">
-		<label for="status"><?php esc_html_e( 'Status', 'page-generator-pro' ); ?></label>
+		<label for="status"><?php esc_html_e( 'Status', 'page-generator' ); ?></label>
 	</div>
 	<div class="right">
 		<select name="<?php echo esc_attr( $this->base->plugin->name ); ?>[status]" id="status" size="1" class="widefat">
@@ -29,7 +29,7 @@
 </div>
 
 <?php
-// Upgrade Notice
+// Upgrade Notice.
 if ( class_exists( 'Page_Generator' ) ) {
-    require( $this->base->plugin->folder . 'views/admin/generate-meta-box-publish-upgrade.php' );
+	require $this->base->plugin->folder . 'views/admin/generate-meta-box-publish-upgrade.php';
 }

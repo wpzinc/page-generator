@@ -9,7 +9,7 @@
 ?>
 <div class="wpzinc-option sidebar">
 	<div class="left">
-		<label for="method"><?php esc_html_e( 'Method', 'page-generator-pro' ); ?></label>
+		<label for="method"><?php esc_html_e( 'Method', 'page-generator' ); ?></label>
 	</div>
 	<div class="right">
 		<select name="<?php echo esc_attr( $this->base->plugin->name ); ?>[method]" id="method" size="1" class="widefat">
@@ -27,7 +27,7 @@
 		</select>
 	</div>
 	<p class="description">
-		<strong><?php esc_html_e( 'All:', 'page-generator-pro' ); ?></strong>
+		<strong><?php esc_html_e( 'All:', 'page-generator' ); ?></strong>
 		<?php
 		echo sprintf(
 			/* translators: Post Type, Plural (e.g. Posts, Pages) */
@@ -37,8 +37,8 @@
 		?>
 	</p>
 	<p class="description">
-		<strong><?php esc_html_e( 'Sequential:', 'page-generator-pro' ); ?></strong>
-		<?php esc_html_e( 'Honors the order of terms in each keyword used. Once all terms have been used in a keyword, the generator stops.', 'page-generator-pro' ); ?>
+		<strong><?php esc_html_e( 'Sequential:', 'page-generator' ); ?></strong>
+		<?php esc_html_e( 'Honors the order of terms in each keyword used. Once all terms have been used in a keyword, the generator stops.', 'page-generator' ); ?>
 	</p>
 </div>
 
@@ -70,7 +70,7 @@
 </div>
 
 <?php
-// Upgrade Notice
+// Upgrade Notice.
 if ( class_exists( 'Page_Generator' ) ) {
-    require( $this->base->plugin->folder . 'views/admin/generate-meta-box-generation-upgrade.php' );
+	require $this->base->plugin->folder . 'views/admin/generate-meta-box-generation-upgrade.php';
 }

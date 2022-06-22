@@ -9,7 +9,7 @@
 ?>
 <div id="author" class="wpzinc-option">
 	<div class="left">
-		<label for="author"><?php esc_html_e( 'Author', 'page-generator-pro' ); ?></strong>
+		<label for="author"><?php esc_html_e( 'Author', 'page-generator' ); ?></strong>
 	</div>
 	<div class="right">
 		<select name="<?php echo esc_attr( $this->base->plugin->name ); ?>[author]" id="author" class="wpzinc-selectize-search" data-action="page_generator_pro_search_authors" data-name-field="user_login" data-value-field="id" data-method="POST" data-output-fields="user_login" data-nonce="<?php echo esc_attr( wp_create_nonce( 'search_authors' ) ); ?>">
@@ -26,13 +26,13 @@
 
 <div class="wpzinc-option">
 	<div class="left">
-		<label for="rotate_authors"><?php esc_html_e( 'Random?', 'page-generator-pro' ); ?></label>
+		<label for="rotate_authors"><?php esc_html_e( 'Random?', 'page-generator' ); ?></label>
 	</div>
 	<div class="right">
 		<input type="checkbox" id="rotate_authors" name="<?php echo esc_attr( $this->base->plugin->name ); ?>[rotateAuthors]" value="1"<?php checked( $this->settings['rotateAuthors'], 1 ); ?> data-conditional="author" data-conditional-display="false" />
 
 		<p class="description">
-			<?php esc_html_e( 'If checked, will choose a WordPress User at random for each Page/Post generated.', 'page-generator-pro' ); ?>
+			<?php esc_html_e( 'If checked, will choose a WordPress User at random for each Page/Post generated.', 'page-generator' ); ?>
 		</p>
 	</div>
 </div>

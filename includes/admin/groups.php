@@ -94,7 +94,7 @@ class Page_Generator_Pro_Groups {
 
 	}
 
-/**
+	/**
 	 * Defines a default settings structure when creating a new group
 	 *
 	 * @since   1.2.0
@@ -227,7 +227,7 @@ class Page_Generator_Pro_Groups {
 
 	}
 
-    /**
+	/**
 	 * Returns a Group's Settings by the given Group ID
 	 *
 	 * @since   1.2.1
@@ -300,7 +300,7 @@ class Page_Generator_Pro_Groups {
 
 	}
 
-    /**
+	/**
 	 * Returns all Post Metadata for the given Group ID, excluding some specific keys.
 	 *
 	 * This ensures that Page Builder data, ACF data etc. is included in the Group
@@ -680,7 +680,7 @@ class Page_Generator_Pro_Groups {
 
 	}
 
-    /**
+	/**
 	 * Performs several validations on the given Group Settings, to ensure that
 	 * content generation will function successfully.
 	 *
@@ -715,7 +715,7 @@ class Page_Generator_Pro_Groups {
 			if ( ! is_array( $matches ) || count( $matches[1] ) === 0 ) {
 				return new WP_Error(
 					'page_generator_pro_groups_validate_permalink',
-					__( 'The Permalink must either be blank or contain one or more keywords, so that a unique Permalink is produced for each generated page.  Defining a "static" Permalink will result in a single generated page, regardless of any other settings.', 'page-generator-pro' )
+					__( 'The Permalink must either be blank or contain one or more keywords, so that a unique Permalink is produced for each generated page.  Defining a "static" Permalink will result in a single generated page, regardless of any other settings.', 'page-generator' )
 				);
 			}
 
@@ -724,7 +724,7 @@ class Page_Generator_Pro_Groups {
 			if ( substr_count( $settings['permalink'], '{' ) !== substr_count( $settings['permalink'], '}' ) ) {
 				return new WP_Error(
 					'page_generator_pro_groups_validate_permalink',
-					__( 'One or more Keywords in the Permalink are missing opening and/or closing braces. This must be fixed for generation to work correctly.', 'page-generator-pro' )
+					__( 'One or more Keywords in the Permalink are missing opening and/or closing braces. This must be fixed for generation to work correctly.', 'page-generator' )
 				);
 			}
 		}
@@ -733,7 +733,7 @@ class Page_Generator_Pro_Groups {
 		if ( empty( $settings['author'] ) && ! $settings['rotateAuthors'] ) {
 			return new WP_Error(
 				'page_generator_pro_groups_validate_author',
-				__( 'The Author must be specified, or the Random Author option selected.', 'page-generator-pro' )
+				__( 'The Author must be specified, or the Random Author option selected.', 'page-generator' )
 			);
 		}
 
@@ -833,7 +833,7 @@ class Page_Generator_Pro_Groups {
 
 	}
 
-    /**
+	/**
 	 * Tests content for the given Group ID
 	 *
 	 * @since   1.8.0
@@ -967,7 +967,7 @@ class Page_Generator_Pro_Groups {
 
 	}
 
-    /**
+	/**
 	 * Returns a flag denoting whether the given Group ID is idle i.e. not generating
 	 *
 	 * @since   1.9.9

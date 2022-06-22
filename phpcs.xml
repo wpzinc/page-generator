@@ -42,6 +42,7 @@
 		<exclude name="WordPress.Security.EscapeOutput"/>
 		-->
 		<exclude name="WordPress.PHP.YodaConditions" />
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
 	</rule>
 
 	<!-- Check that code is documented to WordPress Standards. -->
@@ -53,11 +54,11 @@
 	<!-- Define minimum supported WordPress version for sniffs. -->
 	<config name="minimum_supported_wp_version" value="5.0"/>
 
-	<!-- Text domain should always be 'media-library-organizer'. -->
+	<!-- Text domain should always be 'page-generator'. -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
 			<property name="text_domain" type="array">
-				<element value="media-library-organizer"/>
+				<element value="page-generator"/>
 			</property>
 		</properties>
 	</rule>

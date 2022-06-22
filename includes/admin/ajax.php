@@ -45,8 +45,8 @@ class Page_Generator_Pro_AJAX {
 		add_action( 'wp_ajax_page_generator_pro_generate_content_trash_generated_content', array( $this, 'trash_generated_content' ) );
 		add_action( 'wp_ajax_page_generator_pro_generate_content_delete_generated_content', array( $this, 'delete_generated_content' ) );
 		add_action( 'wp_ajax_page_generator_pro_generate_content_after', array( $this, 'after_generated_content' ) );
-        
-    }
+
+	}
 
 	/**
 	 * Returns the maximum number of generated items to delete in a single AJAX
@@ -262,7 +262,7 @@ class Page_Generator_Pro_AJAX {
 
 		// Sanitize inputs.
 		if ( ! isset( $_POST['id'] ) ) {
-			wp_send_json_error( __( 'No group ID was specified.', 'page-generator-pro' ) );
+			wp_send_json_error( __( 'No group ID was specified.', 'page-generator' ) );
 			die();
 		}
 

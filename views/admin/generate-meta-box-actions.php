@@ -26,7 +26,7 @@ away from the page as they may lose their changes
 			if ( isset( $post ) && ( ! in_array( $post->post_status, array( 'publish', 'future', 'private' ), true ) || 0 === $post->ID ) ) {
 				// Publish.
 				?>
-				<input name="original_publish" type="hidden" id="original_publish<?php echo esc_attr( $bottom ); ?>" value="<?php esc_attr_e( 'Publish', 'page-generator-pro' ); ?>" />
+				<input name="original_publish" type="hidden" id="original_publish<?php echo esc_attr( $bottom ); ?>" value="<?php esc_attr_e( 'Publish', 'page-generator' ); ?>" />
 				<?php
 				submit_button(
 					__( 'Save', 'page-generator' ),
@@ -42,7 +42,7 @@ away from the page as they may lose their changes
 			} else {
 				// Update.
 				?>
-				<input name="original_publish" type="hidden" id="original_publish<?php echo esc_attr( $bottom ); ?>" value="<?php esc_attr_e( 'Update', 'page-generator-pro' ); ?>" />
+				<input name="original_publish" type="hidden" id="original_publish<?php echo esc_attr( $bottom ); ?>" value="<?php esc_attr_e( 'Update', 'page-generator' ); ?>" />
 				<?php
 				submit_button(
 					__( 'Save', 'page-generator' ),
@@ -113,7 +113,7 @@ if ( $this->settings['generated_pages_count'] > 0 ) {
 				?>
 				<span class="trash_generated_content">
 					<a href="<?php echo esc_attr( admin_url( 'edit.php?post_type=' . $this->base->get_class( 'post_type' )->post_type_name . '&' . $this->base->plugin->name . '-action=trash-generated-content&id=' . $group_id . '&type=' . $this->settings['group_type'] ) ); ?>" class="button wpzinc-button-red trash-generated-content" data-group-id="<?php echo esc_attr( $group_id ); ?>" data-limit="<?php echo esc_attr( $limit ); ?>" data-total="<?php echo esc_attr( $this->settings['generated_pages_count'] ); ?>">
-						<?php esc_html_e( 'Trash Generated Content', 'page-generator-pro' ); ?>
+						<?php esc_html_e( 'Trash Generated Content', 'page-generator' ); ?>
 					</a>
 				</span>
 				<br />
@@ -122,7 +122,7 @@ if ( $this->settings['generated_pages_count'] > 0 ) {
 			?>
 			<span class="delete_generated_content">
 				<a href="<?php echo esc_attr( admin_url( 'edit.php?post_type=' . $this->base->get_class( 'post_type' )->post_type_name . '&' . $this->base->plugin->name . '-action=delete-generated-content&id=' . $group_id . '&type=' . $this->settings['group_type'] ) ); ?>" class="button wpzinc-button-red delete-generated-content" data-group-id="<?php echo esc_attr( $group_id ); ?>" data-limit="<?php echo esc_attr( $limit ); ?>" data-total="<?php echo esc_attr( $this->settings['generated_pages_count'] ); ?>">
-					<?php esc_html_e( 'Delete Generated Content', 'page-generator-pro' ); ?>
+					<?php esc_html_e( 'Delete Generated Content', 'page-generator' ); ?>
 				</a>
 			</span>
 		</div>

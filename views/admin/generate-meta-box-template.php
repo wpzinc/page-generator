@@ -14,7 +14,7 @@ foreach ( $post_types_templates as $group_post_type => $templates ) {
 		<div class="full">
 			<select name="<?php echo esc_attr( $this->base->plugin->name ); ?>[pageTemplate][<?php echo esc_attr( $group_post_type ); ?>]" id="<?php echo esc_attr( $group_post_type ); ?>_template" size="1" class="widefat">
 				<option value="default"<?php selected( $template, 'default' ); ?>>
-					<?php esc_attr_e( 'Default Template', 'page-generator-pro' ); ?>
+					<?php esc_attr_e( 'Default Template', 'page-generator' ); ?>
 				</option>
 				<?php page_template_dropdown( $template, $group_post_type ); ?>
 			</select>

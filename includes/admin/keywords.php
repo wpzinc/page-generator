@@ -628,7 +628,7 @@ class Page_Generator_Pro_Keywords {
 		return true;
 
 	}
-    
+
 	/**
 	 * Get the number of matching records
 	 *
@@ -657,7 +657,7 @@ class Page_Generator_Pro_Keywords {
 
 	}
 
-/**
+	/**
 	 * Return Terms for the given Keyword ID, based on the optional
 	 * offset, limit and search parameters.
 	 *
@@ -802,7 +802,7 @@ class Page_Generator_Pro_Keywords {
 
 	}
 
-/**
+	/**
 	 * Adds or edits a record, based on the given data array.
 	 *
 	 * @since   1.0.0
@@ -956,7 +956,7 @@ class Page_Generator_Pro_Keywords {
 
 		// Check for required data fields.
 		if ( empty( $data['keyword'] ) ) {
-			return new WP_Error( 'page_generator_pro_keywords_save_validation_error', __( 'Please complete the keyword field.', 'page-generator-pro' ) );
+			return new WP_Error( 'page_generator_pro_keywords_save_validation_error', __( 'Please complete the keyword field.', 'page-generator' ) );
 		}
 
 		// Check keyword name doesn't already exist as another keyword.
@@ -973,21 +973,21 @@ class Page_Generator_Pro_Keywords {
 
 		// Check that the keyword does not contain spaces.
 		if ( preg_match( '/[\\s\'\/~`\!@#\$%\^&\*\(\)\+=\{\}\[\]\|;:"\<\>,\.\?\\\]/', $data['keyword'] ) ) {
-			return new WP_Error( 'page_generator_pro_keywords_save_validation_error', __( 'The Keyword field can only contain letters, numbers, hyphens and underscores.', 'page-generator-pro' ) );
+			return new WP_Error( 'page_generator_pro_keywords_save_validation_error', __( 'The Keyword field can only contain letters, numbers, hyphens and underscores.', 'page-generator' ) );
 		}
 
 		// Column name checks.
 		if ( ! empty( $data['columns'] ) ) {
 			// Check column names don't contain invalid characters.
 			if ( preg_match( '/[\\s\'\/~`\!@#\$%\^&\*\(\)\+=\{\}\[\]\|;:"\<\>\.\?\\\]/', $data['columns'] ) ) {
-				return new WP_Error( 'page_generator_pro_keywords_save_validation_error', __( 'The Columns field can only contain letters, numbers, commas, hyphens and underscores.', 'page-generator-pro' ) );
+				return new WP_Error( 'page_generator_pro_keywords_save_validation_error', __( 'The Columns field can only contain letters, numbers, commas, hyphens and underscores.', 'page-generator' ) );
 			}
 
 			// Check a delimiter exists.
 			if ( empty( $data['delimiter'] ) ) {
 				return new WP_Error(
 					'page_generator_pro_keywords_save_validation_error',
-					__( 'Delimiter Field: When specifying column names in the Columns Field, a delimiter must also be specified.', 'page-generator-pro' )
+					__( 'Delimiter Field: When specifying column names in the Columns Field, a delimiter must also be specified.', 'page-generator' )
 				);
 			}
 
@@ -995,7 +995,7 @@ class Page_Generator_Pro_Keywords {
 			if ( strlen( $data['delimiter'] ) > 1 ) {
 				return new WP_Error(
 					'page_generator_pro_keywords_save_validation_error',
-					__( 'The Delimiter field must be a single character.', 'page-generator-pro' )
+					__( 'The Delimiter field must be a single character.', 'page-generator' )
 				);
 			}
 		}
@@ -1020,7 +1020,7 @@ class Page_Generator_Pro_Keywords {
 			if ( empty( $data['columns'] ) ) {
 				return new WP_Error(
 					'page_generator_pro_keywords_save_validation_error',
-					__( 'Columns Field: Two or more column names must be specified in the Columns Field When specifying a delimiter.', 'page-generator-pro' )
+					__( 'Columns Field: Two or more column names must be specified in the Columns Field When specifying a delimiter.', 'page-generator' )
 				);
 			}
 
@@ -1028,7 +1028,7 @@ class Page_Generator_Pro_Keywords {
 			if ( strpos( $data['columns'], ',' ) === false ) {
 				return new WP_Error(
 					'page_generator_pro_keywords_save_validation_error',
-					__( 'Columns Field: The values specified in the Columns Field must be separated by a comma.', 'page-generator-pro' )
+					__( 'Columns Field: The values specified in the Columns Field must be separated by a comma.', 'page-generator' )
 				);
 			}
 		}
@@ -1130,7 +1130,7 @@ class Page_Generator_Pro_Keywords {
 
 		// Bail if no keyword was found.
 		if ( ! $keyword ) {
-			return new WP_Error( 'page_generator_pro_keywords_duplicate', __( 'Keyword could not be found for duplication.', 'page-generator-pro' ) );
+			return new WP_Error( 'page_generator_pro_keywords_duplicate', __( 'Keyword could not be found for duplication.', 'page-generator' ) );
 		}
 
 		// Delete some keys from the data.

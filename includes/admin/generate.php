@@ -95,10 +95,10 @@ class Page_Generator_Pro_Generate {
 
 		// Store base class.
 		$this->base = $base;
-         
-    }
 
-/**
+	}
+
+	/**
 	 * Calculates the maximum number of items that will be generated based
 	 * on the settings.
 	 *
@@ -174,7 +174,7 @@ class Page_Generator_Pro_Generate {
 		return 0;
 
 	}
-    
+
 	/**
 	 * Generates a Page, Post or Custom Post Type for the given Group and Index
 	 *
@@ -218,7 +218,7 @@ class Page_Generator_Pro_Generate {
 
 				// Return error.
 				return $this->generate_error_return(
-					new WP_Error( 'generation_error', __( 'A request to cancel generation was made by the User. Exiting...', 'page-generator-pro' ) ),
+					new WP_Error( 'generation_error', __( 'A request to cancel generation was made by the User. Exiting...', 'page-generator' ) ),
 					$group_id,
 					0,
 					$settings['type'],
@@ -284,7 +284,7 @@ class Page_Generator_Pro_Generate {
 		$required_keywords = $this->find_keywords_in_settings( $settings );
 		if ( count( $required_keywords['required_keywords'] ) === 0 ) {
 			return $this->generate_error_return(
-				new WP_Error( 'keyword_error', __( 'No keywords were specified in the Group.', 'page-generator-pro' ) ),
+				new WP_Error( 'keyword_error', __( 'No keywords were specified in the Group.', 'page-generator' ) ),
 				$group_id,
 				0,
 				$settings['type'],
@@ -298,7 +298,7 @@ class Page_Generator_Pro_Generate {
 		$this->keywords = $this->get_keywords_terms_columns_delimiters( $required_keywords['required_keywords'] );
 		if ( count( $this->keywords['terms'] ) === 0 ) {
 			return $this->generate_error_return(
-				new WP_Error( 'keyword_error', __( 'Keywords were specified in the Group, but no keywords exist in either the Keywords section of the Plugin or as a Taxonomy.', 'page-generator-pro' ) ),
+				new WP_Error( 'keyword_error', __( 'Keywords were specified in the Group, but no keywords exist in either the Keywords section of the Plugin or as a Taxonomy.', 'page-generator' ) ),
 				$group_id,
 				0,
 				$settings['type'],
@@ -442,7 +442,7 @@ class Page_Generator_Pro_Generate {
 				}
 
 				// Try again.
-                $post_id = wp_insert_post( $post_args, true ); 
+				$post_id = wp_insert_post( $post_args, true );
 
 				// If Post creation / update still didn't work, bail.
 				if ( is_wp_error( $post_id ) ) {
@@ -587,10 +587,10 @@ class Page_Generator_Pro_Generate {
 	 * @param   string $keyword                    Keyword without Modifiers (e.g. keyword).
 	 * @param   string $term                       Term (replacement).
 	 */
-	private function build_search_replace_arrays_for_keyword( $keyword_with_modifiers, $keyword, $term ) {
+	private function build_search_replace_arrays_for_keyword( $keyword_with_modifiers, $keyword, $term ) { // phpcs:ignore
 
 		// Add Keyword and Term to Search and Replace arrays.
-		$this->searches[]     = '{' . $keyword_with_modifiers . '}';
+		$this->searches[]     = '{' . $keyword . '}';
 		$this->replacements[] = $term;
 
 	}
@@ -634,10 +634,10 @@ class Page_Generator_Pro_Generate {
 
 		$store_keywords = array();
 
-        foreach ( $keywords_terms as $keyword => $term ) {
+		foreach ( $keywords_terms as $keyword => $term ) {
 			// Add keyword/term pair.
 			$store_keywords[ $keyword ] = $term;
-        }
+		}
 
 		// Bail if no keywords.
 		if ( count( $store_keywords ) === 0 ) {
@@ -645,8 +645,8 @@ class Page_Generator_Pro_Generate {
 		}
 
 		return $store_keywords;
-        
-    }
+
+	}
 
 	/**
 	 * A faster method for fetching all keyword combinations for PHP 5.5+
@@ -728,12 +728,12 @@ class Page_Generator_Pro_Generate {
 			}
 
 			$results['terms'][ $keyword ] = $result['dataArr'];
-        }
+		}
 
 		// Return results.
 		return $results;
 
-    }
+	}
 
 	/**
 	 * Returns an array of keyword and term key / value pairs.
@@ -766,9 +766,9 @@ class Page_Generator_Pro_Generate {
 						// If the combinations count is a negative number, we exceeded the floating point for an integer
 						// Tell the user to upgrade PHP and/or reduce the number of keyword terms.
 						if ( $combinations->count() < 0 ) {
-							$message = __( 'The total possible number of unique keyword term combinations exceeds the maximum number value that can be stored by your version of PHP.  Please consider upgrading to a 64 bit PHP 7.0+ build and/or reducing the number of keyword terms that you are using.', 'page-generator-pro' );
+							$message = __( 'The total possible number of unique keyword term combinations exceeds the maximum number value that can be stored by your version of PHP.  Please consider upgrading to a 64 bit PHP 7.0+ build and/or reducing the number of keyword terms that you are using.', 'page-generator' );
 						} else {
-							$message = __( 'All possible keyword term combinations have been generated. Generating more Pages/Posts would result in duplicate content.', 'page-generator-pro' );
+							$message = __( 'All possible keyword term combinations have been generated. Generating more Pages/Posts would result in duplicate content.', 'page-generator' );
 						}
 
 						return new WP_Error( 'page_generator_pro_generate_content_keywords_exhausted', $message );
@@ -792,7 +792,7 @@ class Page_Generator_Pro_Generate {
 					// If the current index exceeds the total number of combinations, we've exhausted all
 					// options and don't want to generate any more Pages (otherwise we end up with duplicates).
 					if ( $index > ( count( $combinations ) - 1 ) ) {
-						return new WP_Error( 'keywords_exhausted', __( 'All possible keyword term combinations have been generated. Generating more Pages/Posts would result in duplicate content.', 'page-generator-pro' ) );
+						return new WP_Error( 'keywords_exhausted', __( 'All possible keyword term combinations have been generated. Generating more Pages/Posts would result in duplicate content.', 'page-generator' ) );
 					}
 
 					// Define the keyword => term key/value pairs to use based on the current index.
@@ -839,7 +839,7 @@ class Page_Generator_Pro_Generate {
 			 * Invalid method
 			 */
 			default:
-				return new WP_Error( 'page_generator_pro_generate_get_keywords_terms_invalid_method', __( 'The method given is invalid.', 'page-generator-pro' ) );
+				return new WP_Error( 'page_generator_pro_generate_get_keywords_terms_invalid_method', __( 'The method given is invalid.', 'page-generator' ) );
 		}
 
 		// Cleanup the terms.
@@ -862,9 +862,9 @@ class Page_Generator_Pro_Generate {
 		// Return.
 		return $keywords_terms;
 
-    }
+	}
 
-/**
+	/**
 	 * Performs a search on the given string to find any {keywords}
 	 *
 	 * @since   1.2.0
@@ -1042,7 +1042,7 @@ class Page_Generator_Pro_Generate {
 
 	}
 
-/**
+	/**
 	 * Assigns any Attachments to the given Post ID that have the specified Group ID and Index
 	 *
 	 * @since   2.4.1
@@ -1109,11 +1109,11 @@ class Page_Generator_Pro_Generate {
 	 * @param   array $settings                       Group Settings.
 	 * @param   mixed $last_generated_post_date_time  Last Generated Post's Date and Time.
 	 */
-	public function post_date( $settings, $last_generated_post_date_time = false ) {
+	public function post_date( $settings, $last_generated_post_date_time = false ) { // phpcs:ignore
 
-        return date_format( date_create( date_i18n( 'Y-m-d H:i:s' ) ), 'Y-m-d H:i:s' );
+		return date_format( date_create( date_i18n( 'Y-m-d H:i:s' ) ), 'Y-m-d H:i:s' );
 
-    }
+	}
 
 	/**
 	 * Copies Attributes > Template to the Generated Post ID, honoring
@@ -1164,7 +1164,7 @@ class Page_Generator_Pro_Generate {
 
 	}
 
-    /**
+	/**
 	 * Copies the Content Group's Post Meta to the Generated Post ID,
 	 * including Page Builder / ACF data.
 	 *
@@ -1259,7 +1259,7 @@ class Page_Generator_Pro_Generate {
 
 	}
 
-/**
+	/**
 	 * Main function to trash previously generated Contents
 	 * for the given Group ID
 	 *
@@ -1410,7 +1410,7 @@ class Page_Generator_Pro_Generate {
 
 		// If no Posts found, return an error.
 		if ( ! $posts->posts || count( $posts->posts ) === 0 ) {
-			return new WP_Error( 'page_generator_pro_generate_get_generated_content_post_ids', __( 'No content has been generated by this group.', 'page-generator-pro' ) );
+			return new WP_Error( 'page_generator_pro_generate_get_generated_content_post_ids', __( 'No content has been generated by this group.', 'page-generator' ) );
 		}
 
 		// Return Post IDs.
@@ -1436,7 +1436,7 @@ class Page_Generator_Pro_Generate {
 	 * @param   mixed  $last_generated_post_date_time  Last Generated Post's Date and Time.
 	 * @return                                          Success Data
 	 */
-	private function generate_return( $group_id, $post_or_term_id, $post_type_or_taxonomy, $generated, $message, $start, $test_mode, $system, $keywords_terms, $last_generated_post_date_time = false ) {
+	private function generate_return( $group_id, $post_or_term_id, $post_type_or_taxonomy, $generated, $message, $start, $test_mode, $system, $keywords_terms, $last_generated_post_date_time = false ) { // phpcs:ignore
 
 		$url = get_permalink( $post_or_term_id );
 		if ( $test_mode ) {
@@ -1449,7 +1449,7 @@ class Page_Generator_Pro_Generate {
 		} else {
 			$url = get_permalink( $post_or_term_id );
 		}
-	
+
 		// Performance debugging.
 		$end = ( function_exists( 'hrtime' ) ? hrtime( true ) : microtime( true ) );
 
@@ -1499,7 +1499,7 @@ class Page_Generator_Pro_Generate {
 	 * @param   array    $keywords_terms         Keywords and Terms.
 	 * @return  WP_Error                            Error
 	 */
-	private function generate_error_return( $error, $group_id, $post_or_term_id, $post_type_or_taxonomy, $test_mode, $system, $keywords_terms ) {
+	private function generate_error_return( $error, $group_id, $post_or_term_id, $post_type_or_taxonomy, $test_mode, $system, $keywords_terms ) { // phpcs:ignore
 
 		$url = '';
 		if ( $post_or_term_id ) {

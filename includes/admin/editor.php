@@ -61,7 +61,7 @@ class Page_Generator_Pro_Editor {
 		// Low priority ensures this works with Frontend Page Builders.
 		add_filter( 'mce_external_plugins', array( $this, 'register_tinymce_plugins' ), 99999 );
 
-    }
+	}
 
 	/**
 	 * Register JS plugins for the TinyMCE Editor

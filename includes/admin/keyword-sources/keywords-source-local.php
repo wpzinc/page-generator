@@ -72,7 +72,7 @@ class Page_Generator_Pro_Keywords_Source_Local {
 	 */
 	public function get_label() {
 
-		return __( 'Local', 'page-generator-pro' );
+		return __( 'Local', 'page-generator' );
 
 	}
 
@@ -94,7 +94,7 @@ class Page_Generator_Pro_Keywords_Source_Local {
 					'name'    => $this->get_name(),
 					'label'   => $this->get_label(),
 					'options' => array(
-						'data'      => array(
+						'data' => array(
 							'type'        => 'textarea',
 							'label'       => __( 'Terms', 'page-generator' ),
 							'description' => array(
@@ -125,7 +125,7 @@ class Page_Generator_Pro_Keywords_Source_Local {
 		$keyword = array_merge(
 			$keyword,
 			array(
-				'data'      => $keyword['options']['data'],
+				'data' => $keyword['options']['data'],
 			)
 		);
 
@@ -156,7 +156,7 @@ class Page_Generator_Pro_Keywords_Source_Local {
 
 		// Check that data was supplied.
 		if ( empty( $keyword['data'] ) ) {
-			return new WP_Error( 'page_generator_pro_keywords_save_validation_error', __( 'Please complete the keyword data field.', 'page-generator-pro' ) );
+			return new WP_Error( 'page_generator_pro_keywords_save_validation_error', __( 'Please complete the keyword data field.', 'page-generator' ) );
 		}
 
 		// Validation passed.

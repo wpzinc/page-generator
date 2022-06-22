@@ -134,7 +134,7 @@ class Page_Generator_Pro_PostType {
 		}
 
 		// Stop the request.
-		wp_die( esc_html__( 'To preview a Content Group, use the Test functionality.', 'page-generator-pro' ) );
+		wp_die( esc_html__( 'To preview a Content Group, use the Test functionality.', 'page-generator' ) );
 
 	}
 

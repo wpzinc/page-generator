@@ -13,7 +13,7 @@
 		<?php echo esc_html( $this->base->plugin->displayName ); ?>
 
 		<span>
-			<?php esc_html_e( 'Generate', 'page-generator-pro' ); ?>
+			<?php esc_html_e( 'Generate', 'page-generator' ); ?>
 		</span>
 	</h1>
 
@@ -25,7 +25,7 @@
 	<div class="wrap-inner">
 		<!-- Return Button -->
 		<a href="<?php echo $return_url; // phpcs:ignore ?>" class="button button-primary">
-			<?php esc_html_e( 'Return to Group', 'page-generator-pro' ); ?>
+			<?php esc_html_e( 'Return to Group', 'page-generator' ); ?>
 		</a>
 	</div>
 </div>

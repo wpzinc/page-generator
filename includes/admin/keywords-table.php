@@ -60,14 +60,14 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 				esc_html__( 'No keywords found matching the search term', 'page-generator' ),
 				esc_html( $this->get_search() )
 			);
-			echo ( '<br /><a href="admin.php?page=' . $this->base->plugin->name . '-keywords" class="button">' . __( 'View all keywords', 'page-generator-pro' ) . '</a>' ); // phpcs:ignore
+			echo ( '<br /><a href="admin.php?page=' . $this->base->plugin->name . '-keywords" class="button">' . __( 'View all keywords', 'page-generator' ) . '</a>' ); // phpcs:ignore
 
 			return;
 		}
 
 		// No Keywords exist in the database table.
-		esc_html_e( 'Keywords are used to produce unique content for each Page, Post or Custom Post Type that is generated.', 'page-generator-pro' );
-		echo ( '<br /><a href="admin.php?page=' . $this->base->plugin->name . '-keywords&cmd=form" class="button">' . __( 'Create first keyword.', 'page-generator-pro' ) . '</a>' ); // phpcs:ignore
+		esc_html_e( 'Keywords are used to produce unique content for each Page, Post or Custom Post Type that is generated.', 'page-generator' );
+		echo ( '<br /><a href="admin.php?page=' . $this->base->plugin->name . '-keywords&cmd=form" class="button">' . __( 'Create first keyword.', 'page-generator' ) . '</a>' ); // phpcs:ignore
 
 	}
 
@@ -249,24 +249,24 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 
 						echo ( '<td class="' . esc_attr( $column_name ) . ' column-' . esc_attr( $column_name ) . '">
 									<strong>
-										<a href="' . esc_attr( $edit_url ) . '" title="' . esc_attr__( 'Edit this keyword', 'page-generator-pro' ) . '">
+										<a href="' . esc_attr( $edit_url ) . '" title="' . esc_attr__( 'Edit this keyword', 'page-generator' ) . '">
 											' . esc_html( $record->keyword ) . '
 										</a>
 									</strong>
 									<div class="row-actions">
 										<span class="edit">
-											<a href="' . esc_attr( $edit_url ) . '" title="' . esc_attr__( 'Edit this keyword', 'page-generator-pro' ) . '">
-											' . esc_html__( 'Edit', 'page-generator-pro' ) . '
+											<a href="' . esc_attr( $edit_url ) . '" title="' . esc_attr__( 'Edit this keyword', 'page-generator' ) . '">
+											' . esc_html__( 'Edit', 'page-generator' ) . '
 											</a> | 
 										</span>
 										<span class="edit">
-											<a href="' . esc_attr( $duplicate_url ) . '" title="' . esc_attr__( 'Duplicate this keyword', 'page-generator-pro' ) . '">
-											' . esc_html__( 'Duplicate', 'page-generator-pro' ) . '
+											<a href="' . esc_attr( $duplicate_url ) . '" title="' . esc_attr__( 'Duplicate this keyword', 'page-generator' ) . '">
+											' . esc_html__( 'Duplicate', 'page-generator' ) . '
 											</a> | 
 										</span>
 										<span class="trash">
-											<a href="' . esc_attr( $delete_url ) . '" title="' . esc_attr__( 'Delete this keyword', 'page-generator-pro' ) . '" class="delete">
-											' . esc_html__( 'Delete', 'page-generator-pro' ) . '
+											<a href="' . esc_attr( $delete_url ) . '" title="' . esc_attr__( 'Delete this keyword', 'page-generator' ) . '" class="delete">
+											' . esc_html__( 'Delete', 'page-generator' ) . '
 											</a>
 										</span>
 									</div>

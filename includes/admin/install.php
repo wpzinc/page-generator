@@ -50,10 +50,10 @@ class Page_Generator_Pro_Install {
 	public function install() {
 
 		// Run activation routines on classes.
-        $this->base->get_class( 'groups' )->activate();
-        $this->base->get_class( 'keywords' )->activate();
+		$this->base->get_class( 'groups' )->activate();
+		$this->base->get_class( 'keywords' )->activate();
 
-    }
+	}
 
 	/**
 	 * Runs migrations for Pro to Pro version upgrades
@@ -73,36 +73,36 @@ class Page_Generator_Pro_Install {
 			return;
 		}
 
-        /**
-         * 1.5.7: Upgrade Keywords Table
-         */
-        if ( ! $installed_version || $installed_version < '1.5.7' ) {
-            $this->base->get_class( 'keywords' )->upgrade();
-        }
+		/**
+		 * 1.5.7: Upgrade Keywords Table
+		 */
+		if ( ! $installed_version || $installed_version < '1.5.7' ) {
+			$this->base->get_class( 'keywords' )->upgrade();
+		}
 
-        /**
-         * 1.7.8: Install 
-         */
-        if ( ! $installed_version || $installed_version < '1.4.8' ) {
-            // Get instance.
-            $keywords = $this->base->get_class( 'keywords' );
+		/**
+		 * 1.7.8: Install
+		 */
+		if ( ! $installed_version || $installed_version < '1.4.8' ) {
+			// Get instance.
+			$keywords = $this->base->get_class( 'keywords' );
 
-            // Upgrade table.
-            $keywords->upgrade();
-        }
-        
-        // Update the version number.
-        update_option( $this->base->plugin->name . '-version', $this->base->plugin->version );  
+			// Upgrade table.
+			$keywords->upgrade();
+		}
 
-    }
+		// Update the version number.
+		update_option( $this->base->plugin->name . '-version', $this->base->plugin->version );
 
-    /**
-     * Runs uninstallation routines
-     *
-     * @since   1.9.8
-     */
-    public function uninstall() {
+	}
 
-    }
+	/**
+	 * Runs uninstallation routines
+	 *
+	 * @since   1.9.8
+	 */
+	public function uninstall() {
+
+	}
 
 }

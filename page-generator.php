@@ -20,7 +20,7 @@ if ( class_exists( 'Page_Generator' ) ) {
 
 // Bail if the Pro version of the Plugin is active.
 if ( class_exists( 'Page_Generator_Pro' ) ) {
-    return;
+	return;
 }
 
 // Define Plugin version and build date.

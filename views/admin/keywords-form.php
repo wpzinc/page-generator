@@ -12,7 +12,7 @@
 		<?php echo esc_html( $this->base->plugin->displayName ); ?>
 
 		<span>
-			<?php esc_html_e( 'Add New Keyword', 'page-generator-pro' ); ?>
+			<?php esc_html_e( 'Add New Keyword', 'page-generator' ); ?>
 		</span>
 	</h1>
 
@@ -30,24 +30,24 @@
 					<form class="<?php echo esc_attr( $this->base->plugin->name ); ?>" name="post" method="post" action="admin.php?page=page-generator-keywords&amp;cmd=form" enctype="multipart/form-data">		
 						<div id="normal-sortables" class="meta-box-sortables ui-sortable">                        
 							<div id="keyword-panel" class="postbox">
-								<h3 class="hndle"><?php esc_html_e( 'Keyword', 'page-generator-pro' ); ?></h3>
+								<h3 class="hndle"><?php esc_html_e( 'Keyword', 'page-generator' ); ?></h3>
 
 								<div class="wpzinc-option">
 									<div class="left">
-										<label for="keyword"><?php esc_html_e( 'Keyword', 'page-generator-pro' ); ?></label>
+										<label for="keyword"><?php esc_html_e( 'Keyword', 'page-generator' ); ?></label>
 									</div>
 									<div class="right">
 										<input type="text" name="keyword" id="keyword" value="<?php echo esc_attr( isset( $_POST['keyword'] ) ? esc_attr( $_POST['keyword'] ) : '' ); // phpcs:ignore ?>" class="widefat" />
 
 										<p class="description">
-											<?php esc_html_e( 'A unique template tag name, which can then be used when generating content.', 'page-generator-pro' ); ?>
+											<?php esc_html_e( 'A unique template tag name, which can then be used when generating content.', 'page-generator' ); ?>
 										</p>
 									</div>
 								</div>
 
 								<div class="wpzinc-option">
 									<div class="left">
-										<label for="source"><?php esc_html_e( 'Source', 'page-generator-pro' ); ?></label>
+										<label for="source"><?php esc_html_e( 'Source', 'page-generator' ); ?></label>
 									</div>
 									<div class="right">
 										<div class="right">
@@ -63,7 +63,7 @@
 												?>
 											</select>
 											<p class="description">
-												<?php esc_html_e( 'The source of this Keyword\'s Terms.', 'page-generator-pro' ); ?>
+												<?php esc_html_e( 'The source of this Keyword\'s Terms.', 'page-generator' ); ?>
 											</p>
 										</div>
 									</div>
@@ -114,7 +114,7 @@
 
 								<div class="wpzinc-option">
 									<?php wp_nonce_field( 'save_keyword', 'nonce' ); ?>
-									<input type="submit" name="submit" value="<?php esc_attr_e( 'Save', 'page-generator-pro' ); ?>" class="button button-primary" />
+									<input type="submit" name="submit" value="<?php esc_attr_e( 'Save', 'page-generator' ); ?>" class="button button-primary" />
 								</div>
 							</div>
 						</div>
