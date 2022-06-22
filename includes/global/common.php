@@ -99,6 +99,130 @@ class Page_Generator_Pro_Common {
 	}
 
 	/**
+	 * Helper method to retrieve public Post Types
+	 *
+	 * @since   1.1.3
+	 *
+	 * @return  array   Public Post Types
+	 */
+	public function get_post_types() {
+
+		// Get public Post Types.
+		$types = get_post_types(
+			array(
+				'public' => true,
+			),
+			'objects'
+		);
+
+		// Remove excluded Post Types from $types.
+		$excluded_types = $this->get_excluded_post_types();
+		if ( is_array( $excluded_types ) ) {
+			foreach ( $excluded_types as $excluded_type ) {
+				unset( $types[ $excluded_type ] );
+			}
+		}
+
+		/**
+		 * Defines the available public Post Type Objects that content can be generated for.
+		 *
+		 * @since   1.1.3
+		 *
+		 * @param   array   $types  Post Types.
+		 */
+		$types = apply_filters( 'page_generator_pro_common_get_post_types', $types );
+
+		// Return filtered results.
+		return $types;
+
+	}
+
+	/**
+	 * Helper method to retrieve excluded Post Types
+	 *
+	 * @since   1.1.3
+	 *
+	 * @return  array                       Excluded Post Types
+	 */
+	public function get_excluded_post_types() {
+
+		// Get excluded Post Types.
+		$types = array(
+			$this->base->get_class( 'post_type' )->post_type_name,
+			'attachment',
+			'revision',
+			'nav_menu_item',
+		);
+
+		/**
+		 * Defines the Post Type Objects that content cannot be generated for.
+		 *
+		 * @since   1.1.3
+		 *
+		 * @param   array   $types  Post Types.
+		 */
+		$types = apply_filters( 'page_generator_pro_common_get_excluded_post_types', $types );
+
+		// Return filtered results.
+		return $types;
+
+	}
+
+	/**
+	 * Returns any available Templates for each Post Type
+	 *
+	 * @since   1.5.8
+	 *
+	 * @return  array   Post Types and Templates
+	 */
+	public function get_post_types_templates() {
+
+		// Get Post Types.
+		$post_types = $this->get_post_types();
+
+		// Bail if no Post Types.
+		if ( empty( $post_types ) ) {
+			return false;
+		}
+
+		// Load necessary library if get_page_templates() isn't available.
+		if ( ! function_exists( 'get_page_templates' ) ) {
+			include_once ABSPATH . 'wp-admin/includes/theme.php';
+		}
+
+		// Bail if get_page_templates() still isn't available.
+		if ( ! function_exists( 'get_page_templates' ) ) {
+			return false;
+		}
+
+		// Build templates.
+		$templates = array();
+		foreach ( $post_types as $post_type ) {
+			// Skip if this Post Type doesn't have any templates.
+			$post_type_templates = get_page_templates( null, $post_type->name );
+			if ( empty( $post_type_templates ) ) {
+				continue;
+			}
+
+			$templates[ $post_type->name ] = $post_type_templates;
+		}
+
+		/**
+		 * Defines available Theme Templates for each Post Type that can have content
+		 * generated for it.
+		 *
+		 * @since   1.5.8
+		 *
+		 * @param   array   $templates  Templates by Post Type.
+		 */
+		$templates = apply_filters( 'page_generator_pro_common_get_post_type_templates', $templates );
+
+		// Return filtered results.
+		return $templates;
+
+	}
+
+	/**
 	 * Helper method to retrieve post statuses
 	 *
 	 * @since   1.1.3

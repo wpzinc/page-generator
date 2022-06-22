@@ -164,7 +164,6 @@ class Page_Generator_Pro_Admin {
 							'trash_generated_content'  => wp_create_nonce( 'page-generator-pro-trash-generated-content' ),
 							'delete_generated_content' => wp_create_nonce( 'page-generator-pro-delete-generated-content' ),
 						),
-						'post_type_conditional_metaboxes' => $this->base->get_class( 'groups_ui' )->get_post_type_conditional_metaboxes(),
 					)
 				);
 
@@ -219,7 +218,6 @@ class Page_Generator_Pro_Admin {
 							'page_generator_pro_gutenberg',
 							array(
 								'keywords'   => $this->base->get_class( 'keywords' )->get_keywords_and_columns( true ),
-								'shortcodes' => $this->base->get_class( 'shortcode' )->get_shortcodes(),
 								'post_type'  => ( isset( $post->post_type ) ? $post->post_type : false ),
 							)
 						);
@@ -427,7 +425,7 @@ class Page_Generator_Pro_Admin {
 					// Redirect.
 					$this->base->get_class( 'notices' )->enable_store();
 					$this->base->get_class( 'notices' )->add_success_notice( __( 'Keyword saved successfully', 'page-generator-pro' ) );
-					wp_safe_redirect( 'admin.php?page=page-generator-pro-keywords&cmd=form&id=' . $keyword_id );
+					wp_safe_redirect( 'admin.php?page=page-generator-keywords&cmd=form&id=' . $keyword_id );
 					die;
 				}
 				break;

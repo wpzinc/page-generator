@@ -76,6 +76,7 @@ function page_generator_autoloader( $class_name ) {
 	// Define the paths with file name we need to include.
 	$include_paths = array(
 		dirname( __FILE__ ) . '/includes/admin/' . $file_name,
+		dirname( __FILE__ ) . '/includes/admin/keyword-sources/' . $file_name,
 		dirname( __FILE__ ) . '/includes/global/' . $file_name,
 	);
 

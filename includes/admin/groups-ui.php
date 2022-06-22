@@ -221,11 +221,11 @@ class Page_Generator_Pro_Groups_UI {
 			'side'
 		);
 
-		// Attributes.
+		// Template.
 		add_meta_box(
-			$this->base->get_class( 'post_type' )->post_type_name . '-attributes',
-			__( 'Attributes', 'page-generator-pro' ),
-			array( $this, 'output_meta_box_attributes' ),
+			$this->base->get_class( 'post_type' )->post_type_name . '-template',
+			__( 'Template', 'page-generator-pro' ),
+			array( $this, 'output_meta_box_template' ),
 			$this->base->get_class( 'post_type' )->post_type_name,
 			'side'
 		);
@@ -384,8 +384,6 @@ class Page_Generator_Pro_Groups_UI {
 		if ( count( $this->settings ) === 0 ) {
 			$this->settings = $this->base->get_class( 'groups' )->get_settings( $post->ID );
 		}
-
-		$date_options = $this->base->get_class( 'common' )->get_date_options();
 
 		// Load view.
 		include $this->base->plugin->folder . 'views/admin/generate-meta-box-discussion.php';
@@ -546,21 +544,19 @@ class Page_Generator_Pro_Groups_UI {
 	}
 
 	/**
-	 * Outputs the Attributes Sidebar Meta Box
+	 * Outputs the Template Sidebar Meta Box
 	 *
-	 * @since   2.0.2
+	 * @since   3.3.9
 	 *
 	 * @param   WP_Post $post   Custom Post Type's Post.
 	 */
-	public function output_meta_box_attributes( $post ) {
+	public function output_meta_box_template( $post ) { // phpcs:ignore
 
-		// Get settings.
-		if ( count( $this->settings ) === 0 ) {
-			$this->settings = $this->base->get_class( 'groups' )->get_settings( $post->ID );
-		}
+		// Get options.
+		$post_types_templates = $this->base->get_class( 'common' )->get_post_types_templates();
 
 		// Load view.
-		include $this->base->plugin->folder . 'views/admin/generate-meta-box-attributes.php';
+		include $this->base->plugin->folder . 'views/admin/generate-meta-box-template.php';
 
 	}
 
@@ -804,14 +800,14 @@ class Page_Generator_Pro_Groups_UI {
 				}
 
 				// Bail if we're not on our Group Post Type.
-				if ( $_REQUEST['post_type'] !== Page_Generator_Pro_PostType::get_instance()->post_type_name ) { // phpcs:ignore
+				if ( $_REQUEST['post_type'] !== 'page-generator-pro' ) { // phpcs:ignore
 					break;
 				}
 
 				// Fetch first group.
 				$groups = new WP_Query(
 					array(
-						'post_type'      => Page_Generator_Pro_PostType::get_instance()->post_type_name,
+						'post_type'      => 'page-generator-pro',
 						'post_status'    => 'publish',
 						'posts_per_page' => 1,
 					)
@@ -837,14 +833,14 @@ class Page_Generator_Pro_Groups_UI {
 				}
 
 				// Bail if we're not on our Group Post Type.
-				if ( $_REQUEST['post_type'] !== Page_Generator_Pro_PostType::get_instance()->post_type_name ) { // phpcs:ignore
+				if ( $_REQUEST['post_type'] !== 'page-generator-pro' ) { // phpcs:ignore
 					break;
 				}
 
 				// Fetch first group.
 				$groups = new WP_Query(
 					array(
-						'post_type'      => Page_Generator_Pro_PostType::get_instance()->post_type_name,
+						'post_type'      => 'page-generator-pro',
 						'post_status'    => 'publish',
 						'posts_per_page' => 1,
 					)
@@ -882,7 +878,7 @@ class Page_Generator_Pro_Groups_UI {
 		if ( ! isset( $post['post_type'] ) ) {
 			return $limit;
 		}
-		if ( $post['post_type'] !== Page_Generator_Pro_PostType::get_instance()->post_type_name ) {
+		if ( $post['post_type'] !== 'page-generator-pro') {
 			return $limit;
 		}
 
