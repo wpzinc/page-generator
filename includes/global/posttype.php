@@ -73,23 +73,23 @@ class Page_Generator_Pro_PostType {
 		// Define Post Type arguments.
 		$args = array(
 			'labels'              => array(
-				'name'               => __( 'Content Groups', 'page-generator-pro' ),
-				'singular_name'      => __( 'Content Group', 'page-generator-pro' ),
+				'name'               => __( 'Content Groups', 'page-generator' ),
+				'singular_name'      => __( 'Content Group', 'page-generator' ),
 				'menu_name'          => $this->base->plugin->displayName,
-				'add_new'            => __( 'Add New', 'page-generator-pro' ),
-				'add_new_item'       => __( 'Add New Content Group', 'page-generator-pro' ),
-				'edit_item'          => __( 'Edit Content Group', 'page-generator-pro' ),
-				'new_item'           => __( 'New Content Group', 'page-generator-pro' ),
-				'view_item'          => __( 'View Content Group', 'page-generator-pro' ),
-				'search_items'       => __( 'Search Content Groups', 'page-generator-pro' ),
-				'not_found'          => __( 'No Content Groups found', 'page-generator-pro' ),
-				'not_found_in_trash' => __( 'No Content Groups found in Trash', 'page-generator-pro' ),
+				'add_new'            => __( 'Add New', 'page-generator' ),
+				'add_new_item'       => __( 'Add New Content Group', 'page-generator' ),
+				'edit_item'          => __( 'Edit Content Group', 'page-generator' ),
+				'new_item'           => __( 'New Content Group', 'page-generator' ),
+				'view_item'          => __( 'View Content Group', 'page-generator' ),
+				'search_items'       => __( 'Search Content Groups', 'page-generator' ),
+				'not_found'          => __( 'No Content Groups found', 'page-generator' ),
+				'not_found_in_trash' => __( 'No Content Groups found in Trash', 'page-generator' ),
 				'parent_item_colon'  => '',
 			),
 			/* translators: Plugin Name */
 			'description'         => sprintf(
 				/* translators: Plugin Name */
-				__( '%s Groups', 'page-generator-pro' ),
+				__( '%s Groups', 'page-generator' ),
 				$this->base->plugin->displayName
 			),
 			'public'              => $logged_in,      // Needs to be true for Visual Composer?

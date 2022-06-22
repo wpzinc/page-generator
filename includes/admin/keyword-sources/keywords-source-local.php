@@ -96,11 +96,11 @@ class Page_Generator_Pro_Keywords_Source_Local {
 					'options' => array(
 						'data'      => array(
 							'type'        => 'textarea',
-							'label'       => __( 'Terms', 'page-generator-pro' ),
+							'label'       => __( 'Terms', 'page-generator' ),
 							'description' => array(
-								__( 'Word(s) or phrase(s) which will be cycled through when generating content using the above keyword template tag.', 'page-generator-pro' ),
-								__( 'One word / phrase per line.', 'page-generator-pro' ),
-								__( 'If no Terms are entered, the plugin will try to automatically determine a list of similar terms based on the supplied keyword when you click Save.', 'page-generator-pro' ),
+								__( 'Word(s) or phrase(s) which will be cycled through when generating content using the above keyword template tag.', 'page-generator' ),
+								__( 'One word / phrase per line.', 'page-generator' ),
+								__( 'If no Terms are entered, the plugin will try to automatically determine a list of similar terms based on the supplied keyword when you click Save.', 'page-generator' ),
 							),
 						),
 					),

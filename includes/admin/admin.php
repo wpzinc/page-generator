@@ -362,7 +362,7 @@ class Page_Generator_Pro_Admin {
 		add_screen_option(
 			'per_page',
 			array(
-				'label'   => __( 'Keywords', 'page-generator-pro' ),
+				'label'   => __( 'Keywords', 'page-generator' ),
 				'default' => 20,
 				'option'  => 'page_generator_pro_keywords_per_page',
 			)
@@ -516,7 +516,7 @@ class Page_Generator_Pro_Admin {
 					$this->base->get_class( 'notices' )->add_success_notice(
 						sprintf(
 							/* translators: Number of Keywords deleted */
-							__( '%s Keywords deleted.', 'page-generator-pro' ),
+							__( '%s Keywords deleted.', 'page-generator' ),
 							count( $_REQUEST['ids'] )
 						)
 					);
@@ -590,7 +590,7 @@ class Page_Generator_Pro_Admin {
 					$this->base->get_class( 'notices' )->add_success_notice(
 						sprintf(
 							/* translators: Link to view duplicated Keyword */
-							__( 'Keyword duplicated successfully. %s', 'page-generator-pro' ),
+							__( 'Keyword duplicated successfully. %s', 'page-generator' ),
 							'<a href="' . admin_url( 'admin.php?page=' . $this->base->plugin->name . '-keywords&cmd=form&id=' . $result ) . '">' .
 							__( 'View Keyword', 'page-generator-pro' ) . '</a>'
 						)
@@ -879,15 +879,15 @@ class Page_Generator_Pro_Admin {
 				'resume_index'                  => $settings['resumeIndex'],
 				'stop_on_error'                 => (int) $this->base->get_class( 'settings' )->get_setting( $this->base->plugin->name . '-generate', 'stop_on_error', 0 ),
 				'stop_on_error_pause'           => (int) ( $this->base->get_class( 'settings' )->get_setting( $this->base->plugin->name . '-generate', 'stop_on_error_pause', 5 ) * 1000 ),
-				'exit_screen'                   => __( 'Closing / navigating away from this window will stop generation. Are you sure?', 'page-generator-pro' ),
+				'exit_screen'                   => __( 'Closing / navigating away from this window will stop generation. Are you sure?', 'page-generator' ),
 				'browser_title'                 => array(
 					'processing' => sprintf(
 						/* translators: Post Type */
-						__( '%1$s Generated', 'page-generator-pro' ),
+						__( '%1$s Generated', 'page-generator' ),
 						$object_label
 					),
-					'success'    => __( 'Generation Complete', 'page-generator-pro' ),
-					'cancelled'  => __( 'Generation Cancelled', 'page-generator-pro' ),
+					'success'    => __( 'Generation Complete', 'page-generator' ),
+					'cancelled'  => __( 'Generation Cancelled', 'page-generator' ),
 				),
 			)
 		);

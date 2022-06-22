@@ -901,7 +901,7 @@ class Page_Generator_Pro_Keywords {
 					'db_query_error',
 					sprintf(
 						/* translators: Database error */
-						__( 'Keyword could not be updated in the database. Database error: %s', 'page-generator-pro' ),
+						__( 'Keyword could not be updated in the database. Database error: %s', 'page-generator' ),
 						$wpdb->last_error
 					)
 				);
@@ -930,7 +930,7 @@ class Page_Generator_Pro_Keywords {
 					'db_query_error',
 					sprintf(
 						/* translators: Database error */
-						__( 'Keyword could not be added to the database. Database error: %s', 'page-generator-pro' ),
+						__( 'Keyword could not be added to the database. Database error: %s', 'page-generator' ),
 						$wpdb->last_error
 					)
 				);
@@ -965,7 +965,7 @@ class Page_Generator_Pro_Keywords {
 				'page_generator_pro_keywords_save_validation_error',
 				sprintf(
 					/* translators: Keyword Name */
-					__( 'The Keyword "%s" already exists. Please choose a different name.', 'page-generator-pro' ),
+					__( 'The Keyword "%s" already exists. Please choose a different name.', 'page-generator' ),
 					$data['keyword']
 				)
 			);
@@ -1009,7 +1009,7 @@ class Page_Generator_Pro_Keywords {
 						'page_generator_pro_keywords_save_validation_error',
 						sprintf(
 							/* translators: delimiter character */
-							__( 'Delimiter Field: %s cannot be used as a delimiter, as it may conflict with Keyword and Spintax syntax', 'page-generator-pro' ),
+							__( 'Delimiter Field: %s cannot be used as a delimiter, as it may conflict with Keyword and Spintax syntax', 'page-generator' ),
 							'<code>' . $data['delimiter'] . '</code>'
 						)
 					);
@@ -1081,7 +1081,7 @@ class Page_Generator_Pro_Keywords {
 						'db_query_error',
 						sprintf(
 							/* translators: Database error */
-							__( 'Record(s) could not be deleted from the database. Database error: %s', 'page-generator-pro' ),
+							__( 'Record(s) could not be deleted from the database. Database error: %s', 'page-generator' ),
 							$wpdb->last_error
 						)
 					);
@@ -1104,7 +1104,7 @@ class Page_Generator_Pro_Keywords {
 					'db_query_error',
 					sprintf(
 						/* translators: Database error */
-						__( 'Record(s) could not be deleted from the database. Database error: %s', 'page-generator-pro' ),
+						__( 'Record(s) could not be deleted from the database. Database error: %s', 'page-generator' ),
 						$wpdb->last_error
 					)
 				);

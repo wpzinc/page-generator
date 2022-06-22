@@ -57,7 +57,7 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 		if ( ! empty( $this->get_search() ) ) {
 			echo sprintf(
 				'%1$s <strong>%2$s</strong>',
-				esc_html__( 'No keywords found matching the search term', 'page-generator-pro' ),
+				esc_html__( 'No keywords found matching the search term', 'page-generator' ),
 				esc_html( $this->get_search() )
 			);
 			echo ( '<br /><a href="admin.php?page=' . $this->base->plugin->name . '-keywords" class="button">' . __( 'View all keywords', 'page-generator-pro' ) . '</a>' ); // phpcs:ignore
@@ -82,9 +82,9 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 
 		return array(
 			'cb'                   => '<input type="checkbox" class="toggle" />',
-			'col_field_keyword'    => __( 'Keyword', 'page-generator-pro' ),
-			'col_field_source'     => __( 'Source', 'page-generator-pro' ),
-			'col_field_term_count' => __( 'Number of Terms', 'page-generator-pro' ),
+			'col_field_keyword'    => __( 'Keyword', 'page-generator' ),
+			'col_field_source'     => __( 'Source', 'page-generator' ),
+			'col_field_term_count' => __( 'Number of Terms', 'page-generator' ),
 		);
 
 	}
@@ -117,7 +117,7 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 	public function get_bulk_actions() {
 
 		return array(
-			'delete' => __( 'Delete', 'page-generator-pro' ),
+			'delete' => __( 'Delete', 'page-generator' ),
 		);
 
 	}

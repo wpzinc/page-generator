@@ -90,17 +90,17 @@ class Page_Generator_Pro_Groups_UI {
 
 		$messages[ $this->base->get_class( 'post_type' )->post_type_name ] = array(
 			0  => '', // Unused. Messages start at index 1.
-			1  => __( 'Group updated.', 'page-generator-pro' ),
-			2  => __( 'Custom field updated.', 'page-generator-pro' ),
-			3  => __( 'Custom field deleted.', 'page-generator-pro' ),
-			4  => __( 'Group updated.', 'page-generator-pro' ),
+			1  => __( 'Group updated.', 'page-generator' ),
+			2  => __( 'Custom field updated.', 'page-generator' ),
+			3  => __( 'Custom field deleted.', 'page-generator' ),
+			4  => __( 'Group updated.', 'page-generator' ),
 			/* translators: Post revision title */
-			5  => ( isset( $_GET['revision'] ) ? sprintf( __( 'Group restored to revision from %s.', 'page-generator-pro' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false ), // phpcs:ignore
-			6  => __( 'Group saved.', 'page-generator-pro' ),
-			7  => __( 'Group saved.', 'page-generator-pro' ),
-			8  => __( 'Group submitted.', 'page-generator-pro' ),
-			9  => __( 'Group scheduled.', 'page-generator-pro' ),
-			10 => __( 'Group draft updated.', 'page-generator-pro' ),
+			5  => ( isset( $_GET['revision'] ) ? sprintf( __( 'Group restored to revision from %s.', 'page-generator' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false ), // phpcs:ignore
+			6  => __( 'Group saved.', 'page-generator' ),
+			7  => __( 'Group saved.', 'page-generator' ),
+			8  => __( 'Group submitted.', 'page-generator' ),
+			9  => __( 'Group scheduled.', 'page-generator' ),
+			10 => __( 'Group draft updated.', 'page-generator' ),
 		);
 
 		return $messages;
@@ -152,7 +152,7 @@ class Page_Generator_Pro_Groups_UI {
 		// Permalink.
 		add_meta_box(
 			$this->base->get_class( 'post_type' )->post_type_name . '-permalink',
-			__( 'Permalink', 'page-generator-pro' ),
+			__( 'Permalink', 'page-generator' ),
 			array( $this, 'output_meta_box_permalink' ),
 			$this->base->get_class( 'post_type' )->post_type_name,
 			'normal'
@@ -161,7 +161,7 @@ class Page_Generator_Pro_Groups_UI {
 		// Author.
 		add_meta_box(
 			$this->base->get_class( 'post_type' )->post_type_name . '-author',
-			__( 'Author', 'page-generator-pro' ),
+			__( 'Author', 'page-generator' ),
 			array( $this, 'output_meta_box_author' ),
 			$this->base->get_class( 'post_type' )->post_type_name,
 			'normal'
@@ -170,7 +170,7 @@ class Page_Generator_Pro_Groups_UI {
 		// Discussion.
 		add_meta_box(
 			$this->base->get_class( 'post_type' )->post_type_name . '-discussion',
-			__( 'Discussion', 'page-generator-pro' ),
+			__( 'Discussion', 'page-generator' ),
 			array( $this, 'output_meta_box_discussion' ),
 			$this->base->get_class( 'post_type' )->post_type_name,
 			'normal'
@@ -180,7 +180,7 @@ class Page_Generator_Pro_Groups_UI {
 		if ( class_exists( 'Page_Generator' ) ) {
 			add_meta_box(
 				$this->base->get_class( 'post_type' )->post_type_name . '-upgrade',
-				__( 'Upgrade', 'page-generator-pro' ),
+				__( 'Upgrade', 'page-generator' ),
 				array( $this, 'output_meta_box_upgrade' ),
 				$this->base->get_class( 'post_type' )->post_type_name,
 				'normal'
@@ -195,7 +195,7 @@ class Page_Generator_Pro_Groups_UI {
 		if ( ! $is_gutenberg_page ) {
 			add_meta_box(
 				$this->base->get_class( 'post_type' )->post_type_name . '-actions',
-				__( 'Actions', 'page-generator-pro' ),
+				__( 'Actions', 'page-generator' ),
 				array( $this, 'output_meta_box_actions_top' ),
 				$this->base->get_class( 'post_type' )->post_type_name,
 				'side',
@@ -206,7 +206,7 @@ class Page_Generator_Pro_Groups_UI {
 		// Publish.
 		add_meta_box(
 			$this->base->get_class( 'post_type' )->post_type_name . '-publish',
-			__( 'Publish', 'page-generator-pro' ),
+			__( 'Publish', 'page-generator' ),
 			array( $this, 'output_meta_box_publish' ),
 			$this->base->get_class( 'post_type' )->post_type_name,
 			'side'
@@ -215,7 +215,7 @@ class Page_Generator_Pro_Groups_UI {
 		// Generation.
 		add_meta_box(
 			$this->base->get_class( 'post_type' )->post_type_name . '-generation',
-			__( 'Generation', 'page-generator-pro' ),
+			__( 'Generation', 'page-generator' ),
 			array( $this, 'output_meta_box_generation' ),
 			$this->base->get_class( 'post_type' )->post_type_name,
 			'side'
@@ -224,7 +224,7 @@ class Page_Generator_Pro_Groups_UI {
 		// Template.
 		add_meta_box(
 			$this->base->get_class( 'post_type' )->post_type_name . '-template',
-			__( 'Template', 'page-generator-pro' ),
+			__( 'Template', 'page-generator' ),
 			array( $this, 'output_meta_box_template' ),
 			$this->base->get_class( 'post_type' )->post_type_name,
 			'side'
@@ -234,7 +234,7 @@ class Page_Generator_Pro_Groups_UI {
 		if ( ! $is_gutenberg_page ) {
 			add_meta_box(
 				$this->base->get_class( 'post_type' )->post_type_name . '-actions-bottom',
-				__( 'Actions', 'page-generator-pro' ),
+				__( 'Actions', 'page-generator' ),
 				array( $this, 'output_meta_box_actions_bottom' ),
 				$this->base->get_class( 'post_type' )->post_type_name,
 				'side',
@@ -243,7 +243,7 @@ class Page_Generator_Pro_Groups_UI {
 		} else {
 			add_meta_box(
 				$this->base->get_class( 'post_type' )->post_type_name . '-actions-gutenberg-bottom',
-				__( 'Actions', 'page-generator-pro' ),
+				__( 'Actions', 'page-generator' ),
 				array( $this, 'output_meta_box_actions_gutenberg' ),
 				$this->base->get_class( 'post_type' )->post_type_name,
 				'side'
@@ -534,8 +534,8 @@ class Page_Generator_Pro_Groups_UI {
 
 		// Define labels.
 		$labels = array(
-			'singular' => __( 'Page', 'page-generator-pro' ),
-			'plural'   => __( 'Pages', 'page-generator-pro' ),
+			'singular' => __( 'Page', 'page-generator' ),
+			'plural'   => __( 'Pages', 'page-generator' ),
 		);
 
 		// Load view.
@@ -701,23 +701,23 @@ class Page_Generator_Pro_Groups_UI {
                 'cancel_generation_success'         => __( 'Generation Cancelled', 'page-generator' ),
   
 				// Test.
-				'test_confirm'                     => __( 'This will generate a single Page/Post in draft mode. Proceed?', 'page-generator-pro' ),
-				'test'                             => __( 'Generating Test in Draft Mode...', 'page-generator-pro' ),
+				'test_confirm'                     => __( 'This will generate a single Page/Post in draft mode. Proceed?', 'page-generator' ),
+				'test'                             => __( 'Generating Test in Draft Mode...', 'page-generator' ),
 				/* Translators: URL to Term */
-				'test_success'                     => __( 'Test Page/Post Generated at %s', 'page-generator-pro' ),
+				'test_success'                     => __( 'Test Page/Post Generated at %s', 'page-generator' ),
 
 				// Trash Generated Content.
 				/* translators: Number of Pages/Posts to trash */
-				'trash_generated_content_confirm'  => __( 'This will trash ALL %s content items generated by this group. Proceed?', 'page-generator-pro' ),
-				'trash_generated_content'          => __( 'Trashing Generated Content Items', 'page-generator-pro' ),
-				'trash_generated_content_success'  => __( 'Generated Content Trashed', 'page-generator-pro' ),
-				'trash_generated_content_error'    => __( 'An error occured. Please try again.', 'page-generator-pro' ),
+				'trash_generated_content_confirm'  => __( 'This will trash ALL %s content items generated by this group. Proceed?', 'page-generator' ),
+				'trash_generated_content'          => __( 'Trashing Generated Content Items', 'page-generator' ),
+				'trash_generated_content_success'  => __( 'Generated Content Trashed', 'page-generator' ),
+				'trash_generated_content_error'    => __( 'An error occured. Please try again.', 'page-generator' ),
 
 				// Delete Generated Content.
 				/* translators: Number of Pages/Post to delete */
-				'delete_generated_content_confirm' => __( 'This will PERMANENTLY DELETE ALL %s content items generated by this group. This action cannot be undone. Proceed?', 'page-generator-pro' ),
-				'delete_generated_content'         => __( 'Deleting Generated Content Items', 'page-generator-pro' ),
-				'delete_generated_content_success' => __( 'Generated Content Deleted', 'page-generator-pro' ),
+				'delete_generated_content_confirm' => __( 'This will PERMANENTLY DELETE ALL %s content items generated by this group. This action cannot be undone. Proceed?', 'page-generator' ),
+				'delete_generated_content'         => __( 'Deleting Generated Content Items', 'page-generator' ),
+				'delete_generated_content_success' => __( 'Generated Content Deleted', 'page-generator' ),
             ),
         );
 

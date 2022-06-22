@@ -29,7 +29,7 @@ away from the page as they may lose their changes
 				<input name="original_publish" type="hidden" id="original_publish<?php echo esc_attr( $bottom ); ?>" value="<?php esc_attr_e( 'Publish', 'page-generator-pro' ); ?>" />
 				<?php
 				submit_button(
-					__( 'Save', 'page-generator-pro' ),
+					__( 'Save', 'page-generator' ),
 					'primary button-large',
 					'publish',
 					false,
@@ -45,7 +45,7 @@ away from the page as they may lose their changes
 				<input name="original_publish" type="hidden" id="original_publish<?php echo esc_attr( $bottom ); ?>" value="<?php esc_attr_e( 'Update', 'page-generator-pro' ); ?>" />
 				<?php
 				submit_button(
-					__( 'Save', 'page-generator-pro' ),
+					__( 'Save', 'page-generator' ),
 					'primary button-large',
 					'publish',
 					false,
@@ -64,7 +64,7 @@ away from the page as they may lose their changes
 
 				<?php
 				submit_button(
-					__( 'Test', 'page-generator-pro' ),
+					__( 'Test', 'page-generator' ),
 					'primary button-large',
 					'test',
 					false,
@@ -86,7 +86,7 @@ away from the page as they may lose their changes
 			<div class="wpzinc-option">
 				<?php
 				submit_button(
-					__( 'Generate via Browser', 'page-generator-pro' ),
+					__( 'Generate via Browser', 'page-generator' ),
 					'primary button-large margin-bottom',
 					'generate',
 					false,

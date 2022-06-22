@@ -76,7 +76,7 @@ class Page_Generator {
         $this->plugin->review_name       = 'page-generator';
         $this->plugin->review_notice     = sprintf(
             /* translators: Plugin Name */
-            __( 'Thanks for using %s to generate content!', 'page-generator-pro' ),
+            __( 'Thanks for using %s to generate content!', 'page-generator' ),
             $this->plugin->displayName
         );
 

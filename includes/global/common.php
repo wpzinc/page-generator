@@ -49,9 +49,9 @@ class Page_Generator_Pro_Common {
 
 		// Get systems.
 		$systems = array(
-			'browser' => __( 'Browser', 'page-generator-pro' ),
-			'cron'    => __( 'Server', 'page-generator-pro' ),
-			'cli'     => __( 'WP-CLI', 'page-generator-pro' ),
+			'browser' => __( 'Browser', 'page-generator' ),
+			'cron'    => __( 'Server', 'page-generator' ),
+			'cli'     => __( 'WP-CLI', 'page-generator' ),
 		);
 
 		/**
@@ -233,11 +233,11 @@ class Page_Generator_Pro_Common {
 
 		// Get statuses.
 		$statuses = array(
-			'draft'   => __( 'Draft', 'page-generator-pro' ),
-			'future'  => __( 'Scheduled', 'page-generator-pro' ),
-			'pending' => __( 'Pending Review', 'page-generator-pro' ),
-			'private' => __( 'Private', 'page-generator-pro' ),
-			'publish' => __( 'Publish', 'page-generator-pro' ),
+			'draft'   => __( 'Draft', 'page-generator' ),
+			'future'  => __( 'Scheduled', 'page-generator' ),
+			'pending' => __( 'Pending Review', 'page-generator' ),
+			'private' => __( 'Private', 'page-generator' ),
+			'publish' => __( 'Publish', 'page-generator' ),
 		);
 
 		/**

@@ -31,7 +31,7 @@
 		<?php
 		echo sprintf(
 			/* translators: Post Type, Plural (e.g. Posts, Pages) */
-			esc_html__( 'Generates %s for all possible combinations of terms across all keywords used.', 'page-generator-pro' ),
+			esc_html__( 'Generates %s for all possible combinations of terms across all keywords used.', 'page-generator' ),
 			esc_html( $labels['plural'] )
 		);
 		?>
@@ -48,7 +48,7 @@
 			<?php
 			echo sprintf(
 				/* translators: Post Type, Plural */
-				esc_html__( 'No. %s', 'page-generator-pro' ),
+				esc_html__( 'No. %s', 'page-generator' ),
 				esc_html( $labels['plural'] )
 			);
 			?>
@@ -61,7 +61,7 @@
 		<?php
 		echo sprintf(
 			/* translators: %1$s: Post Type, Plural, %2$s: Post Type, Plural */
-			esc_html__( 'The number of %1$s to generate. If zero or blank, all %2$s will be generated.', 'page-generator-pro' ),
+			esc_html__( 'The number of %1$s to generate. If zero or blank, all %2$s will be generated.', 'page-generator' ),
 			esc_html( $labels['plural'] ),
 			esc_html( $labels['plural'] )
 		);

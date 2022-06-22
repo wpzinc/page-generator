@@ -87,8 +87,8 @@ class Page_Generator_Pro_Groups {
 			array(
 				'post_type'    => $this->base->get_class( 'post_type' )->post_type_name,
 				'post_status'  => 'publish',
-				'post_title'   => __( 'Title', 'page-generator-pro' ),
-				'post_content' => __( 'Edit this content, replacing it with the content you want to generate. You can use {keywords} here too.  Need help? Visit <a href="https://www.wpzinc.com/documentation/page-generator-pro/generate-content/" rel="nofollow noreferrer noopener" target="_blank">https://www.wpzinc.com/documentation/page-generator-pro/generate-content/</a>', 'page-generator-pro' ),
+				'post_title'   => __( 'Title', 'page-generator' ),
+				'post_content' => __( 'Edit this content, replacing it with the content you want to generate. You can use {keywords} here too.  Need help? Visit <a href="https://www.wpzinc.com/documentation/page-generator-pro/generate-content/" rel="nofollow noreferrer noopener" target="_blank">https://www.wpzinc.com/documentation/page-generator-pro/generate-content/</a>', 'page-generator' ),
 			)
 		);
 
@@ -561,7 +561,7 @@ class Page_Generator_Pro_Groups {
 						'%1$s <a href="%2$s" target="_blank">%3$s</a>',
 						sprintf(
 							/* translators: Number of seconds */
-							__( 'Test Page Generated in %s seconds at ', 'page-generator-pro' ),
+							__( 'Test Page Generated in %s seconds at ', 'page-generator' ),
 							$result['duration']
 						),
 						$result['url'],
@@ -701,7 +701,7 @@ class Page_Generator_Pro_Groups {
 				'page_generator_pro_groups_validate',
 				sprintf(
 					/* translators: Group ID */
-					__( 'Group ID %s does not exist!', 'page-generator-pro' ),
+					__( 'Group ID %s does not exist!', 'page-generator' ),
 					$id
 				)
 			);
@@ -746,7 +746,7 @@ class Page_Generator_Pro_Groups {
 				'page_generator_pro_groups_validate_save',
 				sprintf(
 					/* translators: %1$s: Comma separated list of required Group Statuses (e.g. publish,future), %2$s: Current Group Status (e.g. draft), %3$s: URL to Edit Content Group screen */
-					__( 'The Group\'s Status must be set to one of <strong>%1$s</strong> for Generation to function correctly. Right now, it\'s set as <strong>%2$s</strong>. Please <a href="%3$s">edit the Group</a> as necessary.', 'page-generator-pro' ),
+					__( 'The Group\'s Status must be set to one of <strong>%1$s</strong> for Generation to function correctly. Right now, it\'s set as <strong>%2$s</strong>. Please <a href="%3$s">edit the Group</a> as necessary.', 'page-generator' ),
 					implode( ', ', $required_group_statuses ),
 					get_post_status( $id ),
 					admin_url( 'post.php?post=' . $id . '&action=edit' )
@@ -787,8 +787,8 @@ class Page_Generator_Pro_Groups {
 
 		// Get statuses.
 		$statuses = array(
-			'private' => __( 'Private', 'page-generator-pro' ),
-			'publish' => __( 'Publish', 'page-generator-pro' ),
+			'private' => __( 'Private', 'page-generator' ),
+			'publish' => __( 'Publish', 'page-generator' ),
 		);
 
 		/**
@@ -850,7 +850,7 @@ class Page_Generator_Pro_Groups {
 				'page_generator_pro_groups_test',
 				sprintf(
 					/* translators: Group ID */
-					__( 'Group ID %s does not exist!', 'page-generator-pro' ),
+					__( 'Group ID %s does not exist!', 'page-generator' ),
 					$id
 				)
 			);

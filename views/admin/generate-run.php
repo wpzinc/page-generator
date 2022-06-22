@@ -15,7 +15,7 @@
 			<?php
 			echo sprintf(
 				'%1$s &quot;%2$s&quot;',
-				esc_html__( 'Generating', 'page-generator-pro' ),
+				esc_html__( 'Generating', 'page-generator' ),
 				esc_html( $settings['title'] )
 			);
 			?>
@@ -29,7 +29,7 @@
 			<?php
 			echo sprintf(
 				'%s %s %s',
-				esc_html__( 'Please be patient while content is generated. This can take a while if you have a lot of Pages to generate, and/or you are using Page Generator Shortcodes.', 'page-generator-pro' ),
+				esc_html__( 'Please be patient while content is generated. This can take a while if you have a lot of Pages to generate, and/or you are using Page Generator Shortcodes.', 'page-generator' ),
 				'<a href="' . esc_attr( $this->base->plugin->documentation_url ) . '/generate/#page-generation" target="_blank">' . esc_html__( 'Read the Documentation', 'page-generator-pro' ) . '</a>',
 				esc_html__( 'to understand why.', 'page-generator-pro' )
 			);

@@ -31,7 +31,7 @@
 	<form action="admin.php" method="get" id="posts-filter">
 		<input type="hidden" name="page" value="page-generator-keywords" />
 		<?php
-		$keywords_table->search_box( esc_html__( 'Search', 'page-generator-pro' ), 'page-generator-pro' );
+		$keywords_table->search_box( esc_html__( 'Search', 'page-generator' ), 'page-generator-pro' );
 		$keywords_table->display();
 		?>
 	</form>
