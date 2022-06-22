@@ -863,7 +863,6 @@ class Page_Generator_Pro_Admin {
 
 		// Enqueue and localize Generate Browser script with the necessary parameters for synchronous AJAX requests.
 		wp_enqueue_script( $this->base->plugin->name . '-generate-browser' );
-		wp_localize_script( $this->base->plugin->name . '-generate-browser', 'page_generator_pro', $this->base->licensing->get_parameters() );
 		wp_localize_script(
 			$this->base->plugin->name . '-generate-browser',
 			'page_generator_pro_generate_browser',

@@ -364,10 +364,6 @@ class Page_Generator_Pro_Generate {
 		 */
 		$settings = apply_filters( 'page_generator_pro_generate_content_settings', $settings, $group_id, $index, $test_mode );
 
-		// Process Shortcodes.
-		// Blocks above that have been converted into Shortcodes will now be processed.
-		array_walk_recursive( $settings, array( $this, 'process_shortcodes_in_array' ) );
-
 		// Build Post args.
 		$post_args = array(
 			'post_type'      => $settings['type'],
@@ -479,22 +475,6 @@ class Page_Generator_Pro_Generate {
 		update_post_meta( $post_id, '_page_generator_pro_group', $group_id );
 		update_post_meta( $post_id, '_page_generator_pro_index', $index );
 
-		// Assign Attachments that may have been created by shortcode processing to the generated Post.
-		// We do this here as shortcodes are processed before a Post is generated, therefore any Attachments
-		// created won't have a Post ID.
-		$result = $this->assign_attachments_to_post_id( $post_id, $group_id, $index );
-		if ( is_wp_error( $result ) && defined( 'PAGE_GENERATOR_PRO_DEBUG' ) && PAGE_GENERATOR_PRO_DEBUG === true ) {
-			return $this->generate_error_return(
-				$result,
-				$group_id,
-				$post_id,
-				$settings['type'],
-				$test_mode,
-				$system,
-				$keywords_terms
-			);
-		}
-
 		// Store Page Template.
 		$this->set_page_template( $post_id, $group_id, $settings, $post_args );
 
@@ -503,7 +483,7 @@ class Page_Generator_Pro_Generate {
 
 		// Request that the user review the Plugin, if we're not in Test Mode. Notification displayed later,
 		// can be called multiple times and won't re-display the notification if dismissed.
-		if ( ! $test_mode && ! $this->base->licensing->has_feature( 'whitelabelling' ) ) {
+		if ( ! $test_mode ) {
 			$this->base->dashboard->request_review();
 		}
 
@@ -1330,10 +1310,6 @@ class Page_Generator_Pro_Generate {
 		if ( is_wp_error( $post_ids ) ) {
 			return $post_ids;
 		}
-
-		// Delete Attachments.
-		$this->delete_attachments_by_post_ids( $post_ids, $group_id );
-		$this->delete_featured_image_by_post_ids( $post_ids, $group_id );
 
 		// Delete Posts.
 		foreach ( $post_ids as $post_id ) {

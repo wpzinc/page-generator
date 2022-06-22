@@ -138,6 +138,96 @@ class Page_Generator_Pro_Common {
 	}
 
 	/**
+	 * Returns an array of Post Types supporting the given feature
+	 *
+	 * @since   3.3.9
+	 *
+	 * @param   string $feature    post_type_supports() compatible $feature argument.
+	 * @return  array               Post Types supporting feature
+	 */
+	public function get_post_types_supporting( $feature ) {
+
+		// Get public Post Types.
+		$types = get_post_types(
+			array(
+				'public' => true,
+			),
+			'objects'
+		);
+
+		// Remove excluded Post Types from $types.
+		$excluded_types = $this->get_excluded_post_types();
+		if ( is_array( $excluded_types ) ) {
+			foreach ( $excluded_types as $excluded_type ) {
+				unset( $types[ $excluded_type ] );
+			}
+		}
+
+		// Get some settings we might check.
+		$post_types_templates = $this->base->get_class( 'common' )->get_post_types_templates();
+
+		foreach ( $types as $post_type => $type ) {
+			// Some features aren't returned by post_type_supports().
+			switch ( $feature ) {
+				case 'hierarchical':
+					// Remove this Post Type if it doesn't support this feature.
+					if ( ! $type->hierarchical ) {
+						unset( $types[ $post_type ] );
+					}
+					break;
+
+				case 'templates':
+					// Remove this Post Type if it doesn't have any Templates.
+					if ( ! $post_types_templates ) {
+						unset( $types[ $post_type ] );
+						break;
+					}
+					if ( ! isset( $post_types_templates[ $post_type ] ) ) {
+						unset( $types[ $post_type ] );
+						break;
+					}
+					break;
+
+				case 'taxonomies':
+					// Remove this Post Type if it doesn't have any Taxonomies.
+					if ( ! count( get_object_taxonomies( $post_type ) ) ) {
+						unset( $types[ $post_type ] );
+					}
+					break;
+
+				default:
+					// Remove this Post Type if it doesn't support the feature.
+					if ( ! post_type_supports( $post_type, $feature ) ) {
+						unset( $types[ $post_type ] );
+					}
+					break;
+			}
+		}
+
+		// Just get Post Type names.
+		return array_values( array_keys( $types ) );
+
+	}
+
+	/**
+	 * Improved version of post_type_supports() that can detect whether the Post Type supports:
+	 * - Hierarchical structure
+	 * - Templates
+	 * - Taxonomies
+	 *
+	 * @since   3.3.9
+	 *
+	 * @param   string $post_type  Post Type.
+	 * @param   string $feature    Feature.
+	 * @return  bool                Feature supported by Post Type
+	 */
+	public function post_type_supports( $post_type, $feature ) {
+
+		return in_array( $post_type, $this->get_post_types_supporting( $feature ), true );
+
+	}
+
+	/**
 	 * Helper method to retrieve excluded Post Types
 	 *
 	 * @since   1.1.3

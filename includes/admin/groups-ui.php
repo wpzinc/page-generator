@@ -397,15 +397,10 @@ class Page_Generator_Pro_Groups_UI {
 	 *
 	 * @param   WP_Post $post   Custom Post Type's Post.
 	 */
-	public function output_meta_box_upgrade( $post ) {
-
-		// Get settings.
-		if ( count( $this->settings ) === 0 ) {
-			$this->settings = $this->base->get_class( 'groups' )->get_settings( $post->ID );
-		}
+	public function output_meta_box_upgrade( $post ) { // phpcs:ignore
 
 		// Load view.
-		include $this->base->plugin->folder . '/_modules/dashboard/views/footer-upgrade-embedded.php';
+		include $this->base->plugin->folder . '/_modules/dashboard/views/footer-upgrade.php';
 
 	}
 
