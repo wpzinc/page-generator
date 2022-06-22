@@ -581,7 +581,10 @@ class Page_Generator_Pro_Groups_UI {
 		}
 
 		// Save the Group's Settings.
-		$result = $this->base->get_class( 'groups' )->save( $_POST[ $this->base->plugin->name ], $post_id );
+		$result = $this->base->get_class( 'groups' )->save(
+			$this->base->get_class( 'common' )->recursive_sanitize_text_field( $_POST[ $this->base->plugin->name ] ),
+			$post_id
+		);
 
 		// Get action.
 		$action = $this->get_action();

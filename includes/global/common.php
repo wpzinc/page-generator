@@ -566,4 +566,26 @@ class Page_Generator_Pro_Common {
 
 	}
 
+	/**
+	 * Recursively sanitizes a given multidimensional array.
+	 *
+	 * @since   1.6.5
+	 *
+	 * @param   array $array  Values.
+	 * @return  array           Sanitized values
+	 */
+	public function recursive_sanitize_text_field( $array ) {
+
+		foreach ( $array as $key => &$value ) {
+			if ( is_array( $value ) ) {
+				$value = $this->recursive_sanitize_text_field( $value );
+			} else {
+				$value = sanitize_text_field( $value );
+			}
+		}
+
+		return $array;
+
+	}
+
 }

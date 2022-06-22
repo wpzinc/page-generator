@@ -410,17 +410,20 @@ class Page_Generator_Pro_Admin {
 			 */
 			case 'form':
 				// Get keyword from POST data or DB.
-				if ( isset( $_POST['keyword'] ) ) { // phpcs:ignore
-					// Get keyword from POST data.
-					$keyword = array(
-						'keyword' => sanitize_text_field( $_POST['keyword'] ), // phpcs:ignore
-						'source'  => sanitize_text_field( $_POST['source'] ), // phpcs:ignore
-						'local'   => array(
-							'data' => sanitize_textarea_field( $_POST['local']['data'] ), // phpcs:ignore
-						),
-					);
+				if ( isset( $_POST['nonce'] ) ) { // phpcs:ignore
+					if ( wp_verify_nonce( $_POST['nonce'], 'save_keyword' ) ) {
+						// Get keyword from POST data.
+						$keyword = array(
+							'keyword' => sanitize_text_field( $_POST['keyword'] ),
+							'source'  => sanitize_text_field( $_POST['source'] ),
+							'local'   => array(
+								'data' => sanitize_textarea_field( $_POST['local']['data'] ),
+							),
+						);
+					}
 				} elseif ( isset( $_GET['id'] ) ) { // phpcs:ignore
 					// Editing an existing Keyword.
+					// Get Keyword from DB.
 					$keyword = $this->base->get_class( 'keywords' )->get_by_id( absint( $_GET['id'] ) ); // phpcs:ignore
 				}
 
