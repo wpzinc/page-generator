@@ -1,310 +1,332 @@
 <?php
 /**
- * Determines which Plugin Screen the User is on
- * 
- * @package Page Generator Pro
- * @author  Tim Carr
+ * Screen Class
+ *
+ * @package Page_Generator_Pro
+ * @author WP Zinc
+ */
+
+/**
+ * Safely determines which screen a request is for,
+ * even if get_current_screen() isn't available.
+ *
+ * @package Page_Generator_Pro
+ * @author  WP Zinc
  * @version 2.2.4
  */
 class Page_Generator_Pro_Screen {
 
-    /**
-     * Holds the base object.
-     *
-     * @since   2.2.4
-     *
-     * @var     object
-     */
-    public $base;
+	/**
+	 * Holds the base object.
+	 *
+	 * @since   2.2.4
+	 *
+	 * @var     object
+	 */
+	public $base;
 
-    /**
-     * Constructor
-     * 
-     * @since   2.2.4
-     *
-     * @param   object $base    Base Plugin Class
-     */
-    public function __construct( $base ) {
+	/**
+	 * Constructor
+	 *
+	 * @since   2.2.4
+	 *
+	 * @param   object $base    Base Plugin Class.
+	 */
+	public function __construct( $base ) {
 
-        // Store base class
-        $this->base = $base;
+		// Store base class.
+		$this->base = $base;
 
-    }
+	}
 
-    /**
-     * Returns an array comprising of a simplified screen and section that we are viewing
-     * within the WordPress Administration interface.
-     *
-     * Non-Plugin screens will be returned if we need to hook into them.
-     *
-     * For example:
-     * [
-     *  'screen' => 'keywords',
-     *  'section' => 'generate_locations',
-     * ]
-     *
-     * Returns false if we're not on a screen that the Plugin needs to interact with.
-     *
-     * @since   2.2.4
-     *
-     * @return  array   Screen and Section (if false, we're not on this Plugin's screens)
-     */
-    public function get_current_screen() {
+	/**
+	 * Returns an array comprising of a simplified screen and section that we are viewing
+	 * within the WordPress Administration interface.
+	 *
+	 * Non-Plugin screens will be returned if we need to hook into them.
+	 *
+	 * For example:
+	 * [
+	 *  'screen' => 'keywords',
+	 *  'section' => 'generate_locations',
+	 * ]
+	 *
+	 * Returns false if we're not on a screen that the Plugin needs to interact with.
+	 *
+	 * @since   2.2.4
+	 *
+	 * @return  array   Screen and Section (if false, we're not on this Plugin's screens)
+	 */
+	public function get_current_screen() {
 
-        global $post;
+		global $post;
 
-        // Assume we're not on a plugin screen
-        $result = array(
-            'screen'  => false,
-            'section' => false,
-        );
+		// Assume we're not on a plugin screen.
+		$result = array(
+			'screen'  => false,
+			'section' => false,
+		);
 
-        /**
-         * Returns an array comprising of a simplified screen and section that we are viewing
-         * within the WordPress Administration interface, before we've performed any checks.
-         *
-         * This is useful for frontend Page Builders and AJAX requests where get_current_screen()
-         * below won't return anything.
-         *
-         * @since   2.5.7
-         *
-         * @param   array       $result     Screen and Section
-         * @return  array                   Screen and Section
-         */
-        $result = apply_filters( 'page_generator_pro_screen_get_current_screen_before', $result );
+		/**
+		 * Returns an array comprising of a simplified screen and section that we are viewing
+		 * within the WordPress Administration interface, before we've performed any checks.
+		 *
+		 * This is useful for frontend Page Builders and AJAX requests where get_current_screen()
+		 * below won't return anything.
+		 *
+		 * @since   2.5.7
+		 *
+		 * @param   array       $result     Screen and Section.
+		 */
+		$result = apply_filters( 'page_generator_pro_screen_get_current_screen_before', $result );
 
-        // If we're on the frontend, check if we're editing a Content Group
-        if ( ! is_admin() ) {
-            // Editing a Content Group
-            if ( ! is_null( $post ) && $this->base->plugin->name == get_post_type( $post ) ) {
-                return array(
-                    'screen'    => 'content_groups',
-                    'section'   => 'edit',
-                );
-            }
-            
-            if ( isset( $_SERVER['REQUEST_URI'] ) && stripos( $_SERVER['REQUEST_URI'], $this->base->plugin->name ) !== false ) {
-                return array(
-                    'screen'    => 'content_groups',
-                    'section'   => 'edit',
-                );
-            }
+		// If we're on the frontend, check if we're editing a Content Group.
+		if ( ! is_admin() ) {
+			// Editing a Content Group.
+			if ( ! is_null( $post ) && $this->base->plugin->name === get_post_type( $post ) ) {
+				return array(
+					'screen'  => 'content_groups',
+					'section' => 'edit',
+				);
+			}
 
-            // Not editing a Content Group
-            return $result;
-        }
+			// Editing a Content Group on the frontend.
+			if ( isset( $_SERVER['REQUEST_URI'] ) && stripos( $_SERVER['REQUEST_URI'], $this->base->plugin->name ) !== false ) {
+				return array(
+					'screen'  => 'content_groups',
+					'section' => 'edit',
+				);
+			}
 
-        // Bail if we can't determine this
-        if ( ! function_exists( 'get_current_screen' ) ) {
-            return $result;
-        }
+			// Not editing a Content Group.
+			return $result;
+		}
 
-        // Get screen
-        $screen = get_current_screen();
-        
-        // Get screen ID without Plugin Display Name, which can be edited by whitelabelling
-        $screen_id = str_replace( array(
-            'toplevel_page_', // licensing = page-generator-pro
-            sanitize_title( $this->base->plugin->displayName ) . '_page_',
-        ), '', ( isset( $screen->id ) ? $screen->id : '' )); // was $screen->id
+		// Bail if we can't determine this.
+		if ( ! function_exists( 'get_current_screen' ) ) {
+			return $result;
+		}
 
-        switch ( $screen_id ) {
+		// Get screen.
+		$screen = get_current_screen();
 
-            /**
-             * Settings
-             */
-            case $this->base->plugin->name . '-settings':
-                $result = array(
-                    'screen'    => 'settings',
-                    'section'   => ( isset( $_REQUEST['tab'] ) ? str_replace( $this->base->plugin->name . '-', '', sanitize_text_field( $_REQUEST['tab'] ) ) : 'general' ),
-                );
-                break;
+		// Get screen ID without Plugin Display Name, which can be edited by whitelabelling.
+		$screen_id = str_replace(
+			array(
+				'toplevel_page_', // licensing = page-generator-pro.
+				sanitize_title( $this->base->plugin->displayName ) . '_page_',
+			),
+			'',
+			( isset( $screen->id ) ? $screen->id : '' )
+		); // was $screen->id.
 
-            /**
-             * Keywords
-             */
-            case $this->base->plugin->name . '-keywords':
-                $cmd = ( isset( $_REQUEST['cmd'] ) ? sanitize_text_field( $_REQUEST['cmd'] ) : false );
-                switch ( $cmd ) {
-                    // Keywords WP_List_Table
-                    case false:
-                        $result = array(
-                            'screen'    => 'keywords',
-                            'section'   => 'wp_list_table',
-                        );
-                        break;
+		switch ( $screen_id ) {
 
-                    // Add/Edit
-                    case 'form':
-                        $result = array(
-                            'screen'    => 'keywords',
-                            'section'   => 'edit',
-                        );
-                        break;
+			/**
+			 * Settings
+			 */
+			case $this->base->plugin->name . '-settings':
+				$result = array(
+					'screen'  => 'settings',
+					'section' => ( isset( $_REQUEST['tab'] ) ? str_replace( $this->base->plugin->name . '-', '', sanitize_text_field( $_REQUEST['tab'] ) ) : 'general' ), // phpcs:ignore
+				);
+				break;
 
-                    // Import CSV
-                    case 'form-import-csv':
-                        $result = array(
-                            'screen'    => 'keywords',
-                            'section'   => 'import_csv',
-                        );
-                        break;
+			/**
+			 * Groups Directory
+			 */
+			case $this->base->plugin->name . '-groups-directory':
+				$result = array(
+					'screen'  => 'groups-directory',
+					'section' => 'groups-directory',
+				);
+				break;
 
-                    // Generate Locations
-                    case 'form-locations':
-                        $result = array(
-                            'screen'    => 'keywords',
-                            'section'   => 'generate_locations',
-                        );
-                        break;
+			/**
+			 * Keywords
+			 */
+			case $this->base->plugin->name . '-keywords':
+				$cmd = ( isset( $_REQUEST['cmd'] ) ? sanitize_text_field( $_REQUEST['cmd'] ) : false ); // phpcs:ignore
+				switch ( $cmd ) {
+					// Keywords WP_List_Table.
+					case false:
+						$result = array(
+							'screen'  => 'keywords',
+							'section' => 'wp_list_table',
+						);
+						break;
 
-                    // Generate Phone Area Codes
-                    case 'form-phone':
-                        $result = array(
-                            'screen'    => 'keywords',
-                            'section'   => 'generate_phone_area_codes',
-                        );
-                        break;
-                }
-                break;
+					// Add/Edit.
+					case 'form':
+						$result = array(
+							'screen'  => 'keywords',
+							'section' => 'edit',
+						);
+						break;
 
-            /**
-             * Content: Groups: Table
-             */
-            case 'edit-' . $this->base->plugin->name:
-                switch ( $screen->action ) {
-                    // WP_List_Table
-                    case '':
-                        $result = array(
-                            'screen'    => 'content_groups',
-                            'section'   => 'wp_list_table',
-                        );
-                        break;
-                }
-                break;
+					// Import File.
+					case 'form-import-file':
+						$result = array(
+							'screen'  => 'keywords',
+							'section' => 'import_file',
+						);
+						break;
 
-            /**
-             * Licensing
-             * Content: Groups: Add/Edit
-             */
-            case $this->base->plugin->name:
-            case 'page-generator-pro':
-                switch ( $screen->base ) {
-                    case 'toplevel_page_' . $this->base->plugin->name:
-                        $result = array(
-                            'screen'    => 'licensing',
-                            'section'   => 'licensing',
-                        );
-                        break;
+					// Generate Locations.
+					case 'form-locations':
+						$result = array(
+							'screen'  => 'keywords',
+							'section' => 'generate_locations',
+						);
+						break;
 
-                    case 'post':
-                        $result = array(
-                            'screen'    => 'content_groups',
-                            'section'   => 'edit',
-                        );
-                        break;
-                }
-                break;
+					// Generate Phone Area Codes.
+					case 'form-phone':
+						$result = array(
+							'screen'  => 'keywords',
+							'section' => 'generate_phone_area_codes',
+						);
+						break;
+				}
+				break;
 
-            /**
-             * Content: Terms: Add/Edit
-             */
-            case 'edit-page-generator-tax':
-                switch ( $screen->base ) {
-                    // WP_List_Table
-                    case 'edit-tags':
-                        $result = array(
-                            'screen'    => 'content_terms',
-                            'section'   => 'wp_list_table',
-                        );
-                        break;
+			/**
+			 * Content: Groups: Table
+			 */
+			case 'edit-' . $this->base->plugin->name:
+				switch ( $screen->action ) {
+					// WP_List_Table.
+					case '':
+						$result = array(
+							'screen'  => 'content_groups',
+							'section' => 'wp_list_table',
+						);
+						break;
+				}
+				break;
 
-                    // Edit
-                    case 'term':
-                        $result = array(
-                            'screen'    => 'content_terms',
-                            'section'   => 'edit',
-                        );
-                        break;
-                }
-                break;
+			/**
+			 * Licensing
+			 * Content: Groups: Add/Edit
+			 */
+			case $this->base->plugin->name:
+			case 'page-generator-pro':
+				switch ( $screen->base ) {
+					case 'toplevel_page_' . $this->base->plugin->name:
+						$result = array(
+							'screen'  => 'licensing',
+							'section' => 'licensing',
+						);
+						break;
 
-            /**
-             * Content: Generate
-             */
-            case $this->base->plugin->name . '-generate':
-                $result = array(
-                    'screen'    => 'generate',
-                    'section'   => 'generate',
-                );
-                break;
+					case 'post':
+						$result = array(
+							'screen'  => 'content_groups',
+							'section' => 'edit',
+						);
+						break;
+				}
+				break;
 
-            /**
-             * Logs
-             */
-            case $this->base->plugin->name . '-logs':
-                $result = array(
-                    'screen'    => 'logs',
-                    'section'   => 'logs',
-                );
-                break;
+			/**
+			 * Content: Terms: Add/Edit
+			 */
+			case 'edit-page-generator-tax':
+				switch ( $screen->base ) {
+					// WP_List_Table.
+					case 'edit-tags':
+						$result = array(
+							'screen'  => 'content_terms',
+							'section' => 'wp_list_table',
+						);
+						break;
 
-            /**
-             * Posts, Pages
-             */
-            case 'edit-post':
-            case 'edit-page':
-                $result = array(
-                    'screen'    => 'post',
-                    'section'   => 'wp_list_table',
-                );
-                break;
+					// Edit.
+					case 'term':
+						$result = array(
+							'screen'  => 'content_terms',
+							'section' => 'edit',
+						);
+						break;
+				}
+				break;
 
-            case 'post':
-            case 'page':
-                $result = array(
-                    'screen'    => 'post',
-                    'section'   => 'edit',
-                );
-                break;
+			/**
+			 * Content: Generate
+			 */
+			case $this->base->plugin->name . '-generate':
+				$result = array(
+					'screen'  => 'generate',
+					'section' => 'generate',
+				);
+				break;
 
-            /**
-             * Appearance > Customize
-             */
-            case 'customize':
-                $result = array(
-                    'screen'    => 'appearance',
-                    'section'   => 'customize',
-                );
-                break;
+			/**
+			 * Logs
+			 */
+			case $this->base->plugin->name . '-logs':
+				$result = array(
+					'screen'  => 'logs',
+					'section' => 'logs',
+				);
+				break;
 
-            /**
-             * Settings > Reading
-             */
-            case 'options-reading':
-                $result = array(
-                    'screen'    => 'options',
-                    'section'   => 'reading',
-                );
-                break;
-        }
+			/**
+			 * Posts, Pages
+			 */
+			case 'edit-post':
+			case 'edit-page':
+				$result = array(
+					'screen'  => 'post',
+					'section' => 'wp_list_table',
+				);
+				break;
 
-        /**
-         * Returns an array comprising of a simplified screen and section that we are viewing
-         * within the WordPress Administration interface.
-         *
-         * @since   2.5.7
-         *
-         * @param   array       $result     Screen and Section
-         * @param   string      $screen_id  Screen
-         * @param   WP_Screen   $screen     WordPress Screen object
-         * @return  array                   Screen and Section
-         */
-        $result = apply_filters( 'page_generator_pro_screen_get_current_screen', $result, $screen_id, $screen );
+			case 'post':
+			case 'page':
+				$result = array(
+					'screen'  => 'post',
+					'section' => 'edit',
+				);
+				break;
 
-        // If here, we couldn't determine the screen
-        return $result;
+			/**
+			 * Appearance > Customize
+			 */
+			case 'customize':
+				$result = array(
+					'screen'  => 'appearance',
+					'section' => 'customize',
+				);
+				break;
 
-    }
+			/**
+			 * Settings > Reading
+			 */
+			case 'options-reading':
+				$result = array(
+					'screen'  => 'options',
+					'section' => 'reading',
+				);
+				break;
+		}
+
+		/**
+		 * Returns an array comprising of a simplified screen and section that we are viewing
+		 * within the WordPress Administration interface.
+		 *
+		 * @since   2.5.7
+		 *
+		 * @param   array       $result     Screen and Section.
+		 * @param   string      $screen_id  Screen.
+		 * @param   WP_Screen   $screen     WordPress Screen object.
+		 * @return  array                   Screen and Section
+		 */
+		$result = apply_filters( 'page_generator_pro_screen_get_current_screen', $result, $screen_id, $screen );
+
+		// If here, we couldn't determine the screen.
+		return $result;
+
+	}
 
 }
