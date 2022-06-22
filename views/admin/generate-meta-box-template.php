@@ -6,19 +6,17 @@
  * @author WP Zinc
  */
 
-// Output Template Options for Post Types.
-foreach ( $post_types_templates as $group_post_type => $templates ) {
-	$template = ( isset( $this->settings['pageTemplate'][ $group_post_type ] ) ? $this->settings['pageTemplate'][ $group_post_type ] : '' );
-	?>
-	<div class="wpzinc-option post-type-conditional <?php echo esc_attr( $group_post_type ); ?>">
-		<div class="full">
-			<select name="<?php echo esc_attr( $this->base->plugin->name ); ?>[pageTemplate][<?php echo esc_attr( $group_post_type ); ?>]" id="<?php echo esc_attr( $group_post_type ); ?>_template" size="1" class="widefat">
-				<option value="default"<?php selected( $template, 'default' ); ?>>
-					<?php esc_attr_e( 'Default Template', 'page-generator' ); ?>
-				</option>
-				<?php page_template_dropdown( $template, $group_post_type ); ?>
-			</select>
-		</div>
+// Output Template Options for Pages.
+$template = ( isset( $this->settings['pageTemplate']['page'] ) ? $this->settings['pageTemplate']['page'] : '' );
+?>
+<div class="wpzinc-option post-type-conditional page>">
+	<div class="full">
+		<select name="<?php echo esc_attr( $this->base->plugin->name ); ?>[pageTemplate][page]" id="page_template" size="1" class="widefat">
+			<option value="default"<?php selected( $template, 'default' ); ?>>
+				<?php esc_attr_e( 'Default Template', 'page-generator' ); ?>
+			</option>
+			<?php page_template_dropdown( $template, 'page' ); ?>
+		</select>
 	</div>
-	<?php
-}
+</div>
+<?php
