@@ -3718,9 +3718,9 @@
       "co" : 0,
       "ft" : 16,
       "ma" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/assets\/css\/admin-min.css",
-      "oF" : 0,
+      "oF" : 1,
       "pg" : 0
     },
     "\/assets\/images\/icons\/logo.png" : {
