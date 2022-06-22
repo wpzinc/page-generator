@@ -14,7 +14,7 @@ $filter_docs = $read_actions_filters->run(
     true, // Extract filters.
     false, // Extract actions.
     'markdown', // Return as HTML/markdown compatible with GitHub.
-    '\'media_library_organizer_', // Only build Docs for actions starting with media_library_organizer_.
+    '\'page_generator_', // Only build Docs for actions starting with page_generator_.
     false, // Change prefix.
     true // Return by file.
 );
@@ -28,7 +28,7 @@ $action_docs = $read_actions_filters->run(
     false, // Extract filters.
     true, // Extract actions.
     'markdown', // Return as HTML/markdown compatible with GitHub.
-    '\'media_library_organizer_', // Only build Docs for actions starting with media_library_organizer_.
+    '\'page_generator_', // Only build Docs for actions starting with page_generator_.
     false, // Change prefix.
     true // Return by file.
 );
