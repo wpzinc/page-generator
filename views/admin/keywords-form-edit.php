@@ -1,221 +1,119 @@
+<?php
+/**
+ * Outputs the form at Keywords > Edit
+ *
+ * @package Page_Generator_Pro
+ * @author WP Zinc
+ */
+
+?>
 <div class="wrap">
-    <h1 class="wp-heading-inline">
-        <?php echo $this->base->plugin->displayName; ?>
+	<h1 class="wp-heading-inline">
+		<?php echo esc_html( $this->base->plugin->displayName ); ?>
 
-        <span>
-        	<?php _e( 'Edit Keyword', 'page-generator' ); ?>
-        </span>
-    </h1>
+		<span>
+			<?php esc_html_e( 'Edit Keyword', 'page-generator' ); ?>
+		</span>
+	</h1>
 
-    <?php
-    // Button Links
-    require_once( 'keywords-links.php' );
-    ?>
-    
-    <div class="wrap-inner">
-	    <div id="poststuff">
-	    	<div id="post-body" class="metabox-holder columns-1">
-	    		<!-- Content -->
-	    		<div id="post-body-content">
-	    			<!-- Form Start -->
-	    			<form class="<?php echo $this->base->plugin->name; ?>" name="post" method="post" action="admin.php?page=page-generator-keywords&amp;cmd=form&id=<?php echo absint( $_GET['id'] ); ?>" enctype="multipart/form-data">		
-		    	    	<div id="normal-sortables" class="meta-box-sortables ui-sortable">                        
-			                <div id="keyword-panel" class="postbox">
-			                	<!-- Keyword ID we're editing -->
-			                	<input type="hidden" name="keywordID" value="<?php echo esc_attr( $keyword['keywordID'] ); ?>" />
-			                	
-			                    <h3 class="hndle"><?php _e( 'Keyword', 'page-generator' ); ?></h3>
-			                    
-			                    <div class="wpzinc-option">
-			                    	<div class="left">
-			                    		<label for="keyword"><?php _e( 'Keyword', 'page-generator' ); ?></label>
-			                    	</div>
-			                    	<div class="right">
-			                    		<input type="text" name="keyword" id="keyword" value="<?php echo ( isset( $_POST['keyword'] ) ? esc_attr( $_POST['keyword'] ) : $keyword['keyword'] ); ?>" class="widefat" />
-			                    	
-				                    	<p class="description">
-				                    		<?php _e( 'A unique template tag name, which can then be used when generating content.', 'page-generator' ); ?>
-				                    	</p>
-			                    	</div>
-			                    </div>
+	<?php
+	// Button Links.
+	require_once 'keywords-links.php';
+	?>
 
-			                    <div class="wpzinc-option">
-			                    	<div class="left">
-			                    		<label for="source"><?php _e( 'Source', 'page-generator' ); ?></label>
-			                    	</div>
-			                    	<div class="right">
-			                    		<div class="right">
-			                    			<?php echo $sources[ $keyword['source'] ]['label']; ?>
-			                    			<input type="hidden" name="source" value="<?php echo $keyword['source']; ?>" />
-			                    			<p class="description">
-			                    				<?php _e( 'Once a Keyword is created, the source cannot be changed. To change the source, delete this Keyword and create a new Keyword with the same name.', 'page-generator' ); ?>
-				                    		</p>
-				                    	</div>
-			                    	</div>
-			                    </div>
+	<div class="wrap-inner">
+		<div id="poststuff">
+			<div id="post-body" class="metabox-holder columns-1">
+				<!-- Content -->
+				<div id="post-body-content">
+					<!-- Form Start -->
+					<form class="<?php echo esc_attr( $this->base->plugin->name ); ?>" name="post" method="post" action="admin.php?page=page-generator-keywords&amp;cmd=form&id=<?php echo absint( $_GET['id'] ); // phpcs:ignore ?>" enctype="multipart/form-data">		
+						<div id="normal-sortables" class="meta-box-sortables ui-sortable">                        
+							<div id="keyword-panel" class="postbox">
+								<!-- Keyword ID we're editing -->
+								<input type="hidden" name="keywordID" value="<?php echo esc_attr( $keyword['keywordID'] ); ?>" />
 
-			                    <?php
-			                    foreach ( $sources[ $keyword['source'] ]['options'] as $option_name => $option ) {
-			                    	// Data, Delimiter and Column are stored outside of options, but are submitted as options
-			                    	$value = '';
-			                    	if ( isset( $_POST[ $keyword['source'] ][ $option_name ] ) ) {
-			                    		$value = $_POST[ $keyword['source'] ][ $option_name ];
+								<h3 class="hndle"><?php esc_html_e( 'Keyword', 'page-generator' ); ?></h3>
 
-			                    		// Sanitize value depending on whether it's for a textarea or not
-				                    	if ( $option['type'] == 'textarea' ) {
-				                    		// Prevents stripping of newlines
-				                    		$value = sanitize_textarea_field( $value );
-				                    	} else {
-				                    		$value = sanitize_text_field( $value );
-				                    	}
-			                    	} elseif ( isset( $_POST[ $option_name ] ) ) {
-			                    		$value = $_POST[ $option_name ];
+								<div class="wpzinc-option">
+									<div class="left">
+										<label for="keyword"><?php esc_html_e( 'Keyword', 'page-generator' ); ?></label>
+									</div>
+									<div class="right">
+										<input type="text" name="keyword" id="keyword" value="<?php echo esc_attr( stripslashes( isset( $_POST['keyword'] ) ? $_POST['keyword'] : $keyword['keyword'] ) ); // phpcs:ignore ?>" class="widefat" />
 
-			                    		// Sanitize value depending on whether it's for a textarea or not
-				                    	if ( $option['type'] == 'textarea' ) {
-				                    		// Prevents stripping of newlines
-				                    		$value = sanitize_textarea_field( $value );
-				                    	} else {
-				                    		$value = sanitize_text_field( $value );
-				                    	}
-			                    	} elseif ( isset( $keyword['options'][ $option_name ] ) ) {
-			                    		$value = $keyword['options'][ $option_name ];
-			                    	} elseif ( isset( $keyword[ $option_name ] ) ) {
-			                    		$value = $keyword[ $option_name ];
-			                    	}
-                    				?>
-                    				<div class="wpzinc-option">
-			                    		<div class="left">
-				                    		<label for="<?php echo $option_name; ?>"><?php echo $option['label']; ?></label>
-				                    	</div>
-				                    	<div class="right">
-				                    		<?php
-				                    		// Output Form Field
-				                    		switch ( $option['type'] ) {
-				                    			case 'text':
-				                    				?>
-				                    				<input type="text" name="<?php echo $keyword['source']; ?>[<?php echo $option_name; ?>]" id="<?php echo $option_name; ?>" value="<?php echo $value; ?>" class="widefat" />
-	                    							<?php
-				                    				break;
+										<p class="description">
+											<?php esc_html_e( 'A unique template tag name, which can then be used when generating content.', 'page-generator' ); ?>
+										</p>
+									</div>
+								</div>
 
-				                    			case 'url':
-				                    				?>
-				                    				<input type="url" name="<?php echo $keyword['source']; ?>[<?php echo $option_name; ?>]" id="<?php echo $option_name; ?>" value="<?php echo $value; ?>" class="widefat" />
-	                    							<?php
-				                    				break;
+								<div class="wpzinc-option">
+									<div class="left">
+										<label for="source"><?php esc_html_e( 'Source', 'page-generator' ); ?></label>
+									</div>
+									<div class="right">
+										<div class="right">
+											<?php echo esc_html( $sources[ $keyword['source'] ]['label'] ); ?>
+											<input type="hidden" name="source" value="<?php echo esc_attr( $keyword['source'] ); ?>" />
+											<p class="description">
+												<?php esc_html_e( 'Once a Keyword is created, the source cannot be changed. To change the source, delete this Keyword and create a new Keyword with the same name.', 'page-generator' ); ?>
+											</p>
+										</div>
+									</div>
+								</div>
 
-				                    			case 'number':
-				                    				?>
-				                    				<input type="number" name="<?php echo $keyword['source']; ?>[<?php echo $option_name; ?>]" id="<?php echo $option_name; ?>" value="<?php echo $value; ?>" class="widefat" />
-	                    							<?php
-				                    				break;
+								<?php
+								// Define source name variable for keywords-form-field.php.
+								$source_name = $keyword['source'];
 
-				                    			case 'toggle':
-				                    				?>
-				                    				<input type="checkbox" name="<?php echo $keyword['source']; ?>[<?php echo $option_name; ?>]" id="<?php echo $option_name; ?>" value="1"<?php echo ( $value ? ' checked' : '' ); ?> />
-	                    							<?php
-				                    				break;
+								foreach ( $sources[ $keyword['source'] ]['options'] as $option_name => $option ) {
+									// Data, Delimiter and Column are stored outside of options, but are submitted as options.
+									$value = '';
+									if ( isset( $_POST[ $keyword['source'] ][ $option_name ] ) ) { // phpcs:ignore
+										// Sanitize value depending on whether it's for a textarea or not.
+										if ( $option['type'] === 'textarea' ) {
+											// Prevents stripping of newlines.
+											$value = sanitize_textarea_field( $_POST[ $keyword['source'] ][ $option_name ] ); // phpcs:ignore
+										} else {
+											$value = sanitize_text_field( $_POST[ $keyword['source'] ][ $option_name ] ); // phpcs:ignore
+										}
+									} elseif ( isset( $_POST[ $option_name ] ) ) { // phpcs:ignore
+										// Sanitize value depending on whether it's for a textarea or not.
+										if ( $option['type'] === 'textarea' ) {
+											// Prevents stripping of newlines.
+											$value = sanitize_textarea_field( $_POST[ $option_name ] ); // phpcs:ignore
+										} else {
+											$value = sanitize_text_field( $_POST[ $option_name ] ); // phpcs:ignore
+										}
+									} elseif ( isset( $keyword['options'][ $option_name ] ) ) {
+										$value = $keyword['options'][ $option_name ];
+									} elseif ( isset( $keyword[ $option_name ] ) ) {
+										$value = $keyword[ $option_name ];
+									}
 
-				                    			case 'textarea':
-				                    				?>
-				                    				<textarea name="<?php echo $keyword['source']; ?>[<?php echo $option_name; ?>]" id="<?php echo $option_name; ?>" rows="10" class="widefat no-wrap" style="height:300px"><?php echo esc_textarea( $value ); ?></textarea>
-	                    							<?php
-				                    				break;
+									// Output form field.
+									include 'keywords-form-field.php';
+								}
 
-				                    			case 'file':
-				                    				?>
-				                    				<input type="file" name="<?php echo $keyword['source']; ?>[<?php echo $option_name; ?>]" id="<?php echo $option_name; ?>" />
-				                    				<?php
-				                    				break;
-
-				                    			case 'select':
-				                    				?>
-				                    				<select name="<?php echo $keyword['source']; ?>[<?php echo $option_name; ?>]" size="1">
-						                    			<?php
-						                    			foreach ( $option['values'] as $key => $label ) {
-						                    				?>
-						                    				<option value="<?php echo $key; ?>"<?php selected( $key, $value ); ?>><?php echo $label; ?></option>
-						                    				<?php
-						                    			}
-						                    			?>
-						                    		</select>
-						                    		<?php
-				                    				break;
-
-				                    			case 'media_library':
-				                    				$file = get_attached_file( $value );
-				                    				?>
-				                    				<button class="button button-secondary wpzinc-media-library-image-insert" data-input="<?php echo $option_name; ?>_input" data-output="<?php echo $option_name; ?>_output" data-file-type="<?php echo $option['file_type']; ?>">
-								                        <?php _e( 'Choose File from Media Library', 'page-generator' ); ?>
-								                    </button>
-								                    <input type="hidden" id="<?php echo $option_name; ?>_input" name="<?php echo $keyword['source']; ?>[<?php echo $option_name; ?>]" value="<?php echo $value; ?>" />
-								                    <div id="<?php echo $option_name; ?>_output">
-								                    	<a href="post.php?post=<?php echo $value; ?>&action=edit" target="_blank">
-								                    		<?php echo basename( $file ); ?>
-								                    	</a>
-								                    </div>
-				                    				<?php
-				                    				break;
-
-				                    			case 'preview':
-				                    				?>
-				                    				<table class="page-generator-pro-keywords-table widefat striped" style="width:100%" data-keyword-id="<?php echo $keyword['keywordID']; ?>">
-				                    					<thead>
-				                    						<tr>
-				                    							<?php
-				                    							foreach ( $keyword['columnsArr'] as $column ) {
-				                    								?>
-				                    								<th><?php echo $column; ?></th>
-				                    								<?php
-				                    							}
-				                    							?>
-				                    						</tr>
-				                    					</thead>
-				                    				</table>
-				                    				<?php
-				                    				break;
-				                    		}
-
-				                    		// Output Description
-				                    		if ( isset( $option['description'] ) ) {
-				                    			?>
-				                    			<p class="description">
-				                    				<?php
-				                    				if ( is_array( $option['description'] ) ) {
-				                    					echo implode( '<br />', $option['description'] );
-				                    				} else {
-				                    					echo $option['description'];
-				                    				}
-				                    				?>
-				                    			</p>
-				                    			<?php
-				                    		}
-				                    		?>
-				                    	</div>
-			                    	</div>
-                    				<?php
-			                    }
-			                    ?>
-
-			                    <?php
-								// Upgrade Notice
+								// Upgrade Notice.
 								if ( class_exists( 'Page_Generator' ) ) {
-								    require( $this->base->plugin->folder . 'views/admin/keywords-form-upgrade.php' );
+									require $this->base->plugin->folder . 'views/admin/keywords-form-upgrade.php';
 								}
 								?>
 
-			                    <div class="wpzinc-option">
-		                    		<?php wp_nonce_field( 'save_keyword', $this->base->plugin->name . '_nonce' ); ?>
-		                			<input type="submit" name="submit" value="<?php _e( 'Save', 'page-generator' ); ?>" class="button button-primary" />
-			                    </div>
-			                </div>
+								<div class="wpzinc-option">
+									<?php wp_nonce_field( 'save_keyword', 'nonce' ); ?>
+									<input type="submit" name="submit" value="<?php esc_attr_e( 'Save', 'page-generator' ); ?>" class="button button-primary" />
+								</div>
+							</div>
 						</div>
 						<!-- /normal-sortables -->
-				    </form>
-				    <!-- /form end -->
-	    		</div>
-	    		<!-- /post-body-content -->
-	    	</div>
+					</form>
+					<!-- /form end -->
+				</div>
+				<!-- /post-body-content -->
+			</div>
 		</div>  
 	</div>     
 </div>

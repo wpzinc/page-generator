@@ -1,94 +1,118 @@
 <?php
 /**
- * Keywords Table class
- * 
+ * Keywords WP_List_Table Class
+ *
  * @package Page_Generator_Pro
- * @author 	Tim Carr
+ * @author WP Zinc
+ */
+
+/**
+ * Controls the Keywords WP_List_Table.
+ *
+ * @package Page_Generator_Pro
+ * @author  WP Zinc
  * @version 1.0.0
  */
 class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 
-    /**
-     * Holds the base class object.
-     *
-     * @since 	1.3.8
-     *
-     * @var 	object
-     */
-    public $base;
+	/**
+	 * Holds the base class object.
+	 *
+	 * @since   1.3.8
+	 *
+	 * @var     object
+	 */
+	public $base;
 
-    /**
-     * Constructor.
-     *
-     * @since   1.0.0
-     *
-     * @param   object $base    Base Plugin Class
-     */
-    public function __construct( $base ) {
+	/**
+	 * Constructor.
+	 *
+	 * @since   1.0.0
+	 *
+	 * @param   object $base    Base Plugin Class.
+	 */
+	public function __construct( $base ) {
 
-        // Store base class
-        $this->base = $base;
+		// Store base class.
+		$this->base = $base;
 
-        parent::__construct( array(
-			'singular'	=> 'keyword', 	// Singular label
-			'plural' 	=> 'keywords', 	// plural label, also this well be one of the table css class
-			'ajax'		=> false 		// We won't support Ajax for this table
-		));
+		parent::__construct(
+			array(
+				'singular' => 'keyword',   // Singular label.
+				'plural'   => 'keywords',  // plural label, also this well be one of the table css class.
+				'ajax'     => false,        // We won't support Ajax for this table.
+			)
+		);
 
-    }
-	
+	}
+
 	/**
 	 * Defines the message to display when no items exist in the table
 	 *
-	 * @since 	1.0.0
-	 *
-	 * @return 	No Items Message
+	 * @since   1.0.0
 	 */
 	public function no_items() {
 
-		_e( 'Keywords are used to produce unique content for each Page that is generated.', 'page-generator' );
-		echo ( '<br /><a href="admin.php?page=' . $this->base->plugin->name . '-keywords&cmd=form" class="button">' . __( 'Create first keyword.', 'page-generator' ).'</a>' );
-	
+		// If search terms are supplied, show a message.
+		if ( ! empty( $this->get_search() ) ) {
+			echo sprintf(
+				'%1$s <strong>%2$s</strong>',
+				esc_html__( 'No keywords found matching the search term', 'page-generator' ),
+				esc_html( $this->get_search() )
+			);
+			echo ( '<br /><a href="admin.php?page=' . $this->base->plugin->name . '-keywords" class="button">' . __( 'View all keywords', 'page-generator' ) . '</a>' ); // phpcs:ignore
+
+			return;
+		}
+
+		// No Keywords exist in the database table.
+		esc_html_e( 'Keywords are used to produce unique content for each Page, Post or Custom Post Type that is generated.', 'page-generator' );
+		echo ( '<br /><a href="admin.php?page=' . $this->base->plugin->name . '-keywords&cmd=form" class="button">' . __( 'Create first keyword.', 'page-generator' ) . '</a>' ); // phpcs:ignore
+
 	}
-	 
+
 	/**
- 	 * Define the columns that are going to be used in the table
- 	 *
- 	 * @since 	1.0.0
- 	 *
- 	 * @return 	array 	Columns to use with the table
- 	 */
+	 * Define the columns that are going to be used in the table
+	 *
+	 * @since   1.0.0
+	 *
+	 * @return  array   Columns to use with the table
+	 */
 	public function get_columns() {
 
 		return array(
-			'cb' 					=> '<input type="checkbox" class="toggle" />',
-			'col_field_keyword' 	=> __( 'Keyword', 'page-generator' ),
-			'col_field_term_count'	=> __( 'Number of Terms', 'page-generator' ),
+			'cb'                   => '<input type="checkbox" class="toggle" />',
+			'col_field_keyword'    => __( 'Keyword', 'page-generator' ),
+			'col_field_source'     => __( 'Source', 'page-generator' ),
+			'col_field_term_count' => __( 'Number of Terms', 'page-generator' ),
 		);
 
 	}
-	
+
 	/**
- 	 * Decide which columns to activate the sorting functionality on
- 	 *
- 	 * @since 	1.0.0
- 	 *
- 	 * @return 	array 	Columns that can be sorted by the user
- 	 */
+	 * Decide which columns to activate the sorting functionality on
+	 *
+	 * @since   1.0.0
+	 *
+	 * @return  array   Columns that can be sorted by the user
+	 */
 	public function get_sortable_columns() {
 
-		return $sortable = array(
-			'col_field_keyword' => array( 'keyword', true )
+		$sortable = array(
+			'col_field_keyword' => array( 'keyword', true ),
+			'col_field_source'  => array( 'source', true ),
 		);
 
+		return $sortable;
+
 	}
-	
+
 	/**
 	 * Overrides the list of bulk actions in the select dropdowns above and below the table
 	 *
-	 * @since 	1.0.0
+	 * @since   1.0.0
 	 *
-	 * @return 	array 	Bulk Actions
+	 * @return  array   Bulk Actions
 	 */
 	public function get_bulk_actions() {
 
@@ -97,150 +121,177 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 		);
 
 	}
-	
+
 	/**
- 	 * Prepare the table with different parameters, pagination, columns and table elements
- 	 *
- 	 * @since 	1.0.0
- 	 */
+	 * Prepare the table with different parameters, pagination, columns and table elements
+	 *
+	 * @since   1.0.0
+	 */
 	public function prepare_items() {
 
 		global $_wp_column_headers;
-		
-		$screen = get_current_screen();
-		
-		// Get params
-		$search 	= $this->get_search();
-		$order_by 	= $this->get_order_by();
-  		$order 		= $this->get_order();
-		$page 		= $this->get_page();
-		$per_page 	= $this->get_items_per_page( 'page_generator_pro_keywords_per_page', 20 );
 
-		// Get total records for this query
+		$screen = get_current_screen();
+
+		// Get params.
+		$search   = $this->get_search();
+		$order_by = $this->get_order_by();
+		$order    = $this->get_order();
+		$page     = $this->get_page();
+		$per_page = $this->get_items_per_page( 'page_generator_pro_keywords_per_page', 20 );
+
+		// Get total records for this query.
 		$total = $this->base->get_class( 'keywords' )->total( $search );
 
-		// Define pagination
-		$this->set_pagination_args( array(
-			'total_items' 	=> $total,
-			'total_pages' 	=> ceil( $total / $per_page ),
-			'per_page' 		=> $per_page,
-		) );
-		
-		// Set column headers
-  		$this->_column_headers = array( 
-  			$this->get_columns(),
-  			array(),
-  			$this->get_sortable_columns(),
-  		);
+		// Define pagination.
+		$this->set_pagination_args(
+			array(
+				'total_items' => $total,
+				'total_pages' => ceil( $total / $per_page ),
+				'per_page'    => $per_page,
+			)
+		);
 
-  		$this->items = $this->base->get_class( 'keywords' )->get_all( $order_by, $order, $page, $per_page, $search );
+		// Set column headers.
+		$this->_column_headers = array(
+			$this->get_columns(),
+			array(),
+			$this->get_sortable_columns(),
+		);
+
+		$this->items = $this->base->get_class( 'keywords' )->get_all( $order_by, $order, $page, $per_page, $search );
 
 	}
 
 	/**
 	 * Display the rows of records in the table
 	 *
-	 * @since 	1.0.0
+	 * @since   1.0.0
 	 *
-	 * @return 	HTML Row Output
+	 * @return  HTML Row Output
 	 */
 	public function display_rows() {
-		
-		// Get rows and columns
-		$records = $this->items;
+
+		// Get rows and columns.
+		$records                  = $this->items;
 		list( $columns, $hidden ) = $this->get_column_info();
-		
-		// Bail if no records found
+
+		// Bail if no records found.
 		if ( empty( $records ) ) {
 			return;
 		}
 
-		// Get params
+		// Get params.
 		$params = array(
-			'page'		=> $this->base->plugin->name . '-keywords',
-			's' 		=> $this->get_search(),
-			'orderby' 	=> $this->get_order_by(),
-			'order' 	=> $this->get_order(),
-			'paged' 	=> $this->get_page(),
+			'page'    => $this->base->plugin->name . '-keywords',
+			's'       => $this->get_search(),
+			'orderby' => $this->get_order_by(),
+			'order'   => $this->get_order(),
+			'paged'   => $this->get_page(),
 		);
 
-		// Iterate through records
+		// Iterate through records.
 		foreach ( $records as $key => $record ) {
-			// Start row
-			echo ('<tr id="record_' . $record->keywordID . '"' . ( ( $key % 2 == 0 ) ? ' class="alternate"' : '') . '>' );
+			// Start row.
+			echo ( '<tr id="record_' . esc_attr( $record->keywordID ) . '"' . ( ( $key % 2 === 0 ) ? ' class="alternate"' : '' ) . '>' ); // phpcs:ignore
 
-			// Iterate through columns
+			// Iterate through columns.
 			foreach ( $columns as $column_name => $display_name ) {
 				switch ( $column_name ) {
-					
+
 					/**
 					 * Checkbox
 					 */
 					case 'cb':
-						echo ('	<th scope="row" class="check-column">
-									<input type="checkbox" name="ids[' . $record->keywordID . ']" value="' . $record->keywordID . '" />
-								</th>'); 
+						echo ( '<th scope="row" class="check-column"><input type="checkbox" name="ids[' . esc_attr( $record->keywordID ) . ']" value="' . esc_attr( $record->keywordID ) . '" /></th>' ); // phpcs:ignore
 						break;
 
 					/**
 					 * Keyword
 					 */
 					case 'col_field_keyword':
-						// Build URLs for edit, delete and duplicate
-						$edit_url = add_query_arg( array(
-							'page' 	=> $this->base->plugin->name . '-keywords',
-							'cmd' 	=> 'form',
-							'id' 	=> absint( $record->keywordID ),
-						), 'admin.php' );
+						// Define nonce.
+						$nonce = wp_create_nonce( 'action-keywords' );
 
-						$delete_url = add_query_arg( array_merge( $params, array(
-							'cmd' 	=> 'delete',
-							'id' 	=> absint( $record->keywordID ),
-						) ), 'admin.php' );
+						// Build URLs for edit, delete and duplicate.
+						$edit_url = add_query_arg(
+							array(
+								'page' => $this->base->plugin->name . '-keywords',
+								'cmd'  => 'form',
+								'id'   => absint( $record->keywordID ), // phpcs:ignore
+							),
+							'admin.php'
+						);
 
-						$duplicate_url = add_query_arg( array_merge( $params, array(
-							'cmd' 	=> 'duplicate',
-							'id' 	=> absint( $record->keywordID ),
-						) ), 'admin.php' );
+						$delete_url = add_query_arg(
+							array_merge(
+								$params,
+								array(
+									'cmd'      => 'delete',
+									'id'       => absint( $record->keywordID ), // phpcs:ignore
+									'_wpnonce' => $nonce,
+								)
+							),
+							'admin.php'
+						);
 
-						echo ( '<td class="' . $column_name . ' column-' . $column_name . '">
+						$duplicate_url = add_query_arg(
+							array_merge(
+								$params,
+								array(
+									'cmd'      => 'duplicate',
+									'id'       => absint( $record->keywordID ), // phpcs:ignore
+									'_wpnonce' => $nonce,
+								)
+							),
+							'admin.php'
+						);
+
+						echo ( '<td class="' . esc_attr( $column_name ) . ' column-' . esc_attr( $column_name ) . '">
 									<strong>
-										<a href="' . $edit_url . '" title="' . __( 'Edit this keyword', 'page-generator' ) . '">
-											' . $record->keyword . '
+										<a href="' . esc_attr( $edit_url ) . '" title="' . esc_attr__( 'Edit this keyword', 'page-generator' ) . '">
+											' . esc_html( $record->keyword ) . '
 										</a>
 									</strong>
 									<div class="row-actions">
 										<span class="edit">
-											<a href="' . $edit_url . '" title="' . __( 'Edit this keyword', 'page-generator' ) . '">
-											' . __( 'Edit', 'page-generator' ) . '
+											<a href="' . esc_attr( $edit_url ) . '" title="' . esc_attr__( 'Edit this keyword', 'page-generator' ) . '">
+											' . esc_html__( 'Edit', 'page-generator' ) . '
 											</a> | 
 										</span>
 										<span class="edit">
-											<a href="' . $duplicate_url . '" title="' . __( 'Duplicate this keyword', 'page-generator' ) . '">
-											' . __( 'Duplicate', 'page-generator' ) . '
+											<a href="' . esc_attr( $duplicate_url ) . '" title="' . esc_attr__( 'Duplicate this keyword', 'page-generator' ) . '">
+											' . esc_html__( 'Duplicate', 'page-generator' ) . '
 											</a> | 
 										</span>
 										<span class="trash">
-											<a href="' . $delete_url . '" title="' . __( 'Delete this keyword', 'page-generator' ).'" class="delete">
-											' . __( 'Delete', 'page-generator' ) . '
+											<a href="' . esc_attr( $delete_url ) . '" title="' . esc_attr__( 'Delete this keyword', 'page-generator' ) . '" class="delete">
+											' . esc_html__( 'Delete', 'page-generator' ) . '
 											</a>
 										</span>
 									</div>
-								</td>'); 
+								</td>' );
+						break;
+
+					/**
+					 * Source
+					 */
+					case 'col_field_source':
+						echo '<td class="' . esc_attr( $column_name ) . ' column-' . esc_attr( $column_name ) . '">' . esc_html( ! empty( $record->source ) ? $record->source : 'local' ) . '</td>';
 						break;
 
 					/**
 					 * Number of Terms
 					 */
 					case 'col_field_term_count':
-						echo ( 	'<td class="' . $column_name . ' column-' . $column_name . '">' . number_format( count( explode( "\n", $record->data ) ) ) . '</td>' ); 
+						echo ( '<td class="' . esc_attr( $column_name ) . ' column-' . esc_attr( $column_name ) . '">' . esc_html( number_format( count( explode( "\n", $record->data ) ) ) ) . '</td>' );
 						break;
 
 				}
 			}
 
-			// End row
-			echo (' </tr>' );
+			// End row.
+			echo ( ' </tr>' );
 		}
 
 	}
@@ -248,52 +299,52 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 	/**
 	 * Get the Search requested by the user
 	 *
-	 * @since 	2.6.5
+	 * @since   2.6.5
 	 *
-	 * @return 	string
+	 * @return  string
 	 */
 	public function get_search() {
 
-		return ( isset( $_GET['s'] ) ? sanitize_text_field( urldecode( $_GET['s'] ) ) : '' );
+		return ( isset( $_GET['s'] ) ? sanitize_text_field( stripslashes( urldecode( $_GET['s'] ) ) ) : '' ); // phpcs:ignore
 
 	}
 
 	/**
 	 * Get the Order By requested by the user
 	 *
-	 * @since 	2.6.5
+	 * @since   2.6.5
 	 *
-	 * @return 	string
+	 * @return  string
 	 */
 	private function get_order_by() {
 
-		return ( isset( $_GET['orderby'] ) ? sanitize_text_field( $_GET['orderby'] ) : 'keyword' );
+		return ( isset( $_GET['orderby'] ) ? sanitize_sql_orderby( $_GET['orderby'] ) : 'keyword' ); // phpcs:ignore
 
 	}
 
 	/**
 	 * Get the Order requested by the user
 	 *
-	 * @since 	2.6.5
+	 * @since   2.6.5
 	 *
-	 * @return 	string
+	 * @return  string
 	 */
 	private function get_order() {
 
-		return ( isset( $_GET['order'] ) ? sanitize_text_field( $_GET['order'] ) : 'ASC' );
+		return ( isset( $_GET['order'] ) ? sanitize_text_field( $_GET['order'] ) : 'ASC' ); // phpcs:ignore
 
 	}
 
 	/**
 	 * Get the Pagination Page requested by the user
 	 *
-	 * @since 	2.6.5
+	 * @since   2.6.5
 	 *
-	 * @return 	string
+	 * @return  string
 	 */
 	private function get_page() {
 
-		return ( ( isset( $_GET['paged'] ) && ! empty( $_GET['paged'] ) ) ? absint( $_GET['paged'] ) : 1 );
+		return ( ( isset( $_GET['paged'] ) && ! empty( $_GET['paged'] ) ) ? absint( $_GET['paged'] ) : 1 ); // phpcs:ignore
 
 	}
 
