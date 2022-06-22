@@ -587,8 +587,7 @@ class Page_Generator_Pro_Generate {
 	 */
 	public function replace_keywords( $settings ) {
 
-		// Iterate through Group Settings, replacing $this->searches (Keywords) with $this->replacements (Terms)
-		// as well as performing spintax and shortcode processing.
+		// Iterate through Group Settings, replacing $this->searches (Keywords) with $this->replacements (Terms).
 		array_walk_recursive( $settings, array( $this, 'replace_keywords_in_array' ) );
 
 		// Return.
@@ -877,7 +876,7 @@ class Page_Generator_Pro_Generate {
 		 * {keyword(column_name):modifier[args]}
 		 * {keyword(column_name):modifier[arg1,argN]}
 		 *
-		 * Previous method "|{(.+?)}|" would include spintax and fail to extract keywords
+		 * Previous method "|{(.+?)}|" would fail to extract keywords
 		 * within JSON e.g. Gutenberg Block JSON strings that contain a Keyword.
 		 */
 		preg_match_all( '/{([\p{L}0-9_\-:,()\\[\\]]+?)}/u', $content, $matches );
@@ -906,8 +905,7 @@ class Page_Generator_Pro_Generate {
 	 */
 	private function add_keyword_to_required_keywords( $keyword ) {
 
-		// If a keyword is within spintax at the start of the string (e.g. {{service}|{service2}} ),
-		// we get an additional leading curly brace for some reason.  Remove it.
+		// Remove additional leading/trailing curly braces.
 		$keyword = str_replace( '{', '', $keyword );
 		$keyword = str_replace( '}', '', $keyword );
 
@@ -962,8 +960,6 @@ class Page_Generator_Pro_Generate {
 	 * Callback for array_walk_recursive, which finds $this->searches, replacing with
 	 * $this->replacements in $item.
 	 *
-	 * Also performs spintax.
-	 *
 	 * @since   1.3.1
 	 *
 	 * @param   mixed  $item   Item (array, object, string).
@@ -981,7 +977,7 @@ class Page_Generator_Pro_Generate {
 			array_walk_recursive( $item, array( $this, 'replace_keywords_in_array' ) );
 		} elseif ( is_string( $item ) ) {
 			// If here, we have a string.
-			// Perform keyword replacement, spintax and shortcode processing now.
+			// Perform keyword replacement now.
 
 			// If replacements contain an array, we're using the :random_different Keyword Transformation
 			// and therefore need to perform a slower search/replace to iterate through every occurance of

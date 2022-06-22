@@ -1009,7 +1009,7 @@ class Page_Generator_Pro_Keywords {
 						'page_generator_pro_keywords_save_validation_error',
 						sprintf(
 							/* translators: delimiter character */
-							__( 'Delimiter Field: %s cannot be used as a delimiter, as it may conflict with Keyword and Spintax syntax', 'page-generator' ),
+							__( 'Delimiter Field: %s cannot be used as a delimiter, as it may conflict with Keyword syntax', 'page-generator' ),
 							'<code>' . $data['delimiter'] . '</code>'
 						)
 					);

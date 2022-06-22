@@ -117,7 +117,7 @@ class Page_Generator_Pro_Editor {
 
 	/**
 	 * Returns an array of TinyMCE Plugins that aren't shortcodes/blocks,
-	 * such as Autocomplete and Generate Spintax from Selected Text
+	 * such as Autocomplete.
 	 *
 	 * @since   2.8.9
 	 *
@@ -138,7 +138,7 @@ class Page_Generator_Pro_Editor {
 
 		/**
 		 * Returns an array of TinyMCE Plugins that aren't shortcodes/blocks,
-		 * such as Autocomplete and Generate Spintax from Selected Text
+		 * such as Autocomplete
 		 *
 		 * @since   2.8.9
 		 *

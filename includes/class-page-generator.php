@@ -123,10 +123,6 @@ class Page_Generator {
 				__( 'Change the case of Keyword Terms, extract sub terms, force specific terms to be used and more.', 'page-generator' ),
 			),
 			array(
-				__( 'Spintax, Nested Spintax and Block Spintax Support', 'page-generator' ),
-				__( 'Generate truly unique, non-duplicate content by writing content using spintax, nested spintax and block spinning - or have Page Generator Pro generate spintax from your content for you.', 'page-generator' ),
-			),
-			array(
 				__( 'Overwrite or Skip Existing Generated Content', 'page-generator' ),
 				__( 'Refresh existing content, correct mistakes in previously generated Pages or choose to skip already generated content to avoid duplication.', 'page-generator' ),
 			),

@@ -7,8 +7,7 @@
  */
 
 /**
- * Registers AJAX endpoints for various features, such as Generate Locations,
- * Generate Spintax from Content and Generation/Trash/Delete Content.
+ * Registers AJAX endpoints for various features, such as Generation/Trash/Delete Content.
  *
  * @package Page_Generator_Pro
  * @author  WP Zinc
