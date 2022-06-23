@@ -1138,7 +1138,7 @@ add_filter( 'page_generator_pro_admin_admin_menu_minimum_capability', function( 
 </pre>
 <h3 id="page_generator_pro_keywords_save_  source">
 						page_generator_pro_keywords_save_  source
-						<code>includes/admin/admin.php::785</code>
+						<code>includes/admin/admin.php::824</code>
 					</h3><h4>Overview</h4>
 						<p>Define the Keyword properties (data, delimiter and columns) for the given Source before saving the Keyword to the database.</p><h4>Parameters</h4>
 					<table>
@@ -2240,7 +2240,7 @@ do_action( 'page_generator_pro_admin_admin_scripts_css', function( $screen, $pos
 </pre>
 <h3 id="page_generator_pro_generate_content_before">
 						page_generator_pro_generate_content_before
-						<code>includes/admin/admin.php::852</code>
+						<code>includes/admin/admin.php::891</code>
 					</h3><h4>Overview</h4>
 						<p>Runs any actions before Generate Content has started.</p><h4>Parameters</h4>
 					<table>

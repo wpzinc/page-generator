@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Page Generator plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Page Generator 1.6.6\n"
+"Project-Id-Version: Page Generator 1.6.6.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/page-generator\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-06-22T15:40:48+00:00\n"
+"POT-Creation-Date: 2022-06-23T16:57:33+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: page-generator\n"
@@ -96,32 +96,32 @@ msgstr ""
 msgid "Keyword deleted successfully."
 msgstr ""
 
-#: includes/admin/admin.php:750
+#: includes/admin/admin.php:789
 msgid "Nonce field is missing. Settings NOT saved."
 msgstr ""
 
-#: includes/admin/admin.php:755
+#: includes/admin/admin.php:794
 msgid "Invalid nonce specified. Settings NOT saved."
 msgstr ""
 
-#: includes/admin/admin.php:810
+#: includes/admin/admin.php:849
 msgid "No Group ID was specified."
 msgstr ""
 
-#: includes/admin/admin.php:902
+#: includes/admin/admin.php:941
 msgid "Closing / navigating away from this window will stop generation. Are you sure?"
 msgstr ""
 
 #. translators: Post Type
-#: includes/admin/admin.php:906
+#: includes/admin/admin.php:945
 msgid "%1$s Generated"
 msgstr ""
 
-#: includes/admin/admin.php:909
+#: includes/admin/admin.php:948
 msgid "Generation Complete"
 msgstr ""
 
-#: includes/admin/admin.php:910
+#: includes/admin/admin.php:949
 #: includes/admin/groups-ui.php:699
 msgid "Generation Cancelled"
 msgstr ""
@@ -739,8 +739,8 @@ msgstr ""
 
 #: views/admin/generate-meta-box-actions.php:32
 #: views/admin/generate-meta-box-actions.php:48
-#: views/admin/keywords-form-edit.php:107
-#: views/admin/keywords-form.php:119
+#: views/admin/keywords-form-edit.php:95
+#: views/admin/keywords-form.php:113
 msgid "Save"
 msgstr ""
 
