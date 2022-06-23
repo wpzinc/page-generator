@@ -16,7 +16,7 @@
 		<?php $this->base->get_class( 'keywords' )->output_dropdown( $this->keywords, 'permalink' ); ?>
 	</div>
 	<div class="full">
-		<input type="text" id="permalink" name="<?php echo esc_attr( $this->base->plugin->name ); ?>[permalink]" id="permalink" value="<?php echo $this->settings['permalink']; // phpcs:ignore ?>" class="widefat" />
+		<input type="text" id="permalink" name="<?php echo esc_attr( $this->base->plugin->name ); ?>[permalink]" id="permalink" value="<?php echo esc_attr( $this->settings['permalink'] ); ?>" class="widefat" />
 
 		<p class="description">
 			<?php esc_html_e( 'Letters, numbers, underscores and dashes only. Specifying a Permalink with Keywords is highly recommended to avoid duplicate content and ensure Overwrite functionality works correctly.', 'page-generator' ); ?>

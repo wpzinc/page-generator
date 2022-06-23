@@ -58,7 +58,7 @@
 			</a>
 
 			<!-- Return Button (display when generation routine finishes -->
-			<a href="<?php echo $return_url; // phpcs:ignore ?>" class="button button-primary page-generator-pro-generate-return-button">
+			<a href="<?php echo esc_attr( $return_url ); ?>" class="button button-primary page-generator-pro-generate-return-button">
 				<?php esc_html_e( 'Return to Group', 'page-generator' ); ?>
 			</a>
 		</p>

@@ -23,7 +23,7 @@
 	// Search Subtitle.
 	if ( ! empty( $keywords_table->get_search() ) ) {
 		?>
-		<span class="subtitle left"><?php esc_html_e( 'Search results for', 'page-generator' ); ?> &#8220;<?php echo esc_html( $keywords_table->get_search() ); // phpcs:ignore ?>&#8221;</span>
+		<span class="subtitle left"><?php esc_html_e( 'Search results for', 'page-generator' ); ?> &#8220;<?php echo esc_html( $keywords_table->get_search() ); ?>&#8221;</span>
 		<?php
 	}
 	?>

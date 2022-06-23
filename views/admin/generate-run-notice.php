@@ -24,7 +24,7 @@
 
 	<div class="wrap-inner">
 		<!-- Return Button -->
-		<a href="<?php echo $return_url; // phpcs:ignore ?>" class="button button-primary">
+		<a href="<?php echo esc_attr( $return_url ); ?>" class="button button-primary">
 			<?php esc_html_e( 'Return to Group', 'page-generator' ); ?>
 		</a>
 	</div>

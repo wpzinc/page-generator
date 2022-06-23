@@ -689,8 +689,23 @@ class Page_Generator_Pro_Admin {
 			case 'form':
 				// Edit.
 				if ( isset( $_GET['id'] ) ) { // phpcs:ignore
-					// Get Keyword.
-					$keyword = $this->base->get_class( 'keywords' )->get_by_id( absint( $_GET['id'] ) ); // phpcs:ignore
+					$keyword_id = absint( $_GET['id'] ); // phpcs:ignore
+					// Get keyword from POST data or DB.
+					if ( isset( $_POST['nonce'] ) ) { // phpcs:ignore
+						if ( wp_verify_nonce( $_POST['nonce'], 'save_keyword' ) ) {
+							// Get keyword from POST data.
+							$keyword = array(
+								'keyword' => stripslashes( sanitize_text_field( $_POST['keyword'] ) ),
+								'source'  => stripslashes( sanitize_text_field( $_POST['source'] ) ),
+								'local'   => array(
+									'data' => stripslashes( sanitize_textarea_field( $_POST['local']['data'] ) ),
+								),
+							);
+						}
+					} else {
+						// Get Keyword from DB.
+						$keyword = $this->base->get_class( 'keywords' )->get_by_id( absint( $_GET['id'] ) ); // phpcs:ignore
+					}
 
 					// Get Keyword Sources.
 					$sources = $this->base->get_class( 'keywords' )->get_sources();
@@ -699,6 +714,30 @@ class Page_Generator_Pro_Admin {
 					$view = 'views/admin/keywords-form-edit.php';
 				} else {
 					// Add Keyword.
+
+					// Get keyword from POST data or DB.
+					if ( isset( $_POST['nonce'] ) ) { // phpcs:ignore
+						if ( wp_verify_nonce( $_POST['nonce'], 'save_keyword' ) ) {
+							// Get keyword from POST data.
+							$keyword = array(
+								'keyword' => stripslashes( sanitize_text_field( $_POST['keyword'] ) ),
+								'source'  => stripslashes( sanitize_text_field( $_POST['source'] ) ),
+								'local'   => array(
+									'data' => stripslashes( sanitize_textarea_field( $_POST['local']['data'] ) ),
+								),
+							);
+						}
+					} else {
+						// Define blank Keyword.
+						$keyword = array(
+							'keyword' => '',
+							'source'  => 'local',
+							'local'   => array(
+								'data' => '',
+							),
+						);
+					}
+
 					// Get Keyword Sources.
 					$sources = $this->base->get_class( 'keywords' )->get_sources();
 

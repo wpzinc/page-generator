@@ -17,13 +17,13 @@
 		switch ( $option['type'] ) {
 			case 'text':
 				?>
-				<input type="text" name="<?php echo esc_attr( $source_name ); ?>[<?php echo esc_attr( $option_name ); ?>]" id="<?php echo esc_attr( $option_name ); ?>" value="<?php echo stripslashes( $value ); // phpcs:ignore ?>" class="widefat" />
+				<input type="text" name="<?php echo esc_attr( $source_name ); ?>[<?php echo esc_attr( $option_name ); ?>]" id="<?php echo esc_attr( $option_name ); ?>" value="<?php echo esc_attr( $value ); ?>" class="widefat" />
 				<?php
 				break;
 
 			case 'textarea':
 				?>
-				<textarea name="<?php echo esc_attr( $source_name ); ?>[<?php echo esc_attr( $option_name ); ?>]" id="<?php echo esc_attr( $option_name ); ?>" rows="10" class="widefat no-wrap" style="height:300px"><?php echo stripslashes( $value ); // phpcs:ignore ?></textarea>
+				<textarea name="<?php echo esc_attr( $source_name ); ?>[<?php echo esc_attr( $option_name ); ?>]" id="<?php echo esc_attr( $option_name ); ?>" rows="10" class="widefat no-wrap" style="height:300px"><?php echo esc_textarea( $value ); ?></textarea>
 				<?php
 				break;
 
@@ -49,9 +49,11 @@
 			<p class="description">
 				<?php
 				if ( is_array( $option['description'] ) ) {
-					echo implode( '<br />', $option['description'] ); // phpcs:ignore
+					foreach ( $option['description'] as $description ) {
+						echo esc_html( $description ) . '<br />';
+					}
 				} else {
-					echo esc_attr( $option['description'] );
+					echo esc_html( $option['description'] );
 				}
 				?>
 			</p>

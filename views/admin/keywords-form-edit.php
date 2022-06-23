@@ -27,11 +27,11 @@
 				<!-- Content -->
 				<div id="post-body-content">
 					<!-- Form Start -->
-					<form class="<?php echo esc_attr( $this->base->plugin->name ); ?>" name="post" method="post" action="admin.php?page=page-generator-keywords&amp;cmd=form&id=<?php echo absint( $_GET['id'] ); // phpcs:ignore ?>" enctype="multipart/form-data">		
+					<form class="<?php echo esc_attr( $this->base->plugin->name ); ?>" name="post" method="post" action="admin.php?page=page-generator-keywords&amp;cmd=form&id=<?php echo esc_attr( $keyword_id ); ?>">		
 						<div id="normal-sortables" class="meta-box-sortables ui-sortable">                        
 							<div id="keyword-panel" class="postbox">
 								<!-- Keyword ID we're editing -->
-								<input type="hidden" name="keywordID" value="<?php echo esc_attr( $keyword['keywordID'] ); ?>" />
+								<input type="hidden" name="keywordID" value="<?php echo esc_attr( $keyword_id ); ?>" />
 
 								<h3 class="hndle"><?php esc_html_e( 'Keyword', 'page-generator' ); ?></h3>
 
@@ -40,7 +40,7 @@
 										<label for="keyword"><?php esc_html_e( 'Keyword', 'page-generator' ); ?></label>
 									</div>
 									<div class="right">
-										<input type="text" name="keyword" id="keyword" value="<?php echo esc_attr( stripslashes( isset( $_POST['keyword'] ) ? $_POST['keyword'] : $keyword['keyword'] ) ); // phpcs:ignore ?>" class="widefat" />
+										<input type="text" name="keyword" id="keyword" value="<?php echo esc_attr( $keyword['keyword'] ); ?>" class="widefat" />
 
 										<p class="description">
 											<?php esc_html_e( 'A unique template tag name, which can then be used when generating content.', 'page-generator' ); ?>
@@ -70,24 +70,12 @@
 								foreach ( $sources[ $keyword['source'] ]['options'] as $option_name => $option ) {
 									// Data, Delimiter and Column are stored outside of options, but are submitted as options.
 									$value = '';
-									if ( isset( $_POST[ $keyword['source'] ][ $option_name ] ) ) { // phpcs:ignore
-										// Sanitize value depending on whether it's for a textarea or not.
-										if ( $option['type'] === 'textarea' ) {
-											// Prevents stripping of newlines.
-											$value = sanitize_textarea_field( $_POST[ $keyword['source'] ][ $option_name ] ); // phpcs:ignore
-										} else {
-											$value = sanitize_text_field( $_POST[ $keyword['source'] ][ $option_name ] ); // phpcs:ignore
-										}
-									} elseif ( isset( $_POST[ $option_name ] ) ) { // phpcs:ignore
-										// Sanitize value depending on whether it's for a textarea or not.
-										if ( $option['type'] === 'textarea' ) {
-											// Prevents stripping of newlines.
-											$value = sanitize_textarea_field( $_POST[ $option_name ] ); // phpcs:ignore
-										} else {
-											$value = sanitize_text_field( $_POST[ $option_name ] ); // phpcs:ignore
-										}
-									} elseif ( isset( $keyword['options'][ $option_name ] ) ) {
+									if ( isset( $keyword['options'][ $option_name ] ) ) {
 										$value = $keyword['options'][ $option_name ];
+									} elseif ( isset( $keyword[ $option_name ] ) ) {
+										$value = $keyword[ $option_name ];
+									} elseif ( isset( $keyword[ $source_name ][ $option_name ] ) ) {
+										$value = $keyword[ $source_name ][ $option_name ];
 									} elseif ( isset( $keyword[ $option_name ] ) ) {
 										$value = $keyword[ $option_name ];
 									}

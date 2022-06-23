@@ -15,9 +15,9 @@
 		<select name="<?php echo esc_attr( $this->base->plugin->name ); ?>[status]" id="status" size="1" class="widefat">
 			<?php
 			if ( is_array( $statuses ) && count( $statuses ) > 0 ) {
-				foreach ( $statuses as $status => $label ) { // phpcs:ignore
+				foreach ( $statuses as $group_status => $label ) {
 					?>
-					<option value="<?php echo esc_attr( $status ); ?>"<?php selected( $this->settings['status'], $status ); ?>>
+					<option value="<?php echo esc_attr( $group_status ); ?>"<?php selected( $this->settings['status'], $group_status ); ?>>
 						<?php echo esc_attr( $label ); ?>
 					</option>
 					<?php

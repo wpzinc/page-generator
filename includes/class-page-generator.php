@@ -298,7 +298,7 @@ class Page_Generator {
 			// Admin UI.
 			if ( is_admin() ) {
 				wp_die(
-                    $error, /* phpcs:ignore */
+                    $error, // phpcs:ignore
 					sprintf(
 						/* translators: Plugin Name */
 						esc_html__( '%s: Error', 'page-generator' ),
