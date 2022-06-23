@@ -386,7 +386,7 @@ class Page_Generator_Pro_Admin {
 	 * @param   string $value          The option value.
 	 * @return  string                  The option value
 	 */
-	public function set_screen_options( $screen_option, $option, $value ) { // phpcs:ignore
+	public function set_screen_options( $screen_option, $option, $value ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 
 		return $value;
 
@@ -403,28 +403,26 @@ class Page_Generator_Pro_Admin {
 		$this->base->get_class( 'notices' )->set_key_prefix( 'page_generator_pro_' . wp_get_current_user()->ID );
 
 		// Get command.
-		$cmd = ( ( isset( $_GET['cmd'] ) ) ? sanitize_text_field( $_GET['cmd'] ) : '' ); // phpcs:ignore
+		$cmd = ( ( isset( $_GET['cmd'] ) ) ? sanitize_text_field( $_GET['cmd'] ) : '' ); // phpcs:ignore WordPress.Security.NonceVerification
 		switch ( $cmd ) {
 			/**
 			 * Add / Edit Keyword
 			 */
 			case 'form':
 				// Get keyword from POST data or DB.
-				if ( isset( $_POST['nonce'] ) ) { // phpcs:ignore
-					if ( wp_verify_nonce( $_POST['nonce'], 'save_keyword' ) ) {
-						// Get keyword from POST data.
-						$keyword = array(
-							'keyword' => sanitize_text_field( $_POST['keyword'] ),
-							'source'  => sanitize_text_field( $_POST['source'] ),
-							'local'   => array(
-								'data' => sanitize_textarea_field( $_POST['local']['data'] ),
-							),
-						);
-					}
-				} elseif ( isset( $_GET['id'] ) ) { // phpcs:ignore
+				if ( isset( $_POST['nonce'] ) && wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'save_keyword' ) ) {
+					// Get keyword from POST data.
+					$keyword = array(
+						'keyword' => sanitize_text_field( $_POST['keyword'] ),
+						'source'  => sanitize_text_field( $_POST['source'] ),
+						'local'   => array(
+							'data' => sanitize_textarea_field( $_POST['local']['data'] ),
+						),
+					);
+				} elseif ( isset( $_GET['id'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 					// Editing an existing Keyword.
 					// Get Keyword from DB.
-					$keyword = $this->base->get_class( 'keywords' )->get_by_id( absint( $_GET['id'] ) ); // phpcs:ignore
+					$keyword = $this->base->get_class( 'keywords' )->get_by_id( absint( $_GET['id'] ) ); // phpcs:ignore WordPress.Security.NonceVerification
 				}
 
 				// Save keyword.
@@ -471,7 +469,7 @@ class Page_Generator_Pro_Admin {
 		if ( ! array_key_exists( '_wpnonce', $_REQUEST ) ) {
 			return;
 		}
-		if ( ! wp_verify_nonce( $_REQUEST['_wpnonce'], 'bulk-keywords' ) ) {
+		if ( ! wp_verify_nonce( sanitize_key( $_REQUEST['_wpnonce'] ), 'bulk-keywords' ) ) {
 			$this->base->get_class( 'notices' )->add_error_notice(
 				__( 'Nonce invalid. Bulk action not performed.', 'page-generator' )
 			);
@@ -482,8 +480,8 @@ class Page_Generator_Pro_Admin {
 		$bulk_action = array_values(
 			array_filter(
 				array(
-					( isset( $_REQUEST['action'] ) && $_REQUEST['action'] != '-1' ? sanitize_text_field( $_REQUEST['action'] ) : '' ), // phpcs:ignore
-					( isset( $_REQUEST['action2'] ) && $_REQUEST['action2'] != '-1' ? sanitize_text_field( $_REQUEST['action2'] ) : '' ), // phpcs:ignore
+					( isset( $_REQUEST['action'] ) && $_REQUEST['action'] != '-1' ? sanitize_text_field( $_REQUEST['action'] ) : '' ), // phpcs:ignore WordPress.PHP.StrictComparisons
+					( isset( $_REQUEST['action2'] ) && $_REQUEST['action2'] != '-1' ? sanitize_text_field( $_REQUEST['action2'] ) : '' ), // phpcs:ignore WordPress.PHP.StrictComparisons
 					( isset( $_REQUEST['action3'] ) && ! empty( $_REQUEST['action3'] ) ? sanitize_text_field( $_REQUEST['action3'] ) : '' ),
 				)
 			)
@@ -556,7 +554,7 @@ class Page_Generator_Pro_Admin {
 	public function run_keyword_table_row_actions() {
 
 		// Bail if no page specified.
-		$page = ( ( isset( $_GET['page'] ) ) ? sanitize_text_field( $_GET['page'] ) : false ); // phpcs:ignore
+		$page = ( ( isset( $_GET['page'] ) ) ? sanitize_text_field( $_GET['page'] ) : false ); // phpcs:ignore WordPress.Security.NonceVerification
 		if ( ! $page ) {
 			return;
 		}
@@ -660,10 +658,10 @@ class Page_Generator_Pro_Admin {
 		$url = add_query_arg(
 			array(
 				'page'    => $this->base->plugin->name . '-keywords',
-				's'       => ( isset( $_REQUEST['s'] ) ? sanitize_text_field( $_REQUEST['s'] ) : '' ), // phpcs:ignore
-				'paged'   => ( isset( $_REQUEST['paged'] ) ? sanitize_text_field( $_REQUEST['paged'] ) : 1 ), // phpcs:ignore
-				'orderby' => ( isset( $_REQUEST['orderby'] ) ? sanitize_sql_orderby( $_REQUEST['orderby'] ) : 'keyword' ), // phpcs:ignore
-				'order'   => ( isset( $_REQUEST['order'] ) ? sanitize_text_field( $_REQUEST['order'] ) : 'ASC' ), // phpcs:ignore
+				's'       => ( isset( $_REQUEST['s'] ) ? sanitize_text_field( $_REQUEST['s'] ) : '' ), // phpcs:ignore WordPress.Security.NonceVerification
+				'paged'   => ( isset( $_REQUEST['paged'] ) ? sanitize_text_field( $_REQUEST['paged'] ) : 1 ), // phpcs:ignore WordPress.Security.NonceVerification
+				'orderby' => ( isset( $_REQUEST['orderby'] ) ? sanitize_sql_orderby( $_REQUEST['orderby'] ) : 'keyword' ), // phpcs:ignore WordPress.Security.NonceVerification
+				'order'   => ( isset( $_REQUEST['order'] ) ? sanitize_text_field( $_REQUEST['order'] ) : 'ASC' ), // phpcs:ignore WordPress.Security.NonceVerification
 			),
 			'admin.php'
 		);
@@ -681,30 +679,28 @@ class Page_Generator_Pro_Admin {
 	public function keywords_screen() {
 
 		// Get command.
-        $cmd = ( ( isset($_GET['cmd'] ) ) ? sanitize_text_field( $_GET['cmd'] ) : '' ); // phpcs:ignore
+		$cmd = ( ( isset( $_GET['cmd'] ) ) ? sanitize_text_field( $_GET['cmd'] ) : '' ); // phpcs:ignore WordPress.Security.NonceVerification
 		switch ( $cmd ) {
 			/**
 			 * Add / Edit Keyword
 			 */
 			case 'form':
 				// Edit.
-				if ( isset( $_GET['id'] ) ) { // phpcs:ignore
-					$keyword_id = absint( $_GET['id'] ); // phpcs:ignore
+				if ( isset( $_GET['id'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
+					$keyword_id = absint( $_GET['id'] ); // phpcs:ignore WordPress.Security.NonceVerification
 					// Get keyword from POST data or DB.
-					if ( isset( $_POST['nonce'] ) ) { // phpcs:ignore
-						if ( wp_verify_nonce( $_POST['nonce'], 'save_keyword' ) ) {
-							// Get keyword from POST data.
-							$keyword = array(
-								'keyword' => stripslashes( sanitize_text_field( $_POST['keyword'] ) ),
-								'source'  => stripslashes( sanitize_text_field( $_POST['source'] ) ),
-								'local'   => array(
-									'data' => stripslashes( sanitize_textarea_field( $_POST['local']['data'] ) ),
-								),
-							);
-						}
+					if ( isset( $_POST['nonce'] ) && wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'save_keyword' ) ) {
+						// Get keyword from POST data.
+						$keyword = array(
+							'keyword' => wp_unslash( sanitize_text_field( $_POST['keyword'] ) ),
+							'source'  => wp_unslash( sanitize_text_field( $_POST['source'] ) ),
+							'local'   => array(
+								'data' => wp_unslash( sanitize_textarea_field( $_POST['local']['data'] ) ),
+							),
+						);
 					} else {
 						// Get Keyword from DB.
-						$keyword = $this->base->get_class( 'keywords' )->get_by_id( absint( $_GET['id'] ) ); // phpcs:ignore
+						$keyword = $this->base->get_class( 'keywords' )->get_by_id( absint( $_GET['id'] ) ); // phpcs:ignore WordPress.Security.NonceVerification
 					}
 
 					// Get Keyword Sources.
@@ -716,17 +712,15 @@ class Page_Generator_Pro_Admin {
 					// Add Keyword.
 
 					// Get keyword from POST data or DB.
-					if ( isset( $_POST['nonce'] ) ) { // phpcs:ignore
-						if ( wp_verify_nonce( $_POST['nonce'], 'save_keyword' ) ) {
-							// Get keyword from POST data.
-							$keyword = array(
-								'keyword' => stripslashes( sanitize_text_field( $_POST['keyword'] ) ),
-								'source'  => stripslashes( sanitize_text_field( $_POST['source'] ) ),
-								'local'   => array(
-									'data' => stripslashes( sanitize_textarea_field( $_POST['local']['data'] ) ),
-								),
-							);
-						}
+					if ( isset( $_POST['nonce'] ) && wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'save_keyword' ) ) {
+						// Get keyword from POST data.
+						$keyword = array(
+							'keyword' => wp_unslash( sanitize_text_field( $_POST['keyword'] ) ),
+							'source'  => wp_unslash( sanitize_text_field( $_POST['source'] ) ),
+							'local'   => array(
+								'data' => wp_unslash( sanitize_textarea_field( $_POST['local']['data'] ) ),
+							),
+						);
 					} else {
 						// Define blank Keyword.
 						$keyword = array(
@@ -790,7 +784,7 @@ class Page_Generator_Pro_Admin {
 		}
 
 		// Invalid nonce.
-		if ( ! wp_verify_nonce( $_POST['nonce'], 'save_keyword' ) ) {
+		if ( ! wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'save_keyword' ) ) {
 			return new WP_Error( 'page_generator_pro_admin_save_keyword', __( 'Invalid nonce specified. Settings NOT saved.', 'page-generator' ) );
 		}
 
@@ -845,15 +839,15 @@ class Page_Generator_Pro_Admin {
 		$this->base->get_class( 'notices' )->set_key_prefix( 'page_generator_pro_' . wp_get_current_user()->ID );
 
 		// Bail if no Group ID was specified.
-		if ( ! isset( $_REQUEST['id'] ) ) { // phpcs:ignore
+		if ( ! isset( $_REQUEST['id'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 			$this->base->get_class( 'notices' )->add_error_notice( __( 'No Group ID was specified.', 'page-generator' ) );
 			include_once $this->base->plugin->folder . 'views/admin/notices.php';
 			return;
 		}
 
 		// Get Group ID and Type.
-		$id   = absint( $_REQUEST['id'] ); // phpcs:ignore
-		$type = ( isset( $_REQUEST['type'] ) ? sanitize_text_field( $_REQUEST['type'] ) : 'content' ); // phpcs:ignore
+		$id   = absint( $_REQUEST['id'] ); // phpcs:ignore WordPress.Security.NonceVerification
+		$type = ( isset( $_REQUEST['type'] ) ? sanitize_text_field( $_REQUEST['type'] ) : 'content' ); // phpcs:ignore WordPress.Security.NonceVerification
 
 		// Get groups or groups terms class, depending on the content type we're generating.
 		$group = ( ( $type === 'term' ) ? $this->base->get_class( 'groups_terms' ) : $this->base->get_class( 'groups' ) );
@@ -905,7 +899,7 @@ class Page_Generator_Pro_Admin {
 		}
 
 		// If no limit specified, set one now.
-		if ( $settings['numberOfPosts'] == 0 ) { // phpcs:ignore
+		if ( $settings['numberOfPosts'] == 0 ) { // phpcs:ignore WordPress.PHP.StrictComparisons
 			if ( $settings['method'] === 'random' ) {
 				$settings['numberOfPosts'] = 10;
 			} else {

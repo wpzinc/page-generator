@@ -60,14 +60,14 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 				esc_html__( 'No keywords found matching the search term', 'page-generator' ),
 				esc_html( $this->get_search() )
 			);
-			echo ( '<br /><a href="admin.php?page=' . $this->base->plugin->name . '-keywords" class="button">' . __( 'View all keywords', 'page-generator' ) . '</a>' ); // phpcs:ignore
+			echo ( '<br /><a href="admin.php?page=' . esc_attr( $this->base->plugin->name ) . '-keywords" class="button">' . esc_html__( 'View all keywords', 'page-generator' ) . '</a>' );
 
 			return;
 		}
 
 		// No Keywords exist in the database table.
 		esc_html_e( 'Keywords are used to produce unique content for each Page, Post or Custom Post Type that is generated.', 'page-generator' );
-		echo ( '<br /><a href="admin.php?page=' . $this->base->plugin->name . '-keywords&cmd=form" class="button">' . __( 'Create first keyword.', 'page-generator' ) . '</a>' ); // phpcs:ignore
+		echo ( '<br /><a href="admin.php?page=' . esc_attr( $this->base->plugin->name ) . '-keywords&cmd=form" class="button">' . esc_html__( 'Create first keyword.', 'page-generator' ) . '</a>' );
 
 	}
 
@@ -193,7 +193,7 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 		// Iterate through records.
 		foreach ( $records as $key => $record ) {
 			// Start row.
-			echo ( '<tr id="record_' . esc_attr( $record->keywordID ) . '"' . ( ( $key % 2 === 0 ) ? ' class="alternate"' : '' ) . '>' ); // phpcs:ignore
+			echo ( '<tr id="record_' . esc_attr( $record->keywordID ) . '"' . ( ( $key % 2 === 0 ) ? ' class="alternate"' : '' ) . '>' ); // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 
 			// Iterate through columns.
 			foreach ( $columns as $column_name => $display_name ) {
@@ -203,7 +203,7 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 					 * Checkbox
 					 */
 					case 'cb':
-						echo ( '<th scope="row" class="check-column"><input type="checkbox" name="ids[' . esc_attr( $record->keywordID ) . ']" value="' . esc_attr( $record->keywordID ) . '" /></th>' ); // phpcs:ignore
+						echo ( '<th scope="row" class="check-column"><input type="checkbox" name="ids[' . esc_attr( $record->keywordID ) . ']" value="' . esc_attr( $record->keywordID ) . '" /></th>' ); // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 						break;
 
 					/**
@@ -218,7 +218,7 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 							array(
 								'page' => $this->base->plugin->name . '-keywords',
 								'cmd'  => 'form',
-								'id'   => absint( $record->keywordID ), // phpcs:ignore
+								'id'   => absint( $record->keywordID ), // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 							),
 							'admin.php'
 						);
@@ -228,7 +228,7 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 								$params,
 								array(
 									'cmd'      => 'delete',
-									'id'       => absint( $record->keywordID ), // phpcs:ignore
+									'id'       => absint( $record->keywordID ), // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 									'_wpnonce' => $nonce,
 								)
 							),
@@ -240,7 +240,7 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 								$params,
 								array(
 									'cmd'      => 'duplicate',
-									'id'       => absint( $record->keywordID ), // phpcs:ignore
+									'id'       => absint( $record->keywordID ), // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 									'_wpnonce' => $nonce,
 								)
 							),
@@ -305,7 +305,7 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 	 */
 	public function get_search() {
 
-		return ( isset( $_GET['s'] ) ? sanitize_text_field( stripslashes( urldecode( $_GET['s'] ) ) ) : '' ); // phpcs:ignore
+		return ( isset( $_GET['s'] ) ? sanitize_text_field( wp_unslash( urldecode( $_GET['s'] ) ) ) : '' ); // phpcs:ignore WordPress.Security.NonceVerification
 
 	}
 
@@ -318,7 +318,7 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 	 */
 	private function get_order_by() {
 
-		return ( isset( $_GET['orderby'] ) ? sanitize_sql_orderby( $_GET['orderby'] ) : 'keyword' ); // phpcs:ignore
+		return ( isset( $_GET['orderby'] ) ? sanitize_sql_orderby( $_GET['orderby'] ) : 'keyword' ); // phpcs:ignore WordPress.Security.NonceVerification
 
 	}
 
@@ -331,7 +331,7 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 	 */
 	private function get_order() {
 
-		return ( isset( $_GET['order'] ) ? sanitize_text_field( $_GET['order'] ) : 'ASC' ); // phpcs:ignore
+		return ( isset( $_GET['order'] ) ? sanitize_text_field( $_GET['order'] ) : 'ASC' ); // phpcs:ignore WordPress.Security.NonceVerification
 
 	}
 
@@ -344,7 +344,7 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 	 */
 	private function get_page() {
 
-		return ( ( isset( $_GET['paged'] ) && ! empty( $_GET['paged'] ) ) ? absint( $_GET['paged'] ) : 1 ); // phpcs:ignore
+		return ( ( isset( $_GET['paged'] ) && ! empty( $_GET['paged'] ) ) ? absint( $_GET['paged'] ) : 1 ); // phpcs:ignore WordPress.Security.NonceVerification
 
 	}
 

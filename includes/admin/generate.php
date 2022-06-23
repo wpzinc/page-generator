@@ -370,9 +370,9 @@ class Page_Generator_Pro_Generate {
 			'post_title'     => $settings['title'],
 			'post_content'   => $settings['content'],
 			'post_status'    => ( $test_mode ? 'draft' : $settings['status'] ),
-			'post_author'    => ( ( isset( $settings['rotateAuthors'] ) && $settings['rotateAuthors'] == 1 ) ? $authors[ $user_index ]->ID : $settings['author'] ), // phpcs:ignore
-			'comment_status' => ( ( isset( $settings['comments'] ) && $settings['comments'] == 1 ) ? 'open' : 'closed' ), // phpcs:ignore
-			'ping_status'    => ( ( isset( $settings['trackbacks'] ) && $settings['trackbacks'] == 1 ) ? 'open' : 'closed' ), // phpcs:ignore
+			'post_author'    => ( ( isset( $settings['rotateAuthors'] ) && $settings['rotateAuthors'] == 1 ) ? $authors[ $user_index ]->ID : $settings['author'] ), // phpcs:ignore WordPress.PHP.StrictComparisons
+			'comment_status' => ( ( isset( $settings['comments'] ) && $settings['comments'] == 1 ) ? 'open' : 'closed' ), // phpcs:ignore WordPress.PHP.StrictComparisons
+			'ping_status'    => ( ( isset( $settings['trackbacks'] ) && $settings['trackbacks'] == 1 ) ? 'open' : 'closed' ), // phpcs:ignore WordPress.PHP.StrictComparisons
 			'post_name'      => $post_name,
 			'post_date'      => $this->post_date( $settings, $last_generated_post_date_time ),
 		);
@@ -567,7 +567,7 @@ class Page_Generator_Pro_Generate {
 	 * @param   string $keyword                    Keyword without Modifiers (e.g. keyword).
 	 * @param   string $term                       Term (replacement).
 	 */
-	private function build_search_replace_arrays_for_keyword( $keyword_with_modifiers, $keyword, $term ) { // phpcs:ignore
+	private function build_search_replace_arrays_for_keyword( $keyword_with_modifiers, $keyword, $term ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 
 		// Add Keyword and Term to Search and Replace arrays.
 		$this->searches[]     = '{' . $keyword . '}';
@@ -851,7 +851,7 @@ class Page_Generator_Pro_Generate {
 	 * @param   string $content    Array Value (string to search).
 	 * @param   string $key        Array Key.
 	 */
-	private function find_keywords_in_string( $content, $key ) { // phpcs:ignore
+	private function find_keywords_in_string( $content, $key ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 
 		// If $content is an object, iterate this call.
 		if ( is_object( $content ) ) {
@@ -916,12 +916,12 @@ class Page_Generator_Pro_Generate {
 		$keyword_name = $this->extract_keyword_name_from_keyword( $keyword );
 
 		// If the Keyword Name is a spin that's just text (i.e it's not actually a Keyword), skip it.
-		if ( ! in_array( $keyword_name, $this->base->get_class( 'keywords' )->get_keywords_names() ) ) { // phpcs:ignore
+		if ( ! in_array( $keyword_name, $this->base->get_class( 'keywords' )->get_keywords_names(), true ) ) {
 			return;
 		}
 
 		// If the Keyword Name is not in our required_keywords array, add it now.
-		if ( ! in_array( $keyword_name, $this->required_keywords ) ) { // phpcs:ignore
+		if ( ! in_array( $keyword_name, $this->required_keywords, true ) ) {
 			$this->required_keywords[ $keyword_name ] = $keyword_name;
 		}
 
@@ -929,7 +929,7 @@ class Page_Generator_Pro_Generate {
 		if ( ! isset( $this->required_keywords_full[ $keyword_name ] ) ) {
 			$this->required_keywords_full[ $keyword_name ] = array();
 		}
-		if ( ! in_array( $keyword, $this->required_keywords_full[ $keyword_name ] ) ) { // phpcs:ignore
+		if ( ! in_array( $keyword, $this->required_keywords_full[ $keyword_name ], true ) ) {
 			$this->required_keywords_full[ $keyword_name ][] = $keyword;
 		}
 
@@ -1085,7 +1085,7 @@ class Page_Generator_Pro_Generate {
 	 * @param   array $settings                       Group Settings.
 	 * @param   mixed $last_generated_post_date_time  Last Generated Post's Date and Time.
 	 */
-	public function post_date( $settings, $last_generated_post_date_time = false ) { // phpcs:ignore
+	public function post_date( $settings, $last_generated_post_date_time = false ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 
 		return date_format( date_create( date_i18n( 'Y-m-d H:i:s' ) ), 'Y-m-d H:i:s' );
 
@@ -1103,7 +1103,7 @@ class Page_Generator_Pro_Generate {
 	 * @param   array $post_args          wp_insert_post() / wp_update_post() arguments.
 	 * @return  bool                        Updated Page Template on Generated Post ID
 	 */
-	private function set_page_template( $post_id, $group_id, $settings, $post_args ) { // phpcs:ignore
+	private function set_page_template( $post_id, $group_id, $settings, $post_args ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 
 		// Bail if the target Post Type doesn't support templates.
 		if ( ! $this->base->get_class( 'common' )->post_type_supports( $settings['type'], 'templates' ) ) {
@@ -1408,7 +1408,7 @@ class Page_Generator_Pro_Generate {
 	 * @param   mixed  $last_generated_post_date_time  Last Generated Post's Date and Time.
 	 * @return                                          Success Data
 	 */
-	private function generate_return( $group_id, $post_or_term_id, $post_type_or_taxonomy, $generated, $message, $start, $test_mode, $system, $keywords_terms, $last_generated_post_date_time = false ) { // phpcs:ignore
+	private function generate_return( $group_id, $post_or_term_id, $post_type_or_taxonomy, $generated, $message, $start, $test_mode, $system, $keywords_terms, $last_generated_post_date_time = false ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 
 		$url = get_permalink( $post_or_term_id );
 		if ( $test_mode ) {
@@ -1471,7 +1471,7 @@ class Page_Generator_Pro_Generate {
 	 * @param   array    $keywords_terms         Keywords and Terms.
 	 * @return  WP_Error                            Error
 	 */
-	private function generate_error_return( $error, $group_id, $post_or_term_id, $post_type_or_taxonomy, $test_mode, $system, $keywords_terms ) { // phpcs:ignore
+	private function generate_error_return( $error, $group_id, $post_or_term_id, $post_type_or_taxonomy, $test_mode, $system, $keywords_terms ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 
 		$url = '';
 		if ( $post_or_term_id ) {

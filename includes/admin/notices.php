@@ -417,7 +417,11 @@ class Page_Generator_Pro_Notices {
 			?>
 			<div class="notice notice-success is-dismissible">
 				<p>
-					<?php echo implode( '<br />', $this->notices['success'] ); // phpcs:ignore ?>
+					<?php
+					foreach ( $this->notices['success'] as $notice ) {
+						echo esc_html( $notice ) . '<br />';
+					}
+					?>
 				</p>
 			</div>
 			<?php
@@ -428,7 +432,11 @@ class Page_Generator_Pro_Notices {
 			?>
 			<div class="notice notice-warning is-dismissible">
 				<p>
-					<?php echo implode( '<br />', $this->notices['warning'] ); // phpcs:ignore ?>
+					<?php
+					foreach ( $this->notices['warning'] as $notice ) {
+						echo esc_html( $notice ) . '<br />';
+					}
+					?>
 				</p>
 			</div>
 			<?php
@@ -439,7 +447,11 @@ class Page_Generator_Pro_Notices {
 			?>
 			<div class="notice notice-error is-dismissible">
 				<p>
-					<?php echo implode( '<br />', $this->notices['error'] ); // phpcs:ignore ?>
+					<?php
+					foreach ( $this->notices['error'] as $notice ) {
+						echo esc_html( $notice ) . '<br />';
+					}
+					?>
 				</p>
 			</div>
 			<?php

@@ -155,8 +155,8 @@ class Page_Generator_Pro_Keywords {
 
 		// Iterate through columns.
 		foreach ( $columns as $column ) {
-			if ( array_key_exists( $column->Field, $required_columns ) ) { // phpcs:ignore
-				$required_columns[ $column->Field ] = true; // phpcs:ignore
+			if ( array_key_exists( $column->Field, $required_columns ) ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+				$required_columns[ $column->Field ] = true; // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 			}
 		}
 
@@ -172,7 +172,13 @@ class Page_Generator_Pro_Keywords {
 				 */
 				case 'options':
 				case 'columns':
-					$wpdb->query( 'ALTER TABLE ' . $wpdb->prefix . 'page_generator_keywords ADD COLUMN `' . $column . '` text NOT NULL AFTER `keyword`' ); // phpcs:ignore
+					$wpdb->query( 
+						$wpdb->prepare(
+							'ALTER TABLE %1$spage_generator_keywords ADD COLUMN `%2$s` text NOT NULL AFTER `keyword`', // phpcs:ignore WordPress.DB.PreparedSQLPlaceholders
+							$wpdb->prefix,
+							$column
+						)
+					);
 					break;
 
 				/**
@@ -180,7 +186,13 @@ class Page_Generator_Pro_Keywords {
 				 */
 				case 'source':
 				case 'delimiter':
-					$wpdb->query( 'ALTER TABLE ' . $wpdb->prefix . 'page_generator_keywords ADD COLUMN `' . $column . '` varchar(191) NOT NULL AFTER `keyword`' ); // phpcs:ignore
+					$wpdb->query( 
+						$wpdb->prepare(
+							'ALTER TABLE %1$spage_generator_keywords ADD COLUMN `%2$s` varchar(191) NOT NULL AFTER `keyword`', // phpcs:ignore WordPress.DB.PreparedSQLPlaceholders
+							$wpdb->prefix,
+							$column
+						)
+					);
 					break;
 			}
 		}
@@ -204,18 +216,24 @@ class Page_Generator_Pro_Keywords {
 
 		// Find column.
 		foreach ( $columns as $column ) {
-			if ( $column->Field !== 'columns' ) { // phpcs:ignore
+			if ( $column->Field !== 'columns' ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 				continue;
 			}
 
 			// If here, we found the column we want.
-			if ( $column->Type === 'text' ) { // phpcs:ignore
+			if ( $column->Type === 'text' ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 				// Already set to the correct type.
 				return true;
 			}
 
 			// Change column from varchar to text.
-			$wpdb->query( 'ALTER TABLE ' . $wpdb->prefix . 'page_generator_keywords MODIFY COLUMN `' . $column->Field . '` text NOT NULL' ); // phpcs:ignore
+			$wpdb->query(
+				$wpdb->prepare(
+					'ALTER TABLE %1$spage_generator_keywords MODIFY COLUMN `%2$s` text NOT NULL', // phpcs:ignore WordPress.DB.PreparedSQLPlaceholders
+					$wpdb->prefix,
+					$column->Field // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+				)
+			);
 
 			return true;
 		}
@@ -238,18 +256,24 @@ class Page_Generator_Pro_Keywords {
 
 		// Find column.
 		foreach ( $columns as $column ) {
-			if ( $column->Field !== 'data' ) { // phpcs:ignore
+			if ( $column->Field !== 'data' ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 				continue;
 			}
 
 			// If here, we found the column we want.
-			if ( $column->Type === 'longtext' ) { // phpcs:ignore
+			if ( $column->Type === 'longtext' ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 				// Already set to the correct type.
 				return true;
 			}
 
 			// Change column from varchar to text.
-			$wpdb->query( 'ALTER TABLE ' . $wpdb->prefix . 'page_generator_keywords MODIFY COLUMN `' . $column->Field . '` longtext NOT NULL' ); // phpcs:ignore
+			$wpdb->query(
+				$wpdb->prepare(
+					'ALTER TABLE %1$spage_generator_keywords MODIFY COLUMN `%2$s` longtext NOT NULL', // phpcs:ignore WordPress.DB.PreparedSQLPlaceholders
+					$wpdb->prefix,
+					$column->Field // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+				)
+			);
 
 			return true;
 		}
@@ -287,11 +311,13 @@ class Page_Generator_Pro_Keywords {
 		// Iterate through Keywords, updating each Keyword's Terms.
 		foreach ( $keywords as $keyword ) {
 			// Get Keyword.
-			$query   = $wpdb->prepare(
-				"SELECT keywordID, keyword, source, columns, delimiter, options FROM " . $wpdb->prefix . $this->table . " WHERE keyword = %s LIMIT 1", // phpcs:ignore
-				$keyword
+			$keyword = $wpdb->get_row(
+				$wpdb->prepare(
+					'SELECT keywordID, keyword, source, columns, delimiter, options FROM {$wpdb->prefix}{$this->table} WHERE keyword = %s LIMIT 1',
+					$keyword
+				),
+				ARRAY_A
 			);
-			$keyword = $wpdb->get_row( $query, ARRAY_A ); // phpcs:ignore
 
 			// Skip if the Keyword doesn't exist.
 			if ( is_null( $keyword ) ) {
@@ -364,11 +390,13 @@ class Page_Generator_Pro_Keywords {
 		global $wpdb;
 
 		// Get record.
-		$query   = $wpdb->prepare(
-			'SELECT * FROM ' . $wpdb->prefix . $this->table . ' WHERE ' . $this->key . ' = %d LIMIT 1', // phpcs:ignore
-			$id
+		$results = $wpdb->get_results(
+			$wpdb->prepare(
+				'SELECT * FROM {$wpdb->prefix}{$this->table} WHERE {$this->key} = %d LIMIT 1',
+				$id
+			),
+			ARRAY_A
 		);
-		$results = $wpdb->get_results( $query, ARRAY_A ); // phpcs:ignore
 
 		// Check a record was found   . .
 		if ( ! $results ) {
@@ -392,18 +420,20 @@ class Page_Generator_Pro_Keywords {
 	 * @param   string $value  Field Value.
 	 * @return  array           Records
 	 */
-	public function get_by( $field, $value ) {
+	public function get_by( $field, $value ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 
 		global $wpdb;
 
 		// Get record.
-		$query   = $wpdb->prepare(
-			'SELECT * FROM ' . $wpdb->prefix . $this->table . ' WHERE ' . $field . " = %s", // phpcs:ignore
-			$value
+		$results = $wpdb->get_results(
+			$wpdb->prepare(
+				'SELECT * FROM {$wpdb->prefix}{$this->table} WHERE {$field} = %s',
+				$value
+			),
+			ARRAY_A
 		);
-		$results = $wpdb->get_results( $query, ARRAY_A ); // phpcs:ignore
 
-		// Check a record was found   ..
+		// Check a record was found.
 		if ( ! $results ) {
 			return false;
 		}
@@ -432,13 +462,13 @@ class Page_Generator_Pro_Keywords {
 
 		global $wpdb;
 
-		$get_all = ( ( $paged == -1 ) ? true : false ); // phpcs:ignore
+		$get_all = ( ( $paged == -1 ) ? true : false ); // phpcs:ignore WordPress.PHP.StrictComparisons
 
 		// Search.
 		if ( ! empty( $search ) ) {
 			$query = $wpdb->prepare(
-				'SELECT * FROM ' . $wpdb->prefix . $this->table . " WHERE keyword LIKE '%%%s%%' ORDER BY " . $order_by . ' ' . $order, // phpcs:ignore
-				$search
+				'SELECT * FROM {$wpdb->prefix}{$this->table} WHERE keyword LIKE %s ORDER BY {$order_by} {$order}',
+				$wpdb->esc_like( $search )
 			);
 		} else {
 			$query = 'SELECT * FROM ' . $wpdb->prefix . $this->table . ' ORDER BY ' . $order_by . ' ' . $order;
@@ -454,7 +484,7 @@ class Page_Generator_Pro_Keywords {
 		}
 
 		// Get results.
-		$results = $wpdb->get_results( $query ); // phpcs:ignore
+		$results = $wpdb->get_results( $query );
 
 		// Check a record was found.
 		if ( ! $results ) {
@@ -486,7 +516,7 @@ class Page_Generator_Pro_Keywords {
 		global $wpdb;
 
 		// Get results.
-		$results = $wpdb->get_results( 'SELECT keyword FROM ' . $wpdb->prefix . $this->table . ' ORDER BY keyword ASC', ARRAY_A ); // phpcs:ignore
+		$results = $wpdb->get_results( 'SELECT keyword FROM ' . $wpdb->prefix . $this->table . ' ORDER BY keyword ASC', ARRAY_A );
 
 		// Check a record was found   .
 		if ( ! $results ) {
@@ -535,7 +565,7 @@ class Page_Generator_Pro_Keywords {
 		global $wpdb;
 
 		// Get results.
-		$results = $wpdb->get_results( 'SELECT keyword, columns, delimiter FROM ' . $wpdb->prefix . $this->table . ' ORDER BY keyword ASC', ARRAY_A ); // phpcs:ignore
+		$results = $wpdb->get_results( 'SELECT keyword, columns, delimiter FROM ' . $wpdb->prefix . $this->table . ' ORDER BY keyword ASC', ARRAY_A );
 
 		// Check a record was found.
 		if ( ! $results ) {
@@ -603,19 +633,19 @@ class Page_Generator_Pro_Keywords {
 		// Prepare query.
 		if ( empty( $id ) ) {
 			$query = $wpdb->prepare(
-				'SELECT keywordID FROM ' . $wpdb->prefix . $this->table . ' WHERE keyword = %s', // phpcs:ignore
+				'SELECT keywordID FROM ' . $wpdb->prefix . $this->table . ' WHERE keyword = %s',
 				$keyword
 			);
 		} else {
 			$query = $wpdb->prepare(
-				'SELECT keywordID FROM ' . $wpdb->prefix . $this->table . " WHERE keyword = %s AND keywordID != %d", // phpcs:ignore
+				'SELECT keywordID FROM ' . $wpdb->prefix . $this->table . ' WHERE keyword = %s AND keywordID != %d',
 				$keyword,
 				$id
 			);
 		}
 
 		// Run query.
-		$results = $wpdb->get_results( $query, ARRAY_A ); // phpcs:ignore
+		$results = $wpdb->get_results( $query, ARRAY_A );
 
 		// Check a record was found.
 		if ( ! $results ) {
@@ -644,7 +674,7 @@ class Page_Generator_Pro_Keywords {
 		// Prepare query.
 		if ( ! empty( $search ) ) {
 			$query = $wpdb->prepare(
-				"SELECT COUNT(" . $this->key . ") FROM " . $wpdb->prefix . $this->table . " WHERE keyword LIKE '%%%s%%'", // phpcs:ignore
+				'SELECT COUNT(' . $this->key . ') FROM ' . $wpdb->prefix . $this->table . " WHERE keyword LIKE '%%%s%%'",
 				$search
 			);
 		} else {
@@ -653,7 +683,7 @@ class Page_Generator_Pro_Keywords {
 		}
 
 		// Return count.
-		return $wpdb->get_var( $query ); // phpcs:ignore
+		return $wpdb->get_var( $query );
 
 	}
 
@@ -779,9 +809,9 @@ class Page_Generator_Pro_Keywords {
 		$result['keywordID'] = absint( $result['keywordID'] );
 
 		// Stripslashes.
-		$result['data']      = stripslashes( $result['data'] );
-		$result['delimiter'] = stripslashes( $result['delimiter'] );
-		$result['columns']   = stripslashes( $result['columns'] );
+		$result['data']      = wp_unslash( $result['data'] );
+		$result['delimiter'] = wp_unslash( $result['delimiter'] );
+		$result['columns']   = wp_unslash( $result['columns'] );
 
 		// Expand data into array.
 		$result['dataArr']    = explode( "\n", $result['data'] );
@@ -865,7 +895,7 @@ class Page_Generator_Pro_Keywords {
 			if ( $append_terms ) {
 				// Prepare query.
 				$query = $wpdb->prepare(
-					"UPDATE " . $wpdb->prefix . $this->table . " SET keyword = %s, source = %s, options = %s, delimiter = %s, columns = %s, data = concat(data, '" . addslashes( $data['data'] ) . "') WHERE " . $this->key . " = %s", // phpcs:ignore
+					'UPDATE ' . $wpdb->prefix . $this->table . " SET keyword = %s, source = %s, options = %s, delimiter = %s, columns = %s, data = concat(data, '" . addslashes( $data['data'] ) . "') WHERE " . $this->key . ' = %s',
 					$data['keyword'],
 					$data['source'],
 					$data['options'],
@@ -875,7 +905,7 @@ class Page_Generator_Pro_Keywords {
 				);
 
 				// Run query.
-				$result = $wpdb->query( $query ); // phpcs:ignore
+				$result = $wpdb->query( $query );
 			} else {
 				// Editing an existing record.
 				$result = $wpdb->update(
@@ -1156,7 +1186,7 @@ class Page_Generator_Pro_Keywords {
 	 * @param   array  $keywords   Keywords.
 	 * @param   string $element    HTML Element ID to insert Keyword into when selected in dropdown.
 	 */
-	public function output_dropdown( $keywords, $element ) { // phpcs:ignore
+	public function output_dropdown( $keywords, $element ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 
 		// Load view.
 		include $this->base->plugin->folder . 'views/admin/keywords-dropdown.php';

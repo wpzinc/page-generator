@@ -154,15 +154,15 @@ class Page_Generator_Pro_PostType {
 		}
 
 		// Not a preview if the required request parameters are missing.
-		if ( ! isset( $_REQUEST['preview_id'] ) ) { // phpcs:ignore
+		if ( ! isset( $_REQUEST['preview_id'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 			return false;
 		}
-		if ( ! isset( $_REQUEST['preview'] ) ) { // phpcs:ignore
+		if ( ! isset( $_REQUEST['preview'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 			return false;
 		}
 
 		// Not a preview if it's not a Content Group.
-		$preview_id = absint( $_REQUEST['preview_id'] ); // phpcs:ignore
+		$preview_id = absint( $_REQUEST['preview_id'] ); // phpcs:ignore WordPress.Security.NonceVerification
 		if ( get_post_type( $preview_id ) !== $this->post_type_name ) {
 			return false;
 		}

@@ -95,7 +95,7 @@ class Page_Generator_Pro_Groups_UI {
 			3  => __( 'Custom field deleted.', 'page-generator' ),
 			4  => __( 'Group updated.', 'page-generator' ),
 			/* translators: Post revision title */
-			5  => ( isset( $_GET['revision'] ) ? sprintf( __( 'Group restored to revision from %s.', 'page-generator' ), wp_post_revision_title( absint( $_GET['revision'] ), false ) ) : false ), // phpcs:ignore
+			5  => ( isset( $_GET['revision'] ) ? sprintf( __( 'Group restored to revision from %s.', 'page-generator' ), wp_post_revision_title( absint( $_GET['revision'] ), false ) ) : false ), // phpcs:ignore WordPress.Security.NonceVerification
 			6  => __( 'Group saved.', 'page-generator' ),
 			7  => __( 'Group saved.', 'page-generator' ),
 			8  => __( 'Group submitted.', 'page-generator' ),
@@ -397,7 +397,7 @@ class Page_Generator_Pro_Groups_UI {
 	 *
 	 * @param   WP_Post $post   Custom Post Type's Post.
 	 */
-	public function output_meta_box_upgrade( $post ) { // phpcs:ignore
+	public function output_meta_box_upgrade( $post ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 
 		// Load view.
 		include $this->base->plugin->folder . '/_modules/dashboard/views/footer-upgrade.php';
@@ -545,7 +545,7 @@ class Page_Generator_Pro_Groups_UI {
 	 *
 	 * @param   WP_Post $post   Custom Post Type's Post.
 	 */
-	public function output_meta_box_template( $post ) { // phpcs:ignore
+	public function output_meta_box_template( $post ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 
 		// Get options.
 		$post_types_templates = $this->base->get_class( 'common' )->get_post_types_templates();
@@ -576,7 +576,7 @@ class Page_Generator_Pro_Groups_UI {
 		}
 
 		// Invalid nonce.
-		if ( ! wp_verify_nonce( $_POST[ $this->base->plugin->name . '_nonce' ], 'save_generate' ) ) {
+		if ( ! wp_verify_nonce( sanitize_key( $_POST[ $this->base->plugin->name . '_nonce' ] ), 'save_generate' ) ) {
 			return;
 		}
 
@@ -742,31 +742,31 @@ class Page_Generator_Pro_Groups_UI {
 	 */
 	private function get_action() {
 
-		if ( isset( $_POST['test'] ) ) { // phpcs:ignore
+		if ( isset( $_POST['test'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 			return 'test';
 		}
 
-		if ( isset( $_POST['generate'] ) ) { // phpcs:ignore
+		if ( isset( $_POST['generate'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 			return 'generate';
 		}
 
-		if ( isset( $_POST['generate_server'] ) ) { // phpcs:ignore
+		if ( isset( $_POST['generate_server'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 			return 'generate_server';
 		}
 
-		if ( isset( $_POST['trash_generated_content'] ) ) { // phpcs:ignore
+		if ( isset( $_POST['trash_generated_content'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 			return 'trash_generated_content';
 		}
 
-		if ( isset( $_POST['delete_generated_content'] ) ) { // phpcs:ignore
+		if ( isset( $_POST['delete_generated_content'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 			return 'delete_generated_content';
 		}
 
-		if ( isset( $_POST['cancel_generation'] ) ) { // phpcs:ignore
+		if ( isset( $_POST['cancel_generation'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 			return 'cancel_generation';
 		}
 
-		if ( isset( $_POST['save'] ) ) { // phpcs:ignore
+		if ( isset( $_POST['save'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 			return 'save';
 		}
 
@@ -793,12 +793,12 @@ class Page_Generator_Pro_Groups_UI {
 			 */
 			case 'edit.php':
 				// Bail if no Post Type is supplied.
-				if ( ! isset( $_REQUEST['post_type'] ) ) { // phpcs:ignore
+				if ( ! isset( $_REQUEST['post_type'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 					break;
 				}
 
 				// Bail if we're not on our Group Post Type.
-				if ( $_REQUEST['post_type'] !== 'page-generator-pro' ) { // phpcs:ignore
+				if ( $_REQUEST['post_type'] !== 'page-generator-pro' ) { // phpcs:ignore WordPress.Security.NonceVerification
 					break;
 				}
 
@@ -826,12 +826,12 @@ class Page_Generator_Pro_Groups_UI {
 			case 'post-new.php':
 			case 'press-this.php':
 				// Bail if we don't know the Post Type.
-				if ( ! isset( $_REQUEST['post_type'] ) ) { // phpcs:ignore
+				if ( ! isset( $_REQUEST['post_type'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 					break;
 				}
 
 				// Bail if we're not on our Group Post Type.
-				if ( $_REQUEST['post_type'] !== 'page-generator-pro' ) { // phpcs:ignore
+				if ( $_REQUEST['post_type'] !== 'page-generator-pro' ) { // phpcs:ignore WordPress.Security.NonceVerification
 					break;
 				}
 

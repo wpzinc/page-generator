@@ -114,7 +114,7 @@ class Page_Generator_Pro_Cartesian_Product implements IteratorAggregate, Countab
 		if ( null === $this->count ) {
 			$this->count = (int) array_product(
 				array_map(
-					function ( $subset, $key ) { // phpcs:ignore
+					function ( $subset, $key ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 						return count( $subset );
 					},
 					$this->set,

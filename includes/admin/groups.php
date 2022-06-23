@@ -673,7 +673,7 @@ class Page_Generator_Pro_Groups {
 		 * @param   array   $settings   Group Settings.
 		 * @param   array   $_REQUEST   Request data.
 		 */
-		do_action( 'page_generator_pro_groups_save', $group_id, $settings, $_REQUEST ); // phpcs:ignore
+		do_action( 'page_generator_pro_groups_save', $group_id, $settings, $_REQUEST ); // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter, WordPress.Security.NonceVerification
 
 		// Validate the Group, adding error notices as necessary.
 		return $this->validate( $group_id );

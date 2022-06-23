@@ -147,7 +147,7 @@ class Page_Generator_Pro_Keywords_Source_Local {
 	 * @param   array $form_data  Keyword Form Data.
 	 * @return  mixed               WP_Error | bool
 	 */
-	public function validate( $result, $keyword, $form_data ) { // phpcs:ignore
+	public function validate( $result, $keyword, $form_data ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 
 		// If result is an error from e.g. another filter, bail.
 		if ( is_wp_error( $result ) ) {

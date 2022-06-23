@@ -289,7 +289,7 @@ class Page_Generator {
 				sprintf(
 					/* translators: %1$s: Plugin Name, %2$s: PHP class name */
 					__( '%1$s: Error: Could not load Plugin class %2$s', 'page-generator' ),
-                    $this->plugin->displayName, // phpcs:ignore
+					$this->plugin->displayName, // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 					$name
 				)
 			);
@@ -298,11 +298,11 @@ class Page_Generator {
 			// Admin UI.
 			if ( is_admin() ) {
 				wp_die(
-                    $error, // phpcs:ignore
+					esc_html( $error->get_error_message() ),
 					sprintf(
 						/* translators: Plugin Name */
 						esc_html__( '%s: Error', 'page-generator' ),
-                        $this->plugin->displayName // phpcs:ignore
+						esc_html( $this->plugin->displayName ) // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 					),
 					array(
 						'back_link' => true,

@@ -156,7 +156,7 @@ class Page_Generator_Pro_Settings {
 	public function update_settings( $type, $settings ) {
 
 		// Strip slashes from settings.
-		$settings = $this->stripslashes( $settings );
+		$settings = wp_unslash( $settings );
 
 		/**
 		 * Filter the Settings before updating.
@@ -172,30 +172,6 @@ class Page_Generator_Pro_Settings {
 		update_option( $type, $settings );
 
 		return true;
-
-	}
-
-	/**
-	 * Recursively strips slashes from settings
-	 *
-	 * @since   1.1.0
-	 *
-	 * @param   array $settings   Settings.
-	 * @return  array               Settings
-	 */
-	public function stripslashes( $settings ) {
-
-		if ( is_string( $settings ) ) {
-			return stripslashes( $settings );
-		}
-
-		if ( is_array( $settings ) ) {
-			foreach ( $settings as $i => $value ) {
-				$settings[ $i ] = $this->stripslashes( $value );
-			}
-		}
-
-		return $settings;
 
 	}
 
