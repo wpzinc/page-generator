@@ -96,6 +96,9 @@ There are no limits on the number of Pages that can be generated with our mass p
 
 == Changelog ==
 
+= 1.6.6.2 (2022-06-21) =
+* Fix: Coding Standards: Provide specific reasons when ignoring a coding standard
+
 = 1.6.6.1 (2022-06-21) =
 * Fix: Keywords: Process form data with nonce verification outside of views folder
 
