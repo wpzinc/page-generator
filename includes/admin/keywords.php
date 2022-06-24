@@ -172,7 +172,7 @@ class Page_Generator_Pro_Keywords {
 				 */
 				case 'options':
 				case 'columns':
-					$wpdb->query( 
+					$wpdb->query(
 						$wpdb->prepare(
 							'ALTER TABLE %1$spage_generator_keywords ADD COLUMN `%2$s` text NOT NULL AFTER `keyword`', // phpcs:ignore WordPress.DB.PreparedSQLPlaceholders
 							$wpdb->prefix,
@@ -186,7 +186,7 @@ class Page_Generator_Pro_Keywords {
 				 */
 				case 'source':
 				case 'delimiter':
-					$wpdb->query( 
+					$wpdb->query(
 						$wpdb->prepare(
 							'ALTER TABLE %1$spage_generator_keywords ADD COLUMN `%2$s` varchar(191) NOT NULL AFTER `keyword`', // phpcs:ignore WordPress.DB.PreparedSQLPlaceholders
 							$wpdb->prefix,
@@ -458,7 +458,7 @@ class Page_Generator_Pro_Keywords {
 	 * @param   string $search             Search Keywords (optional).
 	 * @return  array                       Records
 	 */
-	public function get_all( $order_by = 'keyword', $order = 'ASC', $paged = 1, $results_per_page = 10, $search = '' ) {
+	public function get_all( $order_by = 'keyword', $order = 'ASC', $paged = 1, $results_per_page = 10, $search = '' ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
 
 		global $wpdb;
 
@@ -471,7 +471,7 @@ class Page_Generator_Pro_Keywords {
 				$wpdb->esc_like( $search )
 			);
 		} else {
-			$query = 'SELECT * FROM ' . $wpdb->prefix . $this->table . ' ORDER BY ' . $order_by . ' ' . $order;
+			$query = 'SELECT * FROM {$wpdb->prefix}{$this->table} ORDER BY {$order_by} {$order}';
 		}
 
 		// Add Limit.
@@ -484,7 +484,7 @@ class Page_Generator_Pro_Keywords {
 		}
 
 		// Get results.
-		$results = $wpdb->get_results( $query );
+		$results = $wpdb->get_results( $query ); // phpcs:ignore WordPress.DB
 
 		// Check a record was found.
 		if ( ! $results ) {
@@ -516,7 +516,7 @@ class Page_Generator_Pro_Keywords {
 		global $wpdb;
 
 		// Get results.
-		$results = $wpdb->get_results( 'SELECT keyword FROM ' . $wpdb->prefix . $this->table . ' ORDER BY keyword ASC', ARRAY_A );
+		$results = $wpdb->get_results( 'SELECT keyword FROM {$wpdb->prefix}{$this->table} ORDER BY keyword ASC', ARRAY_A );
 
 		// Check a record was found   .
 		if ( ! $results ) {
@@ -565,7 +565,7 @@ class Page_Generator_Pro_Keywords {
 		global $wpdb;
 
 		// Get results.
-		$results = $wpdb->get_results( 'SELECT keyword, columns, delimiter FROM ' . $wpdb->prefix . $this->table . ' ORDER BY keyword ASC', ARRAY_A );
+		$results = $wpdb->get_results( 'SELECT keyword, columns, delimiter FROM {$wpdb->prefix}{$this->table} ORDER BY keyword ASC', ARRAY_A ); // phpcs:ignore WordPress.DB
 
 		// Check a record was found.
 		if ( ! $results ) {
@@ -633,19 +633,19 @@ class Page_Generator_Pro_Keywords {
 		// Prepare query.
 		if ( empty( $id ) ) {
 			$query = $wpdb->prepare(
-				'SELECT keywordID FROM ' . $wpdb->prefix . $this->table . ' WHERE keyword = %s',
+				'SELECT keywordID FROM {$wpdb->prefix}{$this->table} WHERE keyword = %s',
 				$keyword
 			);
 		} else {
 			$query = $wpdb->prepare(
-				'SELECT keywordID FROM ' . $wpdb->prefix . $this->table . ' WHERE keyword = %s AND keywordID != %d',
+				'SELECT keywordID FROM {$wpdb->prefix}{$this->table} WHERE keyword = %s AND keywordID != %d',
 				$keyword,
 				$id
 			);
 		}
 
 		// Run query.
-		$results = $wpdb->get_results( $query, ARRAY_A );
+		$results = $wpdb->get_results( $query, ARRAY_A ); // phpcs:ignore WordPress.DB
 
 		// Check a record was found.
 		if ( ! $results ) {
@@ -674,16 +674,16 @@ class Page_Generator_Pro_Keywords {
 		// Prepare query.
 		if ( ! empty( $search ) ) {
 			$query = $wpdb->prepare(
-				'SELECT COUNT(' . $this->key . ') FROM ' . $wpdb->prefix . $this->table . " WHERE keyword LIKE '%%%s%%'",
-				$search
+				'SELECT COUNT({$this->key}) FROM {$wpdb->prefix}{$this->table} WHERE keyword LIKE %s',
+				$wpdb->esc_like( $search )
 			);
 		} else {
-			$query = 'SELECT COUNT( ' . $this->key . ' ) FROM ' . $wpdb->prefix . $this->table;
+			$query = 'SELECT COUNT({$this->key}) FROM {$wpdb->prefix}{$this->table}';
 
 		}
 
 		// Return count.
-		return $wpdb->get_var( $query );
+		return $wpdb->get_var( $query ); // phpcs:ignore WordPress.DB
 
 	}
 
@@ -893,19 +893,19 @@ class Page_Generator_Pro_Keywords {
 		// Depending on whether an ID has been defined, update or insert the keyword.
 		if ( ! empty( $id ) ) {
 			if ( $append_terms ) {
-				// Prepare query.
-				$query = $wpdb->prepare(
-					'UPDATE ' . $wpdb->prefix . $this->table . " SET keyword = %s, source = %s, options = %s, delimiter = %s, columns = %s, data = concat(data, '" . addslashes( $data['data'] ) . "') WHERE " . $this->key . ' = %s',
-					$data['keyword'],
-					$data['source'],
-					$data['options'],
-					$data['delimiter'],
-					$data['columns'],
-					$id
-				);
-
 				// Run query.
-				$result = $wpdb->query( $query );
+				$result = $wpdb->query(
+					$wpdb->prepare(
+						'UPDATE {$wpdb->prefix}{$this->table} SET keyword = %s, source = %s, options = %s, delimiter = %s, columns = %s, data = concat(data, %s) WHERE {$this->key} = %s',
+						$data['keyword'],
+						$data['source'],
+						$data['options'],
+						$data['delimiter'],
+						$data['columns'],
+						addslashes( $data['data'] ),
+						$id
+					)
+				);
 			} else {
 				// Editing an existing record.
 				$result = $wpdb->update(
