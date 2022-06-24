@@ -419,7 +419,10 @@ class Page_Generator_Pro_Notices {
 				<p>
 					<?php
 					foreach ( $this->notices['success'] as $notice ) {
-						echo esc_html( $notice ) . '<br />';
+						$notice_lines = explode( "\n", $notice );
+						foreach ( $notice_lines as $notice_line ) {
+							echo esc_html( $notice_line ) . '<br />';
+						}
 					}
 					?>
 				</p>
@@ -434,7 +437,10 @@ class Page_Generator_Pro_Notices {
 				<p>
 					<?php
 					foreach ( $this->notices['warning'] as $notice ) {
-						echo esc_html( $notice ) . '<br />';
+						$notice_lines = explode( "\n", $notice );
+						foreach ( $notice_lines as $notice_line ) {
+							echo esc_html( $notice_line ) . '<br />';
+						}
 					}
 					?>
 				</p>
@@ -449,7 +455,10 @@ class Page_Generator_Pro_Notices {
 				<p>
 					<?php
 					foreach ( $this->notices['error'] as $notice ) {
-						echo esc_html( $notice ) . '<br />';
+						$notice_lines = explode( "\n", $notice );
+						foreach ( $notice_lines as $notice_line ) {
+							echo esc_html( $notice_line ) . '<br />';
+						}
 					}
 					?>
 				</p>

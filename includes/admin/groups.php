@@ -569,7 +569,8 @@ class Page_Generator_Pro_Groups {
 					);
 
 					foreach ( $result['keywords_terms'] as $keyword => $term ) {
-						$message .= '<br />{' . $keyword . '}: ' . ( strlen( $term ) > 50 ? substr( $term, 0, 50 ) . '...' : $term );
+						$message .= "\n";
+						$message .= '{' . $keyword . '}: ' . ( strlen( $term ) > 50 ? substr( $term, 0, 50 ) . '...' : $term );
 					}
 					break;
 

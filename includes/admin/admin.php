@@ -604,12 +604,7 @@ class Page_Generator_Pro_Admin {
 				} elseif ( is_numeric( $result ) ) {
 					// Success.
 					$this->base->get_class( 'notices' )->add_success_notice(
-						sprintf(
-							/* translators: Link to view duplicated Keyword */
-							__( 'Keyword duplicated successfully. %s', 'page-generator' ),
-							'<a href="' . admin_url( 'admin.php?page=' . $this->base->plugin->name . '-keywords&cmd=form&id=' . $result ) . '">' .
-							__( 'View Keyword', 'page-generator' ) . '</a>'
-						)
+						__( 'Keyword duplicated successfully.', 'page-generator' )
 					);
 				}
 
