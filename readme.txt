@@ -5,7 +5,7 @@ Tags: mass page generator, landing pages, multiple page generator
 Requires at least: 5.0
 Tested up to: 6.0
 Requires PHP: 7.2
-Stable tag: 1.6.6.1
+Stable tag: 1.6.6.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,6 +95,9 @@ There are no limits on the number of Pages that can be generated with our mass p
 3. Generating Pages screen
 
 == Changelog ==
+
+= 1.6.6.3 (2022-06-25)=
+* Fix: Generate: Test Mode: Display link to test page
 
 = 1.6.6.2 (2022-06-21) =
 * Fix: Coding Standards: Provide specific reasons when ignoring a coding standard

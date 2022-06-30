@@ -679,7 +679,6 @@ class Page_Generator_Pro_Keywords {
 			);
 		} else {
 			$query = "SELECT COUNT(keywordID) FROM {$wpdb->prefix}page_generator_keywords";
-
 		}
 
 		// Return count.
@@ -1117,8 +1116,6 @@ class Page_Generator_Pro_Keywords {
 					);
 				}
 			}
-			$query = '  DELETE FROM ' . $wpdb->prefix . $this->table . '
-                        WHERE ' . $this->key . ' IN (' . implode( ',', $data ) . ')';
 		} else {
 			// Delete Keyword.
 			$result = $wpdb->delete(
