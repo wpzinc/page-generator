@@ -46,5 +46,10 @@
             "readme.md",
             "tags"
         ]
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }

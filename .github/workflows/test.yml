@@ -157,4 +157,4 @@ jobs:
       # the user sooner.
       - name: Run WordPress Coding Standards Tests
         working-directory: ${{ env.PLUGIN_DIR }}
-        run: php vendor/bin/phpcs ./ -v
+        run: php vendor/bin/phpcs ./ -v -s
