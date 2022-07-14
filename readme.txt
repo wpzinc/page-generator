@@ -3,9 +3,9 @@ Contributors: n7studios,wpzinc
 Donate link: https://www.wpzinc.com/plugins/page-generator-pro
 Tags: mass page generator, landing pages, multiple page generator
 Requires at least: 5.0
-Tested up to: 6.0
+Tested up to: 6.0.1
 Requires PHP: 7.2
-Stable tag: 1.6.6.3
+Stable tag: 1.6.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,6 +95,9 @@ There are no limits on the number of Pages that can be generated with our mass p
 3. Generating Pages screen
 
 == Changelog ==
+
+= 1.6.7 (2022-07-14) =
+* Fix: Error loading taxonomy class when adding/editing Post Categories or Tags
 
 = 1.6.6.3 (2022-06-25)=
 * Fix: Generate: Test Mode: Display link to test page

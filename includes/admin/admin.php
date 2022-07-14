@@ -344,11 +344,6 @@ class Page_Generator_Pro_Admin {
 			return $this->base->plugin->name;
 		}
 
-		// If we're creating or editing a Term Group, set the $parent_file to this Plugin's registered menu name.
-		if ( ( $current_screen->base === 'edit-tags' || $current_screen->base === 'term' ) && $current_screen->taxonomy === $this->base->get_class( 'taxonomy' )->taxonomy_name ) {
-			return $this->base->plugin->name;
-		}
-
 		return $parent_file;
 
 	}
