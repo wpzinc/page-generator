@@ -113,6 +113,7 @@ class Page_Generator_Pro_Admin {
 		wp_register_script( $this->base->plugin->name . '-conditional-fields', $this->base->plugin->url . 'assets/js/' . ( $minified ? 'min/' : '' ) . 'conditional-fields' . ( $minified ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
 		wp_register_script( $this->base->plugin->name . '-generate-browser', $this->base->plugin->url . 'assets/js/' . ( $minified ? 'min/' : '' ) . 'generate-browser' . ( $minified ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
 		wp_register_script( $this->base->plugin->name . '-generate-content', $this->base->plugin->url . 'assets/js/' . ( $minified ? 'min/' : '' ) . 'generate-content' . ( $minified ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
+		wp_register_script( $this->base->plugin->name . '-gutenberg', $this->base->plugin->url . 'assets/js/' . ( $minified ? 'min/' : '' ) . 'gutenberg' . ( $minified ? '-min' : '' ) . '.js', array( 'jquery', $this->base->plugin->name . '-conditional-fields' ), $this->base->plugin->version, true );
 		wp_register_script( $this->base->plugin->name . '-keywords', $this->base->plugin->url . 'assets/js/' . ( $minified ? 'min/' : '' ) . 'keywords' . ( $minified ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
 		wp_register_script( $this->base->plugin->name . '-selectize', $this->base->plugin->url . 'assets/js/' . ( $minified ? 'min/' : '' ) . 'selectize' . ( $minified ? '-min' : '' ) . '.js', array( 'jquery' ), $this->base->plugin->version, true );
 
@@ -195,6 +196,7 @@ class Page_Generator_Pro_Admin {
 
 						// JS: Plugin.
 						wp_enqueue_script( $this->base->plugin->name . '-conditional-fields' );
+						wp_enqueue_script( $this->base->plugin->name . '-gutenberg' );
 						wp_enqueue_script( $this->base->plugin->name . '-selectize' );
 
 						// Enqueue and localize Autocomplete, if a configuration exists.
@@ -212,8 +214,8 @@ class Page_Generator_Pro_Admin {
 							$this->base->plugin->name . '-gutenberg',
 							'page_generator_pro_gutenberg',
 							array(
-								'keywords'  => $this->base->get_class( 'keywords' )->get_keywords_and_columns( true ),
-								'post_type' => ( isset( $post->post_type ) ? $post->post_type : false ),
+								'keywords'   => $this->base->get_class( 'keywords' )->get_keywords_and_columns( true ),
+								'post_type'  => ( isset( $post->post_type ) ? $post->post_type : false ),
 							)
 						);
 
@@ -406,7 +408,7 @@ class Page_Generator_Pro_Admin {
 					// Redirect.
 					$this->base->get_class( 'notices' )->enable_store();
 					$this->base->get_class( 'notices' )->add_success_notice( __( 'Keyword saved successfully', 'page-generator' ) );
-					wp_safe_redirect( 'admin.php?page=page-generator-pro-keywords&cmd=form&id=' . $keyword_id );
+					wp_safe_redirect( 'admin.php?page=page-generator-keywords&cmd=form&id=' . $keyword_id );
 					die;
 				}
 				break;
@@ -703,7 +705,7 @@ class Page_Generator_Pro_Admin {
 		}
 
 		// Validate Form Inputs.
-		$id           = ( ( isset( $_REQUEST['keywordID'] ) && ! empty( $_REQUEST['keywordID'] ) ) ? absint( $_REQUEST['keywordID'] ) : '' );
+		$id           = ( ( isset( $_REQUEST['id'] ) && ! empty( $_REQUEST['id'] ) ) ? absint( $_REQUEST['id'] ) : '' );
 		$keyword_name = sanitize_text_field( $_POST['keyword'] );
 		$source       = sanitize_text_field( $_POST['source'] );
 		$options      = array(
