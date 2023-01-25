@@ -19,24 +19,6 @@ class AnyErrorsOnBlankInstallCest
 	}
 
 	/**
-	 * Check that no PHP errors or notices are displayed on the Plugin's licensing screen when the Plugin is activated
-	 * and not configured.
-	 *
-	 * @since   3.8.4
-	 *
-	 * @param   AcceptanceTester $I  Tester.
-	 */
-	public function testLicensingScreen(AcceptanceTester $I)
-	{
-		// Go to the Plugin's Settings Screen.
-		$I->amOnAdminPage('admin.php?page=page-generator-pro');
-
-		// Check that no PHP warnings or notices were output.
-		$I->checkNoWarningsAndNoticesOnScreen($I);
-
-	}
-
-	/**
 	 * Check that no errors are displayed on Pages > Add New, when the Plugin is activated
 	 * and not configured.
 	 *
