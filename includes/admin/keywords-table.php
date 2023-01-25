@@ -259,11 +259,6 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 											' . esc_html__( 'Edit', 'page-generator' ) . '
 											</a> | 
 										</span>
-										<span class="edit">
-											<a href="' . esc_attr( $duplicate_url ) . '" title="' . esc_attr__( 'Duplicate this keyword', 'page-generator' ) . '">
-											' . esc_html__( 'Duplicate', 'page-generator' ) . '
-											</a> | 
-										</span>
 										<span class="trash">
 											<a href="' . esc_attr( $delete_url ) . '" title="' . esc_attr__( 'Delete this keyword', 'page-generator' ) . '" class="delete">
 											' . esc_html__( 'Delete', 'page-generator' ) . '

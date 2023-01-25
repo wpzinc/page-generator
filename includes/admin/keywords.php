@@ -6,10 +6,6 @@
  * @author WP Zinc
  */
 
-use League\Csv\Exception;
-use League\Csv\Reader;
-use League\Csv\CharsetConverter;
-
 /**
  * Reads and writes Keywords from the database table,
  * performing validation on create/edit/delete actions.
@@ -687,113 +683,6 @@ class Page_Generator_Pro_Keywords {
 	}
 
 	/**
-	 * Return Terms for the given Keyword ID, based on the optional
-	 * offset, limit and search parameters.
-	 *
-	 * @since   3.0.9
-	 *
-	 * @param   int   $id             Keyword ID.
-	 * @param   int   $offset         Record Offset.
-	 * @param   int   $limit          Number of Terms to return. 0 = all Terms.
-	 * @param   mixed $search         Search Terms.
-	 * @param   bool  $associative    Return results with column names.
-	 * @return  mixed                   false | array
-	 */
-	public function get_terms( $id, $offset = 0, $limit = 0, $search = false, $associative = false ) {
-
-		// Get Keyword.
-		$keyword = $this->get_by_id( $id );
-		if ( ! $keyword ) {
-			return false;
-		}
-
-		// Read data.
-		if ( $keyword['columns'] && $keyword['delimiter'] ) {
-			$reader = Reader::createFromString( $keyword['columns'] . "\n" . $keyword['data'] );
-			$reader->setDelimiter( $keyword['delimiter'] );
-			$reader->setHeaderOffset( 0 );
-			$columns = $reader->getHeader();
-		} else {
-			$reader = Reader::createFromString( $keyword['data'] );
-		}
-
-		// If no pagination or search parameters exists, return now.
-		if ( ! $offset && ! $limit && ! $search ) {
-			$terms = array_values( iterator_to_array( $reader->getRecords() ) );
-			if ( $associative ) {
-				return array(
-					'data'     => $terms,
-					'total'    => count( $terms ),
-					'filtered' => count( $terms ),
-				);
-			}
-
-			// Convert to numeric arrays.
-			foreach ( $terms as $index => $term ) {
-				$terms[ $index ] = array_values( $term );
-			}
-			return array(
-				'data'     => $terms,
-				'total'    => count( $terms ),
-				'filtered' => count( $terms ),
-			);
-		}
-
-		// Define total and filtered record counts.
-		$total = count( $reader );
-
-		// Create query.
-		$query = \League\Csv\Statement::create();
-
-		// Add search constraints.
-		if ( $search ) {
-			$query = $query->where(
-				function( $record ) use ( $search ) {
-					foreach ( $record as $cell ) {
-						if ( stripos( $cell, $search ) !== false ) {
-							return true;
-						}
-					}
-
-					return false;
-				}
-			);
-		}
-
-		// Define filtered record count now, before we apply pagination.
-		$filtered = count( $query->process( $reader ) );
-
-		// Add pagination constraints.
-		if ( $offset || $limit ) {
-			$query = $query->offset( $offset )->limit( $limit );
-		}
-
-		// Run query.
-		$records = $query->process( $reader );
-
-		// Return associative array.
-		$terms = array_values( iterator_to_array( $records->getRecords() ) );
-		if ( $associative ) {
-			return array(
-				'data'     => $terms,
-				'total'    => $total,
-				'filtered' => $filtered,
-			);
-		}
-
-		// Convert to numeric arrays.
-		foreach ( $terms as $index => $term ) {
-			$terms[ $index ] = array_values( $term );
-		}
-		return array(
-			'data'     => $terms,
-			'total'    => $total,
-			'filtered' => $filtered,
-		);
-
-	}
-
-	/**
 	 * Returns the given record, casting values, stripping slashes
 	 * and expanding data into arrays
 	 *
@@ -864,7 +753,7 @@ class Page_Generator_Pro_Keywords {
 
 		// If the data isn't UTF-8, UTF-8 encode it so it can be inserted into the DB.
 		if ( function_exists( 'mb_detect_encoding' ) && ! mb_detect_encoding( $data['data'], 'UTF-8', true ) ) {
-			$data['data'] = utf8_encode( $data['data'] );
+			$data['data'] = mb_convert_encoding( $data['data'], 'UTF-8', mb_list_encodings() );
 		}
 
 		// Remove spaces from column names.
@@ -1139,38 +1028,6 @@ class Page_Generator_Pro_Keywords {
 		}
 
 		return true;
-
-	}
-
-	/**
-	 * Duplicates the given ID to a new row
-	 *
-	 * @since   1.7.8
-	 *
-	 * @param   int $id     Keyword ID.
-	 * @return  mixed           WP_Error | Copied Keyword ID
-	 */
-	public function duplicate( $id ) {
-
-		// Fetch keyword.
-		$keyword = $this->get_by_id( $id );
-
-		// Bail if no keyword was found.
-		if ( ! $keyword ) {
-			return new WP_Error( 'page_generator_pro_keywords_duplicate', __( 'Keyword could not be found for duplication.', 'page-generator' ) );
-		}
-
-		// Delete some keys from the data.
-		unset( $keyword['keywordID'], $keyword['dataArr'], $keyword['columnsArr'] );
-
-		// Rename the keyword.
-		$keyword['keyword'] .= '_copy';
-
-		// Save the keyword as a new keyword.
-		$result = $this->save( $keyword );
-
-		// Return the result (WP_Error | int).
-		return $result;
 
 	}
 

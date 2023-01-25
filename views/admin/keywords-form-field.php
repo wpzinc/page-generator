@@ -11,7 +11,7 @@
 	<div class="left">
 		<label for="<?php echo esc_attr( $option_name ); ?>"><?php echo esc_html( $option['label'] ); ?></label>
 	</div>
-	<div class="right">
+	<div class="right <?php echo sanitize_html_class( $option['type'] ); ?>">
 		<?php
 		// Output Form Field.
 		switch ( $option['type'] ) {

@@ -211,6 +211,7 @@ class Page_Generator_Pro_Screen {
 			 */
 			case $this->base->plugin->name:
 			case 'page-generator-pro':
+			case 'page-generator':
 				switch ( $screen->base ) {
 					case 'toplevel_page_' . $this->base->plugin->name:
 						$result = array(

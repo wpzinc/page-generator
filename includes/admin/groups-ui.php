@@ -750,10 +750,6 @@ class Page_Generator_Pro_Groups_UI {
 			return 'generate';
 		}
 
-		if ( isset( $_POST['generate_server'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
-			return 'generate_server';
-		}
-
 		if ( isset( $_POST['trash_generated_content'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 			return 'trash_generated_content';
 		}

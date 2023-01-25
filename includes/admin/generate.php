@@ -431,10 +431,10 @@ class Page_Generator_Pro_Generate {
 				$post_id = $existing_post_id;
 			} else {
 				// UTF-8 encode the Title, Excerpt and Content.
-				$post_args['post_title']   = utf8_encode( $post_args['post_title'] );
-				$post_args['post_content'] = utf8_encode( $post_args['post_content'] );
+				$post_args['post_title']   = mb_convert_encoding( $post_args['post_title'], 'UTF-8', mb_list_encodings() );
+				$post_args['post_content'] = mb_convert_encoding( $post_args['post_content'], 'UTF-8', mb_list_encodings() );
 				if ( post_type_supports( $settings['type'], 'excerpt' ) ) {
-					$post_args['post_excerpt'] = utf8_encode( $post_args['post_excerpt'] );
+					$post_args['post_excerpt'] = mb_convert_encoding( $post_args['post_excerpt'], 'UTF-8', mb_list_encodings() );
 				}
 
 				// Try again.
@@ -732,50 +732,34 @@ class Page_Generator_Pro_Generate {
 			 * - Generates all possible term combinations across keywords
 			 */
 			case 'all':
-				// If we're on PHP 5.5+, use our Cartesian Product class, which implements a Generator
+				// Use our Cartesian Product class, which implements a Generator
 				// to allow iteration of data without needing to build an array in memory.
 				// See: http://php.net/manual/en/language.generators.overview.php.
-				if ( version_compare( phpversion(), '5.5.0', '>=' ) ) {
-					// Use PHP 5.5+ Generator.
-					$combinations = $this->generate_all_combinations( $this->keywords['terms'] );
+				$combinations = $this->generate_all_combinations( $this->keywords['terms'] );
 
-					// If the current index exceeds the total number of combinations, we've exhausted all
-					// options and don't want to generate any more Pages (otherwise we end up with duplicates).
-					if ( $index > ( $combinations->count() - 1 ) ) {
-						// If the combinations count is a negative number, we exceeded the floating point for an integer
-						// Tell the user to upgrade PHP and/or reduce the number of keyword terms.
-						if ( $combinations->count() < 0 ) {
-							$message = __( 'The total possible number of unique keyword term combinations exceeds the maximum number value that can be stored by your version of PHP.  Please consider upgrading to a 64 bit PHP 7.0+ build and/or reducing the number of keyword terms that you are using.', 'page-generator' );
-						} else {
-							$message = __( 'All possible keyword term combinations have been generated. Generating more Pages/Posts would result in duplicate content.', 'page-generator' );
-						}
-
-						return new WP_Error( 'page_generator_pro_generate_content_keywords_exhausted', $message );
+				// If the current index exceeds the total number of combinations, we've exhausted all
+				// options and don't want to generate any more Pages (otherwise we end up with duplicates).
+				if ( $index > ( $combinations->count() - 1 ) ) {
+					// If the combinations count is a negative number, we exceeded the floating point for an integer
+					// Tell the user to upgrade PHP and/or reduce the number of keyword terms.
+					if ( $combinations->count() < 0 ) {
+						$message = __( 'The total possible number of unique keyword term combinations exceeds the maximum number value that can be stored by your version of PHP.  Please consider upgrading to a 64 bit PHP 7.0+ build and/or reducing the number of keyword terms that you are using.', 'page-generator' );
+					} else {
+						$message = __( 'All possible keyword term combinations have been generated. Generating more Pages/Posts would result in duplicate content.', 'page-generator' );
 					}
 
-					// Iterate through the combinations until we reach the one matching the index.
-					foreach ( $combinations as $c_index => $combination ) {
-						// Skip if not the index we want.
-						if ( $c_index !== $index ) {
-							continue;
-						}
+					return new WP_Error( 'page_generator_pro_generate_content_keywords_exhausted', $message );
+				}
 
-						// Define the keyword => term key/value pairs to use based on the current index.
-						$keywords_terms = $combination;
-						break;
-					}
-				} else {
-					// Use older method, which will hit memory errors.
-					$combinations = $this->generate_all_array_combinations( $this->keywords['terms'] );
-
-					// If the current index exceeds the total number of combinations, we've exhausted all
-					// options and don't want to generate any more Pages (otherwise we end up with duplicates).
-					if ( $index > ( count( $combinations ) - 1 ) ) {
-						return new WP_Error( 'keywords_exhausted', __( 'All possible keyword term combinations have been generated. Generating more Pages/Posts would result in duplicate content.', 'page-generator' ) );
+				// Iterate through the combinations until we reach the one matching the index.
+				foreach ( $combinations as $c_index => $combination ) {
+					// Skip if not the index we want.
+					if ( $c_index !== $index ) {
+						continue;
 					}
 
 					// Define the keyword => term key/value pairs to use based on the current index.
-					$keywords_terms = $combinations[ $index ];
+					$keywords_terms = $combination;
 					break;
 				}
 				break;

@@ -27,7 +27,7 @@
 				<!-- Content -->
 				<div id="post-body-content">
 					<!-- Form Start -->
-					<form class="<?php echo esc_attr( $this->base->plugin->name ); ?>" name="post" method="post" action="admin.php?page=page-generator-keywords&amp;cmd=form">		
+					<form class="<?php echo esc_attr( $this->base->plugin->name ); ?>" name="post" method="post" action="admin.php?page=page-generator-keywords&amp;cmd=form">
 						<div id="normal-sortables" class="meta-box-sortables ui-sortable">                        
 							<div id="keyword-panel" class="postbox">
 								<h3 class="hndle"><?php esc_html_e( 'Keyword', 'page-generator' ); ?></h3>

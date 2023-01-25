@@ -50,8 +50,6 @@ class Page_Generator_Pro_Common {
 		// Get systems.
 		$systems = array(
 			'browser' => __( 'Browser', 'page-generator' ),
-			'cron'    => __( 'Server', 'page-generator' ),
-			'cli'     => __( 'WP-CLI', 'page-generator' ),
 		);
 
 		/**
@@ -423,12 +421,14 @@ class Page_Generator_Pro_Common {
 			// Register autocomplete selectors across Group fields.
 			$fields = array(
 				// Classic Editor.
-				'input[type=text]:not(#tinymce_modal_term-selectized)', // type=text prevents autocomplete greedily running on selectize inputs.
+				'input[type=text]:not(#term-selectized)', // type=text prevents autocomplete greedily running on selectize inputs.
 				'textarea',
 				'div[contenteditable=true]',
 
 				// Gutenberg.
-				// Is now handled using Dashboard Submodule's WPZincAutocompleterControl in autocomplete-gutenberg.js.
+				'h1[contenteditable=true]',
+
+				// Gutenberg's content area is handled using Dashboard Submodule's WPZincAutocompleterControl in autocomplete-gutenberg.js.
 
 				// TinyMCE Plugins.
 				'.wpzinc-autocomplete',

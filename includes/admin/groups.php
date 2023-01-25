@@ -141,7 +141,6 @@ class Page_Generator_Pro_Groups {
 			'schedule'                                 => 1,
 			'scheduleUnit'                             => 'hours',
 			'method'                                   => 'all',
-			'apply_synonyms'                           => 0,
 			'overwrite'                                => 'overwrite',
 			'overwrite_sections'                       => array(
 				'post_title'     => 1,
@@ -238,6 +237,18 @@ class Page_Generator_Pro_Groups {
 	 * @return  mixed                               false | array
 	 */
 	public function get_settings( $id, $include_stats = true, $remove_orphaned_metadata = false ) {
+
+		// Bail if the ID isn't for a Content Group.
+		if ( get_post_type( $id ) !== 'page-generator-pro' ) {
+			return new WP_Error(
+				'page_generator_pro_groups_get_settings_error',
+				sprintf(
+					/* translators: Group ID */
+					esc_html__( 'ID %s is not a Content Group.  Did you enter the correct Content Group ID?', 'page-generator' ),
+					$id
+				)
+			);
+		}
 
 		// Get settings.
 		$settings = get_post_meta( $id, '_page_generator_pro_settings', true );
@@ -697,15 +708,10 @@ class Page_Generator_Pro_Groups {
 
 		// Fetch group settings.
 		$settings = $this->get_settings( $id, false );
-		if ( ! $settings ) {
-			return new WP_Error(
-				'page_generator_pro_groups_validate',
-				sprintf(
-					/* translators: Group ID */
-					__( 'Group ID %s does not exist!', 'page-generator' ),
-					$id
-				)
-			);
+
+		// Bail if an error occured.
+		if ( is_wp_error( $settings ) ) {
+			return $settings;
 		}
 
 		// If the Permalink isn't empty, check it has at least one keyword specified
@@ -859,6 +865,9 @@ class Page_Generator_Pro_Groups {
 
 		// Fetch group settings.
 		$settings = $this->get_settings( $id, false );
+		if ( is_wp_error( $settings ) ) {
+			return $settings;
+		}
 
 		// Validate group.
 		$validated = $this->validate( $id );
@@ -989,26 +998,6 @@ class Page_Generator_Pro_Groups {
 	}
 
 	/**
-	 * Returns a flag denoting whether the given Group ID is scheduled to generate
-	 *
-	 * @since   1.9.9
-	 *
-	 * @param   int $id     Group ID.
-	 * @return  bool            Is Scheduled to Generate
-	 */
-	public function is_scheduled( $id ) {
-
-		$status = $this->get_status( $id );
-
-		if ( $status === 'scheduled' ) {
-			return true;
-		}
-
-		return false;
-
-	}
-
-	/**
 	 * Returns a flag denoting whether the given Group ID is generating
 	 *
 	 * @since   1.9.9
@@ -1092,20 +1081,6 @@ class Page_Generator_Pro_Groups {
 	 */
 	public function cancel_generation( $id ) {
 
-		// Get status and system used.
-		$system = $this->get_system( $id );
-
-		// If we're using WordPress CRON, clear the scheduled hook.
-		if ( $system === 'cron' ) {
-			wp_clear_scheduled_hook(
-				'page_generator_pro_generate_cron',
-				array(
-					$id,
-					'content',
-				)
-			);
-		}
-
 		delete_post_meta( $id, '_page_generator_pro_status' );
 		delete_post_meta( $id, '_page_generator_pro_system' );
 		update_post_meta( $id, '_page_generator_pro_cancel', 1 );
@@ -1153,19 +1128,6 @@ class Page_Generator_Pro_Groups {
 	 * @return  bool
 	 */
 	public function stop_generation( $id ) {
-
-		// Get status and system used.
-		$system = $this->get_system( $id );
-
-		// If we're using WordPress CRON, clear the scheduled hook.
-		if ( $system === 'cron' ) {
-			wp_clear_scheduled_hook(
-				'page_generator_pro_generate_cron',
-				array(
-					$id,
-				)
-			);
-		}
 
 		delete_post_meta( $id, '_page_generator_pro_status' );
 		delete_post_meta( $id, '_page_generator_pro_system' );

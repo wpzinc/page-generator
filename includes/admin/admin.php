@@ -172,13 +172,6 @@ class Page_Generator_Pro_Admin {
 				// Add data to localization depending on the screen we're viewing.
 				switch ( $screen['section'] ) {
 					/**
-					 * Content: Groups: Add / WP_List_Table
-					 */
-					case 'wp_list_table':
-						wp_enqueue_script( $this->base->plugin->name . '-groups-table' ); // @TODO
-						break;
-
-					/**
 					 * Content: Groups: Edit
 					 */
 					case 'edit':
@@ -404,22 +397,6 @@ class Page_Generator_Pro_Admin {
 			 * Add / Edit Keyword
 			 */
 			case 'form':
-				// Get keyword from POST data or DB.
-				if ( isset( $_POST['nonce'] ) && wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'save_keyword' ) ) {
-					// Get keyword from POST data.
-					$keyword = array(
-						'keyword' => sanitize_text_field( $_POST['keyword'] ),
-						'source'  => sanitize_text_field( $_POST['source'] ),
-						'local'   => array(
-							'data' => sanitize_textarea_field( $_POST['local']['data'] ),
-						),
-					);
-				} elseif ( isset( $_GET['id'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
-					// Editing an existing Keyword.
-					// Get Keyword from DB.
-					$keyword = $this->base->get_class( 'keywords' )->get_by_id( absint( $_GET['id'] ) ); // phpcs:ignore WordPress.Security.NonceVerification
-				}
-
 				// Save keyword.
 				$keyword_id = $this->save_keyword();
 
@@ -429,7 +406,7 @@ class Page_Generator_Pro_Admin {
 					// Redirect.
 					$this->base->get_class( 'notices' )->enable_store();
 					$this->base->get_class( 'notices' )->add_success_notice( __( 'Keyword saved successfully', 'page-generator' ) );
-					wp_safe_redirect( 'admin.php?page=page-generator-keywords&cmd=form&id=' . $keyword_id );
+					wp_safe_redirect( 'admin.php?page=page-generator-pro-keywords&cmd=form&id=' . $keyword_id );
 					die;
 				}
 				break;
@@ -578,35 +555,6 @@ class Page_Generator_Pro_Admin {
 		}
 
 		switch ( $cmd ) {
-
-			/**
-			 * Duplicate Keyword
-			 */
-			case 'duplicate':
-				// Bail if no ID set.
-				if ( ! isset( $_GET['id'] ) ) {
-					$this->base->get_class( 'notices' )->add_error_notice( __( 'No Keyword was selected for duplication.', 'page-generator' ) );
-					break;
-				}
-
-				// Duplicate keyword.
-				$result = $this->base->get_class( 'keywords' )->duplicate( absint( $_GET['id'] ) );
-
-				// Output success or error messages.
-				if ( is_wp_error( $result ) ) {
-					// Error.
-					$this->base->get_class( 'notices' )->add_error_notice( $result->get_error_message() );
-				} elseif ( is_numeric( $result ) ) {
-					// Success.
-					$this->base->get_class( 'notices' )->add_success_notice(
-						__( 'Keyword duplicated successfully.', 'page-generator' )
-					);
-				}
-
-				// Redirect.
-				$this->redirect_after_keyword_action();
-				break;
-
 			/**
 			 * Delete Keyword
 			 */
@@ -675,67 +623,43 @@ class Page_Generator_Pro_Admin {
 			 * Add / Edit Keyword
 			 */
 			case 'form':
-				// Edit.
-				if ( isset( $_GET['id'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
-					$keyword_id = absint( $_GET['id'] ); // phpcs:ignore WordPress.Security.NonceVerification
-					// Get keyword from POST data or DB.
-					if ( isset( $_POST['nonce'] ) && wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'save_keyword' ) ) {
-						// Get keyword from POST data.
-						$keyword = array(
-							'keyword' => wp_unslash( sanitize_text_field( $_POST['keyword'] ) ),
-							'source'  => wp_unslash( sanitize_text_field( $_POST['source'] ) ),
-							'local'   => array(
-								'data' => wp_unslash( sanitize_textarea_field( $_POST['local']['data'] ) ),
-							),
-						);
-					} else {
-						// Get Keyword from DB.
-						$keyword = $this->base->get_class( 'keywords' )->get_by_id( absint( $_GET['id'] ) ); // phpcs:ignore WordPress.Security.NonceVerification
-					}
+				// Define blank Keyword.
+				$keyword = array(
+					'keyword' => '',
+					'source'  => 'local',
+				);
 
-					// Get Keyword Sources.
-					$sources = $this->base->get_class( 'keywords' )->get_sources();
+				// Get existing Keyword from database.
+				if ( isset( $_GET['id'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
+					// Editing an existing Keyword.
+					// Get Keyword from DB.
+					$keyword_id = absint( $_GET['id'] ); // phpcs:ignore WordPress.Security.NonceVerification
+					$keyword    = $this->base->get_class( 'keywords' )->get_by_id( absint( $_GET['id'] ) ); // phpcs:ignore WordPress.Security.NonceVerification
 
 					// View.
 					$view = 'views/admin/keywords-form-edit.php';
 				} else {
-					// Add Keyword.
-
-					// Get keyword from POST data or DB.
-					if ( isset( $_POST['nonce'] ) && wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'save_keyword' ) ) {
-						// Get keyword from POST data.
-						$keyword = array(
-							'keyword' => wp_unslash( sanitize_text_field( $_POST['keyword'] ) ),
-							'source'  => wp_unslash( sanitize_text_field( $_POST['source'] ) ),
-							'local'   => array(
-								'data' => wp_unslash( sanitize_textarea_field( $_POST['local']['data'] ) ),
-							),
-						);
-					} else {
-						// Define blank Keyword.
-						$keyword = array(
-							'keyword' => '',
-							'source'  => 'local',
-							'local'   => array(
-								'data' => '',
-							),
-						);
-					}
-
-					// Get Keyword Sources.
-					$sources = $this->base->get_class( 'keywords' )->get_sources();
-
+					// Adding a new Keyword.
 					// View.
 					$view = 'views/admin/keywords-form.php';
 				}
+
+				// If the form has been posted, an error occured if we are here.
+				// Apply the posted values to the keyword.
+				if ( isset( $_POST['nonce'] ) && wp_verify_nonce( sanitize_key( $_POST['nonce'] ), 'save_keyword' ) ) {
+					$keyword['keyword'] = wp_unslash( sanitize_text_field( $_POST['keyword'] ) );
+					$keyword['source']  = wp_unslash( sanitize_text_field( $_POST['source'] ) );
+					$keyword['options'] = stripslashes_deep( $_POST[ $keyword['source'] ] );
+				}
+
+				// Get Keyword Sources.
+				$sources = $this->base->get_class( 'keywords' )->get_sources();
 				break;
 
 			/**
-			 * Duplicate Keyword
 			 * Delete Keyword
 			 * Index
 			 */
-			case 'duplicate':
 			case 'delete':
 			default:
 				// Setup Table.
@@ -839,8 +763,8 @@ class Page_Generator_Pro_Admin {
 		$id   = absint( $_REQUEST['id'] ); // phpcs:ignore WordPress.Security.NonceVerification
 		$type = ( isset( $_REQUEST['type'] ) ? sanitize_text_field( $_REQUEST['type'] ) : 'content' ); // phpcs:ignore WordPress.Security.NonceVerification
 
-		// Get groups or groups terms class, depending on the content type we're generating.
-		$group = ( ( $type === 'term' ) ? $this->base->get_class( 'groups_terms' ) : $this->base->get_class( 'groups' ) );
+		// Get groups class.
+		$group = $this->base->get_class( 'groups' );
 
 		// If this Group has a request to cancel generation, silently clear the status, system and cancel
 		// flags before performing further checks on whether we should generate.
@@ -850,6 +774,13 @@ class Page_Generator_Pro_Admin {
 
 		// Fetch group settings.
 		$settings = $group->get_settings( $id, false );
+
+		// Bail if an error occured.
+		if ( is_wp_error( $settings ) ) {
+			$this->base->get_class( 'notices' )->add_error_notice( $settings->get_error_message() );
+			include_once $this->base->plugin->folder . 'views/admin/generate-run-notice.php';
+			return;
+		}
 
 		// Define return to Group URL and Post/Taxonomy Type, depending on the type.
 		$return_url   = admin_url( 'post.php?post=' . $id . '&amp;action=edit' );
@@ -893,8 +824,17 @@ class Page_Generator_Pro_Admin {
 			if ( $settings['method'] === 'random' ) {
 				$settings['numberOfPosts'] = 10;
 			} else {
-				$settings['numberOfPosts'] = $number_of_pages_to_generate;
+				if ( $settings['resumeIndex'] > 0 ) {
+					$settings['numberOfPosts'] = $number_of_pages_to_generate - $settings['resumeIndex'];
+				} else {
+					$settings['numberOfPosts'] = $number_of_pages_to_generate;
+				}
 			}
+		}
+
+		// Check that the number of posts doesn't exceed the maximum that can be generated.
+		if ( $settings['numberOfPosts'] > $number_of_pages_to_generate ) {
+			$settings['numberOfPosts'] = $number_of_pages_to_generate;
 		}
 
 		// Set last generated post date and time based on the Group's settings (i.e. date/time of now,
@@ -917,7 +857,7 @@ class Page_Generator_Pro_Admin {
 				'nonce'                         => wp_create_nonce( 'page-generator-pro-generate-browser' ),
 				'id'                            => $id,
 				'last_generated_post_date_time' => $last_generated_post_date_time,
-				'max_number_of_pages'           => $number_of_pages_to_generate,
+				'max_number_of_pages'           => $number_of_pages_to_generate, // Determines the /[total] portion of the output.
 				'number_of_requests'            => $settings['numberOfPosts'],
 				'resume_index'                  => $settings['resumeIndex'],
 				'stop_on_error'                 => (int) $this->base->get_class( 'settings' )->get_setting( $this->base->plugin->name . '-generate', 'stop_on_error', 0 ),

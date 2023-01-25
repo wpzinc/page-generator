@@ -27,12 +27,9 @@
 				<!-- Content -->
 				<div id="post-body-content">
 					<!-- Form Start -->
-					<form class="<?php echo esc_attr( $this->base->plugin->name ); ?>" name="post" method="post" action="admin.php?page=page-generator-keywords&amp;cmd=form&id=<?php echo esc_attr( $keyword_id ); ?>">		
+					<form class="<?php echo esc_attr( $this->base->plugin->name ); ?>" name="post" method="post" action="admin.php?page=page-generator-keywords&amp;cmd=form&id=<?php echo esc_attr( $keyword_id ); ?>">
 						<div id="normal-sortables" class="meta-box-sortables ui-sortable">                        
 							<div id="keyword-panel" class="postbox">
-								<!-- Keyword ID we're editing -->
-								<input type="hidden" name="keywordID" value="<?php echo esc_attr( $keyword_id ); ?>" />
-
 								<h3 class="hndle"><?php esc_html_e( 'Keyword', 'page-generator' ); ?></h3>
 
 								<div class="wpzinc-option">

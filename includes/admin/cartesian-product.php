@@ -66,7 +66,7 @@ class Page_Generator_Pro_Cartesian_Product implements IteratorAggregate, Countab
 	 *
 	 * @return \Generator
 	 */
-	public function getIterator() {
+	public function getIterator(): Traversable {
 
 		if ( ! empty( $this->set ) ) {
 			$keys   = array_keys( $this->set );
@@ -109,7 +109,7 @@ class Page_Generator_Pro_Cartesian_Product implements IteratorAggregate, Countab
 	 *
 	 * @return  int     Number of Combinations
 	 */
-	public function count() {
+	public function count(): int {
 
 		if ( null === $this->count ) {
 			$this->count = (int) array_product(
