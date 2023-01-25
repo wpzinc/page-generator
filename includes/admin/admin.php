@@ -214,8 +214,8 @@ class Page_Generator_Pro_Admin {
 							$this->base->plugin->name . '-gutenberg',
 							'page_generator_pro_gutenberg',
 							array(
-								'keywords'   => $this->base->get_class( 'keywords' )->get_keywords_and_columns( true ),
-								'post_type'  => ( isset( $post->post_type ) ? $post->post_type : false ),
+								'keywords'  => $this->base->get_class( 'keywords' )->get_keywords_and_columns( true ),
+								'post_type' => ( isset( $post->post_type ) ? $post->post_type : false ),
 							)
 						);
 
