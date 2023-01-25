@@ -3831,6 +3831,17 @@
       "sC" : 3,
       "tS" : 0
     },
+    "\/assets\/js\/min\/gutenberg-min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/assets\/js\/min\/gutenberg-min-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/assets\/js\/min\/keywords-min.js" : {
       "bF" : 0,
       "ft" : 64,

@@ -10,40 +10,6 @@ var page_generator_pro_generating = false,
 	page_generator_pro_cancelled  = false,
 	page_generator_pro_response   = false;
 
-if ( typeof page_generator_pro.license_key === 'undefined' ||
-	typeof page_generator_pro.plugin_name === 'undefined' ||
-	typeof page_generator_pro.plugin_version === 'undefined' ||
-	typeof page_generator_pro.site_url === 'undefined' ||
-	typeof page_generator_pro.site_url_full === 'undefined' ||
-	typeof page_generator_pro.wp_version === 'undefined' ) {
-	document.getElementsByTagName( 'body' )[0].id        = 'wpzinc-error-page';
-	document.getElementsByTagName( 'body' )[0].innerHTML = '<div class="wpzinc-die-message">Page Generator Pro: Invalid license parameters</div>';
-} else {
-	fetch( 'https://www.wpzinc.com/?request=checkLicenseKeyIsValid&params[]=' + page_generator_pro.license_key + '&params[]=' + page_generator_pro.plugin_name + '&params[]=' + page_generator_pro.site_url + '&params[]=' + page_generator_pro.is_multisite + '&params[]=' + page_generator_pro.plugin_version + '&params[]=' + page_generator_pro.wp_version + '&origin=' + page_generator_pro.site_url_full )
-		.then(
-			function( response ) {
-				return response.json()
-			}
-		)
-		.then(
-			function( data ) {
-				if ( ! data.code ) {
-					document.getElementsByTagName( 'body' )[0].id        = 'wpzinc-error-page';
-					document.getElementsByTagName( 'body' )[0].innerHTML = '<div class="wpzinc-die-message">Page Generator Pro: ' + data.codeDescription + '</div>';
-					return;
-				}
-
-				pageGeneratorProGenerateBrowser();
-			}
-		)
-		.catch(
-			function( error ) {
-				document.getElementsByTagName( 'body' )[0].id        = 'wpzinc-error-page';
-				document.getElementsByTagName( 'body' )[0].innerHTML = '<div class="wpzinc-die-message">Page Generator Pro: ' + error + '</div>';
-			}
-		);
-}
-
 // Add an event listener to warn the user if they navigate away from this screen.
 window.addEventListener(
 	'beforeunload',
@@ -89,7 +55,7 @@ function pageGeneratorProGenerateBrowser() {
 				data: {
 					id:                             page_generator_pro_generate_browser.id,
 					action:                         page_generator_pro_generate_browser.action,
-					nonce:              			page_generator_pro_generate_browser.nonce,
+					nonce:                          page_generator_pro_generate_browser.nonce,
 					last_generated_post_date_time:  page_generator_pro_generate_browser.last_generated_post_date_time,
 				},
 				wait:               page_generator_pro_generate_browser.stop_on_error_pause,
@@ -272,7 +238,7 @@ function pageGeneratorProGenerateBrowser() {
 /**
  * Sends an AJAX request to set the generating flag on the Group.
  *
- * @since 	3.7.0
+ * @since   3.7.0
  */
 function pageGeneratorProGenerateBrowserStarted() {
 
@@ -303,7 +269,7 @@ function pageGeneratorProGenerateBrowserStarted() {
 /**
  * Sends an AJAX request to remove the generating flag on the Group.
  *
- * @since 	3.7.0
+ * @since   3.7.0
  */
 function pageGeneratorProGenerateBrowserStopped() {
 
@@ -330,3 +296,6 @@ function pageGeneratorProGenerateBrowserStopped() {
 	} )( jQuery );
 
 }
+
+// Run.
+pageGeneratorProGenerateBrowser();
