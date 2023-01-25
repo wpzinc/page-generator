@@ -136,7 +136,10 @@ jQuery( document ).ready(
 
 				setTimeout(
 					function() {
-						wp_zinc_autocomplete_initialize();
+						// Initialize autocomplete instances, if Keywords exist.
+						if ( typeof wp_zinc_autocomplete_initialize !== 'undefined' ) {
+							wp_zinc_autocomplete_initialize();
+						}
 					},
 					500
 				);

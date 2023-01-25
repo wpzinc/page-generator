@@ -32,7 +32,7 @@ jQuery( document ).ready(
 					},
 					processing: true,
 					serverSide: true,
-					responsive: true,
+					responsive: false,
 					autoWidth: true,
 					scrollX: true,
 					scrollY: 500
