@@ -3552,6 +3552,14 @@
       "oAP" : "\/.env.example",
       "oF" : 1
     },
+    "\/.env.testing" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/.env.testing",
+      "oF" : 0
+    },
     "\/.github\/workflows\/coding-standards.yml" : {
       "cB" : 0,
       "ft" : 8192,
@@ -4202,12 +4210,41 @@
       "oAP" : "\/tests\/_data\/dump.sql",
       "oF" : 0
     },
+    "\/tests\/_output\/ActivateDeactivatePluginCest.testPluginActivation.fail.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/tests\/_output\/ActivateDeactivatePluginCest.testPluginActivation.fail.html",
+      "oF" : 0
+    },
+    "\/tests\/_output\/ActivateDeactivatePluginCest.testPluginActivation.fail.png" : {
+      "ft" : 32768,
+      "iS" : 763870,
+      "oA" : 0,
+      "oAP" : "\/tests\/_output\/ActivateDeactivatePluginCest.testPluginActivation.fail.png",
+      "oF" : 0,
+      "oIPL" : 1,
+      "opt" : 1,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/tests\/_support\/_generated\/.gitignore" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/tests\/_support\/_generated\/.gitignore",
+      "oF" : 0
+    },
+    "\/tests\/_support\/_generated\/AcceptanceTesterActions.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/tests\/_support\/_generated\/AcceptanceTesterActions.php",
       "oF" : 0
     },
     "\/tests\/_support\/AcceptanceTester.php" : {

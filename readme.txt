@@ -100,11 +100,11 @@ There are no limits on the number of Pages that can be generated with our mass p
 * Notice: PHP 7.4 is the minimum required version
 * Added: Generate: Content: Keyword Autocomplete: Gutenberg: Support for Keyword Autocomplete on Title field
 * Added: Generate: Content: Check ID is a Content Group, and show an error if not
-* Fix: Keywords: Save: Replace utf8_encode() with mb_convert_encoding() for PHP 8.2 compatibility
 * Fix: Keyword Autocompleters: Don't initialize in Gutenberg / Block Editor text blocks when editing Pages or Posts
+* Fix: Keywords: Save: Replace utf8_encode() with mb_convert_encoding() for PHP 8.2 compatibility
+* Fix: Generate: Content: Replace utf8_encode() with mb_convert_encoding() for PHP 8.2 compatibility
 * Fix: Generate: Content: Keyword Autocomplete: Don't initialize if no Keywords defined
 * Fix: Generate: Content: Keywords: PHP Deprecated notice for count() and getIterator()
-* Fix: Generate: Content: Replace utf8_encode() with mb_convert_encoding() for PHP 8.2 compatibility
 
 = 1.6.7 (2022-07-14) =
 * Fix: Error loading taxonomy class when adding/editing Post Categories or Tags
