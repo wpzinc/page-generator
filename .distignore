@@ -19,6 +19,7 @@ config.codekit3
 DEPLOYMENT.md
 DEVELOPMENT.md
 page-generator.zip
+phpcs.tests.xml
 phpcs.xml
 README.md
 SETUP.md
