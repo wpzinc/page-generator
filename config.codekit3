@@ -4105,6 +4105,22 @@
       "oAP" : "\/includes\/global\/settings.php",
       "oF" : 0
     },
+    "\/languages\/page-generator-es.mo" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/languages\/page-generator-es.mo",
+      "oF" : 0
+    },
+    "\/languages\/page-generator-es.po" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/languages\/page-generator-es.po",
+      "oF" : 0
+    },
     "\/languages\/page-generator.pot" : {
       "cB" : 0,
       "ft" : 8192,
