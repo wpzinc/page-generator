@@ -7,7 +7,7 @@
       "uuidString" : "FE3D5008-3394-4B1F-B033-7CBA87890AE4"
     }
   ],
-  "creatorBuild" : "34434",
+  "creatorBuild" : "34510",
   "files" : {
     "\/_modules\/dashboard\/class-wpzincdashboardwidget.php" : {
       "cB" : 0,
@@ -3032,9 +3032,9 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 0,
-      "oAP" : "\/_modules\/dashboard\/js\/deactivation-min.js",
-      "oF" : 0,
-      "sC" : 3,
+      "oAP" : "\/_modules\/dashboard\/js\/min\/deactivation-min.js",
+      "oF" : 2,
+      "sC" : 0,
       "tS" : 0
     },
     "\/_modules\/dashboard\/js\/inline-search.js" : {
@@ -3413,9 +3413,9 @@
       "ft" : 4,
       "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/_modules\/dashboard\/scss\/admin.css",
-      "oF" : 0,
-      "oS" : 0,
+      "oAP" : "\/_modules\/dashboard\/css\/admin.css",
+      "oF" : 2,
+      "oS" : 3,
       "pg" : 0,
       "sct" : 0
     },
@@ -9325,22 +9325,6 @@
       "oAP" : "\/vendor\/guzzlehttp\/promises\/src\/FulfilledPromise.php",
       "oF" : 0
     },
-    "\/vendor\/guzzlehttp\/promises\/src\/functions_include.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/guzzlehttp\/promises\/src\/functions_include.php",
-      "oF" : 0
-    },
-    "\/vendor\/guzzlehttp\/promises\/src\/functions.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/guzzlehttp\/promises\/src\/functions.php",
-      "oF" : 0
-    },
     "\/vendor\/guzzlehttp\/promises\/src\/Is.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -9412,6 +9396,30 @@
       "oA" : 0,
       "oAP" : "\/vendor\/guzzlehttp\/promises\/src\/Utils.php",
       "oF" : 0
+    },
+    "\/vendor\/guzzlehttp\/promises\/vendor-bin\/php-cs-fixer\/composer.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/vendor\/guzzlehttp\/promises\/vendor-bin\/php-cs-fixer\/composer-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/vendor\/guzzlehttp\/promises\/vendor-bin\/phpstan\/composer.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/vendor\/guzzlehttp\/promises\/vendor-bin\/phpstan\/composer-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/vendor\/guzzlehttp\/promises\/vendor-bin\/psalm\/composer.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/vendor\/guzzlehttp\/promises\/vendor-bin\/psalm\/composer-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
     },
     "\/vendor\/guzzlehttp\/psr7\/CHANGELOG.md" : {
       "cB" : 0,
@@ -10069,6 +10077,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/illuminate\/contracts\/Console\/Kernel.php",
+      "oF" : 0
+    },
+    "\/vendor\/illuminate\/contracts\/Console\/PromptsForMissingInput.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/illuminate\/contracts\/Console\/PromptsForMissingInput.php",
       "oF" : 0
     },
     "\/vendor\/illuminate\/contracts\/Container\/BindingResolutionException.php" : {
@@ -14898,6 +14914,14 @@
       "oAP" : "\/vendor\/myclabs\/deep-copy\/src\/DeepCopy\/Exception\/PropertyException.php",
       "oF" : 0
     },
+    "\/vendor\/myclabs\/deep-copy\/src\/DeepCopy\/Filter\/ChainableFilter.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/myclabs\/deep-copy\/src\/DeepCopy\/Filter\/ChainableFilter.php",
+      "oF" : 0
+    },
     "\/vendor\/myclabs\/deep-copy\/src\/DeepCopy\/Filter\/Doctrine\/DoctrineCollectionFilter.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -15251,6 +15275,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/nesbot\/carbon\/src\/Carbon\/CarbonPeriod.php",
+      "oF" : 0
+    },
+    "\/vendor\/nesbot\/carbon\/src\/Carbon\/CarbonPeriodImmutable.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/nesbot\/carbon\/src\/Carbon\/CarbonPeriodImmutable.php",
       "oF" : 0
     },
     "\/vendor\/nesbot\/carbon\/src\/Carbon\/CarbonTimeZone.php" : {
@@ -25338,14 +25370,6 @@
       "oAP" : "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/DetachedShadowRootException.php",
       "oF" : 0
     },
-    "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/DriverServerDiedException.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/DriverServerDiedException.php",
-      "oF" : 0
-    },
     "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/ElementClickInterceptedException.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -25416,6 +25440,54 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/InsecureCertificateException.php",
+      "oF" : 0
+    },
+    "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/Internal\/DriverServerDiedException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/Internal\/DriverServerDiedException.php",
+      "oF" : 0
+    },
+    "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/Internal\/IOException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/Internal\/IOException.php",
+      "oF" : 0
+    },
+    "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/Internal\/LogicException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/Internal\/LogicException.php",
+      "oF" : 0
+    },
+    "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/Internal\/RuntimeException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/Internal\/RuntimeException.php",
+      "oF" : 0
+    },
+    "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/Internal\/UnexpectedResponseException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/Internal\/UnexpectedResponseException.php",
+      "oF" : 0
+    },
+    "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/Internal\/WebDriverCurlException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/Internal\/WebDriverCurlException.php",
       "oF" : 0
     },
     "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/InvalidArgumentException.php" : {
@@ -25610,6 +25682,14 @@
       "oAP" : "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/NullPointerException.php",
       "oF" : 0
     },
+    "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/PhpWebDriverExceptionInterface.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/PhpWebDriverExceptionInterface.php",
+      "oF" : 0
+    },
     "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/ScriptTimeoutException.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -25728,14 +25808,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/UnsupportedOperationException.php",
-      "oF" : 0
-    },
-    "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/WebDriverCurlException.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/WebDriverCurlException.php",
       "oF" : 0
     },
     "\/vendor\/php-webdriver\/webdriver\/lib\/Exception\/WebDriverException.php" : {
@@ -26579,7 +26651,7 @@
       "rFN" : 0,
       "uCM" : 0
     },
-    "\/vendor\/phpunit\/php-code-coverage\/ChangeLog.md" : {
+    "\/vendor\/phpunit\/php-code-coverage\/ChangeLog-9.2.md" : {
       "cB" : 0,
       "cS" : 0,
       "eF" : 1,
@@ -26589,7 +26661,7 @@
       "ft" : 4096,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/ChangeLog.html",
+      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/ChangeLog-9.2.html",
       "oF" : 0,
       "oFM" : 0,
       "oS" : 0,
@@ -27899,7 +27971,7 @@
       "oAP" : "\/vendor\/phpunit\/phpunit\/.phpstorm.meta.php",
       "oF" : 0
     },
-    "\/vendor\/phpunit\/phpunit\/ChangeLog-8.5.md" : {
+    "\/vendor\/phpunit\/phpunit\/ChangeLog-9.6.md" : {
       "cB" : 0,
       "cS" : 0,
       "eF" : 1,
@@ -27909,26 +27981,7 @@
       "ft" : 4096,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/ChangeLog-8.5.html",
-      "oF" : 0,
-      "oFM" : 0,
-      "oS" : 0,
-      "pHT" : 0,
-      "pME" : 1,
-      "rFN" : 0,
-      "uCM" : 0
-    },
-    "\/vendor\/phpunit\/phpunit\/ChangeLog-9.5.md" : {
-      "cB" : 0,
-      "cS" : 0,
-      "eF" : 1,
-      "eL" : 1,
-      "ema" : 1,
-      "eSQ" : 1,
-      "ft" : 4096,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/ChangeLog-9.5.html",
+      "oAP" : "\/vendor\/phpunit\/phpunit\/ChangeLog-9.6.html",
       "oF" : 0,
       "oFM" : 0,
       "oS" : 0,
@@ -31145,22 +31198,6 @@
       "oAP" : "\/vendor\/psr\/http-client\/src\/RequestExceptionInterface.php",
       "oF" : 0
     },
-    "\/vendor\/psr\/http-factory\/.gitignore" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/psr\/http-factory\/.gitignore",
-      "oF" : 0
-    },
-    "\/vendor\/psr\/http-factory\/.pullapprove.yml" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/psr\/http-factory\/.pullapprove.yml",
-      "oF" : 0
-    },
     "\/vendor\/psr\/http-factory\/composer.json" : {
       "ft" : 524288,
       "oA" : 1,
@@ -31270,6 +31307,44 @@
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
+    },
+    "\/vendor\/psr\/http-message\/docs\/PSR7-Interfaces.md" : {
+      "cB" : 0,
+      "cS" : 0,
+      "eF" : 1,
+      "eL" : 1,
+      "ema" : 1,
+      "eSQ" : 1,
+      "ft" : 4096,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/psr\/http-message\/docs\/PSR7-Interfaces.html",
+      "oF" : 0,
+      "oFM" : 0,
+      "oS" : 0,
+      "pHT" : 0,
+      "pME" : 1,
+      "rFN" : 0,
+      "uCM" : 0
+    },
+    "\/vendor\/psr\/http-message\/docs\/PSR7-Usage.md" : {
+      "cB" : 0,
+      "cS" : 0,
+      "eF" : 1,
+      "eL" : 1,
+      "ema" : 1,
+      "eSQ" : 1,
+      "ft" : 4096,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/psr\/http-message\/docs\/PSR7-Usage.html",
+      "oF" : 0,
+      "oFM" : 0,
+      "oS" : 0,
+      "pHT" : 0,
+      "pME" : 1,
+      "rFN" : 0,
+      "uCM" : 0
     },
     "\/vendor\/psr\/http-message\/LICENSE" : {
       "cB" : 0,
@@ -33431,22 +33506,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/sebastian\/object-reflector\/src\/ObjectReflector.php",
-      "oF" : 0
-    },
-    "\/vendor\/sebastian\/recursion-context\/.psalm\/baseline.xml" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/sebastian\/recursion-context\/.psalm\/baseline.xml",
-      "oF" : 0
-    },
-    "\/vendor\/sebastian\/recursion-context\/.psalm\/config.xml" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/sebastian\/recursion-context\/.psalm\/config.xml",
       "oF" : 0
     },
     "\/vendor\/sebastian\/recursion-context\/ChangeLog.md" : {
@@ -38085,6 +38144,22 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/src\/Standards\/Generic\/Tests\/WhiteSpace\/DisallowTabIndentUnitTest.2.inc.fixed",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/src\/Standards\/Generic\/Tests\/WhiteSpace\/DisallowTabIndentUnitTest.3.inc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/src\/Standards\/Generic\/Tests\/WhiteSpace\/DisallowTabIndentUnitTest.3.inc",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/src\/Standards\/Generic\/Tests\/WhiteSpace\/DisallowTabIndentUnitTest.3.inc.fixed" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/src\/Standards\/Generic\/Tests\/WhiteSpace\/DisallowTabIndentUnitTest.3.inc.fixed",
       "oF" : 0
     },
     "\/vendor\/squizlabs\/php_codesniffer\/src\/Standards\/Generic\/Tests\/WhiteSpace\/DisallowTabIndentUnitTest.css" : {
@@ -46017,6 +46092,38 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Tokenizer\/GotoLabelTest.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Tokenizer\/HeredocNowdocCloserTest.inc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Tokenizer\/HeredocNowdocCloserTest.inc",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Tokenizer\/HeredocNowdocCloserTest.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Tokenizer\/HeredocNowdocCloserTest.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Tokenizer\/HeredocStringTest.inc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Tokenizer\/HeredocStringTest.inc",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Tokenizer\/HeredocStringTest.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Tokenizer\/HeredocStringTest.php",
       "oF" : 0
     },
     "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Tokenizer\/NamedFunctionCallArgumentsTest.inc" : {
@@ -56131,6 +56238,10 @@
         "active" : 0,
         "optionString" : "'always', {exceptAfterSingleLine: false}"
       },
+      "logical-assignment-operators" : {
+        "active" : 0,
+        "optionString" : "'always',  {'enforceForIfStatements': false}"
+      },
       "max-classes-per-file" : {
         "active" : 0,
         "optionString" : "{'ignoreExpressions': false, 'max': 1}"
@@ -56291,6 +56402,9 @@
       "no-empty-pattern" : {
         "active" : 1
       },
+      "no-empty-static-block" : {
+        "active" : 0
+      },
       "no-eq-null" : {
         "active" : 0
       },
@@ -56429,6 +56543,9 @@
         "active" : 0
       },
       "no-new-func" : {
+        "active" : 0
+      },
+      "no-new-native-nonconstructor" : {
         "active" : 0
       },
       "no-new-object" : {
@@ -57119,7 +57236,7 @@
       "moduleType" : 2,
       "removeComments" : 0,
       "sourceMapStyle" : 0,
-      "targetECMAVersion" : 0
+      "targetECMAVersion" : 2018
     },
     "languageDefaultsUserDefined" : [
 
@@ -57171,10 +57288,14 @@
       "ENVIRONMENT:::$NODE_ENV"
     ],
     "rollupTreeshakingEnabled" : 1,
+    "rollupTreeshakingModuleSideEffects" : 1,
     "skippedFoldersString" : "log, _logs, logs, _cache, cache, .idea, \/storage\/framework\/sessions, node_modules",
     "sourceFolderName" : "source",
     "susyVersion" : 3,
+    "tsAllowArbitraryExtensions" : 0,
+    "tsAllowImportingTSExtensions" : 0,
     "tsAllowSyntheticDefaultImports" : 0,
+    "tsAllowUMDGlobalAccess" : 0,
     "tsAllowUnreachableCode" : 0,
     "tsAllowUnusedLabels" : 0,
     "tsAlwaysStrict" : 0,
@@ -57183,36 +57304,36 @@
     "tsEmitDecoratorMetadata" : 0,
     "tsESModuleInterop" : 0,
     "tsExactOptionalPropertyTypes" : 0,
+    "tsExperimentalDecorators" : 0,
     "tsForceConsistentCasingInFileNames" : 0,
     "tsImportHelpers" : 0,
     "tsIsolatedModules" : 0,
     "tsJSXFactory" : "React.createElement",
-    "tsKeyofStringsOnly" : 0,
     "tsNoEmitHelpers" : 0,
     "tsNoFallthroughCasesInSwitch" : 0,
     "tsNoImplicitAny" : 0,
     "tsNoImplicitOverride" : 0,
     "tsNoImplicitReturns" : 0,
     "tsNoImplicitThis" : 0,
-    "tsNoImplicitUseStrict" : 0,
     "tsNoLib" : 0,
     "tsNoPropertyAccessFromIndexSignature" : 0,
     "tsNoResolve" : 0,
-    "tsNoStrictGenericChecks" : 0,
     "tsNoUncheckedIndexAccess" : 0,
     "tsNoUnusedLocals" : 0,
     "tsNoUnusedParameters" : 0,
     "tsPreserveConstEnums" : 0,
     "tsPreserveSymlinks" : 0,
     "tsResolveJsonModule" : 0,
+    "tsSkipDefaultLibCheck" : 0,
     "tsSkipLibCheck" : 0,
+    "tsStrictBindCallApply" : 0,
     "tsStrictFunctionTypes" : 0,
     "tsStrictNullChecks" : 0,
     "tsStrictPropertyInitialization" : 0,
     "tsStripInternal" : 0,
-    "tsSuppressExcessPropertyErrors" : 0,
-    "tsSuppressImplicitAnyIndexErrors" : 0,
+    "tsUseDefineForClassFields" : 0,
     "tsUseUnknownInCatchVariables" : 0,
+    "tsVerbatimModuleSyntax" : 0,
     "uglifyDefinesString" : "",
     "uglifyFlags2" : {
       "arguments" : {
@@ -57245,7 +57366,7 @@
       },
       "comments" : {
         "active" : 0,
-        "flagValue" : -1
+        "flagValue" : 1
       },
       "comparisons" : {
         "active" : 1,
