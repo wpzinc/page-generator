@@ -3,9 +3,9 @@ Contributors: n7studios,wpzinc
 Donate link: https://www.wpzinc.com/plugins/page-generator-pro
 Tags: mass page generator, landing pages, multiple page generator
 Requires at least: 5.0
-Tested up to: 6.1.1
+Tested up to: 6.2.2
 Requires PHP: 7.4
-Stable tag: 1.6.8
+Stable tag: 1.6.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,6 +95,9 @@ There are no limits on the number of Pages that can be generated with our mass p
 3. Generating Pages screen
 
 == Changelog ==
+
+= 1.6.9 (2023-08-03) =
+* Fix: PHP Deprecated notices in PHP 8.2
 
 = 1.6.8 (2023-01-26) =
 * Notice: PHP 7.4 is the minimum required version
