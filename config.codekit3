@@ -3568,6 +3568,14 @@
       "oAP" : "\/.github\/workflows\/coding-standards.yml",
       "oF" : 0
     },
+    "\/.github\/workflows\/deploy-readme.yml" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/.github\/workflows\/deploy-readme.yml",
+      "oF" : 0
+    },
     "\/.github\/workflows\/deploy.yml" : {
       "cB" : 0,
       "ft" : 8192,
