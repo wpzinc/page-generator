@@ -46,6 +46,25 @@ class Page_Generator_Pro_Generate {
 	public $keywords_terms = array();
 
 	/**
+	 * Holds an array comprising of every required keyword detected in the Group.
+	 *
+	 * @since   4.0.4
+	 *
+	 * @var     array
+	 */
+	public $required_keywords = array();
+
+	/**
+	 * Holds an array comprising of every required keyword detected in the Group,
+	 * including columns and modifiers.
+	 *
+	 * @since   4.0.4
+	 *
+	 * @var     array
+	 */
+	public $required_keywords_full = array();
+
+	/**
 	 * Holds the array of keywords to replace e.g. {city}
 	 *
 	 * @since   1.3.1
@@ -842,6 +861,11 @@ class Page_Generator_Pro_Generate {
 			return array_walk_recursive( $content, array( $this, 'find_keywords_in_string' ) );
 		}
 
+		// Bail if content is null.
+		if ( is_null( $content ) ) { // @phpstan-ignore-line
+			return;
+		}
+
 		/**
 		 * Get Keywords in this string.  Covers:
 		 * - Alphanumeric and accented keyword names, with hyphens and underscores
@@ -860,7 +884,7 @@ class Page_Generator_Pro_Generate {
 		 * {keyword(column_name):modifier[args]}
 		 * {keyword(column_name):modifier[arg1,argN]}
 		 *
-		 * Previous method "|{(.+?)}|" would fail to extract keywords
+		 * Previous method "|{(.+?)}|" would include spintax and fail to extract keywords
 		 * within JSON e.g. Gutenberg Block JSON strings that contain a Keyword.
 		 */
 		preg_match_all( '/{([\p{L}0-9_\-:,()\\[\\]]+?)}/u', $content, $matches );
