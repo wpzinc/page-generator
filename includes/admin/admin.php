@@ -454,8 +454,8 @@ class Page_Generator_Pro_Admin {
 		$bulk_action = array_values(
 			array_filter(
 				array(
-					( isset( $_REQUEST['action'] ) && $_REQUEST['action'] != '-1' ? sanitize_text_field( $_REQUEST['action'] ) : '' ), // phpcs:ignore WordPress.PHP.StrictComparisons
-					( isset( $_REQUEST['action2'] ) && $_REQUEST['action2'] != '-1' ? sanitize_text_field( $_REQUEST['action2'] ) : '' ), // phpcs:ignore WordPress.PHP.StrictComparisons
+					( isset( $_REQUEST['action'] ) && $_REQUEST['action'] != '-1' ? sanitize_text_field( $_REQUEST['action'] ) : '' ), // phpcs:ignore Universal.Operators.StrictComparisons.LooseNotEqual
+					( isset( $_REQUEST['action2'] ) && $_REQUEST['action2'] != '-1' ? sanitize_text_field( $_REQUEST['action2'] ) : '' ), // phpcs:ignore Universal.Operators.StrictComparisons.LooseNotEqual
 					( isset( $_REQUEST['action3'] ) && ! empty( $_REQUEST['action3'] ) ? sanitize_text_field( $_REQUEST['action3'] ) : '' ),
 				)
 			)
@@ -822,15 +822,13 @@ class Page_Generator_Pro_Admin {
 		}
 
 		// If no limit specified, set one now.
-		if ( $settings['numberOfPosts'] == 0 ) { // phpcs:ignore WordPress.PHP.StrictComparisons
+		if ( $settings['numberOfPosts'] == 0 ) { // phpcs:ignore Universal.Operators.StrictComparisons.LooseEqual
 			if ( $settings['method'] === 'random' ) {
 				$settings['numberOfPosts'] = 10;
-			} else {
-				if ( $settings['resumeIndex'] > 0 ) {
+			} elseif ( $settings['resumeIndex'] > 0 ) {
 					$settings['numberOfPosts'] = $number_of_pages_to_generate - $settings['resumeIndex'];
-				} else {
-					$settings['numberOfPosts'] = $number_of_pages_to_generate;
-				}
+			} else {
+				$settings['numberOfPosts'] = $number_of_pages_to_generate;
 			}
 		}
 

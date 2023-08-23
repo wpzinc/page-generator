@@ -13,7 +13,7 @@
 
 		<span>
 			<?php
-			echo sprintf(
+			printf(
 				'%1$s &quot;%2$s&quot;',
 				esc_html__( 'Generating', 'page-generator' ),
 				esc_html( $settings['title'] )
@@ -27,7 +27,7 @@
 	<div class="wrap-inner">
 		<p>
 			<?php
-			echo sprintf(
+			printf(
 				'%s %s %s',
 				esc_html__( 'Please be patient while content is generated. This can take a while if you have a lot of Pages to generate, and/or you are using Page Generator Shortcodes.', 'page-generator' ),
 				'<a href="' . esc_attr( $this->base->plugin->documentation_url ) . '/generate/#page-generation" target="_blank">' . esc_html__( 'Read the Documentation', 'page-generator' ) . '</a>',

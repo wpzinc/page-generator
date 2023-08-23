@@ -47,12 +47,12 @@ class Page_Generator_Pro_Settings {
 	 *
 	 * @since   1.0.0
 	 *
-	 * @param   string $type       Plugin / Addon Name / Type.
-	 * @param   string $key        Setting key value to retrieve.
-	 * @param   string $default    Default Value.
-	 * @return  string              Value/Default Value
+	 * @param   string $type            Plugin / Addon Name / Type.
+	 * @param   string $key             Setting key value to retrieve.
+	 * @param   string $default_value   Default Value.
+	 * @return  string                  Value/Default Value
 	 */
-	public function get_setting( $type, $key, $default = '' ) {
+	public function get_setting( $type, $key, $default_value = '' ) {
 
 		// Get settings.
 		$settings = $this->get_settings( $type );
@@ -66,7 +66,7 @@ class Page_Generator_Pro_Settings {
 
 			// Check if key exists.
 			if ( ! isset( $settings[ $key ] ) ) {
-				return $default;
+				return $default_value;
 			}
 
 			// Key exists - make settings the value (which could be an array or the final value)

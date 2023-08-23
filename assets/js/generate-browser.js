@@ -13,7 +13,7 @@ var page_generator_pro_generating = false,
 // Add an event listener to warn the user if they navigate away from this screen.
 window.addEventListener(
 	'beforeunload',
-	function( event ) {
+	function ( event ) {
 		// If not generating, permit navigating away.
 		if ( ! page_generator_pro_generating ) {
 			return undefined;
@@ -33,7 +33,7 @@ window.addEventListener(
  */
 function pageGeneratorProGenerateBrowser() {
 
-	( function( $ ) {
+	( function ( $ ) {
 
 		// Cast some settings.
 		page_generator_pro_generate_browser.number_of_requests = Number( page_generator_pro_generate_browser.number_of_requests );
@@ -70,7 +70,7 @@ function pageGeneratorProGenerateBrowser() {
 				 * @param   object  response        Response
 				 * @param   int     currentIndex    Current Index
 				 */
-				onRequestSuccess:   function( response, currentIndex ) {
+				onRequestSuccess:   function ( response, currentIndex ) {
 
 					// Store response in global var.
 					page_generator_pro_response = response;
@@ -136,7 +136,7 @@ function pageGeneratorProGenerateBrowser() {
 				 *
 				 * @since   3.1.8
 				 */
-				onRequestError: function( xhr, textStatus, e, currentIndex ) {
+				onRequestError: function ( xhr, textStatus, e, currentIndex ) {
 
 					// If the log exceeds 100 items, reset it.
 					if ( $( '#log ul li' ).length >= 100 ) {
@@ -164,7 +164,7 @@ function pageGeneratorProGenerateBrowser() {
 				 * @param   object  settings    Settings.
 				 * @return  object              Settings
 				 */
-				updateSettings: function( settings ) {
+				updateSettings: function ( settings ) {
 
 					// If flag is false, the user went to navigate away but then decided to keep the browser window/tab open.
 					// Set the flag to true again.
@@ -184,7 +184,7 @@ function pageGeneratorProGenerateBrowser() {
 				 *
 				 * @since   3.1.8
 				 */
-				onFinished: function() {
+				onFinished: function () {
 
 					// Update flag as generation stopped.
 					page_generator_pro_generating = false;
@@ -223,7 +223,7 @@ function pageGeneratorProGenerateBrowser() {
 		// Sets the page_generator_pro_cancelled flag to true when the user clicks the 'Stop Generation' button.
 		$( 'a.page-generator-pro-generate-cancel-button' ).on(
 			'click',
-			function( e ) {
+			function ( e ) {
 
 				e.preventDefault();
 				page_generator_pro_cancelled = true;
@@ -244,7 +244,7 @@ function pageGeneratorProGenerateBrowserStarted() {
 
 	page_generator_pro_generating = true;
 
-	( function( $ ) {
+	( function ( $ ) {
 
 		$.ajax(
 			{
@@ -255,9 +255,9 @@ function pageGeneratorProGenerateBrowserStarted() {
 					id:     page_generator_pro_generate_browser.id,
 					action: page_generator_pro_generate_browser.action_on_start,
 				},
-				error: function( a, b, c ) {
+				error: function ( a, b, c ) {
 				},
-				success: function( result ) {
+				success: function ( result ) {
 				}
 			}
 		);
@@ -275,7 +275,7 @@ function pageGeneratorProGenerateBrowserStopped() {
 
 	page_generator_pro_generating = false;
 
-	( function( $ ) {
+	( function ( $ ) {
 
 		$.ajax(
 			{
@@ -286,9 +286,9 @@ function pageGeneratorProGenerateBrowserStopped() {
 					id:     page_generator_pro_generate_browser.id,
 					action: page_generator_pro_generate_browser.action_on_finished,
 				},
-				error: function( a, b, c ) {
+				error: function ( a, b, c ) {
 				},
-				success: function( result ) {
+				success: function ( result ) {
 				}
 			}
 		);

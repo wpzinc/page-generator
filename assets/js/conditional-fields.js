@@ -12,12 +12,12 @@
  */
 function page_generator_pro_conditional_fields_initialize() {
 
-	( function( $ ) {
+	( function ( $ ) {
 
 		$( 'body' ).on(
 			'change',
 			'select.wpzinc-conditional, .wpzinc-conditional select, input[type=radio].wpzinc-conditional, .wpzinc-conditional input[type=radio]',
-			function() {
+			function () {
 
 				// Get container that holds all fields that are controlled by this <select>.
 				var container = $( this ).data( 'container' );
@@ -26,7 +26,7 @@ function page_generator_pro_conditional_fields_initialize() {
 				switch ( $( this ).prop( 'nodeName' ).toLowerCase() ) {
 					case 'select':
 						$( 'option', $( this ) ).each(
-							function() {
+							function () {
 								$( '.' + $( this ).val(), $( container ) ).parent().hide();
 							}
 						);
@@ -34,7 +34,7 @@ function page_generator_pro_conditional_fields_initialize() {
 
 					case 'input':
 						$( 'input[name="' + $( this ).attr( 'name' ) + '"]' ).each(
-							function() {
+							function () {
 								$( '.' + $( this ).val(), $( container ) ).parent().hide();
 							}
 						);

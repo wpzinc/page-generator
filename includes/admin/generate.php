@@ -370,9 +370,9 @@ class Page_Generator_Pro_Generate {
 			'post_title'     => $settings['title'],
 			'post_content'   => $settings['content'],
 			'post_status'    => ( $test_mode ? 'draft' : $settings['status'] ),
-			'post_author'    => ( ( isset( $settings['rotateAuthors'] ) && $settings['rotateAuthors'] == 1 ) ? $authors[ $user_index ]->ID : $settings['author'] ), // phpcs:ignore WordPress.PHP.StrictComparisons
-			'comment_status' => ( ( isset( $settings['comments'] ) && $settings['comments'] == 1 ) ? 'open' : 'closed' ), // phpcs:ignore WordPress.PHP.StrictComparisons
-			'ping_status'    => ( ( isset( $settings['trackbacks'] ) && $settings['trackbacks'] == 1 ) ? 'open' : 'closed' ), // phpcs:ignore WordPress.PHP.StrictComparisons
+			'post_author'    => ( ( isset( $settings['rotateAuthors'] ) && $settings['rotateAuthors'] == 1 ) ? $authors[ $user_index ]->ID : $settings['author'] ), // phpcs:ignore Universal.Operators.StrictComparisons.LooseEqual
+			'comment_status' => ( ( isset( $settings['comments'] ) && $settings['comments'] == 1 ) ? 'open' : 'closed' ), // phpcs:ignore Universal.Operators.StrictComparisons.LooseEqual
+			'ping_status'    => ( ( isset( $settings['trackbacks'] ) && $settings['trackbacks'] == 1 ) ? 'open' : 'closed' ), // phpcs:ignore Universal.Operators.StrictComparisons.LooseEqual
 			'post_name'      => $post_name,
 			'post_date'      => $this->post_date( $settings, $last_generated_post_date_time ),
 		);

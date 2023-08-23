@@ -29,7 +29,7 @@
 	<p class="description">
 		<strong><?php esc_html_e( 'All:', 'page-generator' ); ?></strong>
 		<?php
-		echo sprintf(
+		printf(
 			/* translators: Post Type, Plural (e.g. Posts, Pages) */
 			esc_html__( 'Generates %s for all possible combinations of terms across all keywords used.', 'page-generator' ),
 			esc_html( $labels['plural'] )
@@ -46,7 +46,7 @@
 	<div class="left">
 		<label for="number_of_posts">
 			<?php
-			echo sprintf(
+			printf(
 				/* translators: Post Type, Plural */
 				esc_html__( 'No. %s', 'page-generator' ),
 				esc_html( $labels['plural'] )
@@ -59,7 +59,7 @@
 	</div>
 	<p class="description">
 		<?php
-		echo sprintf(
+		printf(
 			/* translators: %1$s: Post Type, Plural, %2$s: Post Type, Plural */
 			esc_html__( 'The number of %1$s to generate. If zero or blank, all %2$s will be generated.', 'page-generator' ),
 			esc_html( $labels['plural'] ),

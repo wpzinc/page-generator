@@ -29,7 +29,7 @@ if ( typeof wp !== 'undefined' &&
 		// We do this when the Title field is selected, because initializing Tribute's
 		// autocomplete instance sooner than this doesn't work.
 		const pageGeneratorProContentGroupEditorIsReady = wp.data.subscribe(
-			function() {
+			function () {
 
 				// Hacky; can't find a Gutenberg native way to determine if the Post Title field is focused.
 				if ( jQuery( 'h1.wp-block-post-title' ).hasClass( 'is-selected' ) ) {

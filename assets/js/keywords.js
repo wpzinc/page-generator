@@ -6,7 +6,7 @@
  */
 
 jQuery( document ).ready(
-	function( $ ) {
+	function ( $ ) {
 
 		// Initialize conditional fields.
 		page_generator_pro_conditional_fields_initialize();

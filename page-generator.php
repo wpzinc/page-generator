@@ -7,7 +7,7 @@
  *
  * Plugin Name: Page Generator
  * Plugin URI: http://www.wpzinc.com/plugins/page-generator-pro
- * Version: 1.6.9
+ * Version: 1.7.0
  * Author: WP Zinc
  * Author URI: http://www.wpzinc.com
  * Description: Generate multiple Pages using dynamic content.
@@ -24,8 +24,8 @@ if ( class_exists( 'Page_Generator_Pro' ) ) {
 }
 
 // Define Plugin version and build date.
-define( 'PAGE_GENERATOR_PLUGIN_VERSION', '1.6.9' );
-define( 'PAGE_GENERATOR_PLUGIN_BUILD_DATE', '2023-08-03 18:00:00' );
+define( 'PAGE_GENERATOR_PLUGIN_VERSION', '1.7.0' );
+define( 'PAGE_GENERATOR_PLUGIN_BUILD_DATE', '2023-08-23 18:00:00' );
 
 // Define Plugin paths.
 define( 'PAGE_GENERATOR_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -75,9 +75,9 @@ function page_generator_autoloader( $class_name ) {
 
 	// Define the paths with file name we need to include.
 	$include_paths = array(
-		dirname( __FILE__ ) . '/includes/admin/' . $file_name,
-		dirname( __FILE__ ) . '/includes/admin/keyword-sources/' . $file_name,
-		dirname( __FILE__ ) . '/includes/global/' . $file_name,
+		__DIR__ . '/includes/admin/' . $file_name,
+		__DIR__ . '/includes/admin/keyword-sources/' . $file_name,
+		__DIR__ . '/includes/global/' . $file_name,
 	);
 
 	// Iterate through the include paths to find the file.

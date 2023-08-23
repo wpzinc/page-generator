@@ -5,7 +5,7 @@ Tags: mass page generator, landing pages, multiple page generator
 Requires at least: 5.0
 Tested up to: 6.3
 Requires PHP: 7.4
-Stable tag: 1.6.9
+Stable tag: 1.7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,6 +95,9 @@ There are no limits on the number of Pages that can be generated with our mass p
 3. Generating Pages screen
 
 == Changelog ==
+
+= 1.7.0 (2023-08-23) =
+* Fix: Updated WordPress Coding Standards to 3.0.0
 
 = 1.6.9 (2023-08-03) =
 * Fix: PHP Deprecated notices in PHP 8.2

@@ -571,12 +571,12 @@ class Page_Generator_Pro_Common {
 	 *
 	 * @since   1.6.5
 	 *
-	 * @param   array $array  Values.
-	 * @return  array           Sanitized values
+	 * @param   array $arr  Values.
+	 * @return  array       Sanitized values
 	 */
-	public function recursive_sanitize_text_field( $array ) {
+	public function recursive_sanitize_text_field( $arr ) {
 
-		foreach ( $array as $key => &$value ) {
+		foreach ( $arr as $key => &$value ) {
 			if ( is_array( $value ) ) {
 				$value = $this->recursive_sanitize_text_field( $value );
 			} else {
@@ -584,7 +584,7 @@ class Page_Generator_Pro_Common {
 			}
 		}
 
-		return $array;
+		return $arr;
 
 	}
 

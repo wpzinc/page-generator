@@ -458,7 +458,7 @@ class Page_Generator_Pro_Keywords {
 
 		global $wpdb;
 
-		$get_all = ( ( $paged == -1 ) ? true : false ); // phpcs:ignore WordPress.PHP.StrictComparisons
+		$get_all = ( ( $paged == -1 ) ? true : false ); // phpcs:ignore Universal.Operators.StrictComparisons.LooseEqual
 
 		// Search.
 		if ( ! empty( $search ) ) {
@@ -552,10 +552,8 @@ class Page_Generator_Pro_Keywords {
 			if ( $this->keywords_columns_with_curly_braces ) {
 				return $this->keywords_columns_with_curly_braces;
 			}
-		} else {
-			if ( $this->keywords_columns ) {
+		} elseif ( $this->keywords_columns ) {
 				return $this->keywords_columns;
-			}
 		}
 
 		global $wpdb;

@@ -55,7 +55,7 @@ class Page_Generator_Pro_Keywords_Table extends WP_List_Table {
 
 		// If search terms are supplied, show a message.
 		if ( ! empty( $this->get_search() ) ) {
-			echo sprintf(
+			printf(
 				'%1$s <strong>%2$s</strong>',
 				esc_html__( 'No keywords found matching the search term', 'page-generator' ),
 				esc_html( $this->get_search() )

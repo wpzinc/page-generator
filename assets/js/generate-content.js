@@ -6,14 +6,14 @@
  */
 
 jQuery( document ).ready(
-	function( $ ) {
+	function ( $ ) {
 
 		/**
 		 * Content Groups: Row Actions
 		 * Content Groups: Actions Meta Box
 		 */
 		$( 'body.page-generator-pro td.has-row-actions span a, body.page-generator-pro td.generated_count span a, body.page-generator-pro td.status span a, #page-generator-pro-actions span a, #page-generator-pro-actions-bottom span a, #page-generator-pro-actions-gutenberg-bottom span a' ).click(
-			function( e ) {
+			function ( e ) {
 
 				var action = $( this ).parent( 'span' ).attr( 'class' ),
 				result     = true,
@@ -113,7 +113,7 @@ jQuery( document ).ready(
 		$( 'body' ).on(
 			'click',
 			'#page-generator-pro-progress button.close',
-			function( e ) {
+			function ( e ) {
 
 				e.preventDefault();
 
@@ -130,12 +130,12 @@ jQuery( document ).ready(
 		$( 'body' ).on(
 			'click',
 			'.wpzinc-add-table-row',
-			function( e ) {
+			function ( e ) {
 
 				e.preventDefault();
 
 				setTimeout(
-					function() {
+					function () {
 						// Initialize autocomplete instances, if Keywords exist.
 						if ( typeof wp_zinc_autocomplete_initialize !== 'undefined' ) {
 							wp_zinc_autocomplete_initialize();
@@ -153,7 +153,7 @@ jQuery( document ).ready(
 		 */
 		if ( $( '.is-sortable' ).length > 0) {
 			$( '.is-sortable' ).each(
-				function() {
+				function () {
 					$( this ).sortable();
 				}
 			);
@@ -165,7 +165,7 @@ jQuery( document ).ready(
 		$( document ).on(
 			'click',
 			'a.deselect-all',
-			function( e ) {
+			function ( e ) {
 
 				e.preventDefault();
 
@@ -179,7 +179,7 @@ jQuery( document ).ready(
 		 */
 		$( 'select[name="page-generator-pro[type]"]' ).on(
 			'change.page-generator-pro',
-			function( e ) {
+			function ( e ) {
 
 				// Get Post Type.
 				var post_type = $( this ).val();
@@ -212,7 +212,7 @@ jQuery( document ).ready(
 		 */
 		$( 'select[name="page-generator-pro[status]"], select[name="page-generator-pro[date_option]"]' ).on(
 			'change.page-generator-pro',
-			function() {
+			function () {
 
 				var status  = $( 'select[name="page-generator-pro[status]"]' ).val(),
 				date_option = $( 'select[name="page-generator-pro[date_option]"]' ).val();
@@ -239,7 +239,7 @@ jQuery( document ).ready(
 		 */
 		$( 'select[name="page-generator-pro[comments_generate][date_option]"]' ).on(
 			'change.page-generator-pro',
-			function() {
+			function () {
 				var date_option = $( this ).val();
 
 				// Hide options.
@@ -257,7 +257,7 @@ jQuery( document ).ready(
 		 */
 		$( 'select[name="page-generator-pro[overwrite]"]' ).on(
 			'change.page-generator-pro',
-			function() {
+			function () {
 				var overwrite = $( this ).val();
 
 				// Hide options.
@@ -274,7 +274,7 @@ jQuery( document ).ready(
 		 */
 		$( 'select[name="page-generator-pro[featured_image_source]"]' ).on(
 			'change.page-generator-pro',
-			function() {
+			function () {
 
 				var source = $( this ).val();
 
@@ -295,7 +295,7 @@ jQuery( document ).ready(
 		 */
 		$( 'select[name="tax"]' ).on(
 			'change.page-generator-pro',
-			function( e ) {
+			function ( e ) {
 
 				var taxonomy = $( this ).val();
 
@@ -317,7 +317,7 @@ jQuery( document ).ready(
 		 * Generate via Server: Submit
 		 */
 		$( 'body.post-type-page-generator-pro form input[type=submit], body.taxonomy-page-generator-tax form input[type=submit]' ).click(
-			function( e ) {
+			function ( e ) {
 
 				// Prevent WordPress from throwing a dialog warning that changes will be lost.
 				$( window ).off( 'beforeunload.edit-post' );
@@ -397,13 +397,13 @@ function page_generator_pro_generate_content_test( group_id, type, current_index
 				nonce:  		page_generator_pro_generate_content.nonces.generate_content,
 				test_mode: 		true,
 			},
-			error: function( xhr, textStatus, errorThrown ) {
+			error: function ( xhr, textStatus, errorThrown ) {
 
 				// Show error message and exit.
 				return wpzinc_modal_show_error_message( xhr.status + ' ' + xhr.statusText );
 
 			},
-			success: function( result ) {
+			success: function ( result ) {
 
 				if ( ! result.success ) {
 					// Show error message and exit.
@@ -468,13 +468,13 @@ function page_generator_pro_generate_content_trash_generated_content( group_id, 
 				action: 		'page_generator_pro_generate_' + type + '_trash_generated_' + type,
 				nonce:  		page_generator_pro_generate_content.nonces.trash_generated_content
 			},
-			error: function( xhr, textStatus, errorThrown ) {
+			error: function ( xhr, textStatus, errorThrown ) {
 
 				// Show error message and exit.
 				return wpzinc_modal_show_error_message( xhr.status + ' ' + xhr.statusText );
 
 			},
-			success: function( result ) {
+			success: function ( result ) {
 
 				if ( ! result.success ) {
 					// Show error message and exit.
@@ -559,13 +559,13 @@ function page_generator_pro_generate_content_delete_generated_content( group_id,
 				action: 		'page_generator_pro_generate_' + type + '_delete_generated_' + type,
 				nonce:  		page_generator_pro_generate_content.nonces.delete_generated_content
 			},
-			error: function( xhr, textStatus, errorThrown ) {
+			error: function ( xhr, textStatus, errorThrown ) {
 
 				// Show error message and exit.
 				return wpzinc_modal_show_error_message( xhr.status + ' ' + xhr.statusText );
 
 			},
-			success: function( result ) {
+			success: function ( result ) {
 
 				if ( ! result.success ) {
 					// Show error message and exit.

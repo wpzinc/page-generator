@@ -78,10 +78,8 @@ class Page_Generator_Pro_Cartesian_Product implements IteratorAggregate, Countab
 					yield $product + array( $key => $value );
 				}
 			}
-		} else {
-			if ( $this->is_recursive_step ) {
+		} elseif ( $this->is_recursive_step ) {
 				yield array();
-			}
 		}
 
 	}
