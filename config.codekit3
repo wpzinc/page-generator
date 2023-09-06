@@ -3032,9 +3032,9 @@
       "ma" : 0,
       "mi" : 1,
       "oA" : 0,
-      "oAP" : "\/_modules\/dashboard\/js\/min\/deactivation-min.js",
-      "oF" : 2,
-      "sC" : 0,
+      "oAP" : "\/_modules\/dashboard\/js\/deactivation-min.js",
+      "oF" : 0,
+      "sC" : 3,
       "tS" : 0
     },
     "\/_modules\/dashboard\/js\/inline-search.js" : {
@@ -4136,6 +4136,14 @@
       "oA" : 1,
       "oAP" : "\/page-generator.php",
       "oF" : 1
+    },
+    "\/page-generator.zip" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/page-generator.zip",
+      "oF" : 0
     },
     "\/phpcs.tests.xml" : {
       "cB" : 0,

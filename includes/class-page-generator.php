@@ -80,6 +80,9 @@ class Page_Generator {
 			$this->plugin->displayName
 		);
 
+		// ConvertKit Form UID.
+		$this->plugin->convertkit_form_uid = '3fcb562250';
+
 		// Upgrade Reasons.
 		$this->plugin->upgrade_reasons = array(
 			array(

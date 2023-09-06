@@ -230,7 +230,7 @@
 					</tbody>
 				</table><h3 id="page_generator_pro_keywords_register_sources">
 						page_generator_pro_keywords_register_sources
-						<code>includes/admin/keywords.php::269</code>
+						<code>includes/admin/keywords.php::289</code>
 					</h3><h4>Parameters</h4>
 					<table>
 						<thead>
@@ -256,7 +256,7 @@ add_filter( 'page_generator_pro_keywords_register_sources', function( array( ) {
 </pre>
 <h3 id="page_generator_pro_keywords_refresh_terms_  keywordsource">
 						page_generator_pro_keywords_refresh_terms_  keywordsource
-						<code>includes/admin/keywords.php::322</code>
+						<code>includes/admin/keywords.php::344</code>
 					</h3><h4>Overview</h4>
 						<p>Refresh the given Keyword's Columns and Terms by fetching them from the database immediately before starting generation.</p><h4>Parameters</h4>
 					<table>
@@ -287,7 +287,7 @@ add_filter( 'page_generator_pro_keywords_refresh_terms_  keywordsource', functio
 </pre>
 <h3 id="page_generator_pro_keywords_validate_  datasource">
 						page_generator_pro_keywords_validate_  datasource
-						<code>includes/admin/keywords.php::1048</code>
+						<code>includes/admin/keywords.php::964</code>
 					</h3><h4>Overview</h4>
 						<p>Runs validation tests specific to this source for a Keyword immediately before it's saved to the database.</p><h4>Parameters</h4>
 					<table>
@@ -322,7 +322,7 @@ add_filter( 'page_generator_pro_keywords_validate_  datasource', function( $resu
 </pre>
 <h3 id="page_generator_pro_generate_content_settings">
 						page_generator_pro_generate_content_settings
-						<code>includes/admin/generate.php::364</code>
+						<code>includes/admin/generate.php::383</code>
 					</h3><h4>Overview</h4>
 						<p>Modify the Group's settings prior to parsing shortcodes and building the Post Arguments to use for generating a single Page, Post or Custom Post Type. Changes made only affect this item in the generation set, and are not persistent or saved. For Gutenberg and Page Builders with Blocks / Elements registered by this Plugin, this is a good time to convert them to a Shortcode Block / Element / Text</p><h4>Parameters</h4>
 					<table>
@@ -361,7 +361,7 @@ add_filter( 'page_generator_pro_generate_content_settings', function( $settings,
 </pre>
 <h3 id="page_generator_pro_generate_post_args">
 						page_generator_pro_generate_post_args
-						<code>includes/admin/generate.php::393</code>
+						<code>includes/admin/generate.php::412</code>
 					</h3><h4>Overview</h4>
 						<p>Filters arguments used for creating or updating a Post when running content generation.</p><h4>Parameters</h4>
 					<table>
@@ -392,7 +392,7 @@ add_filter( 'page_generator_pro_generate_post_args', function( $post_args, $sett
 </pre>
 <h3 id="page_generator_pro_generate_get_keywords_terms">
 						page_generator_pro_generate_get_keywords_terms
-						<code>includes/admin/generate.php::838</code>
+						<code>includes/admin/generate.php::841</code>
 					</h3><h4>Overview</h4>
 						<p>Returns an array of keyword and term key / value pairs, before any search or replacement arrays are built.</p><h4>Parameters</h4>
 					<table>
@@ -427,7 +427,7 @@ add_filter( 'page_generator_pro_generate_get_keywords_terms', function( $keyword
 </pre>
 <h3 id="page_generator_pro_generate_replace_keywords_in_array">
 						page_generator_pro_generate_replace_keywords_in_array
-						<code>includes/admin/generate.php::1015</code>
+						<code>includes/admin/generate.php::1023</code>
 					</h3><h4>Overview</h4>
 						<p>Perform any other keyword replacements or string processing.</p><h4>Parameters</h4>
 					<table>
@@ -458,7 +458,7 @@ add_filter( 'page_generator_pro_generate_replace_keywords_in_array', function( $
 </pre>
 <h3 id="page_generator_pro_generate_set_post_meta_ignored_keys">
 						page_generator_pro_generate_set_post_meta_ignored_keys
-						<code>includes/admin/generate.php::1176</code>
+						<code>includes/admin/generate.php::1184</code>
 					</h3><h4>Overview</h4>
 						<p>Defines Post Meta Keys in a Content Group to ignore and not copy to generated Posts / Groups.</p><h4>Parameters</h4>
 					<table>
@@ -497,7 +497,7 @@ add_filter( 'page_generator_pro_generate_set_post_meta_ignored_keys', function( 
 </pre>
 <h3 id="page_generator_pro_generate_set_post_meta_  meta_key">
 						page_generator_pro_generate_set_post_meta_  meta_key
-						<code>includes/admin/generate.php::1212</code>
+						<code>includes/admin/generate.php::1220</code>
 					</h3><h4>Overview</h4>
 						<p>Filters the Group Metadata for the given Key and Value, immediately before it's saved to the Generated Page.</p><h4>Parameters</h4>
 					<table>
@@ -802,7 +802,7 @@ add_filter( 'page_generator_pro_editor_should_register_tinymce_plugins', functio
 </pre>
 <h3 id="page_generator_pro_groups_get_defaults">
 						page_generator_pro_groups_get_defaults
-						<code>includes/admin/groups.php::222</code>
+						<code>includes/admin/groups.php::221</code>
 					</h3><h4>Overview</h4>
 						<p>Defines the default settings structure when a new Content Group is created.</p><h4>Parameters</h4>
 					<table>
@@ -829,7 +829,7 @@ add_filter( 'page_generator_pro_groups_get_defaults', function( $defaults ) {
 </pre>
 <h3 id="page_generator_pro_groups_get_settings_remove_orphaned_settings">
 						page_generator_pro_groups_get_settings_remove_orphaned_settings
-						<code>includes/admin/groups.php::294</code>
+						<code>includes/admin/groups.php::305</code>
 					</h3><h4>Overview</h4>
 						<p>Remove any orphaned data, such as Page Builder, SEO or Schema metadata, from the Group before generation is run, that might remain due to changing Page Builder, SEO or Schema Plugin.</p><h4>Parameters</h4>
 					<table>
@@ -856,7 +856,7 @@ add_filter( 'page_generator_pro_groups_get_settings_remove_orphaned_settings', f
 </pre>
 <h3 id="page_generator_pro_groups_get_post_meta_ignored_keys">
 						page_generator_pro_groups_get_post_meta_ignored_keys
-						<code>includes/admin/groups.php::342</code>
+						<code>includes/admin/groups.php::353</code>
 					</h3><h4>Overview</h4>
 						<p>Defines Post Meta Keys in a Content Group to ignore and not copy to generated Posts / Groups.</p><h4>Parameters</h4>
 					<table>
@@ -887,7 +887,7 @@ add_filter( 'page_generator_pro_groups_get_post_meta_ignored_keys', function( $i
 </pre>
 <h3 id="page_generator_pro_groups_get_post_meta_  meta_key">
 						page_generator_pro_groups_get_post_meta_  meta_key
-						<code>includes/admin/groups.php::363</code>
+						<code>includes/admin/groups.php::374</code>
 					</h3><h4>Overview</h4>
 						<p>Filters the Group Metadata for the given Key and Value</p><h4>Parameters</h4>
 					<table>
@@ -914,7 +914,7 @@ add_filter( 'page_generator_pro_groups_get_post_meta_  meta_key', function( $val
 </pre>
 <h3 id="page_generator_pro_groups_get_post_meta">
 						page_generator_pro_groups_get_post_meta
-						<code>includes/admin/groups.php::377</code>
+						<code>includes/admin/groups.php::388</code>
 					</h3><h4>Overview</h4>
 						<p>Filters the Group Metadata to return.</p><h4>Parameters</h4>
 					<table>
@@ -945,7 +945,7 @@ add_filter( 'page_generator_pro_groups_get_post_meta', function( $meta, $id ) {
 </pre>
 <h3 id="page_generator_pro_groups_run_row_actions">
 						page_generator_pro_groups_run_row_actions
-						<code>includes/admin/groups.php::525</code>
+						<code>includes/admin/groups.php::536</code>
 					</h3><h4>Parameters</h4>
 					<table>
 						<thead>
@@ -979,7 +979,7 @@ add_filter( 'page_generator_pro_groups_run_row_actions', function( $result, $act
 </pre>
 <h3 id="page_generator_pro_groups_run_row_actions_success_message">
 						page_generator_pro_groups_run_row_actions_success_message
-						<code>includes/admin/groups.php::589</code>
+						<code>includes/admin/groups.php::601</code>
 					</h3><h4>Overview</h4>
 						<p>Define an optional success message based on the result of a custom row action on a Group.</p><h4>Parameters</h4>
 					<table>
@@ -1018,7 +1018,7 @@ add_filter( 'page_generator_pro_groups_run_row_actions_success_message', functio
 </pre>
 <h3 id="page_generator_pro_groups_validate">
 						page_generator_pro_groups_validate
-						<code>includes/admin/groups.php::768</code>
+						<code>includes/admin/groups.php::775</code>
 					</h3><h4>Overview</h4>
 						<p>Performs several validations on the given Group Settings, to ensure that content generation will function successfully.</p><h4>Parameters</h4>
 					<table>
@@ -1053,7 +1053,7 @@ add_filter( 'page_generator_pro_groups_validate', function( $result, $settings, 
 </pre>
 <h3 id="page_generator_pro_groups_get_group_statuses">
 						page_generator_pro_groups_get_group_statuses
-						<code>includes/admin/groups.php::800</code>
+						<code>includes/admin/groups.php::807</code>
 					</h3><h4>Overview</h4>
 						<p>Defines available Post Statuses for generated content.</p><h4>Parameters</h4>
 					<table>
@@ -1080,7 +1080,7 @@ add_filter( 'page_generator_pro_groups_get_group_statuses', function( $statuses 
 </pre>
 <h3 id="page_generator_pro_groups_generates_content">
 						page_generator_pro_groups_generates_content
-						<code>includes/admin/groups.php::962</code>
+						<code>includes/admin/groups.php::972</code>
 					</h3><h4>Overview</h4>
 						<p>Determine if the given Content Group is eligible to generate content</p><h4>Parameters</h4>
 					<table>
@@ -1111,7 +1111,7 @@ add_filter( 'page_generator_pro_groups_generates_content', function( $can_genera
 </pre>
 <h3 id="page_generator_pro_admin_admin_menu_minimum_capability">
 						page_generator_pro_admin_admin_menu_minimum_capability
-						<code>includes/admin/admin.php::303</code>
+						<code>includes/admin/admin.php::298</code>
 					</h3><h4>Overview</h4>
 						<p>Defines the minimum capability required to access the Media Library Organizer Menu and Sub Menus</p><h4>Parameters</h4>
 					<table>
@@ -1138,7 +1138,7 @@ add_filter( 'page_generator_pro_admin_admin_menu_minimum_capability', function( 
 </pre>
 <h3 id="page_generator_pro_keywords_save_  source">
 						page_generator_pro_keywords_save_  source
-						<code>includes/admin/admin.php::824</code>
+						<code>includes/admin/admin.php::734</code>
 					</h3><h4>Overview</h4>
 						<p>Define the Keyword properties (data, delimiter and columns) for the given Source before saving the Keyword to the database.</p><h4>Parameters</h4>
 					<table>
@@ -1401,7 +1401,7 @@ add_filter( 'page_generator_pro_screen_get_current_screen_before', function( $re
 </pre>
 <h3 id="page_generator_pro_screen_get_current_screen">
 						page_generator_pro_screen_get_current_screen
-						<code>includes/global/screen.php::324</code>
+						<code>includes/global/screen.php::325</code>
 					</h3><h4>Overview</h4>
 						<p>Returns an array comprising of a simplified screen and section that we are viewing within the WordPress Administration interface.</p><h4>Parameters</h4>
 					<table>
@@ -1436,7 +1436,7 @@ add_filter( 'page_generator_pro_screen_get_current_screen', function( $result, $
 </pre>
 <h3 id="page_generator_pro_common_get_generation_systems">
 						page_generator_pro_common_get_generation_systems
-						<code>includes/global/common.php::63</code>
+						<code>includes/global/common.php::61</code>
 					</h3><h4>Overview</h4>
 						<p>Defines available Generation Systems</p><h4>Parameters</h4>
 					<table>
@@ -1463,7 +1463,7 @@ add_filter( 'page_generator_pro_common_get_generation_systems', function( $syste
 </pre>
 <h3 id="page_generator_pro_common_get_authors">
 						page_generator_pro_common_get_authors
-						<code>includes/global/common.php::93</code>
+						<code>includes/global/common.php::91</code>
 					</h3><h4>Overview</h4>
 						<p>Defines available authors for the Author dropdown on the Generate Content screen.</p><h4>Parameters</h4>
 					<table>
@@ -1490,7 +1490,7 @@ add_filter( 'page_generator_pro_common_get_authors', function( $authors ) {
 </pre>
 <h3 id="page_generator_pro_common_get_post_types">
 						page_generator_pro_common_get_post_types
-						<code>includes/global/common.php::132</code>
+						<code>includes/global/common.php::130</code>
 					</h3><h4>Overview</h4>
 						<p>Defines the available public Post Type Objects that content can be generated for.</p><h4>Parameters</h4>
 					<table>
@@ -1517,7 +1517,7 @@ add_filter( 'page_generator_pro_common_get_post_types', function( $types ) {
 </pre>
 <h3 id="page_generator_pro_common_get_excluded_post_types">
 						page_generator_pro_common_get_excluded_post_types
-						<code>includes/global/common.php::253</code>
+						<code>includes/global/common.php::251</code>
 					</h3><h4>Overview</h4>
 						<p>Defines the Post Type Objects that content cannot be generated for.</p><h4>Parameters</h4>
 					<table>
@@ -1544,7 +1544,7 @@ add_filter( 'page_generator_pro_common_get_excluded_post_types', function( $type
 </pre>
 <h3 id="page_generator_pro_common_get_post_type_templates">
 						page_generator_pro_common_get_post_type_templates
-						<code>includes/global/common.php::307</code>
+						<code>includes/global/common.php::305</code>
 					</h3><h4>Overview</h4>
 						<p>Defines available Theme Templates for each Post Type that can have content generated for it.</p><h4>Parameters</h4>
 					<table>
@@ -1571,7 +1571,7 @@ add_filter( 'page_generator_pro_common_get_post_type_templates', function( $temp
 </pre>
 <h3 id="page_generator_pro_common_get_post_statuses">
 						page_generator_pro_common_get_post_statuses
-						<code>includes/global/common.php::337</code>
+						<code>includes/global/common.php::335</code>
 					</h3><h4>Overview</h4>
 						<p>Defines available Post Statuses for generated content.</p><h4>Parameters</h4>
 					<table>
@@ -1598,7 +1598,7 @@ add_filter( 'page_generator_pro_common_get_post_statuses', function( $statuses )
 </pre>
 <h3 id="page_generator_pro_common_get_autocomplete_configuration">
 						page_generator_pro_common_get_autocomplete_configuration
-						<code>includes/global/common.php::401</code>
+						<code>includes/global/common.php::399</code>
 					</h3><h4>Overview</h4>
 						<p>Define autocompleters to use across Content Groups, Term Group and TinyMCE                              If false, autocomplete fields are for Related Links shortcode on a Page or Post.</p><h4>Parameters</h4>
 					<table>
@@ -1796,7 +1796,7 @@ add_filter( 'page_generator_pro_common_get_capabilities_to_disable_on_group_cont
 					</tbody>
 				</table><h3 id="page_generator_pro_generate_content_started">
 						page_generator_pro_generate_content_started
-						<code>includes/admin/generate.php::280</code>
+						<code>includes/admin/generate.php::299</code>
 					</h3><h4>Overview</h4>
 						<p>Run any actions before an individual Page, Post or Custom Post Type is generated</p><h4>Parameters</h4>
 					<table>
@@ -1833,7 +1833,7 @@ do_action( 'page_generator_pro_generate_content_started', function( $group_id, $
 </pre>
 <h3 id="page_generator_pro_generate_content_before_insert_update_post">
 						page_generator_pro_generate_content_before_insert_update_post
-						<code>includes/admin/generate.php::405</code>
+						<code>includes/admin/generate.php::424</code>
 					</h3><h4>Overview</h4>
 						<p>Run any actions immediately before an individual Page, Post or Custom Post Type is generated.</p><h4>Parameters</h4>
 					<table>
@@ -1870,7 +1870,7 @@ do_action( 'page_generator_pro_generate_content_before_insert_update_post', func
 </pre>
 <h3 id="page_generator_pro_generate_content_after_insert_update_post">
 						page_generator_pro_generate_content_after_insert_update_post
-						<code>includes/admin/generate.php::471</code>
+						<code>includes/admin/generate.php::490</code>
 					</h3><h4>Overview</h4>
 						<p>Run any actions immediately after an individual Page, Post or Custom Post Type is generated, but before its Page Template, Featured Image, Custom Fields, Post Meta, Geodata or Taxonomy Terms have been assigned.</p><h4>Parameters</h4>
 					<table>
@@ -1911,7 +1911,7 @@ do_action( 'page_generator_pro_generate_content_after_insert_update_post', funct
 </pre>
 <h3 id="page_generator_pro_generate_content_finished">
 						page_generator_pro_generate_content_finished
-						<code>includes/admin/generate.php::506</code>
+						<code>includes/admin/generate.php::525</code>
 					</h3><h4>Overview</h4>
 						<p>Run any actions after an individual Page, Post or Custom Post Type is generated successfully.</p><h4>Parameters</h4>
 					<table>
@@ -1952,7 +1952,7 @@ do_action( 'page_generator_pro_generate_content_finished', function( $post_id, $
 </pre>
 <h3 id="page_generator_pro_generate_set_page_template">
 						page_generator_pro_generate_set_page_template
-						<code>includes/admin/generate.php::1136</code>
+						<code>includes/admin/generate.php::1144</code>
 					</h3><h4>Overview</h4>
 						<p>Action to perform any further steps with the Content Group's Page Template after the Page Template has been copied from the Content Group to the Generated Content.</p><h4>Parameters</h4>
 					<table>
@@ -1989,7 +1989,7 @@ do_action( 'page_generator_pro_generate_set_page_template', function( $post_id, 
 </pre>
 <h3 id="page_generator_pro_generate_set_post_meta">
 						page_generator_pro_generate_set_post_meta
-						<code>includes/admin/generate.php::1231</code>
+						<code>includes/admin/generate.php::1239</code>
 					</h3><h4>Overview</h4>
 						<p>Action to perform any further steps with the Content Group's Post Meta, after all Post Meta has been copied  from the Content Group to the Generated Content.</p><h4>Parameters</h4>
 					<table>
@@ -2030,7 +2030,7 @@ do_action( 'page_generator_pro_generate_set_post_meta', function( $post_id, $gro
 </pre>
 <h3 id="page_generator_pro_generate_trash_content_finished">
 						page_generator_pro_generate_trash_content_finished
-						<code>includes/admin/generate.php::1281</code>
+						<code>includes/admin/generate.php::1289</code>
 					</h3><h4>Overview</h4>
 						<p>Run any actions after all generated content for a given Content Group has been trashd.</p><h4>Parameters</h4>
 					<table>
@@ -2059,7 +2059,7 @@ do_action( 'page_generator_pro_generate_trash_content_finished', function( $grou
 </pre>
 <h3 id="page_generator_pro_generate_delete_content_finished">
 						page_generator_pro_generate_delete_content_finished
-						<code>includes/admin/generate.php::1332</code>
+						<code>includes/admin/generate.php::1340</code>
 					</h3><h4>Overview</h4>
 						<p>Run any actions after all generated content for a given Content Group has been deleted.</p><h4>Parameters</h4>
 					<table>
@@ -2141,7 +2141,7 @@ do_action( 'page_generator_pro_notices_delete_notices', function(  ) {
 </pre>
 <h3 id="page_generator_pro_groups_save">
 						page_generator_pro_groups_save
-						<code>includes/admin/groups.php::675</code>
+						<code>includes/admin/groups.php::687</code>
 					</h3><h4>Overview</h4>
 						<p>Save data to Group Post's Meta</p><h4>Parameters</h4>
 					<table>
@@ -2174,7 +2174,7 @@ do_action( 'page_generator_pro_groups_save', function( $group_id, $settings, $_R
 </pre>
 <h3 id="page_generator_pro_generate_content_after">
 						page_generator_pro_generate_content_after
-						<code>includes/admin/groups.php::884</code>
+						<code>includes/admin/groups.php::894</code>
 					</h3><h4>Overview</h4>
 						<p>Runs any actions once Generate Content has finished.</p><h4>Parameters</h4>
 					<table>
@@ -2207,7 +2207,7 @@ do_action( 'page_generator_pro_generate_content_after', function( $id, true, 'br
 </pre>
 <h3 id="page_generator_pro_admin_admin_scripts_css">
 						page_generator_pro_admin_admin_scripts_css
-						<code>includes/admin/admin.php::267</code>
+						<code>includes/admin/admin.php::262</code>
 					</h3><h4>Overview</h4>
 						<p>Enqueues CSS and JS</p><h4>Parameters</h4>
 					<table>
@@ -2240,7 +2240,7 @@ do_action( 'page_generator_pro_admin_admin_scripts_css', function( $screen, $pos
 </pre>
 <h3 id="page_generator_pro_generate_content_before">
 						page_generator_pro_generate_content_before
-						<code>includes/admin/admin.php::891</code>
+						<code>includes/admin/admin.php::808</code>
 					</h3><h4>Overview</h4>
 						<p>Runs any actions before Generate Content has started.</p><h4>Parameters</h4>
 					<table>
