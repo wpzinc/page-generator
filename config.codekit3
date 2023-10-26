@@ -5166,6 +5166,78 @@
       "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Parser.php",
       "oF" : 0
     },
+    "\/vendor\/bin\/carbon" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/bin\/carbon",
+      "oF" : 0
+    },
+    "\/vendor\/bin\/codecept" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/bin\/codecept",
+      "oF" : 0
+    },
+    "\/vendor\/bin\/php-parse" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/bin\/php-parse",
+      "oF" : 0
+    },
+    "\/vendor\/bin\/phpcbf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/bin\/phpcbf",
+      "oF" : 0
+    },
+    "\/vendor\/bin\/phpcs" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/bin\/phpcs",
+      "oF" : 0
+    },
+    "\/vendor\/bin\/phpunit" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/bin\/phpunit",
+      "oF" : 0
+    },
+    "\/vendor\/bin\/wp" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/bin\/wp",
+      "oF" : 0
+    },
+    "\/vendor\/bin\/wp.bat" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/bin\/wp.bat",
+      "oF" : 0
+    },
+    "\/vendor\/bin\/yaml-lint" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/bin\/yaml-lint",
+      "oF" : 0
+    },
     "\/vendor\/bordoni\/phpass\/.gitignore" : {
       "cB" : 0,
       "ft" : 8192,
@@ -11846,6 +11918,14 @@
       "oAP" : "\/vendor\/lucatume\/wp-browser\/src\/Codeception\/Lib\/Generator\/WPUnit.php",
       "oF" : 0
     },
+    "\/vendor\/lucatume\/wp-browser\/src\/Codeception\/Module\/ThemeMethods.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/lucatume\/wp-browser\/src\/Codeception\/Module\/ThemeMethods.php",
+      "oF" : 0
+    },
     "\/vendor\/lucatume\/wp-browser\/src\/Codeception\/Module\/WordPress.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -13683,22 +13763,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/lucatume\/wp-browser\/src\/tad\/WPBrowser\/class-aliases.php",
-      "oF" : 0
-    },
-    "\/vendor\/lucatume\/wp-browser\/src\/tad\/WPBrowser\/Compat\/Codeception\/Version2\/Unit.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/lucatume\/wp-browser\/src\/tad\/WPBrowser\/Compat\/Codeception\/Version2\/Unit.php",
-      "oF" : 0
-    },
-    "\/vendor\/lucatume\/wp-browser\/src\/tad\/WPBrowser\/Compat\/Compatibility.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/lucatume\/wp-browser\/src\/tad\/WPBrowser\/Compat\/Compatibility.php",
       "oF" : 0
     },
     "\/vendor\/lucatume\/wp-browser\/src\/tad\/WPBrowser\/composer.php" : {
@@ -49648,6 +49712,14 @@
       "pME" : 1,
       "rFN" : 0,
       "uCM" : 0
+    },
+    "\/vendor\/symfony\/polyfill-mbstring\/Resources\/unidata\/caseFolding.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/symfony\/polyfill-mbstring\/Resources\/unidata\/caseFolding.php",
+      "oF" : 0
     },
     "\/vendor\/symfony\/polyfill-mbstring\/Resources\/unidata\/lowerCase.php" : {
       "cB" : 0,

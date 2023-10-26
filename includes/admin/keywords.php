@@ -460,14 +460,17 @@ class Page_Generator_Pro_Keywords {
 
 		$get_all = ( ( $paged == -1 ) ? true : false ); // phpcs:ignore Universal.Operators.StrictComparisons.LooseEqual
 
+		// Sanitize order by.
+		$order_by_sql = sanitize_sql_orderby( "{$order_by} {$order}" );
+
 		// Search.
 		if ( ! empty( $search ) ) {
 			$query = $wpdb->prepare(
-				"SELECT * FROM {$wpdb->prefix}page_generator_keywords WHERE keyword LIKE %s ORDER BY {$order_by} {$order}", // phpcs:ignore WordPress.DB
+				"SELECT * FROM {$wpdb->prefix}page_generator_keywords WHERE keyword LIKE %s ORDER BY {$order_by_sql}", // phpcs:ignore WordPress.DB
 				'%' . $wpdb->esc_like( $search ) . '%'
 			);
 		} else {
-			$query = "SELECT * FROM {$wpdb->prefix}page_generator_keywords ORDER BY {$order_by} {$order}";
+			$query = "SELECT * FROM {$wpdb->prefix}page_generator_keywords ORDER BY {$order_by_sql}"; // phpcs:ignore WordPress.DB
 		}
 
 		// Add Limit.
