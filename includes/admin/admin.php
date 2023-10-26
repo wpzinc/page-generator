@@ -100,12 +100,6 @@ class Page_Generator_Pro_Admin {
 		// (Re)register dashboard scripts and enqueue CSS for frontend editors, which won't have registered these yet.
 		$this->base->dashboard->admin_scripts_css();
 
-		// CSS - always load.
-		// Some WordPress styles are enqueued (again) for Frontend Editors and the Groups Directory, that otherwise wouldn't call them.
-		wp_enqueue_style( 'common' );
-		wp_enqueue_style( 'buttons' );
-		wp_enqueue_style( 'forms' );
-
 		// Determine whether to load minified versions of JS.
 		$minified = $this->base->dashboard->should_load_minified_js();
 
