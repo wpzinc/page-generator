@@ -67,32 +67,33 @@ class Page_Generator_Pro_Common {
 	}
 
 	/**
-	 * Helper method to retrieve authors
+	 * Helper method to return all WordPress User IDs.
 	 *
-	 * @since   1.1.3
+	 * @since   4.6.6
 	 *
 	 * @return  array   Authors
 	 */
-	public function get_authors() {
+	public function get_all_user_ids() {
 
-		// Get authors.
-		$authors = get_users(
+		// Get all user IDs.
+		$user_ids = get_users(
 			array(
-				'orderby' => 'nicename',
+				'fields'  => 'ID',
+				'orderby' => 'ID',
 			)
 		);
 
 		/**
-		 * Defines available authors for the Author dropdown on the Generate Content screen.
+		 * Defines available user IDs.
 		 *
-		 * @since   1.1.3
+		 * @since   4.6.6
 		 *
-		 * @param   array   $authors    Authors.
+		 * @param   array   $user_ids    User IDs.
 		 */
-		$authors = apply_filters( 'page_generator_pro_common_get_authors', $authors );
+		$user_ids = apply_filters( 'page_generator_pro_common_get_all_user_ids', $user_ids );
 
 		// Return filtered results.
-		return $authors;
+		return $user_ids;
 
 	}
 

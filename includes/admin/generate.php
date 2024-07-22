@@ -343,8 +343,8 @@ class Page_Generator_Pro_Generate {
 
 		// Rotate Author.
 		if ( isset( $settings['rotateAuthors'] ) ) {
-			$authors    = $this->base->get_class( 'common' )->get_authors();
-			$user_index = wp_rand( 0, ( count( $authors ) - 1 ) );
+			$author_ids = $this->base->get_class( 'common' )->get_all_user_ids();
+			$user_index = wp_rand( 0, ( count( $author_ids ) - 1 ) );
 		}
 
 		// Remove all shortcode processors, so we don't process any shortcodes. This ensures page builders, galleries etc
@@ -389,7 +389,7 @@ class Page_Generator_Pro_Generate {
 			'post_title'     => $settings['title'],
 			'post_content'   => $settings['content'],
 			'post_status'    => ( $test_mode ? 'draft' : $settings['status'] ),
-			'post_author'    => ( ( isset( $settings['rotateAuthors'] ) && $settings['rotateAuthors'] == 1 ) ? $authors[ $user_index ]->ID : $settings['author'] ), // phpcs:ignore Universal.Operators.StrictComparisons.LooseEqual
+			'post_author'    => ( ( isset( $settings['rotateAuthors'] ) && $settings['rotateAuthors'] == 1 && isset( $author_ids ) && isset( $user_index ) ) ? $author_ids[ $user_index ] : $settings['author'] ), // phpcs:ignore Universal.Operators.StrictComparisons.LooseEqual
 			'comment_status' => ( ( isset( $settings['comments'] ) && $settings['comments'] == 1 ) ? 'open' : 'closed' ), // phpcs:ignore Universal.Operators.StrictComparisons.LooseEqual
 			'ping_status'    => ( ( isset( $settings['trackbacks'] ) && $settings['trackbacks'] == 1 ) ? 'open' : 'closed' ), // phpcs:ignore Universal.Operators.StrictComparisons.LooseEqual
 			'post_name'      => $post_name,
