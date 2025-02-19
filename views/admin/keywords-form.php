@@ -17,8 +17,6 @@
 	</h1>
 </header>
 
-<hr class="wp-header-end" />
-
 <div class="wrap">
 	<div class="wrap-inner">
 		<?php
