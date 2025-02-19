@@ -3450,9 +3450,9 @@
       "ft" : 4,
       "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/_modules\/dashboard\/scss\/admin.css",
-      "oF" : 0,
-      "oS" : 0,
+      "oAP" : "\/_modules\/dashboard\/css\/admin.css",
+      "oF" : 2,
+      "oS" : 3,
       "pg" : 0,
       "sct" : 0
     },
@@ -77111,7 +77111,7 @@
   },
   "projectAttributes" : {
     "creationDate" : 677595214.71662199,
-    "displayValue" : "Page Generator",
+    "displayValue" : "WP Zinc: Page Generator",
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-brick",
     "iconImageWasSetByUser" : 0
