@@ -1,4 +1,9 @@
 <?php
+
+namespace Tests\EndToEnd;
+
+use Tests\Support\EndToEndTester;
+
 /**
  * Tests for errors on a blank installation
  *
@@ -11,9 +16,9 @@ class AnyErrorsOnBlankInstallCest
 	 *
 	 * @since   3.8.4
 	 *
-	 * @param   AcceptanceTester $I  Tester.
+	 * @param   EndToEndTester $I  Tester.
 	 */
-	public function _before(AcceptanceTester $I)
+	public function _before(EndToEndTester $I)
 	{
 		$I->activatePageGeneratorPlugin($I);
 	}
@@ -24,9 +29,9 @@ class AnyErrorsOnBlankInstallCest
 	 *
 	 * @since   3.8.4
 	 *
-	 * @param   AcceptanceTester $I  Tester.
+	 * @param   EndToEndTester $I  Tester.
 	 */
-	public function testAddNewPage(AcceptanceTester $I)
+	public function testAddNewPage(EndToEndTester $I)
 	{
 		// Navigate to Pages > Add New.
 		$I->amOnAdminPage('post-new.php?post_type=page');
@@ -41,9 +46,9 @@ class AnyErrorsOnBlankInstallCest
 	 *
 	 * @since   3.8.4
 	 *
-	 * @param   AcceptanceTester $I  Tester.
+	 * @param   EndToEndTester $I  Tester.
 	 */
-	public function testAddNewPost(AcceptanceTester $I)
+	public function testAddNewPost(EndToEndTester $I)
 	{
 		// Navigate to Pages > Add New.
 		$I->amOnAdminPage('post-new.php');
@@ -59,9 +64,9 @@ class AnyErrorsOnBlankInstallCest
 	 *
 	 * @since   3.8.4
 	 *
-	 * @param   AcceptanceTester $I  Tester.
+	 * @param   EndToEndTester $I  Tester.
 	 */
-	public function _passed(AcceptanceTester $I)
+	public function _passed(EndToEndTester $I)
 	{
 		$I->deactivatePageGeneratorPlugin($I);
 	}
