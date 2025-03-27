@@ -1,6 +1,9 @@
 # Testing Guide
 
-This document describes how to create and run tests for your development work.
+This document describes how to:
+- create and run tests for your development work,
+- ensure code meets PHP and WordPress Coding Standards, for best practices and security,
+- ensure code passes static analysis, to catch potential errors that tests might miss
 
 If you're new to creating and running tests, this guide will walk you through how to do this.
 
@@ -9,7 +12,7 @@ and [Codeception](https://codeception.com/docs/01-Introduction).
 
 ## Prerequisites
 
-If you haven't yet set up your local development environment with the Page Generator Plugin repository installed, refer to the [Setup Guide](SETUP.md).
+If you haven't yet set up your local development environment with the Kit Plugin repository installed, refer to the [Setup Guide](SETUP.md).
 
 If you haven't yet created a branch and made any code changes to the Plugin, refer to the [Development Guide](DEVELOPMENT.md)
 
@@ -21,117 +24,26 @@ If your work fixes existing functionality, check if a test exists. Either update
 
 Tests are written in PHP using [wp-browser](https://wpbrowser.wptestkit.dev/) and [Codeception](https://codeception.com/docs/01-Introduction).
 
-Codeception provides an expressive test syntax.  For example:
-```php
-$I->click('Login');
-$I->fillField('#input-username', 'John Dough');
-$I->pressKey('#input-remarks', 'foo');
-```
-
-wp-browser further extends Codeception's test syntax, with functions and assertions that are *specific for WordPress*.  For example,
-```php
-$I->activatePlugin('page-generator');
-```
-
 ## Types of Test
 
 There are different types of tests that can be written:
-- Acceptance Tests: Test as a non-technical user in the web browser.
-- Functional Tests: Test the framework (WordPress).
-- Integration Tests: Test code modules in the context of a WordPress web site.
-- Unit Tests: Test single PHP classes or functions in isolation.
+- End to End Tests: Test the UI as a non-technical user in the web browser.
+- Integration Tests: Test code modules in the context of a WordPress web site, and test single PHP classes or functions in isolation, with WordPress functions and classes loaded.
 
-There is no definitive / hard guide, as a test can typically overlap into different types (such as Acceptance and Functional).
+## Writing an End to End Test
 
-The most important thing is that you have a test for *something*.  If in doubt, an Acceptance Test will suffice.
+To create a new End to End Test, at the command line in the Plugin's folder, enter the following command, replacing:
+- `general` with the subfolder name to place the test within at `tests/EndToEnd`,
+- `ActivatePlugin` with a meaningful name of what the test will perform.
 
-## Writing an Acceptance Test
+End to End tests are placed in groups within subfolders at `tests/EndToEnd` so that they can be run in isolation, and the GitHub Action can run each folder's End to End tests in parallel for speed.
 
-To create a new Acceptance Test, at the command line in the Plugin's folder, enter the following command, replacing `ActivatePlugin` with a 
-meaningful name of what the test will perform:
+For example, to generate an `ActivatePlugin` End to End test in the `tests/EndtoEnd/general` folder:
 
 ```bash
-php vendor/bin/codecept generate:cest acceptance ActivatePlugin
+php vendor/bin/codecept generate:cest EndToEnd general/ActivatePlugin
 ```
-This will create a PHP test file in the `tests/acceptance` directory called `ActivatePluginCest.php`
-
-```php
-class ActivatePluginCest
-{
-    public function _before(AcceptanceTester $I)
-    {
-    }
-
-    public function tryToTest(AcceptanceTester $I)
-    {
-    }
-}
-```
-
-For common WordPress actions that do not relate to the Plugin (such as logging into the WordPress Administration interface), which need to be 
-performed for every test that you write in this Acceptance Test, it's recommended to use the `_before()` function:
-
-```php
-class ActivatePluginCest
-{
-    public function _before(AcceptanceTester $I)
-    {
-        // Login as a WordPress Administrator before performing each test.
-        $I->loginAsAdmin();
-    }
-
-    public function tryToTest(AcceptanceTester $I)
-    {
-    }
-}
-```
-
-Above, the call to `loginAsAdmin()` is a [wp-browser specific testing function](https://wpbrowser.wptestkit.dev/modules/wpbrowser#loginasadmin) 
-that is available to us.
-
-Next, rename the `tryToTest` function to a descriptive function name that best describes what you are testing in a human readable format:
-
-```php
-class ActivatePluginCest
-{
-    public function _before(AcceptanceTester $I)
-    {
-        // Login as a WordPress Administrator before performing each test.
-        $I->loginAsAdmin();
-    }
-
-    public function testPluginActivation(AcceptanceTester $I)
-    {
-    }
-}
-```
-
-Within your test function, write the test:
-```php
-class ActivatePluginCest
-{
-    public function _before(AcceptanceTester $I)
-    {
-        // Login as a WordPress Administrator before performing each test.
-        $I->loginAsAdmin();
-    }
-
-    public function testPluginActivation(AcceptanceTester $I)
-    {
-        // Go to the Plugins screen in the WordPress Administration interface.
-        $I->amOnPluginsPage();
-
-        // Activate the Plugin.
-        $I->activatePlugin('page-generator');
-
-        // Check that the Plugin activated successfully.
-        $I->seePluginActivated('page-generator');
-
-        // Check that the <body> class does not have a php-error class, which indicates an error in activation.
-        $I->dontSeeElement('body.php-error');
-    }
-}
-```
+This will create a PHP test file in the `tests/EndToEnd/general` directory called `ActivatePluginCest.php`
 
 In a Terminal window, run the ChromeDriver.  This is used by our test to mimic user behaviour, and will execute JavaScript
 and other elements just as a user would see them:
@@ -143,57 +55,65 @@ chromedriver --url-base=/wd/hub
 In a second Terminal window, run the test to confirm it works:
 ```bash
 vendor/bin/codecept build
-vendor/bin/codecept run acceptance
+vendor/bin/codecept run EndToEnd general/ActivatePluginCest
 ```
 
-The console will show the successful result:
+The console will show the successful result
 
-![Codeception Test Results](/.github/docs/codeception.png?raw=true)
+To run all End to End tests, use:
+```bash
+vendor/bin/codecept run EndToEnd
+```
+
+To run End to End tests in a specific folder (for example, `general`), use:
+```bash
+vendor/bin/codecept run EndToEnd general
+```
+
+To run a specific End to End test in a specific folder (for example, `ActivateDeactivatePluginCest` in the `general` folder), use:
+```bash
+vendor/bin/codecept run EndtoEnd general/ActivateDeactivatePluginCest
+```
 
 For a full list of available wp-browser and Codeception functions that can be used for testing, see:
 - [wp-browser](https://wpbrowser.wptestkit.dev/modules)
-- [Codeception](https://codeception.com/docs/03-AcceptanceTests)
+- [Codeception](https://codeception.com/docs/AcceptanceTests)
+
+## Required Test Format
+
+Tests can be run in isolation, as part of a suite of tests, sequentially and/or in parralel across different environments.
+It's therefore required that every Cest contain both `_before()` and `_passed()` functions, which handle:
+- `_before()`: Performing prerequisite steps (such as Plugin activation, third party Plugin activation and setup) prior to each test,
+- `_passed()`: Performing cleanup steps (such as Plugin deactivation, removal of Plugin data from the database) after each passing test.
 
 ## Using Helpers
 
 Helpers extend testing by registering functions that we might want to use across multiple tests, which are not provided by wp-browser, 
 Codeception or PHPUnit.  This helps achieve the principle of DRY code (Don't Repeat Yourself).
 
-For example, in the `tests/_support/Helper` directory, our `Acceptance.php` helper contains the `checkNoWarningsAndNoticesOnScreen()` function,
+For example, in the `tests/Support/Helper` directory, our `Xdebug.php` helper contains the `checkNoWarningsAndNoticesOnScreen()` function,
 which checks that
 - the <body> class does not contain the `php-error` class, which WordPress adds if a PHP error is detected
 - no Xdebug errors were output
 - no PHP Warnings or Notices were output
 
-Our Acceptance Tests can now call `$I->checkNoWarningsAndNoticesOnScreen($I)`, instead of having to write several lines of code to perform each 
-error check for every test.
+## Writing a WordPress Unit Test
 
-Further Acceptance Test Helpers that are provided include:
-- `activatePlugin()`: Logs in to WordPress as the `admin` user, and activates the Page Generator Plugin.
+WordPress Unit tests provide testing of Plugin specific functions and/or classes, typically to assert that they perform as expected
+by a developer.  This is primarily useful for testing our API class, and confirming that any Plugin registered filters return
+the correct data.
 
-The above helpers automatically check for PHP and Xdebug errors.
+To create a new WordPress Unit Test, at the command line in the Plugin's folder, enter the following command, replacing `APITest`
+with a meaningful name of what the test will perform:
 
-## Writing Helpers
-
-With this methodology, if two or more of your tests perform the same checks, you should:
-- add a function to the applicable file in the `tests/_support/Helper` directory (e.g. `tests/_support/Helper/Acceptance.php`),
-usually in the format of
-```php
-/**
- * Description of what this function does
- * 
- * @since   1.0.0
- */
-public function yourCustomFunctionNameInHelper($I)
-{
-    // Your checks here
-    $I->...
-}
+```bash
+php vendor/bin/codecept generate:wpunit Integration APITest
 ```
-- in your test, call your function by using `$I->yourCustomFunctionNameInHelper($I);`
-- at the command line, tell Codeception to build your custom function helpers by using `vendor/bin/codecept build`
 
-Need to change how Codeception runs?  Edit the [codeception.dist.xml](codeception.dist.xml) file.
+This will create a PHP test file in the `tests/Integration` directory called `APITest.php`
+
+Helpers can be used for WordPress Unit Tests, the same as how they can be used for End To End tests.
+To register your own helper function, add it to the `tests/Support/Helper/Wpunit.php` file.
 
 ## Run Tests
 
@@ -209,10 +129,8 @@ To run the tests, enter the following commands in a separate Terminal window:
 
 ```bash
 vendor/bin/codecept build
-vendor/bin/codecept run acceptance
-vendor/bin/codecept run functional
-vendor/bin/codecept run wpunit
-vendor/bin/codecept run unit
+vendor/bin/codecept run EndToEnd
+vendor/bin/codecept run Integration
 ```
 
 If a test fails, you can inspect the output and screenshot at `tests/_output`.
@@ -224,20 +142,82 @@ Any errors should be corrected by making applicable code or test changes.
 [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) checks that all Plugin code meets the 
 [WordPress Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/).
 
-In the Plugin's directory, run the following command to run PHP_CodeSniffer, which will check the code meets WordPress' Coding Standards:
+In the Plugin's directory, run the following command to run PHP_CodeSniffer, which will check the code meets WordPress' Coding Standards
+as defined in the `phpcs.xml` configuration:
 
 ```bash
-vendor/bin/phpcs ./ -v
+vendor/bin/phpcs ./ --standard=phpcs.xml -v -s
 ```
+
+`--standard=phpcs.tests.xml` tells PHP CodeSniffer to use the Coding Standards rules / configuration defined in `phpcs.tests.xml`.
+These differ slightly from WordPress' Coding Standards, to ensure that writing tests isn't a laborious task, whilst maintaing consistency
+in test coding style. 
+`-v` produces verbose output
+`-s` specifies the precise rule that failed
 
 Any errors should be corrected by either:
 - making applicable code changes
-- (Experimental) running `vendor/bin/phpcbf ./ -v` to automatically fix coding standards
+- (Experimental) running `vendor/bin/phpcbf ./ --standard=phpcs.xml -v -s` to automatically fix coding standards
 
-Need to change the PHP or WordPress coding standard rules applied?  Edit the [phpcs.xml](phpcs.xml) file.
+Need to change the PHP or WordPress coding standard rules applied?  Either:
+- ignore a rule in the affected code, by adding `phpcs:ignore {rule}`, where {rule} is the given rule that failed in the above output.
+- edit the [phpcs.xml](phpcs.xml) file.
+
+**Rules should be ignored with caution**, particularly when sanitizing and escaping data.
+
+## Run PHPStan
+
+[PHPStan](https://phpstan.org) performs static analysis on the Plugin's PHP code.  This ensures:
+
+- DocBlocks declarations are valid and uniform
+- DocBlocks declarations for WordPress `do_action()` and `apply_filters()` calls are valid
+- Typehinting variables and return types declared in DocBlocks are correctly cast
+- Any unused functions are detected
+- Unnecessary checks / code is highlighted for possible removal
+- Conditions that do not evaluate can be fixed/removed as necessary
+
+In the Plugin's directory, run the following command to run PHPStan:
+
+```bash
+vendor/bin/phpstan --memory-limit=1G
+```
+
+Any errors should be corrected by making applicable code changes.
+
+False positives [can be excluded by configuring](https://phpstan.org/user-guide/ignoring-errors) the `phpstan.neon` file.
+
+## Run PHP CodeSniffer for Tests
+
+In the Plugin's directory, run the following command to run PHP_CodeSniffer, which will check the code meets Coding Standards
+as defined in the `phpcs.tests.xml` configuration:
+
+```bash
+vendor/bin/phpcs ./tests --standard=phpcs.tests.xml -v -s 
+```
+
+`--standard=phpcs.tests.xml` tells PHP CodeSniffer to use the Coding Standards rules / configuration defined in `phpcs.tests.xml`.
+These differ slightly from WordPress' Coding Standards, to ensure that writing tests isn't a laborious task, whilst maintaing consistency
+in test coding style. 
+`-v` produces verbose output
+`-s` specifies the precise rule that failed
+
+Any errors should be corrected by either:
+- making applicable code changes
+- (Experimental) running `vendor/bin/phpcbf ./tests --standard=phpcs.tests.xml -v -s ` to automatically fix coding standards
+
+Need to change the PHP or WordPress coding standard rules applied?  Either:
+- ignore a rule in the affected code, by adding `phpcs:ignore {rule}`, where {rule} is the given rule that failed in the above output.
+- edit the [phpcs.tests.xml](phpcs.tests.xml) file.
+
+**Rules can be ignored with caution**, but it's essential that rules relating to coding style and inline code commenting / docblocks remain.
 
 ## Next Steps
 
-Once your test(s) are written and successfully run, submit your branch via a new [Pull Request](https://github.com/n7studios/page-generator/compare).
+Once your test(s) are written and successfully run locally, submit your branch via a new Pull Request
 
-This will trigger a GitHub Action, which will run the above tests.
+It's best to create a Pull Request in draft mode, as this will trigger all tests to run as a GitHub Action, allowing you to
+double check all tests pass.
+
+If the PR tests fail, you can make code changes as necessary, pushing to the same branch.  This will trigger the tests to run again.
+
+If the PR tests pass, you can publish the PR, assigning some reviewers.
