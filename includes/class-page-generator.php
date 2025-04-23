@@ -115,7 +115,7 @@ class Page_Generator {
 	public function initialize() {
 
 		// Define translation strings.
-		$this->plugin->review_notice     = sprintf(
+		$this->plugin->review_notice = sprintf(
 			/* translators: Plugin Name */
 			__( 'Thanks for using %s to generate content!', 'page-generator' ),
 			$this->plugin->displayName
@@ -195,7 +195,7 @@ class Page_Generator {
 				__( 'Generate comments for each generated Post, with options to specify the number of comments, the date of each comment between a date range, each comment’s author and comment..  For more dynamic content, keyword support in taxonomies is provided.', 'page-generator' ),
 			),
 		);
-		
+
 		// Dashboard Submodule.
 		if ( ! class_exists( 'WPZincDashboardWidget' ) ) {
 			require_once $this->plugin->folder . '_modules/dashboard/class-wpzincdashboardwidget.php';
