@@ -1,8 +1,9 @@
-# Build ACTIONS-FILTERS.md
-php create-actions-filters-docs.php
+# Remove vendor directory
+cd ..
+rm -rf vendor
 
-# Generate .pot file
-php -n $(which wp) i18n make-pot ../ ../languages/page-generator.pot
+# Run composer to only install non-dev dependencies
+composer install --no-dev
 
 # Build ZIP file, excluding non-Plugin files
 cd ..
@@ -24,3 +25,6 @@ zip -r page-generator.zip . \
 -x "phpcs.tests.xml" \
 -x "phpcs.xml" \
 -x "*.DS_Store" \
+
+# Run composer to install dev dependencies, returning enviornment back to original state
+composer update
