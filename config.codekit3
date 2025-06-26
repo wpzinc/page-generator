@@ -3697,7 +3697,7 @@
     },
     "\/.wordpress-org\/screenshot-1.png" : {
       "ft" : 32768,
-      "iS" : 27333,
+      "iS" : 64362,
       "oA" : 0,
       "oAP" : "\/.wordpress-org\/screenshot-1.png",
       "oF" : 0,
@@ -3710,7 +3710,7 @@
     },
     "\/.wordpress-org\/screenshot-2.png" : {
       "ft" : 32768,
-      "iS" : 37946,
+      "iS" : 77491,
       "oA" : 0,
       "oAP" : "\/.wordpress-org\/screenshot-2.png",
       "oF" : 0,
@@ -3723,9 +3723,22 @@
     },
     "\/.wordpress-org\/screenshot-3.png" : {
       "ft" : 32768,
-      "iS" : 48146,
+      "iS" : 101365,
       "oA" : 0,
       "oAP" : "\/.wordpress-org\/screenshot-3.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/.wordpress-org\/screenshot-4.png" : {
+      "ft" : 32768,
+      "iS" : 165884,
+      "oA" : 0,
+      "oAP" : "\/.wordpress-org\/screenshot-4.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -4495,410 +4508,434 @@
       "rFN" : 0,
       "uCM" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Cache" : {
+    "\/vendor\/behat\/gherkin\/src\/Cache" : {
       "ft" : 65536,
       "oA" : 1,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Cache",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Cache",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Exception\/CacheException.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Exception\/CacheException.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Exception\/CacheException.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Exception\/CacheException.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Exception\/Exception.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Exception\/Exception.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Exception\/Exception.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Exception\/Exception.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Exception\/LexerException.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Exception\/LexerException.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Exception\/LexerException.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Exception\/LexerException.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Exception\/NodeException.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Exception\/NodeException.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Exception\/NodeException.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Exception\/NodeException.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Exception\/ParserException.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Exception\/ParserException.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Exception\/ParserException.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Exception\/ParserException.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/ComplexFilter.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Exception\/UnexpectedParserNodeException.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/ComplexFilter.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Exception\/UnexpectedParserNodeException.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/ComplexFilterInterface.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Exception\/UnexpectedTaggedNodeException.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/ComplexFilterInterface.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Exception\/UnexpectedTaggedNodeException.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/FeatureFilterInterface.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Filter\/ComplexFilter.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/FeatureFilterInterface.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Filter\/ComplexFilter.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/FilterInterface.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Filter\/ComplexFilterInterface.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/FilterInterface.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Filter\/ComplexFilterInterface.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/LineFilter.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Filter\/FeatureFilterInterface.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/LineFilter.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Filter\/FeatureFilterInterface.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/LineRangeFilter.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Filter\/FilterInterface.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/LineRangeFilter.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Filter\/FilterInterface.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/NameFilter.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Filter\/LineFilter.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/NameFilter.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Filter\/LineFilter.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/NarrativeFilter.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Filter\/LineRangeFilter.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/NarrativeFilter.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Filter\/LineRangeFilter.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/PathsFilter.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Filter\/NameFilter.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/PathsFilter.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Filter\/NameFilter.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/RoleFilter.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Filter\/NarrativeFilter.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/RoleFilter.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Filter\/NarrativeFilter.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/SimpleFilter.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Filter\/PathsFilter.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/SimpleFilter.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Filter\/PathsFilter.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/TagFilter.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Filter\/RoleFilter.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Filter\/TagFilter.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Filter\/RoleFilter.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Gherkin.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Filter\/SimpleFilter.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Gherkin.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Filter\/SimpleFilter.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Keywords\/ArrayKeywords.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Filter\/TagFilter.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Keywords\/ArrayKeywords.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Filter\/TagFilter.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Keywords\/CachedArrayKeywords.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Gherkin.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Keywords\/CachedArrayKeywords.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Gherkin.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Keywords\/CucumberKeywords.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Keywords\/ArrayKeywords.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Keywords\/CucumberKeywords.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Keywords\/ArrayKeywords.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Keywords\/KeywordsDumper.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Keywords\/CachedArrayKeywords.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Keywords\/KeywordsDumper.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Keywords\/CachedArrayKeywords.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Keywords\/KeywordsInterface.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Keywords\/CucumberKeywords.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Keywords\/KeywordsInterface.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Keywords\/CucumberKeywords.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Lexer.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Keywords\/KeywordsDumper.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Lexer.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Keywords\/KeywordsDumper.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Loader\/AbstractFileLoader.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Keywords\/KeywordsInterface.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Loader\/AbstractFileLoader.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Keywords\/KeywordsInterface.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Loader\/ArrayLoader.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Lexer.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Loader\/ArrayLoader.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Lexer.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Loader\/CucumberNDJsonAstLoader.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Loader\/AbstractFileLoader.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Loader\/CucumberNDJsonAstLoader.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Loader\/AbstractFileLoader.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Loader\/DirectoryLoader.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Loader\/ArrayLoader.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Loader\/DirectoryLoader.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Loader\/ArrayLoader.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Loader\/FileLoaderInterface.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Loader\/CucumberNDJsonAstLoader.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Loader\/FileLoaderInterface.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Loader\/CucumberNDJsonAstLoader.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Loader\/GherkinFileLoader.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Loader\/DirectoryLoader.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Loader\/GherkinFileLoader.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Loader\/DirectoryLoader.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Loader\/LoaderInterface.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Loader\/FileLoaderInterface.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Loader\/LoaderInterface.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Loader\/FileLoaderInterface.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Loader\/YamlFileLoader.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Loader\/GherkinFileLoader.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Loader\/YamlFileLoader.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Loader\/GherkinFileLoader.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/ArgumentInterface.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Loader\/LoaderInterface.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/ArgumentInterface.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Loader\/LoaderInterface.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/BackgroundNode.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Loader\/YamlFileLoader.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/BackgroundNode.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Loader\/YamlFileLoader.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/ExampleNode.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Node\/ArgumentInterface.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/ExampleNode.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Node\/ArgumentInterface.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/ExampleTableNode.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Node\/BackgroundNode.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/ExampleTableNode.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Node\/BackgroundNode.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/FeatureNode.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Node\/ExampleNode.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/FeatureNode.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Node\/ExampleNode.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/KeywordNodeInterface.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Node\/ExampleTableNode.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/KeywordNodeInterface.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Node\/ExampleTableNode.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/NamedScenarioInterface.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Node\/FeatureNode.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/NamedScenarioInterface.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Node\/FeatureNode.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/NodeInterface.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Node\/KeywordNodeInterface.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/NodeInterface.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Node\/KeywordNodeInterface.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/OutlineNode.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Node\/NamedScenarioInterface.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/OutlineNode.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Node\/NamedScenarioInterface.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/PyStringNode.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Node\/NodeInterface.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/PyStringNode.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Node\/NodeInterface.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/ScenarioInterface.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Node\/OutlineNode.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/ScenarioInterface.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Node\/OutlineNode.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/ScenarioLikeInterface.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Node\/PyStringNode.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/ScenarioLikeInterface.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Node\/PyStringNode.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/ScenarioNode.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Node\/ScenarioInterface.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/ScenarioNode.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Node\/ScenarioInterface.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/StepContainerInterface.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Node\/ScenarioLikeInterface.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/StepContainerInterface.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Node\/ScenarioLikeInterface.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/StepNode.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Node\/ScenarioNode.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/StepNode.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Node\/ScenarioNode.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/TableNode.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Node\/StepContainerInterface.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/TableNode.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Node\/StepContainerInterface.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/TaggedNodeInterface.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Node\/StepNode.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Node\/TaggedNodeInterface.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Node\/StepNode.php",
       "oF" : 0
     },
-    "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Parser.php" : {
+    "\/vendor\/behat\/gherkin\/src\/Node\/TableNode.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/behat\/gherkin\/src\/Behat\/Gherkin\/Parser.php",
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Node\/TableNode.php",
+      "oF" : 0
+    },
+    "\/vendor\/behat\/gherkin\/src\/Node\/TaggedNodeInterface.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Node\/TaggedNodeInterface.php",
+      "oF" : 0
+    },
+    "\/vendor\/behat\/gherkin\/src\/Node\/TaggedNodeTrait.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Node\/TaggedNodeTrait.php",
+      "oF" : 0
+    },
+    "\/vendor\/behat\/gherkin\/src\/Parser.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/behat\/gherkin\/src\/Parser.php",
       "oF" : 0
     },
     "\/vendor\/bin\/codecept" : {
@@ -5112,6 +5149,14 @@
       "oAP" : "\/vendor\/codeception\/codeception\/ext\/SimpleReporter.php",
       "oF" : 0
     },
+    "\/vendor\/codeception\/codeception\/ext\/SuiteInitSubscriberTrait.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/codeception\/codeception\/ext\/SuiteInitSubscriberTrait.php",
+      "oF" : 0
+    },
     "\/vendor\/codeception\/codeception\/functions.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -5142,6 +5187,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/codeception\/codeception\/phpcs.xml",
+      "oF" : 0
+    },
+    "\/vendor\/codeception\/codeception\/phpstan.neon" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/codeception\/codeception\/phpstan.neon",
       "oF" : 0
     },
     "\/vendor\/codeception\/codeception\/src\/Codeception\/Actor.php" : {
@@ -6618,6 +6671,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/codeception\/codeception\/src\/Codeception\/Template\/Dependencies.php",
+      "oF" : 0
+    },
+    "\/vendor\/codeception\/codeception\/src\/Codeception\/Template\/Shared\/TemplateHelpersTrait.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/codeception\/codeception\/src\/Codeception\/Template\/Shared\/TemplateHelpersTrait.php",
       "oF" : 0
     },
     "\/vendor\/codeception\/codeception\/src\/Codeception\/Template\/Unit.php" : {
@@ -17390,14 +17451,6 @@
       "oAP" : "\/vendor\/phpcsstandards\/phpcsextra\/Universal\/Sniffs\/WhiteSpace\/PrecisionAlignmentSniff.php",
       "oF" : 0
     },
-    "\/vendor\/phpcsstandards\/phpcsutils\/.phpdoc.xml.dist" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/.phpdoc.xml.dist",
-      "oF" : 0
-    },
     "\/vendor\/phpcsstandards\/phpcsutils\/CHANGELOG.md" : {
       "cB" : 0,
       "cS" : 0,
@@ -17481,6 +17534,38 @@
       "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Exceptions\/InvalidTokenArray.php",
       "oF" : 0
     },
+    "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Exceptions\/LogicException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Exceptions\/LogicException.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Exceptions\/MissingArgumentError.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Exceptions\/MissingArgumentError.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Exceptions\/OutOfBoundsStackPtr.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Exceptions\/OutOfBoundsStackPtr.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Exceptions\/RuntimeException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Exceptions\/RuntimeException.php",
+      "oF" : 0
+    },
     "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Exceptions\/TestFileNotFound.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -17503,6 +17588,30 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Exceptions\/TestTargetNotFound.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Exceptions\/TypeError.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Exceptions\/TypeError.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Exceptions\/UnexpectedTokenType.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Exceptions\/UnexpectedTokenType.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Exceptions\/ValueError.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Exceptions\/ValueError.php",
       "oF" : 0
     },
     "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Fixers\/SpacesFixer.php" : {
@@ -17561,6 +17670,22 @@
       "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/ruleset.xml",
       "oF" : 0
     },
+    "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/TestUtils\/ConfigDouble.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/TestUtils\/ConfigDouble.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/TestUtils\/RulesetDouble.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/TestUtils\/RulesetDouble.php",
+      "oF" : 0
+    },
     "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/TestUtils\/UtilityMethodTestCase.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -17601,6 +17726,14 @@
       "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Utils\/Conditions.php",
       "oF" : 0
     },
+    "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Utils\/Constants.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Utils\/Constants.php",
+      "oF" : 0
+    },
     "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Utils\/Context.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -17615,6 +17748,22 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Utils\/ControlStructures.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Utils\/FileInfo.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Utils\/FileInfo.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Utils\/FilePath.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Utils\/FilePath.php",
       "oF" : 0
     },
     "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Utils\/FunctionDeclarations.php" : {
@@ -17727,6 +17876,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Utils\/TextStrings.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Utils\/TypeString.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Utils\/TypeString.php",
       "oF" : 0
     },
     "\/vendor\/phpcsstandards\/phpcsutils\/PHPCSUtils\/Utils\/UseStatements.php" : {
@@ -17906,7 +18063,7 @@
       "rFN" : 0,
       "uCM" : 0
     },
-    "\/vendor\/phpunit\/php-code-coverage\/ChangeLog-12.1.md" : {
+    "\/vendor\/phpunit\/php-code-coverage\/ChangeLog-11.0.md" : {
       "cB" : 0,
       "cS" : 0,
       "eF" : 1,
@@ -17916,7 +18073,7 @@
       "ft" : 4096,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/ChangeLog-12.1.html",
+      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/ChangeLog-11.0.html",
       "oF" : 0,
       "oFM" : 0,
       "oS" : 0,
@@ -18043,6 +18200,14 @@
       "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Exception\/BranchAndPathCoverageNotSupportedException.php",
       "oF" : 0
     },
+    "\/vendor\/phpunit\/php-code-coverage\/src\/Exception\/DeadCodeDetectionNotSupportedException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Exception\/DeadCodeDetectionNotSupportedException.php",
+      "oF" : 0
+    },
     "\/vendor\/phpunit\/php-code-coverage\/src\/Exception\/DirectoryCouldNotBeCreatedException.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -18073,14 +18238,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Exception\/InvalidArgumentException.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/Exception\/InvalidCodeCoverageTargetException.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Exception\/InvalidCodeCoverageTargetException.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/php-code-coverage\/src\/Exception\/NoCodeCoverageDriverAvailableException.php" : {
@@ -18185,14 +18342,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Exception\/XdebugNotEnabledException.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/Exception\/XdebugVersionNotSupportedException.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Exception\/XdebugVersionNotSupportedException.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/php-code-coverage\/src\/Exception\/XmlException.php" : {
@@ -18802,190 +18951,6 @@
       "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/StaticAnalysis\/ParsingFileAnalyser.php",
       "oF" : 0
     },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/StaticAnalysis\/Value\/Class_.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/StaticAnalysis\/Value\/Class_.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/StaticAnalysis\/Value\/Function_.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/StaticAnalysis\/Value\/Function_.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/StaticAnalysis\/Value\/Interface_.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/StaticAnalysis\/Value\/Interface_.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/StaticAnalysis\/Value\/LinesOfCode.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/StaticAnalysis\/Value\/LinesOfCode.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/StaticAnalysis\/Value\/Method.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/StaticAnalysis\/Value\/Method.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/StaticAnalysis\/Value\/Trait_.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/StaticAnalysis\/Value\/Trait_.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/StaticAnalysis\/Value\/Visibility.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/StaticAnalysis\/Value\/Visibility.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/Class_.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/Class_.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/ClassesThatExtendClass.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/ClassesThatExtendClass.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/ClassesThatImplementInterface.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/ClassesThatImplementInterface.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/Function_.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/Function_.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/MapBuilder.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/MapBuilder.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/Mapper.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/Mapper.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/Method.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/Method.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/Namespace_.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/Namespace_.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/Target.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/Target.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/TargetCollection.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/TargetCollection.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/TargetCollectionIterator.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/TargetCollectionIterator.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/TargetCollectionValidator.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/TargetCollectionValidator.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/Trait_.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/Trait_.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/ValidationFailure.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/ValidationFailure.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/ValidationResult.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/ValidationResult.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/ValidationSuccess.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/php-code-coverage\/src\/Target\/ValidationSuccess.php",
-      "oF" : 0
-    },
     "\/vendor\/phpunit\/php-code-coverage\/src\/TestSize\/Known.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -19550,7 +19515,7 @@
       "oAP" : "\/vendor\/phpunit\/php-timer\/src\/Timer.php",
       "oF" : 0
     },
-    "\/vendor\/phpunit\/phpunit\/ChangeLog-12.0.md" : {
+    "\/vendor\/phpunit\/phpunit\/ChangeLog-11.5.md" : {
       "cB" : 0,
       "cS" : 0,
       "eF" : 1,
@@ -19560,7 +19525,7 @@
       "ft" : 4096,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/ChangeLog-12.0.html",
+      "oAP" : "\/vendor\/phpunit\/phpunit\/ChangeLog-11.5.html",
       "oF" : 0,
       "oFM" : 0,
       "oS" : 0,
@@ -19789,14 +19754,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/phpunit\/schema\/11.4.xsd",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/phpunit\/schema\/11.5.xsd" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/schema\/11.5.xsd",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/SECURITY.md" : {
@@ -20618,6 +20575,22 @@
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/MockObjectCreatedSubscriber.php",
       "oF" : 0
     },
+    "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/MockObjectForAbstractClassCreated.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/MockObjectForAbstractClassCreated.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/MockObjectForAbstractClassCreatedSubscriber.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/MockObjectForAbstractClassCreatedSubscriber.php",
+      "oF" : 0
+    },
     "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/MockObjectForIntersectionOfInterfacesCreated.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -20634,6 +20607,38 @@
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/MockObjectForIntersectionOfInterfacesCreatedSubscriber.php",
       "oF" : 0
     },
+    "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/MockObjectForTraitCreated.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/MockObjectForTraitCreated.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/MockObjectForTraitCreatedSubscriber.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/MockObjectForTraitCreatedSubscriber.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/MockObjectFromWsdlCreated.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/MockObjectFromWsdlCreated.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/MockObjectFromWsdlCreatedSubscriber.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/MockObjectFromWsdlCreatedSubscriber.php",
+      "oF" : 0
+    },
     "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/PartialMockObjectCreated.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -20648,6 +20653,22 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/PartialMockObjectCreatedSubscriber.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/TestProxyCreated.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/TestProxyCreated.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/TestProxyCreatedSubscriber.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/TestProxyCreatedSubscriber.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Event\/Events\/Test\/TestDouble\/TestStubCreated.php" : {
@@ -21330,6 +21351,22 @@
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Event\/Value\/Telemetry\/MemoryUsage.php",
       "oF" : 0
     },
+    "\/vendor\/phpunit\/phpunit\/src\/Event\/Value\/Telemetry\/Php81GarbageCollectorStatusProvider.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Event\/Value\/Telemetry\/Php81GarbageCollectorStatusProvider.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Event\/Value\/Telemetry\/Php83GarbageCollectorStatusProvider.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Event\/Value\/Telemetry\/Php83GarbageCollectorStatusProvider.php",
+      "oF" : 0
+    },
     "\/vendor\/phpunit\/phpunit\/src\/Event\/Value\/Telemetry\/Snapshot.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -21352,14 +21389,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Event\/Value\/Telemetry\/System.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/phpunit\/src\/Event\/Value\/Telemetry\/SystemGarbageCollectorStatusProvider.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Event\/Value\/Telemetry\/SystemGarbageCollectorStatusProvider.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Event\/Value\/Telemetry\/SystemMemoryMeter.php" : {
@@ -21674,22 +21703,6 @@
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/CoversClass.php",
       "oF" : 0
     },
-    "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/CoversClassesThatExtendClass.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/CoversClassesThatExtendClass.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/CoversClassesThatImplementInterface.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/CoversClassesThatImplementInterface.php",
-      "oF" : 0
-    },
     "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/CoversFunction.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -21704,14 +21717,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/CoversMethod.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/CoversNamespace.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/CoversNamespace.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/CoversNothing.php" : {
@@ -21914,14 +21919,6 @@
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/PreserveGlobalState.php",
       "oF" : 0
     },
-    "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/RequiresEnvironmentVariable.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/RequiresEnvironmentVariable.php",
-      "oF" : 0
-    },
     "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/RequiresFunction.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -22074,22 +22071,6 @@
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/UsesClass.php",
       "oF" : 0
     },
-    "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/UsesClassesThatExtendClass.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/UsesClassesThatExtendClass.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/UsesClassesThatImplementInterface.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/UsesClassesThatImplementInterface.php",
-      "oF" : 0
-    },
     "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/UsesFunction.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -22104,14 +22085,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/UsesMethod.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/UsesNamespace.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/UsesNamespace.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Framework\/Attributes\/UsesTrait.php" : {
@@ -22754,12 +22727,12 @@
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/Exception\/UnknownClassOrInterfaceException.php",
       "oF" : 0
     },
-    "\/vendor\/phpunit\/phpunit\/src\/Framework\/Exception\/UnknownNativeTypeException.php" : {
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/Exception\/UnknownTypeException.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/Exception\/UnknownNativeTypeException.php",
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/Exception\/UnknownTypeException.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Framework\/ExecutionOrderDependency.php" : {
@@ -22784,6 +22757,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Exception\/BadMethodCallException.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Exception\/CannotCloneTestDoubleForReadonlyClassException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Exception\/CannotCloneTestDoubleForReadonlyClassException.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Exception\/CannotUseOnlyMethodsException.php" : {
@@ -22890,28 +22871,12 @@
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Exception\/RuntimeException.php",
       "oF" : 0
     },
-    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/DoubledClass.php" : {
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/CannotUseAddMethodsException.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/DoubledClass.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/DoubledMethod.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/DoubledMethod.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/DoubledMethodSet.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/DoubledMethodSet.php",
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/CannotUseAddMethodsException.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/ClassIsEnumerationException.php" : {
@@ -22954,20 +22919,20 @@
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/InvalidMethodNameException.php",
       "oF" : 0
     },
-    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/MethodNamedMethodException.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/MethodNamedMethodException.php",
-      "oF" : 0
-    },
     "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/NameAlreadyInUseException.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/NameAlreadyInUseException.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/OriginalConstructorInvocationRequiredException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/OriginalConstructorInvocationRequiredException.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/ReflectionException.php" : {
@@ -22984,6 +22949,38 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/RuntimeException.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/SoapExtensionNotAvailableException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/SoapExtensionNotAvailableException.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/UnknownClassException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/UnknownClassException.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/UnknownInterfaceException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/UnknownInterfaceException.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/UnknownTraitException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/UnknownTraitException.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/Exception\/UnknownTypeException.php" : {
@@ -23016,6 +23013,46 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/HookedPropertyGenerator.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/MockClass.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/MockClass.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/MockMethod.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/MockMethod.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/MockMethodSet.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/MockMethodSet.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/MockTrait.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/MockTrait.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/MockType.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/MockType.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/TemplateLoader.php" : {
@@ -23058,12 +23095,44 @@
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/templates\/intersection.tpl",
       "oF" : 0
     },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/templates\/proxied_method.tpl" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/templates\/proxied_method.tpl",
+      "oF" : 0
+    },
     "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/templates\/test_double_class.tpl" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/templates\/test_double_class.tpl",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/templates\/trait_class.tpl" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/templates\/trait_class.tpl",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/templates\/wsdl_class.tpl" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/templates\/wsdl_class.tpl",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/templates\/wsdl_method.tpl" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Generator\/templates\/wsdl_method.tpl",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/MockBuilder.php" : {
@@ -23082,6 +23151,30 @@
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Runtime\/Api\/DoubledCloneMethod.php",
       "oF" : 0
     },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Runtime\/Api\/ErrorCloneMethod.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Runtime\/Api\/ErrorCloneMethod.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Runtime\/Api\/GeneratedAsMockObject.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Runtime\/Api\/GeneratedAsMockObject.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Runtime\/Api\/GeneratedAsTestStub.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Runtime\/Api\/GeneratedAsTestStub.php",
+      "oF" : 0
+    },
     "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Runtime\/Api\/Method.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -23096,6 +23189,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Runtime\/Api\/MockObjectApi.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Runtime\/Api\/MutableStubApi.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Runtime\/Api\/MutableStubApi.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Framework\/MockObject\/Runtime\/Api\/ProxiedCloneMethod.php" : {
@@ -23464,6 +23565,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/TestCase.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Framework\/TestRunner\/ChildProcessResultProcessor.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Framework\/TestRunner\/ChildProcessResultProcessor.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Framework\/TestRunner\/IsolatedTestRunner.php" : {
@@ -24202,6 +24311,14 @@
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/BeforeClass.php",
       "oF" : 0
     },
+    "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Covers.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Covers.php",
+      "oF" : 0
+    },
     "\/vendor\/phpunit\/phpunit\/src\/Metadata\/CoversClass.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -24210,20 +24327,12 @@
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/CoversClass.php",
       "oF" : 0
     },
-    "\/vendor\/phpunit\/phpunit\/src\/Metadata\/CoversClassesThatExtendClass.php" : {
+    "\/vendor\/phpunit\/phpunit\/src\/Metadata\/CoversDefaultClass.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/CoversClassesThatExtendClass.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/phpunit\/src\/Metadata\/CoversClassesThatImplementInterface.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/CoversClassesThatImplementInterface.php",
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/CoversDefaultClass.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Metadata\/CoversFunction.php" : {
@@ -24240,14 +24349,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/CoversMethod.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/phpunit\/src\/Metadata\/CoversNamespace.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/CoversNamespace.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Metadata\/CoversNothing.php" : {
@@ -24306,6 +24407,14 @@
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/DoesNotPerformAssertions.php",
       "oF" : 0
     },
+    "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Exception\/AnnotationsAreNotSupportedForInternalClassesException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Exception\/AnnotationsAreNotSupportedForInternalClassesException.php",
+      "oF" : 0
+    },
     "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Exception\/Exception.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -24336,6 +24445,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Exception\/NoVersionRequirementException.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Exception\/ReflectionException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Exception\/ReflectionException.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Metadata\/ExcludeGlobalVariableFromBackup.php" : {
@@ -24402,6 +24519,30 @@
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/MetadataCollectionIterator.php",
       "oF" : 0
     },
+    "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Parser\/Annotation\/DocBlock.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Parser\/Annotation\/DocBlock.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Parser\/Annotation\/Registry.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Parser\/Annotation\/Registry.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Parser\/AnnotationParser.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Parser\/AnnotationParser.php",
+      "oF" : 0
+    },
     "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Parser\/AttributeParser.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -24424,6 +24565,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Parser\/Parser.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Parser\/ParserChain.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Parser\/ParserChain.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Parser\/Registry.php" : {
@@ -24456,14 +24605,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/PreserveGlobalState.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/phpunit\/src\/Metadata\/RequiresEnvironmentVariable.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/RequiresEnvironmentVariable.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Metadata\/RequiresFunction.php" : {
@@ -24586,6 +24727,14 @@
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/TestWith.php",
       "oF" : 0
     },
+    "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Uses.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/Uses.php",
+      "oF" : 0
+    },
     "\/vendor\/phpunit\/phpunit\/src\/Metadata\/UsesClass.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -24594,20 +24743,12 @@
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/UsesClass.php",
       "oF" : 0
     },
-    "\/vendor\/phpunit\/phpunit\/src\/Metadata\/UsesClassesThatExtendClass.php" : {
+    "\/vendor\/phpunit\/phpunit\/src\/Metadata\/UsesDefaultClass.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/UsesClassesThatExtendClass.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/phpunit\/src\/Metadata\/UsesClassesThatImplementInterface.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/UsesClassesThatImplementInterface.php",
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/UsesDefaultClass.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Metadata\/UsesFunction.php" : {
@@ -24624,14 +24765,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/UsesMethod.php",
-      "oF" : 0
-    },
-    "\/vendor\/phpunit\/phpunit\/src\/Metadata\/UsesNamespace.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Metadata\/UsesNamespace.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Metadata\/UsesTrait.php" : {
@@ -27008,6 +27141,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/phpunit\/phpunit\/src\/TextUI\/TestSuiteFilterProcessor.php",
+      "oF" : 0
+    },
+    "\/vendor\/phpunit\/phpunit\/src\/Util\/Cloner.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/phpunit\/phpunit\/src\/Util\/Cloner.php",
       "oF" : 0
     },
     "\/vendor\/phpunit\/phpunit\/src\/Util\/Color.php" : {
@@ -29524,6 +29665,288 @@
       "oAP" : "\/vendor\/sebastian\/cli-parser\/src\/Parser.php",
       "oF" : 0
     },
+    "\/vendor\/sebastian\/code-unit-reverse-lookup\/ChangeLog.md" : {
+      "cB" : 0,
+      "cS" : 0,
+      "eF" : 1,
+      "eL" : 1,
+      "ema" : 1,
+      "eSQ" : 1,
+      "ft" : 4096,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit-reverse-lookup\/ChangeLog.html",
+      "oF" : 0,
+      "oFM" : 0,
+      "oS" : 0,
+      "pHT" : 0,
+      "pME" : 1,
+      "rFN" : 0,
+      "uCM" : 0
+    },
+    "\/vendor\/sebastian\/code-unit-reverse-lookup\/composer.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/vendor\/sebastian\/code-unit-reverse-lookup\/composer-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/vendor\/sebastian\/code-unit-reverse-lookup\/LICENSE" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit-reverse-lookup\/LICENSE",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/code-unit-reverse-lookup\/README.md" : {
+      "cB" : 0,
+      "cS" : 0,
+      "eF" : 1,
+      "eL" : 1,
+      "ema" : 1,
+      "eSQ" : 1,
+      "ft" : 4096,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit-reverse-lookup\/README.html",
+      "oF" : 0,
+      "oFM" : 0,
+      "oS" : 0,
+      "pHT" : 0,
+      "pME" : 1,
+      "rFN" : 0,
+      "uCM" : 0
+    },
+    "\/vendor\/sebastian\/code-unit-reverse-lookup\/SECURITY.md" : {
+      "cB" : 0,
+      "cS" : 0,
+      "eF" : 1,
+      "eL" : 1,
+      "ema" : 1,
+      "eSQ" : 1,
+      "ft" : 4096,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit-reverse-lookup\/SECURITY.html",
+      "oF" : 0,
+      "oFM" : 0,
+      "oS" : 0,
+      "pHT" : 0,
+      "pME" : 1,
+      "rFN" : 0,
+      "uCM" : 0
+    },
+    "\/vendor\/sebastian\/code-unit-reverse-lookup\/src\/Wizard.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit-reverse-lookup\/src\/Wizard.php",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/ChangeLog.md" : {
+      "cB" : 0,
+      "cS" : 0,
+      "eF" : 1,
+      "eL" : 1,
+      "ema" : 1,
+      "eSQ" : 1,
+      "ft" : 4096,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/ChangeLog.html",
+      "oF" : 0,
+      "oFM" : 0,
+      "oS" : 0,
+      "pHT" : 0,
+      "pME" : 1,
+      "rFN" : 0,
+      "uCM" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/composer.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/composer-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/vendor\/sebastian\/code-unit\/LICENSE" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/LICENSE",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/README.md" : {
+      "cB" : 0,
+      "cS" : 0,
+      "eF" : 1,
+      "eL" : 1,
+      "ema" : 1,
+      "eSQ" : 1,
+      "ft" : 4096,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/README.html",
+      "oF" : 0,
+      "oFM" : 0,
+      "oS" : 0,
+      "pHT" : 0,
+      "pME" : 1,
+      "rFN" : 0,
+      "uCM" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/SECURITY.md" : {
+      "cB" : 0,
+      "cS" : 0,
+      "eF" : 1,
+      "eL" : 1,
+      "ema" : 1,
+      "eSQ" : 1,
+      "ft" : 4096,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/SECURITY.html",
+      "oF" : 0,
+      "oFM" : 0,
+      "oS" : 0,
+      "pHT" : 0,
+      "pME" : 1,
+      "rFN" : 0,
+      "uCM" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/src\/ClassMethodUnit.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/src\/ClassMethodUnit.php",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/src\/ClassUnit.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/src\/ClassUnit.php",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/src\/CodeUnit.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/src\/CodeUnit.php",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/src\/CodeUnitCollection.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/src\/CodeUnitCollection.php",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/src\/CodeUnitCollectionIterator.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/src\/CodeUnitCollectionIterator.php",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/src\/exceptions\/Exception.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/src\/exceptions\/Exception.php",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/src\/exceptions\/InvalidCodeUnitException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/src\/exceptions\/InvalidCodeUnitException.php",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/src\/exceptions\/NoTraitException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/src\/exceptions\/NoTraitException.php",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/src\/exceptions\/ReflectionException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/src\/exceptions\/ReflectionException.php",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/src\/FileUnit.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/src\/FileUnit.php",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/src\/FunctionUnit.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/src\/FunctionUnit.php",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/src\/InterfaceMethodUnit.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/src\/InterfaceMethodUnit.php",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/src\/InterfaceUnit.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/src\/InterfaceUnit.php",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/src\/Mapper.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/src\/Mapper.php",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/src\/TraitMethodUnit.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/src\/TraitMethodUnit.php",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/code-unit\/src\/TraitUnit.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/code-unit\/src\/TraitUnit.php",
+      "oF" : 0
+    },
     "\/vendor\/sebastian\/comparator\/ChangeLog.md" : {
       "cB" : 0,
       "cS" : 0,
@@ -30465,6 +30888,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/sebastian\/lines-of-code\/src\/Exception\/IllogicalValuesException.php",
+      "oF" : 0
+    },
+    "\/vendor\/sebastian\/lines-of-code\/src\/Exception\/NegativeValueException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/sebastian\/lines-of-code\/src\/Exception\/NegativeValueException.php",
       "oF" : 0
     },
     "\/vendor\/sebastian\/lines-of-code\/src\/Exception\/RuntimeException.php" : {
@@ -39597,12 +40028,20 @@
       "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/src\/Standards\/PSR12\/Tests\/Operators\/OperatorSpacingUnitTest.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/src\/Standards\/PSR12\/Tests\/Properties\/ConstantVisibilityUnitTest.inc" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/src\/Standards\/PSR12\/Tests\/Properties\/ConstantVisibilityUnitTest.1.inc" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/src\/Standards\/PSR12\/Tests\/Properties\/ConstantVisibilityUnitTest.inc",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/src\/Standards\/PSR12\/Tests\/Properties\/ConstantVisibilityUnitTest.1.inc",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/src\/Standards\/PSR12\/Tests\/Properties\/ConstantVisibilityUnitTest.2.inc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/src\/Standards\/PSR12\/Tests\/Properties\/ConstantVisibilityUnitTest.2.inc",
       "oF" : 0
     },
     "\/vendor\/squizlabs\/php_codesniffer\/src\/Standards\/PSR12\/Tests\/Properties\/ConstantVisibilityUnitTest.php" : {
@@ -44530,6 +44969,14 @@
       "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Config\/GeneratorArgTest.php",
       "oF" : 0
     },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Config\/ReportArgsTest.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Config\/ReportArgsTest.php",
+      "oF" : 0
+    },
     "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Config\/ReportWidthTest.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -44554,279 +45001,279 @@
       "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/ErrorSuppressionTest.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/FindEndOfStatementTest.inc" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/FindEndOfStatementTest.inc" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/FindEndOfStatementTest.inc",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/FindEndOfStatementTest.inc",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/FindEndOfStatementTest.php" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/FindEndOfStatementTest.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/FindEndOfStatementTest.php",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/FindEndOfStatementTest.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/FindExtendedClassNameTest.inc" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/FindExtendedClassNameTest.inc" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/FindExtendedClassNameTest.inc",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/FindExtendedClassNameTest.inc",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/FindExtendedClassNameTest.php" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/FindExtendedClassNameTest.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/FindExtendedClassNameTest.php",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/FindExtendedClassNameTest.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/FindImplementedInterfaceNamesTest.inc" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/FindImplementedInterfaceNamesTest.inc" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/FindImplementedInterfaceNamesTest.inc",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/FindImplementedInterfaceNamesTest.inc",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/FindImplementedInterfaceNamesTest.php" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/FindImplementedInterfaceNamesTest.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/FindImplementedInterfaceNamesTest.php",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/FindImplementedInterfaceNamesTest.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/FindStartOfStatementTest.inc" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/FindStartOfStatementTest.inc" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/FindStartOfStatementTest.inc",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/FindStartOfStatementTest.inc",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/FindStartOfStatementTest.php" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/FindStartOfStatementTest.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/FindStartOfStatementTest.php",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/FindStartOfStatementTest.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetClassPropertiesTest.inc" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetClassPropertiesTest.inc" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetClassPropertiesTest.inc",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetClassPropertiesTest.inc",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetClassPropertiesTest.php" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetClassPropertiesTest.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetClassPropertiesTest.php",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetClassPropertiesTest.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetConditionTest.inc" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetConditionTest.inc" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetConditionTest.inc",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetConditionTest.inc",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetConditionTest.php" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetConditionTest.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetConditionTest.php",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetConditionTest.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetDeclarationNameJSTest.js" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetDeclarationNameJSTest.js" : {
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetDeclarationNameJSTest-min.js",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetDeclarationNameJSTest-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetDeclarationNameJSTest.php" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetDeclarationNameJSTest.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetDeclarationNameJSTest.php",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetDeclarationNameJSTest.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetDeclarationNameParseError1Test.inc" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetDeclarationNameParseError1Test.inc" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetDeclarationNameParseError1Test.inc",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetDeclarationNameParseError1Test.inc",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetDeclarationNameParseError1Test.php" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetDeclarationNameParseError1Test.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetDeclarationNameParseError1Test.php",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetDeclarationNameParseError1Test.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetDeclarationNameParseError2Test.inc" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetDeclarationNameParseError2Test.inc" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetDeclarationNameParseError2Test.inc",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetDeclarationNameParseError2Test.inc",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetDeclarationNameParseError2Test.php" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetDeclarationNameParseError2Test.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetDeclarationNameParseError2Test.php",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetDeclarationNameParseError2Test.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetDeclarationNameTest.inc" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetDeclarationNameTest.inc" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetDeclarationNameTest.inc",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetDeclarationNameTest.inc",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetDeclarationNameTest.php" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetDeclarationNameTest.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetDeclarationNameTest.php",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetDeclarationNameTest.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMemberPropertiesTest.inc" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMemberPropertiesTest.inc" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMemberPropertiesTest.inc",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMemberPropertiesTest.inc",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMemberPropertiesTest.php" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMemberPropertiesTest.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMemberPropertiesTest.php",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMemberPropertiesTest.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMethodParametersParseError1Test.inc" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMethodParametersParseError1Test.inc" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMethodParametersParseError1Test.inc",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMethodParametersParseError1Test.inc",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMethodParametersParseError1Test.php" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMethodParametersParseError1Test.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMethodParametersParseError1Test.php",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMethodParametersParseError1Test.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMethodParametersParseError2Test.inc" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMethodParametersParseError2Test.inc" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMethodParametersParseError2Test.inc",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMethodParametersParseError2Test.inc",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMethodParametersParseError2Test.php" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMethodParametersParseError2Test.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMethodParametersParseError2Test.php",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMethodParametersParseError2Test.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMethodParametersTest.inc" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMethodParametersTest.inc" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMethodParametersTest.inc",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMethodParametersTest.inc",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMethodParametersTest.php" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMethodParametersTest.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMethodParametersTest.php",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMethodParametersTest.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMethodPropertiesTest.inc" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMethodPropertiesTest.inc" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMethodPropertiesTest.inc",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMethodPropertiesTest.inc",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMethodPropertiesTest.php" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMethodPropertiesTest.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetMethodPropertiesTest.php",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetMethodPropertiesTest.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetTokensAsStringTest.inc" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetTokensAsStringTest.inc" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetTokensAsStringTest.inc",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetTokensAsStringTest.inc",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetTokensAsStringTest.php" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetTokensAsStringTest.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/GetTokensAsStringTest.php",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/GetTokensAsStringTest.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/IsReferenceTest.inc" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/IsReferenceTest.inc" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/IsReferenceTest.inc",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/IsReferenceTest.inc",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/IsReferenceTest.php" : {
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/IsReferenceTest.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/File\/IsReferenceTest.php",
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Files\/File\/IsReferenceTest.php",
       "oF" : 0
     },
     "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Filters\/AbstractFilterTestCase.php" : {
@@ -44867,6 +45314,38 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Filters\/GitStagedTest.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/FixFileReturnValueAllGoodTest.xml" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/FixFileReturnValueAllGoodTest.xml",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/FixFileReturnValueConflictTest.xml" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/FixFileReturnValueConflictTest.xml",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/FixFileReturnValueNotEnoughLoopsTest.xml" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/FixFileReturnValueNotEnoughLoopsTest.xml",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/FixFileReturnValueTest.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/FixFileReturnValueTest.php",
       "oF" : 0
     },
     "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/Fixtures\/GenerateDiffTest-BlankLinesAtEnd.diff" : {
@@ -45043,6 +45522,46 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/Fixtures\/GenerateDiffTest.inc",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/Fixtures\/test.inc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/Fixtures\/test.inc",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/Fixtures\/TestStandard\/ruleset.xml" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/Fixtures\/TestStandard\/ruleset.xml",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/Fixtures\/TestStandard\/Sniffs\/FixFileReturnValue\/AllGoodSniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/Fixtures\/TestStandard\/Sniffs\/FixFileReturnValue\/AllGoodSniff.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/Fixtures\/TestStandard\/Sniffs\/FixFileReturnValue\/ConflictSniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/Fixtures\/TestStandard\/Sniffs\/FixFileReturnValue\/ConflictSniff.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/Fixtures\/TestStandard\/Sniffs\/FixFileReturnValue\/NotEnoughLoopsSniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/Fixtures\/TestStandard\/Sniffs\/FixFileReturnValue\/NotEnoughLoopsSniff.php",
       "oF" : 0
     },
     "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Fixer\/GenerateDiffTest.php" : {
@@ -47033,6 +47552,54 @@
       "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/ExplainTest.php",
       "oF" : 0
     },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/BrokenNamingConventions\/Sniffs\/Category\/Sniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/BrokenNamingConventions\/Sniffs\/Category\/Sniff.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/BrokenNamingConventions\/Sniffs\/Category\/SubDir\/TooDeeplyNestedSniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/BrokenNamingConventions\/Sniffs\/Category\/SubDir\/TooDeeplyNestedSniff.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/BrokenNamingConventions\/Sniffs\/MissingCategoryDirSniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/BrokenNamingConventions\/Sniffs\/MissingCategoryDirSniff.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/BrokenNamingConventions\/Sniffs\/NoNamespaceSniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/BrokenNamingConventions\/Sniffs\/NoNamespaceSniff.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/BrokenNamingConventions\/Sniffs\/PartialNamespaceSniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/BrokenNamingConventions\/Sniffs\/PartialNamespaceSniff.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/BrokenNamingConventions\/Sniffs\/Sniffs\/CategoryCalledSniffsSniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/BrokenNamingConventions\/Sniffs\/Sniffs\/CategoryCalledSniffsSniff.php",
+      "oF" : 0
+    },
     "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/DirectoryExpansion\/.hiddenAbove\/src\/MyStandard\/.hidden\/HiddenDirShouldBeIgnoredSniff.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -47137,14 +47704,6 @@
       "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/DirectoryExpansion\/.hiddenAbove\/src\/MyStandard\/Sniffs\/CategoryA\/MissingSniffSuffix.php",
       "oF" : 0
     },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/DirectoryExpansion\/.hiddenAbove\/src\/MyStandard\/Sniffs\/CategoryA\/Subdir\/IncorrectLevelShouldStillBeFoundSniff.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/DirectoryExpansion\/.hiddenAbove\/src\/MyStandard\/Sniffs\/CategoryA\/Subdir\/IncorrectLevelShouldStillBeFoundSniff.php",
-      "oF" : 0
-    },
     "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/DirectoryExpansion\/.hiddenAbove\/src\/MyStandard\/Sniffs\/CategoryB\/AnotherAbstractSniff.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -47167,14 +47726,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/DirectoryExpansion\/.hiddenAbove\/src\/MyStandard\/Sniffs\/CategoryB\/IncorrectFileExtensionSniff.php3",
-      "oF" : 0
-    },
-    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/DirectoryExpansion\/.hiddenAbove\/src\/MyStandard\/Sniffs\/IncorrectLevelShouldStillBeFoundSniff.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/DirectoryExpansion\/.hiddenAbove\/src\/MyStandard\/Sniffs\/IncorrectLevelShouldStillBeFoundSniff.php",
       "oF" : 0
     },
     "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/DirectoryExpansion\/.hiddenAbove\/src\/MyStandard\/Utils\/NotInSniffsDirSniff.php" : {
@@ -47449,6 +48000,30 @@
       "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/InvalidSniffs\/RegisterNoArraySniff.php",
       "oF" : 0
     },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/MissingInterface\/InvalidImplementsWithoutImplementSniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/MissingInterface\/InvalidImplementsWithoutImplementSniff.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/MissingInterface\/ValidImplementsSniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/MissingInterface\/ValidImplementsSniff.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/MissingInterface\/ValidImplementsViaAbstractSniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/MissingInterface\/ValidImplementsViaAbstractSniff.php",
+      "oF" : 0
+    },
     "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/SetProperty\/AllowedAsDeclaredSniff.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -47487,6 +48062,70 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/SetProperty\/PropertyTypeHandlingSniff.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/SupportedTokenizers\/ImplementsDeprecatedInterfaceSniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/SupportedTokenizers\/ImplementsDeprecatedInterfaceSniff.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/SupportedTokenizers\/ListensForCSSAndJSSniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/SupportedTokenizers\/ListensForCSSAndJSSniff.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/SupportedTokenizers\/ListensForCSSAndUnrecognizedSniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/SupportedTokenizers\/ListensForCSSAndUnrecognizedSniff.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/SupportedTokenizers\/ListensForCSSSniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/SupportedTokenizers\/ListensForCSSSniff.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/SupportedTokenizers\/ListensForEmptySniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/SupportedTokenizers\/ListensForEmptySniff.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/SupportedTokenizers\/ListensForJSSniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/SupportedTokenizers\/ListensForJSSniff.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/SupportedTokenizers\/ListensForPHPAndCSSAndJSSniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/SupportedTokenizers\/ListensForPHPAndCSSAndJSSniff.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/SupportedTokenizers\/ListensForUnrecognizedTokenizersSniff.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/SupportedTokenizers\/ListensForUnrecognizedTokenizersSniff.php",
       "oF" : 0
     },
     "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/Fixtures\/TestStandard\/Sniffs\/ValidSniffs\/RegisterEmptyArraySniff.php" : {
@@ -47529,12 +48168,44 @@
       "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/GetIncludePatternsTest.xml",
       "oF" : 0
     },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/PopulateTokenListenersNamingConventionsTest.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/PopulateTokenListenersNamingConventionsTest.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/PopulateTokenListenersNamingConventionsTest.xml" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/PopulateTokenListenersNamingConventionsTest.xml",
+      "oF" : 0
+    },
     "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/PopulateTokenListenersRegisterNoArrayTest.xml" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/PopulateTokenListenersRegisterNoArrayTest.xml",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/PopulateTokenListenersSupportedTokenizersTest.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/PopulateTokenListenersSupportedTokenizersTest.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/PopulateTokenListenersSupportedTokenizersTest.xml" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/PopulateTokenListenersSupportedTokenizersTest.xml",
       "oF" : 0
     },
     "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/PopulateTokenListenersTest.php" : {
@@ -47719,6 +48390,30 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/PropertyTypeHandlingTest.xml",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/RegisterSniffsMissingInterfaceInvalidTest.xml" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/RegisterSniffsMissingInterfaceInvalidTest.xml",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/RegisterSniffsMissingInterfaceTest.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/RegisterSniffsMissingInterfaceTest.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/RegisterSniffsMissingInterfaceValidTest.xml" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/RegisterSniffsMissingInterfaceValidTest.xml",
       "oF" : 0
     },
     "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Ruleset\/RegisterSniffsRejectsInvalidSniffNoImplementsNoProcessTest.xml" : {
@@ -48207,6 +48902,22 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Tokenizers\/PHP\/AttributesTest.php",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Tokenizers\/PHP\/BackfillAsymmetricVisibilityTest.inc" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Tokenizers\/PHP\/BackfillAsymmetricVisibilityTest.inc",
+      "oF" : 0
+    },
+    "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Tokenizers\/PHP\/BackfillAsymmetricVisibilityTest.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Tokenizers\/PHP\/BackfillAsymmetricVisibilityTest.php",
       "oF" : 0
     },
     "\/vendor\/squizlabs\/php_codesniffer\/tests\/Core\/Tokenizers\/PHP\/BackfillEnumTest.inc" : {
@@ -49394,12 +50105,28 @@
       "oAP" : "\/vendor\/symfony\/console\/Application.php",
       "oF" : 0
     },
+    "\/vendor\/symfony\/console\/Attribute\/Argument.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/symfony\/console\/Attribute\/Argument.php",
+      "oF" : 0
+    },
     "\/vendor\/symfony\/console\/Attribute\/AsCommand.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/symfony\/console\/Attribute\/AsCommand.php",
+      "oF" : 0
+    },
+    "\/vendor\/symfony\/console\/Attribute\/Option.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/symfony\/console\/Attribute\/Option.php",
       "oF" : 0
     },
     "\/vendor\/symfony\/console\/CHANGELOG.md" : {
@@ -49467,6 +50194,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/symfony\/console\/Command\/HelpCommand.php",
+      "oF" : 0
+    },
+    "\/vendor\/symfony\/console\/Command\/InvokableCommand.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/symfony\/console\/Command\/InvokableCommand.php",
       "oF" : 0
     },
     "\/vendor\/symfony\/console\/Command\/LazyCommand.php" : {
@@ -50051,6 +50786,30 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/symfony\/console\/Helper\/TableStyle.php",
+      "oF" : 0
+    },
+    "\/vendor\/symfony\/console\/Helper\/TreeHelper.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/symfony\/console\/Helper\/TreeHelper.php",
+      "oF" : 0
+    },
+    "\/vendor\/symfony\/console\/Helper\/TreeNode.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/symfony\/console\/Helper\/TreeNode.php",
+      "oF" : 0
+    },
+    "\/vendor\/symfony\/console\/Helper\/TreeStyle.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/symfony\/console\/Helper\/TreeStyle.php",
       "oF" : 0
     },
     "\/vendor\/symfony\/console\/Input\/ArgvInput.php" : {
@@ -52180,6 +52939,14 @@
       "oAP" : "\/vendor\/symfony\/process\/Exception\/ProcessSignaledException.php",
       "oF" : 0
     },
+    "\/vendor\/symfony\/process\/Exception\/ProcessStartFailedException.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/symfony\/process\/Exception\/ProcessStartFailedException.php",
+      "oF" : 0
+    },
     "\/vendor\/symfony\/process\/Exception\/ProcessTimedOutException.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -52691,6 +53458,14 @@
       "oAP" : "\/vendor\/symfony\/string\/UnicodeString.php",
       "oF" : 0
     },
+    "\/vendor\/symfony\/var-dumper\/Caster\/AddressInfoCaster.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/symfony\/var-dumper\/Caster\/AddressInfoCaster.php",
+      "oF" : 0
+    },
     "\/vendor\/symfony\/var-dumper\/Caster\/AmqpCaster.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -52729,6 +53504,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/symfony\/var-dumper\/Caster\/ConstStub.php",
+      "oF" : 0
+    },
+    "\/vendor\/symfony\/var-dumper\/Caster\/CurlCaster.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/symfony\/var-dumper\/Caster\/CurlCaster.php",
       "oF" : 0
     },
     "\/vendor\/symfony\/var-dumper\/Caster\/CutArrayStub.php" : {
@@ -52827,6 +53610,14 @@
       "oAP" : "\/vendor\/symfony\/var-dumper\/Caster\/FrameStub.php",
       "oF" : 0
     },
+    "\/vendor\/symfony\/var-dumper\/Caster\/GdCaster.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/symfony\/var-dumper\/Caster\/GdCaster.php",
+      "oF" : 0
+    },
     "\/vendor\/symfony\/var-dumper\/Caster\/GmpCaster.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -52881,6 +53672,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/symfony\/var-dumper\/Caster\/MysqliCaster.php",
+      "oF" : 0
+    },
+    "\/vendor\/symfony\/var-dumper\/Caster\/OpenSSLCaster.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/symfony\/var-dumper\/Caster\/OpenSSLCaster.php",
       "oF" : 0
     },
     "\/vendor\/symfony\/var-dumper\/Caster\/PdoCaster.php" : {
@@ -52947,12 +53746,28 @@
       "oAP" : "\/vendor\/symfony\/var-dumper\/Caster\/ScalarStub.php",
       "oF" : 0
     },
+    "\/vendor\/symfony\/var-dumper\/Caster\/SocketCaster.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/symfony\/var-dumper\/Caster\/SocketCaster.php",
+      "oF" : 0
+    },
     "\/vendor\/symfony\/var-dumper\/Caster\/SplCaster.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/symfony\/var-dumper\/Caster\/SplCaster.php",
+      "oF" : 0
+    },
+    "\/vendor\/symfony\/var-dumper\/Caster\/SqliteCaster.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/symfony\/var-dumper\/Caster\/SqliteCaster.php",
       "oF" : 0
     },
     "\/vendor\/symfony\/var-dumper\/Caster\/StubCaster.php" : {
@@ -53615,6 +54430,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/vendor\/szepeviktor\/phpstan-wordpress\/src\/ShortcodeAttsDynamicFunctionReturnTypeExtension.php",
+      "oF" : 0
+    },
+    "\/vendor\/szepeviktor\/phpstan-wordpress\/src\/WpConstantFetchRule.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/vendor\/szepeviktor\/phpstan-wordpress\/src\/WpConstantFetchRule.php",
       "oF" : 0
     },
     "\/vendor\/szepeviktor\/phpstan-wordpress\/src\/WpParseUrlFunctionDynamicReturnTypeExtension.php" : {
