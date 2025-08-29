@@ -12,7 +12,6 @@
 .gitignore
 ACTIONS-FILTERS.md
 codeception.dist.yml
-codeception.yml
 composer.json
 composer.lock
 config.codekit3
@@ -26,3 +25,4 @@ phpstan.neon.example
 README.md
 SETUP.md
 TESTING.md
+page-generator.zip

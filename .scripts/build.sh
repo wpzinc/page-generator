@@ -9,21 +9,23 @@ composer install --no-dev
 cd ..
 rm page-generator.zip
 zip -r page-generator.zip . \
--x "*.scss" \
 -x "*.git*" \
+-x ".devcontainer/*" \
 -x ".scripts/*" \
+-x ".wordpress-org/*" \
 -x "tests/*" \
 -x "vendor/*" \
 -x "*.distignore" \
 -x "*.env.*" \
 -x ".gitignore" \
 -x "*.md" \
--x "*codeception.*" \
+-x "*.yml" \
 -x "composer.json" \
 -x "composer.lock" \
--x "config.codekit3" \
--x "phpcs.tests.xml" \
--x "phpcs.xml" \
+-x "*.xml" \
+-x "*.neon" \
+-x "*.dist" \
+-x "*.example" \
 -x "*.DS_Store" \
 
 # Run composer to install dev dependencies, returning enviornment back to original state

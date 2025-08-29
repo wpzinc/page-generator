@@ -3928,14 +3928,6 @@
       "oAP" : "\/codeception.dist.yml",
       "oF" : 1
     },
-    "\/codeception.yml" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/codeception.yml",
-      "oF" : 1
-    },
     "\/composer.json" : {
       "ft" : 524288,
       "oA" : 1,
