@@ -191,6 +191,8 @@ jobs:
           path: ${{ env.PLUGIN_DIR }}/.env.testing
           contents: |
             PAGE_GENERATOR_PRO_LICENSE_KEY=12345
+            
+          write-mode: append
 
       # Installs wp-browser, Codeception, PHP CodeSniffer and anything else needed to run tests.
       - name: Run Composer
