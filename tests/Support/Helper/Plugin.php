@@ -60,10 +60,9 @@ class Plugin extends \Codeception\Module
 		$I->waitForElementVisible('body.plugins-php');
 
 		// Activate the Plugin.
-		$I->activatePlugin($name);
-
-		// Go to the Plugins screen again.
-		$I->amOnPluginsPage();
+		$I->checkOption('//*[@data-slug="' . $name . '"]/th/input');
+		$I->selectOption('action', 'activate-selected');
+		$I->click('#doaction');
 
 		// Wait for the Plugins page to load with the Plugin activated, to confirm it activated.
 		$I->waitForElementVisible('table.plugins tr[data-slug=' . $name . '].active');
@@ -95,7 +94,9 @@ class Plugin extends \Codeception\Module
 		$I->waitForElementVisible('body.plugins-php');
 
 		// Deactivate the Plugin.
-		$I->deactivatePlugin($name);
+		$I->checkOption('//*[@data-slug="' . $name . '"]/th/input');
+		$I->selectOption('action', 'deactivate-selected');
+		$I->click('#doaction');
 	}
 
 	/**
@@ -134,12 +135,15 @@ class Plugin extends \Codeception\Module
 		$I->waitForElementVisible('#user_login');
 		$I->waitForElementVisible('#user_pass');
 		$I->waitForElementVisible('#wp-submit');
+		$I->waitForElementVisible('#backtoblog');
 
 		// Fill in the login form.
 		$I->click('#user_login');
 		$I->fillField('#user_login', $_ENV['WORDPRESS_ADMIN_USER']);
+		$I->seeInField('#user_login', $_ENV['WORDPRESS_ADMIN_USER']);
 		$I->click('#user_pass');
 		$I->fillField('#user_pass', $_ENV['WORDPRESS_ADMIN_PASSWORD']);
+		$I->seeInField('#user_pass', $_ENV['WORDPRESS_ADMIN_PASSWORD']);
 
 		// Submit.
 		$I->click('#wp-submit');
