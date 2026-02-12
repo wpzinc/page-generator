@@ -132,6 +132,10 @@ There are no limits on the number of Pages that can be generated with our mass p
 
 == Changelog ==
 
+= 1.8.2 (2026-02-12) =
+* Added: Keywords: Instructions for permitted characters when specifying a Keyword name
+* Updated: Dashboard submodule
+
 = 1.8.1 (2025-12-03) =
 * Fix: Keywords: Add / Edit: Set ID on Source dropdown for accessiblity
 * Updated: Dashboard submodule
