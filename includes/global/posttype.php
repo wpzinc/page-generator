@@ -104,7 +104,7 @@ class Page_Generator_Pro_PostType {
 			'supports'            => $supports,
 			'has_archive'         => false,
 			'show_in_nav_menus'   => $logged_in,
-			'show_in_rest'        => $logged_in,    // Prevents unauthenticated REST API access to Content Groups.
+			'show_in_rest'        => true,
 		);
 
 		/**

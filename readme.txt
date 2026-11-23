@@ -133,8 +133,7 @@ There are no limits on the number of Pages that can be generated with our mass p
 == Changelog ==
 
 = 1.8.8 (2026-11-23) =
-* Fix: Security: Content Groups: Check user capabilities when finishing generation
-* Fix: Security: Content Groups: Prevent unauthenticated access to Content Groups through the REST API
+* Fix: Content Groups: Check user capabilities when finishing generation
 
 = 1.8.7 (2026-08-19) =
 * WordPress 7.1 compatibility
